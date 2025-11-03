@@ -1,0 +1,1 @@
+export { ContentWritingHeroSection } from "./ContentWritingHeroSection";

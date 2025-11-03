@@ -1,0 +1,1 @@
+export { ScrollLogo } from "./ScrollLogo";

@@ -1,0 +1,1 @@
+export { WhyJoinUsSection } from "./WhyJoinUsSection";

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sticky Services – Impulse</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f0e26;
+    --card:#0f0e26;
+    --ink:#ffffff;
+    --muted:#bfc1cf;
+    --accent:#6B04FD;
+    --radius:26px;
+    --shadow:0 22px 70px rgba(0,0,0,.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif}
+  img{display:block;max-width:100%;height:auto;border-radius:18px}
+
+  .wrap{max-width:100%;margin:auto;position:relative;background:var(--bg);padding:4rem 6rem}
+
+  .eyebrow{font-size:20px;letter-spacing:.02em;color:#b7b9c9;margin-bottom:4px;opacity:.85}
+  .h1{font-size:56px;font-weight:800;line-height:1.05;margin-bottom:36px}
+
+  /* ---------- DESKTOP (unchanged sticky effect) ---------- */
+  .stack{display:grid;grid-template-columns:1fr auto;gap:18px}
+  .section{min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .card{
+    min-height:600px; position:sticky; top:64px;
+    display:flex; align-items:flex-start; justify-content:space-between; gap:42px;
+    width:100%; background:var(--card);
+    border-radius:var(--radius); padding:44px 40px; box-shadow:var(--shadow);
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .card.is-active{transform:scale(1.01);border:none;}
+  .num{flex:0 0 72px;font-weight:700;font-size:42px;letter-spacing:.02em;line-height:1;color:#fff;margin-top:6px}
+  .copy{flex:1 1 auto;min-width:0;padding-right:10px}
+  .copy h3{font-size:40px;font-weight:700;letter-spacing:.01em;margin-bottom:18px}
+  .copy ul{list-style:none;display:grid;gap:16px}
+  .copy li{font-size:18px;color:#e9eaf5;padding-left:18px;position:relative}
+  .copy li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.8)}
+  .visual{flex:0 0 520px;display:flex;justify-content:flex-end}
+  .shot{width:520px;height:340px;overflow:hidden;border-radius:32px;position:relative;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+  .shot img{width:100%;height:100%;object-fit:cover;border-radius:32px}
+
+  /* ---------- MOBILE SLIDER (only on <= 980px) ---------- */
+  .mobile-slider{display:none}
+
+  @media (max-width:980px){
+    .wrap{padding:2rem 1.25rem}
+    .stack{display:none}                 /* hide desktop stack */
+    .mobile-slider{display:block;position:relative;overflow:hidden}
+    .track{display:flex;will-change:transform;transition:transform .35s ease}
+    .mcard{
+      flex:0 0 100%;
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      min-height: calc(100vh - 160px);   /* room for header + nav buttons */
+      display:flex;flex-direction:column;gap:18px;
+      box-shadow:var(--shadow);
+    }
+    .m-num{font-size:32px;font-weight:700}
+    .m-title{font-size:28px;font-weight:700}
+    .m-list{list-style:none;display:grid;gap:12px}
+    .m-list li{font-size:16px;color:#e9eaf5;padding-left:16px;position:relative}
+    .m-list li::before{content:"";position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.8)}
+    .m-shot{width:100%;border-radius:20px;overflow:hidden}
+    .m-shot img{width:100%;height:auto;border-radius:20px}
+
+    /* Bottom-center nav like your screenshot */
+    .mnav{
+      position:fixed;left:0;right:0;bottom:20px;
+      display:flex;justify-content:center;gap:12px;pointer-events:none;
+    }
+    .navbtn{
+      pointer-events:auto;
+      width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.06);
+      display:grid;place-items:center;backdrop-filter:blur(4px);
+    }
+    .navbtn svg{width:18px;height:18px}
+    .navbtn.next{background:var(--accent);border-color:var(--accent)}
+    .navbtn[disabled]{opacity:.45}
+  }
+
+  /* extra responsive tweaks */
+  @media (max-width:1100px){
+    .visual{flex:0 0 440px}
+    .shot{width:440px;height:290px}
+    .copy h3{font-size:34px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">Every goal needs a roadmap</div>
+    <div class="h1">We’ve got yours!</div>
+
+    <!-- DESKTOP: sticky stack -->
+    <div class="stack" id="stack"></div>
+
+    <!-- MOBILE: horizontal slider -->
+    <div class="mobile-slider" id="mobileSlider">
+      <div class="track" id="mobileTrack"></div>
+
+      <!-- bottom-center controls -->
+      <div class="mnav">
+        <button class="navbtn prev" id="prevBtn" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 6l-6 6 6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="navbtn next" id="nextBtn" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const data = [
+    { n:"01", title:"Pay-Per-Click",
+      points:["Ad copywriting","Bid management","Landing page optimization","Target audience analysis"],
+      img:"https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop" },
+    { n:"02", title:"Content Writing Services",
+      points:["Blogs","Website content creation","Landing page content","Corporate communication","E-commerce content writing"],
+      img:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" },
+    { n:"03", title:"Production",
+      points:["Scriptwriting & storyboarding","Facebook & Instagram videography","YouTube videography","Voiceover recording"],
+      img:"https://images.unsplash.com/photo-1485841890310-6a055c88698a?q=80&w=1600&auto=format&fit=crop" },
+    { n:"04", title:"Social Media Marketing",
+      points:["Profile setup & hygiene","Always-on content & calendars","Online reputation management","Campaign creation & management","Community building (organic & paid)","Performance monitoring"],
+      img:"https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop" },
+    { n:"05", title:"Employer Branding",
+      points:["EVP & narrative","Hiring creatives & campaigns","Internal storytelling","Leadership visibility"],
+      img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" },
+    { n:"06", title:"SEO",
+      points:["Technical audit","On-page optimization","Content clusters","Link building"],
+      img:"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop" },
+    { n:"07", title:"Website Development & Design",
+      points:["Discovery & IA","UI/UX & prototyping","React/Next.js build","Performance & SEO"],
+      img:"https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1600&auto=format&fit=crop" },
+    { n:"08", title:"Branding",
+      points:["Identity systems","Brand guidelines","Collateral & templates","Launch assets"],
+      img:"https://images.unsplash.com/photo-1529336953121-a5fc39be3443?q=80&w=1600&auto=format&fit=crop" }
+  ];
+
+  /* --------- Build DESKTOP sticky stack (unchanged effect) --------- */
+  const stack = document.getElementById("stack");
+  data.forEach((s, i) => {
+    const section = document.createElement("section");
+    section.className = "section";
+    const card = document.createElement("article");
+    card.className = "card";
+    card.setAttribute("data-index", i);
+    card.innerHTML = `
+      <div class="num">${s.n}</div>
+      <div class="copy">
+        <h3>${s.title}</h3>
+        <ul>${s.points.map(p=>`<li>${p}</li>`).join("")}</ul>
+      </div>
+      <div class="visual">
+        <div class="shot"><img src="${s.img}" alt="${s.title}"></div>
+      </div>
+      <div className="flex w-60 items-start justify-center lg:justify-end pt-2 lg:pt-[7px]">
+        <img className="w-[56px] lg:w-[80px] object-contain" alt="Next" src="Arrow.png" />
+      </div>
+      `;
+    stack.appendChild(card);
+    const spacer = document.createElement("div");
+    spacer.style.height="1px";spacer.style.visibility="hidden";
+    stack.appendChild(spacer);
+  });
+
+  // observe for active styling (desktop)
+  const cards = [...document.querySelectorAll(".card")];
+  const io = new IntersectionObserver((entries)=>{
+    const visible = entries.filter(e=>e.isIntersecting)
+      .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+    cards.forEach(c=>c.classList.remove("is-active"));
+    if(visible){ visible.target.classList.add("is-active"); }
+  }, {threshold:[0.55,0.75]});
+  cards.forEach(c=>io.observe(c));
+
+  /* --------- Build MOBILE slider --------- */
+  const track = document.getElementById("mobileTrack");
+  const slider = document.getElementById("mobileSlider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  data.forEach(s=>{
+    const slide = document.createElement("div");
+    slide.className = "mcard";
+    slide.innerHTML = `
+      <div class="m-num">${s.n}</div>
+      <div class="m-title">${s.title}</div>
+      <ul class="m-list">${s.points.map(p=>`<li>${p}</li>`).join("")}</ul>
+      <div class="m-shot"><img src="${s.img}" alt="${s.title}"></div>
+    `;
+    track.appendChild(slide);
+  });
+
+  let idx = 0;
+  let slideW = () => slider.clientWidth;
+
+  function go(i){
+    idx = Math.max(0, Math.min(i, data.length-1));
+    track.style.transform = `translateX(${-idx * slideW()}px)`;
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===data.length-1;
+  }
+
+  window.addEventListener('resize', ()=>go(idx));
+  prevBtn.addEventListener('click', ()=>go(idx-1));
+  nextBtn.addEventListener('click', ()=>go(idx+1));
+
+  // touch/drag swipe
+  let startX=0, curX=0, dragging=false;
+  track.addEventListener('pointerdown', (e)=>{dragging=true;startX=e.clientX;track.style.transition='none';});
+  window.addEventListener('pointermove', (e)=>{
+    if(!dragging) return;
+    curX = e.clientX;
+    const dx = curX - startX;
+    track.style.transform = `translateX(${ -idx*slideW() + dx }px)`;
+  });
+  window.addEventListener('pointerup', ()=>{
+    if(!dragging) return;
+    dragging=false;
+    track.style.transition='transform .35s ease';
+    const dx = curX - startX;
+    if(Math.abs(dx) > 60){ go(idx + (dx<0 ? 1 : -1)); } else { go(idx); }
+    startX=curX=0;
+  });
+
+  // init
+  go(0);
+</script>
+</body>
+</html>

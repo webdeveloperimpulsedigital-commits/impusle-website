@@ -1,0 +1,1 @@
+export { SocialMediaMarketingHeroSection } from "./SocialMediaMarketingHeroSection";
