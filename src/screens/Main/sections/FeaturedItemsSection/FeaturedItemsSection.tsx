@@ -2,7 +2,7 @@ import Header from "../../../../components/layout/Header";
 
 export const FeaturedItemsSection = (): JSX.Element => {
   
-  const heroTextLines = ["TURNING", "YOUR BUSINESS", "INTO A BRAND"];
+  const heroTextLines = ["TURNING11", "YOUR BUSINESS", "INTO A BRAND"];
 
   const handleContactClick = () => {
     console.log("Contact button clicked");
