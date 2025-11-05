@@ -60,9 +60,9 @@ export const App = (): JSX.Element => {
 
 
       <Route path="/digital-marketing-agency-in-india" element={<DigitalMarketingAgencyinIndia />} />
-      <Route path="/agency-in-thane" element={<AgencyinThane />} />
-      <Route path="/agency-in-navi-mumbai" element={<AgencyinNaviMumbai />} />
-      <Route path="/agency-in-pune" element={<AgencyinPune />} />
+      <Route path="/digital-marketing-agency-in-thane" element={<AgencyinThane />} />
+      <Route path="/digital-marketing-agency-in-navi-mumbai" element={<AgencyinNaviMumbai />} />
+      <Route path="/digital-marketing-agency-in-pune" element={<AgencyinPune />} />
 
 
     </Routes>
