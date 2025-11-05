@@ -8,6 +8,7 @@ const DEFAULT_QA: QA[] = [
   {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     q: "What does Impulse Digital do?",
 =======
     q: "What does Impulse Digital do???",
@@ -15,6 +16,9 @@ const DEFAULT_QA: QA[] = [
 =======
     q: "What does Impulse Digital do???",
 >>>>>>> 5b34040 (faq canges in about us page add que mark)
+=======
+    q: "What does Impulse Digital do?",
+>>>>>>> c69052c (chnage about us section)
     a: "Impulse Digital is a 360-degree digital marketing agency offering end-to-end services in strategy, creative, media, web, content, and analytics. Our focus is on turning marketing investments into measurable business growth."
   },
   {
