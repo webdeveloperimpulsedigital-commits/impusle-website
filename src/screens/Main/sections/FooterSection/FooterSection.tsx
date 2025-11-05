@@ -70,10 +70,10 @@ export const FooterSection: React.FC = () => {
             </ul>
             <ul className="footer__col">
               <strong>Locations</strong>
-              <li><a href="/impulse-website/digital-marketing-agency-in-india">India</a></li>
-              <li><a href="/impulse-website/digital-marketing-agency-in-thane">Thane</a></li>
-              <li><a href="/impulse-website/digital-marketing-agency-in-navi-mumbai">Navi Mumbai</a></li>
-              <li><a href="/impulse-website/digital-marketing-agency-in-pune">Pune</a></li>
+              <li><a href="/digital-marketing-agency-in-india">India</a></li>
+              <li><a href="/digital-marketing-agency-in-thane">Thane</a></li>
+              <li><a href="/digital-marketing-agency-in-navi-mumbai">Navi Mumbai</a></li>
+              <li><a href="/digital-marketing-agency-in-pune">Pune</a></li>
             </ul>
           </nav>
 
