@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../../../components/layout/Header";
 
 export const FeaturedItemsSection = (): JSX.Element => {
-  const heroTextLines = ["TURNING", "YOUR BUSINESS", "INTO A BRAND"];
+  const heroTextLines = ["Impulse", "YOUR BUSINESS", "INTO A BRAND"];
 
   
 
