@@ -1,5 +1,4 @@
 import { Button } from "../../../../../components/ui/button";
-import { Link } from "react-router-dom";
 
 interface JobPosition {
   id: string;
@@ -81,7 +80,8 @@ export const OpenPositionsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full bg-white py-16 lg:py-24" data-section="open-positions">
+    <section className="w-full bg-white lg:py-0" data-section="open-positions" id="open-position-sec-border">
+
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -164,12 +164,20 @@ export const OpenPositionsSection = (): JSX.Element => {
               >
                 Apply for this Position
               </a> */}
-                      <Button 
-                        className="w-[240px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 bg-[#543d98] hover:bg-[#543d98]/90  rounded-xl  text-white">
-                        <Link to="/contact" className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base">Apply for this Position</Link>
-                        <img src="/impulse-website/button-icon.svg" alt="Arrow"
-                          className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 pointer-events-none"/>
-                      </Button>
+                      
+
+                      <Button className="w-[250px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
+           
+                         <a href="#application-form" className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300">
+  Apply for this Position
+</a>
+
+                         <img
+                           src="/impulse-website/button-icon.svg"
+                           alt="Arrow"
+                           className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert-0 group-hover:invert pointer-events-none"
+                         />
+                     </Button><br></br>
             </div>
           ))}
         </div>
@@ -196,5 +204,9 @@ export const OpenPositionsSection = (): JSX.Element => {
         )}
       </div>
     </section>
+
+
+
+
   );
 };

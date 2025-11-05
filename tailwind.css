@@ -5353,6 +5353,15 @@ padding-bottom: 6rem;
   margin-top: -12.9% !important;
  }
 
+ 
+ #abt-sec-border{
+  border-top-right-radius: 55px;
+  border-top-left-radius: 55px;
+  position: relative;
+  margin-top: -12.9% !important;
+  padding: 10% 8%;
+ }
+
  #why-sec-border{
   border-top-right-radius: 55px;
   border-top-left-radius: 55px;
@@ -5374,6 +5383,28 @@ padding-bottom: 6rem;
 .rounded-t-\[55px\] {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+}
+
+.wrap-abt{
+  margin-top: 12%;
+    margin-bottom: 26%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#statistics-section
+{
+    padding: 4rem 0rem !important;
+}
+
+#open-position-sec-border{
+  padding: 8% 0% 12% !important;
+  margin-top: -15.9% !important;
+}
+
+#contact-us-sec-border {
+        padding: 8% 7% 0% !important;
+        margin-top: -15.9% !important;
+        margin-bottom: -3% !important;
 }
 }
 
@@ -5979,6 +6010,15 @@ padding-bottom: 6rem;
   z-index: 99;
  }
 
+ #abt-sec-border{
+  border-top-right-radius: 55px;
+  border-top-left-radius: 55px;
+  position: relative;
+  margin-top: -2.9%;
+  margin-bottom: 3%;
+  z-index: 99;
+ }
+
  #why-sec-border{
   border-top-right-radius: 55px;
   border-top-left-radius: 55px;
@@ -6023,6 +6063,26 @@ padding-bottom: 6rem;
   z-index: 99;
  }
 
+ #open-position-sec-border{
+  border-top-right-radius: 55px;
+  border-top-left-radius: 55px;
+  position: relative;
+  margin-top: -2.9%;
+  margin-bottom: 3%;
+  z-index: 99;
+  padding: 5% 0% 3%;
+ }
+
+#contact-us-sec-border{
+  border-top-right-radius: 55px;
+  border-top-left-radius: 55px;
+  position: relative;
+  margin-top: -2.9%;
+  margin-bottom: 3%;
+  z-index: 99;
+  padding: 5% 0% 3%;
+ }
+ 
 .lg\:pb-016{
   padding-bottom: 4rem;
 }

@@ -1,8 +1,8 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
-import { Header } from "../../../../../components/layout/Header";
+import { Header } from "../../../../components/layout/Header";
 
-export const CareersHeroSection = (): JSX.Element => {
+export const ServicesHeroSection = (): JSX.Element => {
   return (
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
@@ -34,7 +34,7 @@ export const CareersHeroSection = (): JSX.Element => {
       {/* Hero Copy */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-24 px-4">
         <h1 className="uppercase [font-family:'DM_Sans',Helvetica] font-black text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[40px] tracking-tight mb-6">
-          Careers
+          Services
         </h1>
 
         {/* Breadcrumb */}
@@ -43,7 +43,7 @@ export const CareersHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Careers</span>
+          <span className="text-white">Services</span>
         </nav>
       </div>
     </section>

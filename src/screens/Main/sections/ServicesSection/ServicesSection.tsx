@@ -28,65 +28,66 @@ const ServicesSection = () => {
       n: "01",
       title: "SEO",
       points: [
-        "Capture high-intent customers at the precise moment they search for your products or services online. Our Google search ads services leverage strategic keyword targeting and compelling ad copy to drive qualified traffic directly to your website.",
+        "Your prospects are searching, we make sure they find you first. We combine technical expertise with creative content strategies to boost your website’s visibility and ranking. Our SEO team optimizes every aspect of your online presence to attract, engage, and convert the right audience, ensuring your business grows where it matters most: search results.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google search ads.jpg",
+      img: "/impulse-website/06_SEO.jpg",
     },
     {
       n: "02",
       title: "Website Development & Design",
       points: [
-        "Want to reach a broader audience? Our Google display ad services will make it possible with creative banners and rich media ads that capture attention, drive interest, and offer targeted advertising solutions across millions of websites and apps.",
+        "Your website is more than just a digital address, it’s your brand’s first impression, storyteller, and salesperson, all rolled into one.  We design and develop websites that not only look stunning but also perform seamlessly. From intuitive navigation to engaging visuals and compelling content, we build experiences that keep visitors clicking and coming back for more. Every line of code and pixel is crafted to reflect your brand’s essence and purpose. In a world full of tabs and distractions, we make sure your website stands out and speaks volumes.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google display ads.jpg",
+      img: "/impulse-website/07_Website Development.jpg",
     },
     {
       n: "03",
-      title: "Pay per Click ",
+      title: "Performance Marketing",
       points: [
-        "Show off your product listing to audiences who are already searching for them. Our PPC services design visually rich ads with high-quality product images, optimized titles and descriptions, and prices to attract customers who are ready to buy.",
+        "Every campaign should perform, not just run, that’s where we come in. At Impulse Digital, our performance marketing approach ensures every click, impression and conversion drives measurable growth. We blend strategy, creativity and data to deliver results you can see and scale. From understanding audience behaviour to optimizing spends across channels, we focus on impact over noise. With us, your marketing doesn’t just reach people, it moves them to act.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google shopping ads.jpg",
+      img: "/impulse-website/01_Pay-Per-Click.jpg",
     },
     {
       n: "04",
       title: "Content Writing Services",
       points: [
-        "Merge your digital advertising efforts across Search, Display, YouTube, and more with 1 single campaign. Our PPC services harness machine learning to optimize this goal-based campaign automatically to ensure your ads reach valuable consumers online.",
+        "Great content doesn’t just tell a story, it builds a connection. We craft narratives that resonate with your audience and reflect your brand’s true voice. Every word is designed with purpose, ensuring your message reaches the right people in the most meaningful way. From thought-provoking blogs to engaging campaign copy, our content marketing approach blends creativity with strategy. Because when your content speaks the language of your audience, it turns attention into trust.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google Performance max ads.jpg",
+      img: "/impulse-website/02_Content Writing.jpg",
     },
     {
       n: "05",
       title: "Production",
       points: [
-        "Bring together the power of strategic brand storytelling with targeted lead generation techniques on Meta platforms. We craft creative content and visually appealing ads tailored for Facebook and Instagram to focus on both brand awareness and conversions.",
+        "Transform Your Brands Online Communication with Social Media Video Production. Our Social Media Video Production service is specifically designed to elevate your brand's online presence with visually appealing and strategically crafted videos tailored to suit your brand and its target audience. From ideation, conceptualization, method storytelling to visually crafting a masterpiece, we handle every aspect of video production with the required ",
       ],
-      img: "/impulse-website/service section 520 x 340 - Meta ads & lead gen.jpg",
+      img: "/impulse-website/03_Production.jpg",
     },
     {
       n: "06",
       title: "Social Media Marketing",
       points: [
-        "Our Amazon Sales & Branding PPC services focus on optimizing your presence on the world’s largest online marketplace. Our team crafts targeted ad strategies and engaging content that reflect your brand’s identity, ensuring your listing stands out.",
+        "Your audience is scrolling, now the question is, are they stopping for you? At Impulse Digital, we make sure your brand stands out in the endless feed. Our social media marketing services blend strategy, creativity and data to create conversations that matter. From relatable content to impactful campaigns, we help you build a community that listens, engages and grows with you. Because on social media, it’s not just about being seen, it’s about being remembered.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/04_Social Media Marketing.jpg",
+     
     },
     {
       n: "07",
       title: "Employer Branding",
       points: [
-        "Want to reach out to decision-makers at top companies in the world? Our highly targeted LinkedIn ads leverage detailed demographic and job role data to connect you with the right audience to support your business’s sustainable growth in the B2B arena.",
+        "Your audience is scrolling, now the question is, are they stopping for you? At Impulse Digital, we make sure your brand stands out in the endless feed. Our social media marketing services blend strategy, creativity and data to create conversations that matter. From relatable content to impactful campaigns, we help you build a community that listens, engages and grows with you. Because on social media, it’s not just about being seen, it’s about being remembered.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/05_Employer Branding.jpg",
     },
     {
       n: "08",
       title: "Branding",
       points: [
-        "Want to reach out to decision-makers at top companies in the world? Our highly targeted LinkedIn ads leverage detailed demographic and job role data to connect you with the right audience to support your business’s sustainable growth in the B2B arena.",
+        "A brand is more than just a logo, it is the feeling people associate with your name. Through our corporate branding services, we help you create that emotion by shaping how your audience perceives and connects with your business. From uncovering your core values to crafting a powerful visual and verbal identity, every detail is designed to make your brand stand apart. We blend strategy with creativity to build a consistent and lasting impression across every touchpoint. When your brand feels authentic, it does not just capture attention, it earns trust.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Linkedin Ads.jpg",
+      img: "/impulse-website/08_Branding.jpg",
     },
   ];
 

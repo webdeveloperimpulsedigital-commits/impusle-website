@@ -27,36 +27,36 @@ type HeaderProps = {
 
 const DEFAULT_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   {
     label: "Services",
-    href: "",
+    href: "/services",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Content Writing Services", href: "/content-writing-services" },
-      { label: "Pay-Per-Click (PPC)", href: "/pay-per-click" },
-      { label: "Social Media Marketing", href: "/social-media-marketing" },
+      { label: "Content Writing Services", href: "/services/content-writing-services" },
+      { label: "Performance Marketing (PPC)", href: "/services/performance-marketing" },
+      { label: "Social Media Marketing", href: "/services/social-media-marketing" },
       {
         label: "Search Engine Optimization",
-        href: "/search-engine-optimization",
+        href: "/services/search-engine-optimization",
         hasSubDropdown: true,
         subItems: [
-          { label: "Enterprise SEO Services", href: "/enterprise-seo-services" },
-          { label: "eCommerce SEO Services", href: "/ecommerce-seo-services" },
-          { label: "B2B SEO Services", href: "/b2b-seo-services" },
-          { label: "Local SEO Services", href: "/local-seo-services" },
+          { label: "Enterprise SEO Services", href: "/services/search-engine-optimization/enterprise-seo-services" },
+          { label: "eCommerce SEO Services", href: "/services/search-engine-optimization/ecommerce-seo-services" },
+          { label: "B2B SEO Services", href: "/services/search-engine-optimization/b2b-seo-services" },
+          { label: "Local SEO Services", href: "/services/search-engine-optimization/local-seo-services" },
         ],
       },
-      { label: "Website Development & Design", href: "/website-development-design" },
-      { label: "Branding Creative Services", href: "/branding-creative-services" },
-      { label: "Employee Branding Services", href: "/employee-branding-services" },
-      { label: "Corporate Communication Services", href: "/corporate-communication-services" },
-      { label: "Social Media Video Production Services", href: "/social-media-video-production-services" },
+      { label: "Website Development", href: "/services/website-development" },
+      { label: "Branding Creative", href: "/services/branding-creative-services" },
+      { label: "Employee Branding", href: "/services/employee-branding-agency" },
+      { label: "Corporate Communication", href: "/services/corporate-communication-agency" },
+      { label: "Social Media Video Production", href: "/services/social-media-video-production" },
     ],
   },
   { label: "Case Studies", href: "#" },
-  { label: "Blogs", href: "#" },
-  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "#" },
+  { label: "Career", href: "/career" },
 ];
 
 export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
@@ -247,7 +247,7 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
             className="w-[150px] h-[44px] group hidden sm:inline-flex items-center gap-2 px-4 py-5 bg-white rounded-xl hover:bg-[#543d98] hover:text-[#ffffff] text-[#543d98]"
           >
             <Link
-              to="/contact"
+              to="/contact-us"
               className="[font-family:'DM_Sans',Helvetica] font-bold text-sm md:text-base"
             >
               Contact Us
@@ -313,7 +313,7 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
                 variant="outline"
                 className="w-120 group flex items-center gap-2 px-4 py-6 bg-white rounded-xl hover:bg-gray-100 text-[#543d98]"
               >
-                <Link to="/contact" className="font-dm-sans font-bold text-sm text-[#543d98]">
+                <Link to="/contact-us" className="font-dm-sans font-bold text-sm text-[#543d98]">
                   Contact Us
                 </Link>
                 <img

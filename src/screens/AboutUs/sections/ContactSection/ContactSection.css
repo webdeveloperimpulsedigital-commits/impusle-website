@@ -136,10 +136,10 @@
 .contact-right button {
     margin-top: 10px;
     background: #543d98;
-    width: 25%;
+    width: 30%;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 1.2rem;
     padding: 10px 25px;
     font-size: 14px;
     font-weight: 600;
@@ -197,5 +197,9 @@
 .contact-container1{
     gap: 15px !important;
     padding-bottom: 2rem !important;
+}
+
+.contact-right button {
+  width: 50%;
 }
 }

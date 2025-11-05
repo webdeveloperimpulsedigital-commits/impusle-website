@@ -26,8 +26,8 @@ const Counter: React.FC<CounterProps> = ({ target, suffix, description, isVisibl
     <div className="text-center">
       <div className="flex items-baseline justify-center gap-1 mb-4">
         <FlipNumbers
-          height={window.innerWidth < 768 ? 50 : 70}
-          width={window.innerWidth < 768 ? 35 : 50}
+          height={window.innerWidth < 768 ? 30 : 70}
+          width={window.innerWidth < 768 ? 25 : 50}
           color="#ffffff"
           background="transparent"
           play={isVisible}

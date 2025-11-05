@@ -59,21 +59,21 @@ export const FooterSection: React.FC = () => {
               <li><a href="#">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Services</a></li>
-              <li><a href="#">Clients & Work</a></li>
+              {/* <li><a href="#">Clients & Work</a></li> */}
             </ul>
             <ul className="footer__col">
               <strong>Resources</strong>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">Blogs</a></li>
-              <li><a href="#">Resources</a></li>
-              <li><a href="#">Careers</a></li>
+              {/* <li><a href="#">Case Studies</a></li> */}
+              <li><a href="impulse-website/blog">Blog</a></li>
+              {/* <li><a href="#">Resources</a></li> */}
+              <li><a href="/impulse-website/career">Career</a></li>
             </ul>
             <ul className="footer__col">
               <strong>Locations</strong>
               <li><a href="/impulse-website/digital-marketing-agency-in-india">India</a></li>
-              <li><a href="/impulse-website/agency-in-thane">Thane</a></li>
-              <li><a href="/impulse-website/agency-in-navi-mumbai">Navi Mumbai</a></li>
-              <li><a href="/impulse-website/agency-in-pune">Pune</a></li>
+              <li><a href="/impulse-website/digital-marketing-agency-in-thane">Thane</a></li>
+              <li><a href="/impulse-website/digital-marketing-agency-in-navi-mumbai">Navi Mumbai</a></li>
+              <li><a href="/impulse-website/digital-marketing-agency-in-pune">Pune</a></li>
             </ul>
           </nav>
 

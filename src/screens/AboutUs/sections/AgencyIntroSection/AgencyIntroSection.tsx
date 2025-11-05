@@ -4,14 +4,14 @@ export const AgencyIntroSection = (): JSX.Element => {
   return (
     <section
       
-      className="w-full bg-white py-0 md:py-16 lg:py-0 lg:pt-20" id="sec-border">
+      className="w-full bg-white md:py-16 lg:py-0 lg:pt-20 sm:py-8 sm:pt-16" id="abt-sec-border">
       <div className="max-w-[1290px] mx-auto px-0 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="lg:col-span-12 space-y-8">
             
 
-            <div className="wrap-abt">
+            <div className="wrap-abt0">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#030019]  lg:text-[34px] sm:text-[16px]">
                   A Result Oriented
@@ -24,7 +24,7 @@ export const AgencyIntroSection = (): JSX.Element => {
             </div>
 
             <div className="space-y-2">
-              <p className="pt-5 [font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px] leading-relaxed text-justify">
+              <p className="lg:pt-5 [font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px] leading-relaxed text-justify">
                 More than 36 years of marketing, branding, and advertising experience with 360° solutions are ready to welcome 
                 you and your business at Impulse Digital. As a leading digital marketing agency, we take pride in growing when our 
                 clients grow. No fluff or big words. Only research-led, data-backed strategies to address every one of your 
@@ -38,12 +38,17 @@ export const AgencyIntroSection = (): JSX.Element => {
               </p>
             </div>
 
-            <Button 
-            className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 bg-[#543d98] hover:bg-[#543d98]/90  rounded-xl  text-white">
-            <Link to="/contact" className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base">Connect Now</Link>
-            <img src="/impulse-website/button-icon.svg" alt="Arrow"
-              className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 pointer-events-none"/>
-          </Button>
+            <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
+            
+                          <Link to="/contact" className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300">
+                            Connect Now
+                          </Link>
+                          <img
+                            src="/impulse-website/button-icon.svg"
+                            alt="Arrow"
+                            className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert-0 group-hover:invert pointer-events-none"
+                          />
+                      </Button>
           </div>
 
           {/* Right Side - Decorative Element */}

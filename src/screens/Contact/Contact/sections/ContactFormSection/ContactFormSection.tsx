@@ -1,31 +1,15 @@
-import React from "react";
 import { Button } from "../../../../../components/ui/button";
-import { Link } from "react-router-dom";
-
-export const ContactFormSection = (): JSX.Element => {
- 
-
-  const contactInfo = [
-    {
-      icon: "/impulse-website/call.png",
-      text: "+91-9769285224",
-    },
-    {
-      icon: "/impulse-website/sms-1.png",
-      text: "collabs@theimpulsedigital.com",
-    },
-    {
-      icon: "/impulse-website/location.png",
-      text: "304 - 305,Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, \nThane, Mumbai 400604",
-    },
-  ];
-
+// ------------------- Contact & Resources Section -------------------
+export const ContactFormSection = () => {
   return (
-    <section className="w-full bg-gray py-16 lg:py-24" data-section="contact-form">
-      <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          <div className="flex flex-col flex-1 items-start gap-12">
-             <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
+    <section className="contact-section1 sm:pt-5 sm:pb-16 lg:pt-16 lg:pb-16 bg-white" id="contact-us-sec-border">
+      <div className="max-w-[1280px] mx-auto px-0 lg:px-0 contact-container1" data-section="contact-resources">
+        {/* LEFT: heading + contact details */}
+        <div className="contact-left1">
+          
+          
+
+          <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
             <span className="text-[#030019]  lg:text-[34px] sm:text-[16px]">
               Let's put
             </span>
@@ -33,38 +17,35 @@ export const ContactFormSection = (): JSX.Element => {
             <span className="font-bold text-[#030019] lg:text-[52px] md:text-[52px] sm:text-[20px]">
              Your Auto-fill to Use!
             </span>
-          </h2>
+          </h2><br></br>
+         
 
-            <div className="flex flex-col items-start gap-12 w-full">
-              {contactInfo.map((contact, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-start gap-4 w-full"
-                >
-                  <div className="inline-flex items-center gap-2.5 p-2.5 bg-[#000000] rounded-full">
-                    <img
-                      className="w-6 h-6"
-                      alt="Contact icon"
-                      src={contact.icon}
-                    />
-                  </div>
+          <ul className="contact-list lg:pt-16 hidden lg:block md:block">
+            <img className="c-icon w-120" alt="Call Logo" src="call.png" />
+            <li>
+              <a href="tel:+919769285224" className="text-[#030019]">+91-9769285224</a>
+            </li>
 
-                  <div className="opacity-90 [font-family:'DM_Sans',Helvetica] font-medium text-black text-lg lg:text-[26px] tracking-[0] leading-7 lg:leading-10">
-                    {contact.text.split("\n").map((line, lineIndex) => (
-                      <React.Fragment key={lineIndex}>
-                        {line}
-                        {lineIndex < contact.text.split("\n").length - 1 && (
-                          <br />
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+            <img className="c-icon w-120" alt="Email Logo" src="sms-1.png" />
+            <li>
+              <a href="mailto:collabs@theimpulsedigital.com">
+                collabs@theimpulsedigital.com
+              </a>
+            </li>
 
-           <div className="contact-right-wrapper mt-20">
+            <img className="c-icon w-120" alt="location Logo" src="location.png" />
+            <li>
+              <address>
+                304 – 305, Chirag Infotech, Road No. 16/Z,<br />
+                Ambica Nagar, Wagle Industrial Estate,<br />
+                Thane, Mumbai 400604
+              </address>
+            </li>
+          </ul>
+        </div>
+
+        {/* RIGHT: Zoho form embed */}
+        <div className="contact-right-wrapper">
           <div className="contact-right">
             <form
               action="https://forms.zohopublic.in/shwetaktheimpul1/form/ContactUs/formperma/1ZR0worZNTx7nrfxfhCz1fWCcDGQIu1u785yrDmO4Ac/htmlRecords/submit"
@@ -148,17 +129,62 @@ export const ContactFormSection = (): JSX.Element => {
               {/* Submit Button */}
               
 
-                      <Button 
-                        className="w-[240px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 bg-[#543d98] hover:bg-[#543d98]/90  rounded-xl  text-white">
-                        <Link to="/contact" className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base">Submit</Link>
-                        <img src="/impulse-website/button-icon.svg" alt="Arrow"
-                          className="w-4 h-4 transition-transform duration-300 group-hover:rotate-45 pointer-events-none"/>
+                      
+                     <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
+            
+                          <span className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300">
+                            Submit
+                          </span>
+                          <img
+                            src="/impulse-website/button-icon.svg"
+                            alt="Arrow"
+                            className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert-0 group-hover:invert pointer-events-none"
+                          />
                       </Button>
             </form>
           </div>
         </div>
-        </div>
       </div>
+
+      {/* Divider line */}
+      
+      <style>{`
+
+      .contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact-list .icon {
+  font-size: 18px;
+}
+
+.contact-list a,
+.contact-list address {
+  color: #000000ff;
+    text-decoration: none;
+    line-height: 1.5;
+    font-size: 26px;
+    margin-bottom: 21px;
+    font-style: normal;
+}
+
+.contact-list a:hover {
+  color: white;
+}
+
+      `}
+      </style>
     </section>
   );
 };
+

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "../../../../components/ui/button";
-import { Link } from "react-router-dom";
 import "./FAQSection.css";
 
 type QA = { q: string; a: string };
@@ -82,7 +81,7 @@ export const FAQSection: React.FC<{ items?: QA[] }> = ({ items = DEFAULT_QA }) =
           <div className="faq__cardInner">
             <div className="faq__bubble" aria-hidden>
               <center>
-                <img alt="Messages Icon" src="messages.png" />
+                <img alt="Messages Icon" src="/impulse-website/messages.png" />
               </center>
             </div>
 

@@ -33,8 +33,8 @@ export const ContentWritingHeroSection = (): JSX.Element => {
 
       {/* Hero Copy */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-24 px-4">
-        <h1 className="[font-family:'DM_Sans',Helvetica] font-black text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[40px] tracking-tight mb-6">
-         PAY PER CLICK (PPC)
+        <h1 className="uppercase [font-family:'DM_Sans',Helvetica] font-black text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[40px] tracking-tight mb-6">
+         Performance Marketing (PPC)
         </h1>
 
         {/* Breadcrumb */}
@@ -43,7 +43,7 @@ export const ContentWritingHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Pay Per Click</span>
+          <span className="text-white">Performance Marketing</span>
         </nav>
       </div>
     </section>

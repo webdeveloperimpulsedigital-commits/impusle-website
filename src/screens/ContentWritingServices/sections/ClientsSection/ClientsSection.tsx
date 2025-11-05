@@ -5,12 +5,12 @@ export const ClientsSection = (): JSX.Element => {
 
  
   const logos = [
-    { name: "Dmart", src: "client-logo4.png" },
-    { name: "HDFC Securities", src: "client-logo5.png" },
-    { name: "Hindustan Unilever Limited", src: "client-logo6.png" },
-    { name: "MasterCard", src: "client-logo1.png" },
-    { name: "Amazon", src: "client-logo2.png" },
-    { name: "OLA", src: "client-logo3.png" },
+    { name: "Dmart", src: "/impulse-website/client-logo4.png" },
+    { name: "HDFC Securities", src: "/impulse-website/client-logo5.png" },
+    { name: "Hindustan Unilever Limited", src: "/impulse-website/client-logo6.png" },
+    { name: "MasterCard", src: "/impulse-website/client-logo1.png" },
+    { name: "Amazon", src: "/impulse-website/client-logo2.png" },
+    { name: "OLA", src: "/impulse-website/client-logo3.png" },
   ];
  
   // Video zoom state
