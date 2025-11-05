@@ -27,7 +27,7 @@ export const FeaturedItemsSection = (): JSX.Element => {
 <meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
 <meta name="twitter:url" content="https://www.theimpulsedigital.com" />
 <link rel="canonical" href="https://www.theimpulsedigital.com" />
-      </Helmet>
+</Helmet>
 
       {/* ✅ Hero Section */}
       <section
