@@ -128,7 +128,11 @@ export const AboutSection = (): JSX.Element => {
               Digital Marketing Agency
 =======
               Digital Marketing Agency in thane
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> fb90c92 (change title in about us section in home page ( in thane ))
+>>>>>>> 7478fb1 (change title in about us section in home page ( in thane ))
             </span>
       </h2>
     </div>
