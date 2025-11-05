@@ -108,7 +108,7 @@ export const ZoomGridSection = (): JSX.Element => {
                 Our Results
               </h2>
               <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-2xl md:text-3xl lg:text-[52px] lg:mb-5">
-                Speak for Us US test1
+                Speak for Us
               </h3>
             </div>
           </div>
