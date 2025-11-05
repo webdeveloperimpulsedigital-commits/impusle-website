@@ -10,7 +10,7 @@ export const FeaturedItemsSection = (): JSX.Element => {
     <>
       {/* ✅ SEO Meta Tags */}
 <Helmet>
-<title>Best Digital Marketing Agency in Mumbai | Impulse Digital</title>
+<title>Best Digital Marketing Agency in Mumbai | Impulse</title>
 <meta name="description" content="Impulse Digital is a top digital marketing agency in Mumbai that has the expertise to expand your business reach in the digital space. Our creative, innovative, and energetic"/>
 <meta name="keywords" content="digital marketing agency in mumbai, digital marketing company, impulse digital"/>
 <meta property="og:title" content="Best Digital Marketing Agency in Mumbai | Impulse Digital" />
