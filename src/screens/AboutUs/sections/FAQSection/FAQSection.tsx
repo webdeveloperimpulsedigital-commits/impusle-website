@@ -6,7 +6,11 @@ type QA = { q: string; a: string };
 
 const DEFAULT_QA: QA[] = [
   {
+<<<<<<< HEAD
     q: "What does Impulse Digital do?",
+=======
+    q: "What does Impulse Digital do???",
+>>>>>>> origin/master
     a: "Impulse Digital is a 360-degree digital marketing agency offering end-to-end services in strategy, creative, media, web, content, and analytics. Our focus is on turning marketing investments into measurable business growth."
   },
   {

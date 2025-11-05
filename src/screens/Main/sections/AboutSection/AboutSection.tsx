@@ -124,7 +124,11 @@ export const AboutSection = (): JSX.Element => {
             </span>
             <br />
             <span className="font-bold text-[#543d98] lg:text-[49px] xl:text-[52px] md:text-[52px] sm:text-[26px]">
+<<<<<<< HEAD
               Digital Marketing Agency
+=======
+              Digital Marketing Agency in thane
+>>>>>>> origin/master
             </span>
       </h2>
     </div>
