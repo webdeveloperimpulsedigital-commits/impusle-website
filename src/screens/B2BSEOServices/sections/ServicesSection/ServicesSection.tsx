@@ -33,29 +33,27 @@ const ServicesSection = () => {
     { n:"03", title:"Local SEO",
       points:["Conquer home and then move to geography unknown. Turn your business’s location into its superpower and beat your competitors strategically. Local SEO can pin you on the local pack, make your business discoverable, and help you set the stage to go global. "],
       img:"/impulse-website/service section 520 x 340 - Local SEO.jpg" },
-    { n:"04", title:"B2B SEO",
-      points:["With B2B, your audience isn’t generic. They are key decision-makers, and you need to find out exactly what they are searching for. We make it easier for you with our 6-step, full-proof plan to put your business’s online assets in front of the top decision-makers. "],
-      img:"/impulse-website/service section 520 x 340 - B2B SEO.jpg" },
-    { n:"05", title:"App Store Optimization (ASO)",
+    
+    { n:"04", title:"App Store Optimization (ASO)",
       points:["Without ASO, even the greatest apps remain undiscovered. Think about optimizing app titles, descriptions, keywords, visuals, and everything else. Result? Higher app downloads, better rankings, and increased user engagement. Plus, you get to save user acquisition costs. Are you ready for it? We are. "],
       img:"/impulse-website/service section 520 x 340 - App Store Optimization.jpg" },
-    { n:"06", title:"International SEO",
+    { n:"05", title:"International SEO",
       points:["Ready to go global and conquer internationally? This is your chance to connect with your audience across borders, maintain relevance in diverse markets, and penetrate them to expand your reach. Think of one business, multiple geographies, diverse audiences, yet one big family."],
       img:"/impulse-website/service section 520 x 340 - International SEO.jpg" },
-    { n:"07", title:"Franchise SEO",
+    { n:"06", title:"Franchise SEO",
       points:["Bridge the gap between local visibility and national branding by balancing the unique needs of a franchise with the overall brand guidelines. Franchise SEO ensures a unified digital presence while driving local traffic for higher revenues and a competitive edge locally and nationally."],
       img:"/impulse-website/Franchise SEO.jpg" },
-    { n:"08", title:"Shopify SEO",
+    { n:"07", title:"Shopify SEO",
       points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores—better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
       img:"/impulse-website/service section 520 x 340 - Shopify SEO.jpg",
     },
     {
-      n:"09", title:"Conversion Rate SEO",
+      n:"08", title:"Conversion Rate SEO",
       points:["Got website visitors but no paying customers? We will solve that problem here by analyzing user behavior, improving navigation, and tailoring content to match the audience’s needs. Be ready for an influx of loyal customers."],
       img:"/impulse-website/service section 520 x 340 - Conversion Rate SEO.jpg",
     },
     {
-      n:"10", title:"Content Marketing SEO",
+      n:"09", title:"Content Marketing SEO",
       points:["What if you are telling the wrong stories to the right audience or vice-versa? That's your 1st challenge. The 2nd challenge is maintaining consistent, engaging content while satisfying search engines. Sounds like a task? It isn’t when you partner with the right team. See what we can do for you."],
       img:"/impulse-website/service section 520 x 340 - Content Marketing SEO.jpg ",
     }
@@ -298,7 +296,7 @@ const ServicesSection = () => {
             <div className="mx-auto relative">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#ffffffb2]  lg:text-[34px] sm:text-[16px]">
-                  Our SEO
+                  Our  b2b SEO
 
                 </span>
 

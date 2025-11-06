@@ -7,8 +7,8 @@ export const BrandVisionSection = (): JSX.Element => {
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
     first: 0,   // 95%
-    second: 0,  // 80%
-    third: 0,   // 3.5X (we'll animate as tenths for smoothness)
+    second: 0,  // 90%
+    third: 0,   // 70%
   });
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -19,29 +19,17 @@ export const BrandVisionSection = (): JSX.Element => {
   const animateCounter = (
     target: number,                // final number (e.g., 95)
     duration: number,              // ms
-    onTick: (value: number) => void, // setter per frame
-    options?: { decimals?: number } // for decimal displays
+    onTick: (value: number) => void
   ) =>
     new Promise<void>((resolve) => {
       const start = performance.now();
-      const decimals = options?.decimals ?? 0;
 
       const tick = (now: number) => {
         const t = Math.min((now - start) / duration, 1);
-        // Ease-out cubic for WhatsApp-like feel
+        // Ease-out cubic
         const ease = 1 - Math.pow(1 - t, 3);
 
-        let current = target * ease;
-
-        // For integers: step “one-by-one”
-        if (decimals === 0) current = Math.floor(current);
-
-        // For decimals (like 3.5): keep 1 decimal place smoothly
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
-
+        let current = Math.floor(target * ease);
         onTick(current);
 
         if (t < 1) {
@@ -62,26 +50,22 @@ export const BrandVisionSection = (): JSX.Element => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
 
-          // Sequence: first -> second -> third
-          // 1) 0 -> 95 (int)
+          // Sequence: 95% -> 90% -> 70%
           await animateCounter(95, 1200, (v) =>
             setCounters((c) => ({ ...c, first: v }))
           );
 
-          // tiny gap feels nice
           await new Promise((r) => setTimeout(r, 100));
 
-          // 2) 0 -> 80 (int)
-          await animateCounter(80, 1000, (v) =>
+          await animateCounter(90, 1000, (v) =>
             setCounters((c) => ({ ...c, second: v }))
           );
 
           await new Promise((r) => setTimeout(r, 100));
 
-          // 3) 0.0 -> 3.5 (one decimal)
-          await animateCounter(3.5, 900, (v) =>
+          await animateCounter(70, 900, (v) =>
             setCounters((c) => ({ ...c, third: v }))
-          , { decimals: 1 });
+          );
         }
       },
       { threshold: 0.4 }
@@ -151,7 +135,7 @@ export const BrandVisionSection = (): JSX.Element => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg ">
               <img
                 src="/impulse-website/corporate About service - 451 x 500.jpg"
-                alt="SEO workspace"
+                alt="Corporate communication"
                 className="w-full sm:h-[400px] lg:h-[700px] object-cover"
               />
             </div>
@@ -177,30 +161,27 @@ export const BrandVisionSection = (): JSX.Element => {
                 <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
                   {Math.round(counters.first)}%
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    clients achieved top 1st page search rankings for their
-                    target keywords
+                    of our clients saw a 50%+ reduction in negative press coverage after implementing crisis communication strategies.
                   </p>
                 </h3>
               </div>
 
-              {/* 80% */}
+              {/* 90% */}
               <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
                 <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
                   {Math.round(counters.second)}%
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    of our clients see improved results within the first 3
-                    months.
+                    increase in employee satisfaction scores post-communication strategy implementation.
                   </p>
                 </h3>
               </div>
 
-              {/* 3.5X */}
+              {/* 70% */}
               <div className="absolute bottom-6 left-0 text-center">
                 <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {counters.third.toFixed(1)}X
+                  {Math.round(counters.third)}%
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    business growth for our clients after leveraging our expert
-                    SEO services.
+                    increase in stakeholder loyalty due to tailored communication campaigns.
                   </p>
                 </h3>
               </div>
@@ -269,7 +250,7 @@ export const BrandVisionSection = (): JSX.Element => {
             </div>
           </div>
         ))}
-      </div><br></br><br></br>
+      </div><br /><br />
 
       {/* optional animation CSS if you unhide steps later */}
       <style>{`
@@ -284,7 +265,7 @@ export const BrandVisionSection = (): JSX.Element => {
         @media (prefers-reduced-motion: reduce) {
           .steps-track { animation: none; transform: translateX(0); }
         }
-        .mb-14{ marging-bottom: 40px; }
+        .mb-14 { margin-bottom: 40px; } /* fixed typo: margin */
       `}</style>
     </section>
   );

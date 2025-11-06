@@ -8,7 +8,7 @@ const ServicesSection = () => {
     "SEO",
     "Website Development",
     "Branding",
-    "Pay-Per-Click",
+    "Performance Marketing",
     "Content Writing Services",
   ];
 
@@ -77,7 +77,7 @@ const ServicesSection = () => {
       n: "07",
       title: "Employer Branding",
       points: [
-        "Your audience is scrolling, now the question is, are they stopping for you? At Impulse Digital, we make sure your brand stands out in the endless feed. Our social media marketing services blend strategy, creativity and data to create conversations that matter. From relatable content to impactful campaigns, we help you build a community that listens, engages and grows with you. Because on social media, it’s not just about being seen, it’s about being remembered.",
+        "A strong employer brand doesn’t just attract talent, it inspires it. Our employer branding services help organizations shape how people see, feel and experience their workplace. From defining your EVP to building authentic storytelling that reflects your culture, we turn your employees into brand ambassadors and your company into a talent magnet. Through strategy, design and communication, we craft a brand narrative that resonates both inside and outside the organization. Because when people believe in where they work, they help the world believe in it too.",
       ],
       img: "/impulse-website/05_Employer Branding.jpg",
     },

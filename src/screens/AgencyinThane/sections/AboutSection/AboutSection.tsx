@@ -86,28 +86,29 @@ export const AboutSection = (): JSX.Element => {
     };
   }, []);
 
-  const statsData = [
-    {
-      target: 200,
-      suffix: "K",
-      description: "Keywords ranked on first page of Google",
-    },
-    {
-      target: 10,
-      suffix: "M+",
-      description: "Cumulative website visits for clients per month",
-    },
-    {
-      target: 5,
-      suffix: "M+",
-      description: "Avg. organic engagements on social for clients per month",
-    },
-    {
-      target: 100,
-      suffix: "M+",
-      description: "Cumulative INR revenue collected for clients per month",
-    },
-  ];
+ const statsData = [
+  {
+    target: 3.5,
+    suffix: "X",
+    description: "Business Growth achieved for clients through integrated digital strategies.",
+  },
+  {
+    target: 100,
+    suffix: "+",
+    description: "Brands Partnered with us to scale their digital presence.",
+  },
+  {
+    target: 10,
+    suffix: "k+",
+    description: "cups of coffee enjoyed with our clients while building their digital success stories.",
+  },
+  {
+    target: 120,
+    suffix: "+",
+    description: "years of collective experience in building, scaling, & transforming brands digitally.",
+  },
+];
+
 
   return (
     <section
@@ -135,14 +136,18 @@ export const AboutSection = (): JSX.Element => {
 
           <div className="flex flex-col gap-4 md:gap-6">
            <p className="pt-5 [font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px] leading-relaxed text-justify">
-             At Impulse Digital, we’re more than just a digital marketing agency, we’re growth partners for brands that want to make their mark online. Our approach blends data-driven strategies, customer-centric insights, and realistic timelines to ensure your digital presence aligns seamlessly with your business goals. 
+              We are a Mumbai-based 360° digital marketing agency, a family of
+              go-getters who love creating brands and telling stories. Our team
+              is rightfully an extension of your business, helping you find your
+              unique voice, redefine your messaging, and stir conversations that
+              resonate with your audience.
             </p>
 
             <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px]  leading-relaxed text-justify">
-               We believe in long-term partnerships over one-time transactions. By deeply understanding our clients’ industries and speaking their language, we design digital strategies that don’t just create noise but deliver measurable results. As a trusted digital marketing agency in Thane, we simplify the ever-expanding digital landscape for our clients, making it easier to boost visibility, increase engagement, and win on social media. 
-            </p>
-             <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px]  leading-relaxed text-justify">
-              So, why keep searching for digital marketing solutions when the answer is right here? Choose Impulse Digital, your Digital Marketing Agency in Thane.  
+              What makes us one of the top digital marketing companies? It's the
+              way we marry creativity, strategy, and client relationship to
+              deliver results you can data-check and rely on because, for us,
+              the idea is simple: We grow when you grow.
             </p>
           </div>
 

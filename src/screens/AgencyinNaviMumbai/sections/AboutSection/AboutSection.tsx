@@ -86,28 +86,29 @@ export const AboutSection = (): JSX.Element => {
     };
   }, []);
 
-  const statsData = [
-    {
-      target: 200,
-      suffix: "K",
-      description: "Keywords ranked on first page of Google",
-    },
-    {
-      target: 10,
-      suffix: "M+",
-      description: "Cumulative website visits for clients per month",
-    },
-    {
-      target: 5,
-      suffix: "M+",
-      description: "Avg. organic engagements on social for clients per month",
-    },
-    {
-      target: 100,
-      suffix: "M+",
-      description: "Cumulative INR revenue collected for clients per month",
-    },
-  ];
+ const statsData = [
+  {
+    target: 3.5,
+    suffix: "X",
+    description: "Business Growth achieved for clients through integrated digital strategies.",
+  },
+  {
+    target: 100,
+    suffix: "+",
+    description: "Brands Partnered with us to scale their digital presence.",
+  },
+  {
+    target: 10,
+    suffix: "k+",
+    description: "cups of coffee enjoyed with our clients while building their digital success stories.",
+  },
+  {
+    target: 120,
+    suffix: "+",
+    description: "years of collective experience in building, scaling, & transforming brands digitally.",
+  },
+];
+
 
   return (
     <section
@@ -135,11 +136,18 @@ export const AboutSection = (): JSX.Element => {
 
           <div className="flex flex-col gap-4 md:gap-6">
            <p className="pt-5 [font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px] leading-relaxed text-justify">
-              At Impulse Digital, we’re more than just a digital marketing agency, we’re partners in your brand’s growth journey. By combining data-driven strategies, customer insights, and goal-focused timelines, we ensure your online presence is not only visible but also impactful.
+              We are a Mumbai-based 360° digital marketing agency, a family of
+              go-getters who love creating brands and telling stories. Our team
+              is rightfully an extension of your business, helping you find your
+              unique voice, redefine your messaging, and stir conversations that
+              resonate with your audience.
             </p>
 
             <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px]  leading-relaxed text-justify">
-              We believe real success is built on collaboration, not transactions. By immersing ourselves in your business, we design strategies that speak your brand’s language and deliver measurable outcomes. As a leading digital marketing agency in Navi Mumbai, we simplify the overwhelming digital landscape, helping brands increase visibility, engagement, and conversions.
+              What makes us one of the top digital marketing companies? It's the
+              way we marry creativity, strategy, and client relationship to
+              deliver results you can data-check and rely on because, for us,
+              the idea is simple: We grow when you grow.
             </p>
           </div>
 

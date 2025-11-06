@@ -6,21 +6,28 @@ interface CounterProps {
   suffix: string;
   description: string;
   isVisible: boolean;
+  decimal?: boolean;
 }
 
-const Counter: React.FC<CounterProps> = ({ target, suffix, description, isVisible }) => {
+const Counter: React.FC<CounterProps> = ({
+  target,
+  suffix,
+  description,
+  isVisible,
+  decimal = false,
+}) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (isVisible) {
-      const timer = setTimeout(() => {
-        setCount(target);
-      }, 300);
+      const timer = setTimeout(() => setCount(target), 300);
       return () => clearTimeout(timer);
     } else {
       setCount(0);
     }
   }, [target, isVisible]);
+
+  const displayNumber = decimal ? target.toFixed(1) : count.toString();
 
   return (
     <div className="text-center">
@@ -32,19 +39,19 @@ const Counter: React.FC<CounterProps> = ({ target, suffix, description, isVisibl
           background="transparent"
           play={isVisible}
           perspective={1000}
-          numbers={count.toString()}
+          numbers={displayNumber}
           numberStyle={{
-            fontSize: window.innerWidth < 768 ? '40px' : '64px',
-            fontWeight: 'bold',
-            fontFamily: 'DM Sans, Helvetica',
-            lineHeight: '1',
+            fontSize: window.innerWidth < 768 ? "40px" : "64px",
+            fontWeight: "bold",
+            fontFamily: "DM Sans, Helvetica",
+            lineHeight: "1",
           }}
         />
         <span className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-[40px] md:text-[64px] leading-none">
           {suffix}
         </span>
       </div>
-      <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white/90 text-xs md:text-sm leading-relaxed max-w-[180px] mx-auto text-center">
+      <p className="[font-family:'DM_Sans',Helvetica] font-normal text-white/90 text-xs md:text-sm leading-relaxed max-w-[200px] mx-auto text-center">
         {description}
       </p>
     </div>
@@ -58,39 +65,51 @@ export const StatisticsSection = (): JSX.Element => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -100px 0px'
-      }
+      { threshold: 0.3, rootMargin: "0px 0px -100px 0px" }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
 
   const statistics = [
-    { target: 200, suffix: "K", description: "Keywords ranked on first page of Google", display: "200K" },
-    { target: 10, suffix: "M+", description: "Cumulative website visits for clients per month", display: "10M+" },
-    { target: 5, suffix: "K", description: "Avg. organic engagements on social for clients per month", display: "5K" },
-    { target: 100, suffix: "M+", description: "cumulative INR revenue collected for clients per month", display: "100M+" }
+    {
+      target: 3.5,
+      suffix: "X",
+      description:
+        "Business growth achieved for clients through integrated digital strategies.",
+      decimal: true,
+    },
+    {
+      target: 100,
+      suffix: "+",
+      description:
+        "Brands partnered with us to scale their digital presence.",
+    },
+    {
+      target: 10,
+      suffix: "K+",
+      description:
+        "Cups of coffee enjoyed with our clients while building their digital success stories.",
+    },
+    {
+      target: 120,
+      suffix: "+",
+      description:
+        "Years of collective experience in building, scaling, & transforming brands digitally.",
+    },
   ];
 
   return (
-    <section 
-      ref={sectionRef} 
-      className="relative w-full py-16 lg:py-24 overflow-hidden" 
-      data-section="statistics"  id="statistics-section"
+    <section
+      ref={sectionRef}
+      className="relative w-full py-16 lg:py-24 overflow-hidden"
+      id="statistics-section"
+      data-section="statistics"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -100,15 +119,12 @@ export const StatisticsSection = (): JSX.Element => {
           className="w-full h-full object-cover"
         />
         {/* Purple Overlay */}
-        <div 
-          className="absolute inset-0"
-          
-        />
+        <div className="absolute inset-0 bg-[#543d98]/80" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 lg:px-8">
-        {/* Stats Grid - 4 columns on desktop, 2x2 on mobile */}
+        {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {statistics.map((stat, index) => (
             <div key={index} className="flex justify-center">
@@ -117,22 +133,22 @@ export const StatisticsSection = (): JSX.Element => {
                 suffix={stat.suffix}
                 description={stat.description}
                 isVisible={isVisible}
+                decimal={stat.decimal}
               />
             </div>
           ))}
         </div>
       </div>
-       <style>{`
-  #statistics-section{
-    padding: 12rem 0rem;
-    border-top-right-radius: 55px;
-    border-top-left-radius: 55px;
-    border-bottom-left-radius: 55px;
-    border-bottom-right-radius: 55px;
-    }
-      `}
-  </style>
+
+      <style>{`
+        #statistics-section {
+          padding: 12rem 0rem;
+          border-top-right-radius: 55px;
+          border-top-left-radius: 55px;
+          border-bottom-left-radius: 55px;
+          border-bottom-right-radius: 55px;
+        }
+      `}</style>
     </section>
-    
   );
 };
