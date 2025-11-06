@@ -15,14 +15,12 @@ export const ScrollingStripsSection = (): JSX.Element => {
   const logos = [
     { name: "Hindustan Unilever Limited", src: "client-logo6.png" },
     { name: "Amazon", src: "client-logo2.png" },
-     { name: "MasterCard", src: "client-logo1.png" },
-    { name: "Dmart", src: "client-logo4.png" },
     { name: "OLA", src: "client-logo3.png" },
+    { name: "Dmart", src: "client-logo4.png" },
     { name: "OLA", src: "Aditya_Birla_Group_Logo.svg (1).png" },
     { name: "Tata", src: "Tata-Consumer-Logo (1).jpg" },
     { name: "HDFC Securities", src: "client-logo5.png" },
     { name: "MasterCard", src: "client-logo1.png" },
-    { name: "OLA", src: "client-logo3.png" },
     { name: "OLA", src: "aditya-birla-fashion.jpg" },
     { name: "birla_cellulose_99fde4a4bc (1)", src: "birla_cellulose_99fde4a4bc (1).webp" },
     { name: "Croda_Masterbrand_LockUp_GREEN_RGB (1)", src: "Croda_Masterbrand_LockUp_GREEN_RGB (1).png" },
@@ -48,11 +46,8 @@ export const ScrollingStripsSection = (): JSX.Element => {
     { name: "hem-logo-1 (1)", src: "hem-logo-1 (1).png" },
     { name: "tjsb", src: "tjsb.jpg" },
     { name: "more", src: "more.jpg" },
-    { name: "HDFC Securities", src: "client-logo5.png" },
     { name: "hdfc_logo (1)", src: "hdfc_logo (1).jpg" },
-    { name: "MasterCard", src: "client-logo1.png" },
-    { name: "Amazon", src: "client-logo2.png" },
-    { name: "OLA", src: "client-logo3.png" },
+    
   ];
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
