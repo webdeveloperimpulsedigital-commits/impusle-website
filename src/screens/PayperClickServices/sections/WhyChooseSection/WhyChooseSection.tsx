@@ -20,7 +20,7 @@ export const WhyChooseSection = (): JSX.Element => {
             Why Choose
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-             Impulse Digital’s Pay-Per-Click Services?
+             Impulse Digital’s Performance Marketing Services ?
           </h2>
         </div>
  

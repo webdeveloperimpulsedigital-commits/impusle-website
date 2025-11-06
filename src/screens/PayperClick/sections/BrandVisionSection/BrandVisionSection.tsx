@@ -57,7 +57,7 @@ export const BrandVisionSection = (): JSX.Element => {
                 Driving Conversions
               </p>
               <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl leading-tight">
-                With Data-Backed Pay-Per-Click (PPC)
+                With Data-Backed Performance Marketing (PPC)
               </h2>
             </div>
 

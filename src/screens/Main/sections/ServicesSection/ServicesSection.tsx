@@ -8,7 +8,7 @@ const ServicesSection = () => {
     "SEO",
     "Website Development",
     "Branding",
-    "Pay-Per-Click",
+    "Performance Marketing",
     "Content Writing Services",
   ];
 

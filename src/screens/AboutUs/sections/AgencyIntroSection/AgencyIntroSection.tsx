@@ -32,7 +32,7 @@ export const AgencyIntroSection = (): JSX.Element => {
               </p>
 
               <p className="pt-5 [font-family:'DM_Sans',Helvetica] text-[#030019] sm:text-[12px] md:text-[24px] lg:text-[24px] leading-relaxed text-justify">
-                Led by the visionary and an astute opportunist [XX], Impulse Digital is a culture-first digital marketing agency. We 
+                Led by the visionary and an astute opportunist, Impulse Digital is a culture-first digital marketing agency. We 
                 are touted for marrying creativity, strategy, and client relations to deliver results you can count on. Every dollar 
                 you invest with us comes back to you multiplied.
               </p>

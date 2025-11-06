@@ -177,7 +177,7 @@ export const BrandVisionSection = (): JSX.Element => {
                 <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
                   {Math.round(counters.first)} <span className="align-baseline text-2xl lg:text-4xl">Million+</span>
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                     Million+ organic visits generated for B2B clients, improving their online presence.
+                      organic visits generated for B2B clients, improving their online presence.
                   </p>
                 </h3>
               </div>

@@ -28,7 +28,7 @@ const ServicesSection = () => {
       points:["Enterprise site isn’t a ‘normal’ site. The difference is in the scale. Having more pages means scaling everything 100x—keyword ranking, tools, content, teams—for your desired outcome. Then there’s the need to have custom CMS, multiple department buy-ins, scheme markup—the list is endless but we have it covered for you. "],
       img:"/impulse-website/service section 520 x 340 - Enterprise SEO.jpg" },
     { n:"02", title:"E-Commerce SEO",
-      points:["Too many words and yet no clear message? That’s something we have never experienced before because every word we write is well-researched and SEO-friendly. Whether it is industry insights or how-to guides, we are known for crafting content that educates, inspires, and boosts search engine rankings–all at once."],
+      points:["You can set up your store, add your products, and share the word, yet there can be zero traffic and no new leads. That’s because your audience is unable to find you and, thus, your product. Zero sales. eCommerce SEO sets you on the right path again. "],
       img:"/impulse-website/service section 520 x 340 - Ecommerce SEO.jpg" },
     { n:"03", title:"Local SEO",
       points:["Conquer home and then move to geography unknown. Turn your business’s location into its superpower and beat your competitors strategically. Local SEO can pin you on the local pack, make your business discoverable, and help you set the stage to go global. "],

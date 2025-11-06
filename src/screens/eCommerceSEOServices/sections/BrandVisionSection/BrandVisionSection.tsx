@@ -212,7 +212,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            and you’ve spread the word, but still, there are little to no visitors, and those who somehow manage to find you don’t stay around for long. What are you missing? Maybe your store is not being found. Or it’s taking too long to load, Or worse, it isn't very clear for the user. eCommerce SEO will fix all of this and do more. eCommerce SEO services aim to make your store discoverable and improve your audience's shopping experience, which, in the long run, gives you better sales.
+            the payment gateway is working, and you’ve spread the word, but still, there are little to no visitors, and those who somehow manage to find you don’t stay around for long. What are you missing? Maybe your store is not being found. Or it’s taking too long to load, Or worse, it isn't very clear for the user. eCommerce SEO will fix all of this and do more. eCommerce SEO services aim to make your store discoverable and improve your audience's shopping experience, which, in the long run, gives you better sales.
           </p>
         </div>
       </div>

@@ -6,21 +6,21 @@ export const BrandVisionSection = (): JSX.Element => {
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
-    first: 0,   // 95%
-    second: 0,  // 80%
-    third: 0,   // 3.5X (we'll animate as tenths for smoothness)
+    first: 0, // 95%
+    second: 0, // 70%
+    third: 0, // 10,000+
   });
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const hasAnimated = useRef(false);
   const rafId = useRef<number | null>(null);
 
-  // ---- Helper: animate a single counter with rAF + easing; resolves when done
+  // ---- Helper: animate a single counter with rAF + easing
   const animateCounter = (
-    target: number,                // final number (e.g., 95)
-    duration: number,              // ms
-    onTick: (value: number) => void, // setter per frame
-    options?: { decimals?: number } // for decimal displays
+    target: number,
+    duration: number,
+    onTick: (value: number) => void,
+    options?: { decimals?: number }
   ) =>
     new Promise<void>((resolve) => {
       const start = performance.now();
@@ -28,15 +28,10 @@ export const BrandVisionSection = (): JSX.Element => {
 
       const tick = (now: number) => {
         const t = Math.min((now - start) / duration, 1);
-        // Ease-out cubic for WhatsApp-like feel
         const ease = 1 - Math.pow(1 - t, 3);
-
         let current = target * ease;
 
-        // For integers: step “one-by-one”
         if (decimals === 0) current = Math.floor(current);
-
-        // For decimals (like 3.5): keep 1 decimal place smoothly
         if (decimals > 0) {
           const factor = Math.pow(10, decimals);
           current = Math.round(current * factor) / factor;
@@ -47,7 +42,7 @@ export const BrandVisionSection = (): JSX.Element => {
         if (t < 1) {
           rafId.current = requestAnimationFrame(tick);
         } else {
-          onTick(target); // snap to final
+          onTick(target);
           resolve();
         }
       };
@@ -62,26 +57,24 @@ export const BrandVisionSection = (): JSX.Element => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
 
-          // Sequence: first -> second -> third
           // 1) 0 -> 95 (int)
-          await animateCounter(50, 1200, (v) =>
+          await animateCounter(95, 1200, (v) =>
             setCounters((c) => ({ ...c, first: v }))
           );
 
-          // tiny gap feels nice
           await new Promise((r) => setTimeout(r, 100));
 
-          // 2) 0 -> 80 (int)
-          await animateCounter(50, 1000, (v) =>
+          // 2) 0 -> 70 (int)
+          await animateCounter(70, 1000, (v) =>
             setCounters((c) => ({ ...c, second: v }))
           );
 
           await new Promise((r) => setTimeout(r, 100));
 
-          // 3) 0.0 -> 3.5 (one decimal)
-          await animateCounter(23, 900, (v) =>
+          // 3) 0 -> 10000 (int, with +)
+          await animateCounter(10000, 900, (v) =>
             setCounters((c) => ({ ...c, third: v }))
-          , { decimals: 1 });
+          );
         }
       },
       { threshold: 0.4 }
@@ -94,7 +87,6 @@ export const BrandVisionSection = (): JSX.Element => {
     };
   }, []);
 
-  // ================== PROCESS (kept; hidden on mobile) ==================
   const steps = [
     {
       title: "Discovery and Research",
@@ -120,7 +112,6 @@ export const BrandVisionSection = (): JSX.Element => {
 
   const loopedSteps = [...steps, ...steps];
 
-  // (Kept but hidden on mobile per your request)
   const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
     if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
     return rows as any;
@@ -172,40 +163,39 @@ export const BrandVisionSection = (): JSX.Element => {
           {/* STATS / COUNTERS */}
           <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
             <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 50% */}
+              {/* 95% */}
               <div className="absolute top-6 left-0 text-center">
                 <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
                   {Math.round(counters.first)}%
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    Keywords ranked on first page of Google
+                    client satisfaction rate with the content delivered.
                   </p>
                 </h3>
               </div>
 
-              {/* 80% */}
+              {/* 70% */}
               <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
                 <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
                   {Math.round(counters.second)}%
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    Cumulative website visits
-for clients per month
+                    average increase in organic traffic for clients due to our SEO-optimized content.
                   </p>
                 </h3>
               </div>
 
-              {/* 3.5X */}
+              {/* 10,000+ */}
               <div className="absolute bottom-6 left-0 text-center">
                 <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {counters.third.toFixed(1)}%
+                  {Math.round(counters.third).toLocaleString()}+
                   <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    Avg. organic engagements on social for clients per month
+                    successful content pieces published for clients across various industries.
                   </p>
                 </h3>
               </div>
             </div>
           </div>
 
-          {/* DESKTOP CENTER OVERLAY (unchanged) */}
+          {/* DESKTOP CENTER OVERLAY */}
           <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
             <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
               <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
@@ -223,7 +213,7 @@ for clients per month
         </div>
       </div>
 
-      {/* ---------- DESKTOP AUTO SCROLL (kept hidden) ---------- */}
+      {/* Hidden steps section (kept for structure) */}
       <div className="hidden opacity-0 pointer-events-none">
         <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
         <div className="overflow-hidden">
@@ -245,34 +235,9 @@ for clients per month
         </div>
       </div>
 
-      {/* ---------- MOBILE STATIC GRID (PROCESS) — HIDDEN ON MOBILE ---------- */}
-      <div className="hidden md:hidden space-y-10 px-4 mb-14">
-        {mobileRows.map((pair, rowIdx) => (
-          <div key={rowIdx} className="relative">
-            <div className="absolute left-0 right-0 top-[13px] h-[2px] bg-[#EAEAEA]" />
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-              {pair.map((s, i) => (
-                <div key={i} className="relative">
-                  <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                  <div className="pt-10">
-                    <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[18px] leading-snug mb-1">
-                      {s.title}
-                    </h3>
-                    <p className="[font-family:'DM_Sans',Helvetica] text-[#000] text-[14px] leading-relaxed">
-                      {s.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div><br></br><br></br>
-
-      {/* optional animation CSS if you unhide steps later */}
       <style>{`
         @keyframes scroll-rtl {
-          0%   { transform: translateX(0%); }
+          0% { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
         .steps-track {
@@ -282,7 +247,7 @@ for clients per month
         @media (prefers-reduced-motion: reduce) {
           .steps-track { animation: none; transform: translateX(0); }
         }
-        .mb-14{ marging-bottom: 40px; }
+        .mb-14 { margin-bottom: 40px; }
       `}</style>
     </section>
   );

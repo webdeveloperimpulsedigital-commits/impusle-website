@@ -26,11 +26,11 @@ const ServicesSection = () => {
   const data = [
     {
       n: "01",
-      title: "Infographic Creation and Design",
+      title: "eCommerce Content Writing",
       points: [
-        "Infographics can get confusing pretty quickly. They demand an eye for detail, simplicity, and accuracy to create graphics and pair them with compelling copy, one that captures attention and enhances information retention.",
+        "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories–everything optimized and backed up by research and storytelling—not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google search ads.jpg",
+      img: "/impulse-website/service section 520 x 340 - Youtube Ads.jpg",
     },
     {
       n: "02",
@@ -98,11 +98,12 @@ const ServicesSection = () => {
     },
     {
       n: "10",
-      title: "eCommerce Content Writing",
+      
+      title: "Infographic Creation and Design",
       points: [
-        "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories–everything optimized and backed up by research and storytelling—not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
+        "Infographics can get confusing pretty quickly. They demand an eye for detail, simplicity, and accuracy to create graphics and pair them with compelling copy, one that captures attention and enhances information retention.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Youtube Ads.jpg",
+      img: "/impulse-website/service section 520 x 340 - Google search ads.jpg",
     },
   ];
 
