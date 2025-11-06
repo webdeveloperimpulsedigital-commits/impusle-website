@@ -30,7 +30,7 @@ const ServicesSection = () => {
       points: [
         "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories–everything optimized and backed up by research and storytelling—not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Youtube Ads.jpg",
+      img: "/impulse-website/Ecommerce.jpg",
     },
     {
       n: "02",
@@ -38,7 +38,7 @@ const ServicesSection = () => {
       points: [
         "Too many words and yet no clear message? That’s something we have never experienced before because every word we write is well-researched and SEO-friendly. Whether it is industry insights or how-to guides, we are known for crafting content that educates, inspires, and boosts search engine rankings–all at once.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google display ads.jpg",
+      img: "/impulse-website/Blog.jpg",
     },
     {
       n: "03",
@@ -46,7 +46,7 @@ const ServicesSection = () => {
       points: [
         "Your website is the face of your brand online, and if readers aren’t sticking along for long, there’s something wrong. It could be your messaging. Our website content writing services ensure that every copy is clear, persuasive, SEO-optimized, and actionable, tailored to your brand voice.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google shopping ads.jpg",
+      img: "/impulse-website/Website content.jpg",
     },
     {
       n: "04",
@@ -54,7 +54,7 @@ const ServicesSection = () => {
       points: [
         "Videos are the future of information consumption, and a compelling script is the only way to make them work. Our content writing services strike the right balance between audience-focused, educative, entertaining, and engaging. With storytelling expertise and strategic keyword integration, we ensure your videos rank well and resonate with viewers.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google Performance max ads.jpg",
+      img: "/impulse-website/Video.jpg",
     },
     {
       n: "05",
@@ -62,7 +62,7 @@ const ServicesSection = () => {
       points: [
         "Landing pages are designed to focus your audience’s attention on specific results like lead generation and product promotion. We make sure every landing page we create is highly optimized for conversions, down to every last element and detail. Let our content writing agency take your audience through a journey from introduction to action.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Meta ads & lead gen.jpg",
+      img: "/impulse-website/Landing Page.jpg",
     },
     {
       n: "06",
@@ -78,7 +78,7 @@ const ServicesSection = () => {
       points: [
         "Do you know where most businesses go wrong? They become professionally robotic in their communication. We take care of all your communication—email, press releases, internal newsletters, and more—to create professional yet engaging copy that resonates with your employees, stakeholders, and customers alike. ",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/Corporate Communication.jpg",
     },
     {
       n: "08",
@@ -86,7 +86,7 @@ const ServicesSection = () => {
       points: [
         "When everything is online, why should brochures be offline? They’re your chance to showcase your brand’s USP and offerings. With expertise in strategic layout, crafting compelling copy, and visually striking designs, our digital brochures are nothing short of your brand coming to life, quite literally.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Linkedin Ads.jpg",
+      img: "/impulse-website/Digital Brochure.jpg",
     },
     {
       n: "09",
@@ -103,7 +103,7 @@ const ServicesSection = () => {
       points: [
         "Infographics can get confusing pretty quickly. They demand an eye for detail, simplicity, and accuracy to create graphics and pair them with compelling copy, one that captures attention and enhances information retention.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google search ads.jpg",
+      img: "/impulse-website/Infographic.jpg",
     },
   ];
 

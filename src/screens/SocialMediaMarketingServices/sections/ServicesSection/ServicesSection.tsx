@@ -32,19 +32,19 @@ const ServicesSection = () => {
       img:"/impulse-website/service section 520 x 340 - Content Creation.jpg" },
     { n:"03", title:"Account Management",
       points:["We don’t post and ghost here. Our social media marketing agency manages your account end-to-end, interacting pre- and post-going live with posts, engaging in comments and responding to DMs. This means real-time engagement and real-time conversations for real relationships."],
-      img:"/impulse-website/service section 520 x 340 - Account Management.jpg" },
+      img:"/impulse-website/Account Management.jpg" },
     { n:"04", title:"Advertising",
       points:["While we love organic growth, paid growth has its own place in the industry and we know it. But you know where most people go wrong? They spend too much and think too little. We do the opposite. We strategize and study first, followed by running ads on optimized budgets."],
-      img:"/impulse-website/service section 520 x 340 - Advertising.jpg" },
+      img:"/impulse-website/Advertising.jpg" },
     { n:"05", title:"Analytics and reporting",
       points:["No effort should go wasted. Everything from what your audience is saying about you in their comments and mentions to where they are sharing your content, we listen and learn from everything. And not just once, but every month like clockwork because success requires clockwork activity."],
       img:"/impulse-website/service section 520 x 340 - Analytics and reporting.jpg" },
     { n:"06", title:"Specialized campaigns",
       points:["The year is filled with special occasions and initiatives. How do you stand out as a brand? Our social media marketing agency creates unique campaigns that change the narrative. These campaigns highlight your brand’s perspective and voice in the sea of noise."],
-      img:"/impulse-website/service section 520 x 340 - Specialized campaigns.jpg" },
+      img:"/impulse-website/Campaigns.jpg" },
     { n:"07", title:"Advanced Services",
       points:["Our social media marketing agency does not stop at basics. We also offer to manage your reputation, track social conversations, analyze sentiments, implement chatbots, automate activities, and create real time interactions. This makes us the best social media marketing agency."],
-      img:"/impulse-website/service section 520 x 340 - Advanced services.jpg" }
+      img:"/impulse-website/Advanced.jpg" }
   ];
 
   // Desktop: active sticky card (same IntersectionObserver logic)
