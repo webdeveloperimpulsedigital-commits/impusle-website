@@ -86,28 +86,29 @@ export const AboutSection = (): JSX.Element => {
     };
   }, []);
 
-  const statsData = [
-    {
-      target: 200,
-      suffix: "K",
-      description: "Keywords ranked on first page of Google",
-    },
-    {
-      target: 10,
-      suffix: "M+",
-      description: "Cumulative website visits for clients per month",
-    },
-    {
-      target: 5,
-      suffix: "M+",
-      description: "Avg. organic engagements on social for clients per month",
-    },
-    {
-      target: 100,
-      suffix: "M+",
-      description: "Cumulative INR revenue collected for clients per month",
-    },
-  ];
+ const statsData = [
+  {
+    target: 3.5,
+    suffix: "X",
+    description: "Business Growth achieved for clients through integrated digital strategies.",
+  },
+  {
+    target: 100,
+    suffix: "+",
+    description: "Brands Partnered with us to scale their digital presence.",
+  },
+  {
+    target: 10,
+    suffix: "k+",
+    description: "cups of coffee enjoyed with our clients while building their digital success stories.",
+  },
+  {
+    target: 120,
+    suffix: "+",
+    description: "years of collective experience in building, scaling, & transforming brands digitally.",
+  },
+];
+
 
   return (
     <section
