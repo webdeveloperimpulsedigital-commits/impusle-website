@@ -7,104 +7,106 @@ interface Service {
   description: string;
   features: string[];
   image: string;
-  category: string;
   link: string;
 }
 
 export const ServicesCatalogSection = (): JSX.Element => {
-  const [activeCategory, setActiveCategory] = useState("all");
-
   const services: Service[] = [
     {
-      id: "ppc",
-      title: "Pay-Per-Click (PPC)",
-      description: "Drive immediate traffic and conversions with targeted paid advertising campaigns across Google, Facebook, and other platforms.",
-      features: ["Ad copywriting", "Bid management", "Landing page optimization", "Target audience analysis"],
-      image: "/rectangle-37-6.png",
-      category: "advertising",
-      link: "",
+      id: "content",
+      title: "Content Writing Services",
+      description:
+        "Craft compelling, SEO-driven content that tells your brand story and drives measurable engagement across platforms.",
+      features: ["Blog Writing", "Website Copy", "Landing Pages", "Corporate Communication"],
+      image: "/impulse-website/servicepage-COntent writing.jpg",
+      link: "#",
     },
     {
-      id: "seo",
-      title: "Search Engine Optimization",
-      description: "Improve your organic search rankings and drive long-term, sustainable traffic growth.",
-      features: ["Enterprise SEO", "E-commerce SEO", "Local SEO", "B2B SEO"],
-      image: "/rectangle-37-7.png",
-      category: "organic",
-      link: "",
+      id: "ppc",
+      title: "Performance Marketing (PPC)",
+      description:
+        "Run targeted campaigns across Google, Meta, and more to maximize ROI through data-backed performance marketing strategies.",
+      features: ["Google Ads", "Meta Campaigns", "Bid Optimization", "Landing Page Testing"],
+      image: "/impulse-website/servicepage-PPC.jpg",
+      link: "#",
     },
     {
       id: "social",
       title: "Social Media Marketing",
-      description: "Build brand awareness and engage your audience across all major social media platforms.",
-      features: ["Social Media Profile Creation", "Content Strategy", "Community Management", "Paid Social Campaigns"],
-      image: "/rectangle-37-6.png",
-      category: "social",
-      link: "",
+      description:
+        "Build strong social communities and boost engagement through creative content and performance-driven strategies.",
+      features: ["Strategy & Planning", "Content Creation", "Paid Campaigns", "Community Management"],
+      image: "/impulse-website/servicepage-Social Media Marketing.jpg",
+      link: "#",
     },
     {
-      id: "content",
-      title: "Content Writing Services",
-      description: "Compelling content that tells your brand story and drives engagement across all touchpoints.",
-      features: ["Blog Writing", "Website Content", "Landing Pages", "Corporate Communication"],
-      image: "/rectangle-37-7.png",
-      category: "content",
-      link: "",
+      id: "seo",
+      title: "Search Engine Optimization",
+      description:
+        "Improve your website visibility and rankings with robust SEO strategies built to deliver sustainable growth.",
+      features: ["Technical SEO", "On-Page Optimization", "Off-Page SEO", "Local SEO"],
+      image: "/impulse-website/servicepage-SEO.jpg",
+      link: "#",
     },
     {
       id: "web",
-      title: "Website Development & Design",
-      description: "Beautiful, functional websites that convert visitors into customers and reflect your brand perfectly.",
-      features: ["Website Design", "Website Development", "Website Management", "Website SEO"],
-      image: "/rectangle-37-6.png",
-      category: "development",
-      link: "",
+      title: "Website Development",
+      description:
+        "Design and develop user-focused websites that look great, perform well, and convert visitors into customers.",
+      features: ["UI/UX Design", "Responsive Development", "CMS Setup", "Website SEO"],
+      image: "/impulse-website/servicepage-Website Development.jpg",
+      link: "#",
     },
     {
       id: "branding",
-      title: "Branding & Identity",
-      description: "Create a memorable brand identity that resonates with your target audience and stands out from competitors.",
-      features: ["Brand Development", "Logo Design", "Brand Guidelines", "Brand Story Building"],
-      image: "/rectangle-37-7.png",
-      category: "branding",
-      link: "",
-    },
-    {
-      id: "production",
-      title: "Video & Content Production",
-      description: "High-quality video content and creative assets that capture attention and drive engagement.",
-      features: ["Scriptwriting", "Video Production", "Photography", "Graphic Design"],
-      image: "/rectangle-37-6.png",
-      category: "content",
-      link: "",
+      title: "Branding Creative",
+      description:
+        "Shape your brand’s visual and emotional identity through design, storytelling, and creative strategy.",
+      features: ["Logo Design", "Brand Guidelines", "Campaign Design", "Creative Strategy"],
+      image: "/impulse-website/servicepage-Branding and Identity.jpg",
+      link: "#",
     },
     {
       id: "employer",
-      title: "Employer Branding",
-      description: "Attract top talent and build a strong employer brand that showcases your company culture.",
-      features: ["Recruitment Marketing", "Employee Value Proposition", "Employer Brand Strategy", "Brand Audits"],
-      image: "/rectangle-37-7.png",
-      category: "branding",
-      link: "",
-    }
+      title: "Employee Branding",
+      description:
+        "Build a strong employer brand that attracts, engages, and retains top talent aligned with your company’s values.",
+      features: ["EVP Creation", "Recruitment Marketing", "Internal Campaigns", "Culture Storytelling"],
+      image: "/impulse-website/servicepage-Employeer Branding.jpg",
+      link: "#",
+    },
+    {
+      id: "corporate",
+      title: "Corporate Communication",
+      description:
+        "Deliver impactful corporate messaging that strengthens your reputation and builds trust across stakeholders.",
+      features: ["Press Releases", "Internal Communication", "Crisis Communication", "Leadership Messaging"],
+      image: "/impulse-website/servicepage-PPC.jpg",
+      link: "#",
+    },
+    {
+      id: "video",
+      title: "Social Media Video Production",
+      description:
+        "Produce short-form videos, reels, and branded storytelling content that stand out and drive engagement.",
+      features: ["Concept Development", "Scriptwriting", "Production", "Editing & Animation"],
+      image: "/impulse-website/servicepage-Video Production.jpg",
+      link: "#",
+    },
   ];
 
-  const categories = [
-    { id: "all", label: "All Services" },
-    { id: "advertising", label: "Paid Advertising" },
-    { id: "organic", label: "Organic Growth" },
-    { id: "social", label: "Social Media" },
-    { id: "content", label: "Content & Creative" },
-    { id: "development", label: "Web Development" },
-    { id: "branding", label: "Branding" }
-  ];
+  // Track expanded feature lists per card
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  const filteredServices = activeCategory === "all" 
-    ? services 
-    : services.filter(service => service.category === activeCategory);
+  const toggleExpanded = (id: string) =>
+    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
 
   return (
-    <section className="w-full bg-[#f8f9fa] py-16 lg:py-24" data-section="services-catalog" id="sec-border">
+    <section
+      className="w-full bg-[#f8f9fa] py-16 lg:py-24"
+      data-section="services-catalog"
+      id="sec-border"
+    >
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 lg:mb-16">
@@ -116,86 +118,103 @@ export const ServicesCatalogSection = (): JSX.Element => {
           </h2>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === category.id
-                  ? "bg-[#543d98] text-white shadow-lg"
-                  : "bg-white text-[#030019] hover:bg-[#543d98]/10 border border-gray-200"
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredServices.map((service) => (
-            <div
-              key={service.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-            >
-              {/* Service Image */}
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+          {services.map((service) => {
+            const isOpen = !!expanded[service.id];
+            const base = service.features.slice(0, 3);
+            const rest = service.features.slice(3);
 
-              {/* Service Content */}
-              <div className="p-6">
-                <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-3 group-hover:text-[#543d98] transition-colors">
-                  {service.title}
-                </h3>
-                
-                <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm leading-relaxed mb-4">
-                  {service.description}
-                </p>
+            return (
+              <div
+                key={service.id}
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
 
-                {/* Features List */}
-                <ul className="space-y-2 mb-6">
-                  {service.features.slice(0, 3).map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-[#543d98] mr-2 text-sm">•</span>
-                      <span className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                  {service.features.length > 3 && (
-                    <li className="flex items-start">
-                      <span className="text-[#543d98] mr-2 text-sm">•</span>
-                      <span className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm">
-                        +{service.features.length - 3} more services
-                      </span>
-                    </li>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-3 group-hover:text-[#543d98] transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-2 mb-2">
+                    {base.map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-[#543d98] mr-2 text-sm">•</span>
+                        <span className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Expandable rest */}
+                  {rest.length > 0 && (
+                    <>
+                      <div
+                        className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
+                          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                        }`}
+                        aria-hidden={!isOpen}
+                      >
+                        <ul className="space-y-2 mt-2">
+                          {rest.map((feature, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="text-[#543d98] mr-2 text-sm">•</span>
+                              <span className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-sm">
+                                {feature}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => toggleExpanded(service.id)}
+                        className="mt-3 text-sm font-medium text-[#543d98] hover:underline"
+                        aria-expanded={isOpen}
+                        aria-controls={`features-${service.id}`}
+                      >
+                        {isOpen ? "Show fewer" : `+${rest.length} more services`}
+                      </button>
+                    </>
                   )}
-                </ul>
 
-                {/* CTA Button */}
-                
-
-                <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
-            
-                          <a href="{service.title}">Learn More</a>
-                          
-                          <img
-                            src="/impulse-website/button-icon.svg"
-                            alt="Arrow"
-                            className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert-0 group-hover:invert pointer-events-none"
-                          />
-                      </Button>
+                  {/* CTA */}
+                  <div className="mt-6">
+                    <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
+                      <a
+                        href={service.link}
+                        className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
+                      >
+                        Learn More
+                      </a>
+                      <img
+                        src="/impulse-website/button-icon.svg"
+                        alt="Arrow"
+                        className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert pointer-events-none"
+                      />
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
