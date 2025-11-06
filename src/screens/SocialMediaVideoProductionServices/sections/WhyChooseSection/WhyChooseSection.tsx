@@ -24,7 +24,7 @@ export const WhyChooseSection = (): JSX.Element => {
           <div>
             <div className="relative overflow-hidden rounded-[24px] shadow-lg mb-4">
               <img
-                src="/impulse-website/video  why chooose us section 576 x 400 1.jpg"
+                src="/impulse-website/focus-on-digital-camera-near-talented-asian-stylis-2024-11-11-11-37-59-utc.jpg"
                 alt="Creative workspace content writing"
                 className="w-full h-[320px] sm:h-[400px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                 loading="lazy"
@@ -42,7 +42,7 @@ export const WhyChooseSection = (): JSX.Element => {
           <div>
             <div className="relative overflow-hidden rounded-[24px] shadow-lg mb-4">
               <img
-                src="/impulse-website/video  why chooose us section 576 x 400 2.jpg"
+                src="/impulse-website/business-technology-and-people-concept-close-up-2025-10-03-15-53-55-utc.jpg"
                 alt="Laptop with content writing screen"
                 className="w-full h-[320px] sm:h-[400px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                 loading="lazy"
@@ -84,7 +84,7 @@ export const WhyChooseSection = (): JSX.Element => {
               {/* Image 1 */}
               <div className="relative overflow-hidden rounded-[24px] shadow-lg mb-4">
                 <img
-                  src="/impulse-website/video  why chooose us section 576 x 400 1.jpg"
+                  src="/impulse-website/focus-on-digital-camera-near-talented-asian-stylis-2024-11-11-11-37-59-utc.jpg"
                   alt="Laptop with content writing screen"
                   className="w-full h-[630px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                   loading="lazy"
@@ -112,7 +112,7 @@ export const WhyChooseSection = (): JSX.Element => {
  
               <div className="relative overflow-hidden rounded-[24px] shadow-lg">
                 <img
-                  src="/impulse-website/video  why chooose us section 576 x 400 2.jpg"
+                  src="/impulse-website/business-technology-and-people-concept-close-up-2025-10-03-15-53-55-utc.jpg"
                   alt="Creative workspace content writing"
                   className="w-full h-[630px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                   loading="lazy"

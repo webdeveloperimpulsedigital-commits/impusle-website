@@ -26,10 +26,10 @@ const ServicesSection = () => {
    const data = [
     { n:"01", title:"Social media creatives",
       points:["Capture attention with scroll-stopping creatives designed to engage your audience. From eye-catching visuals to compelling copies, our creatives are tailored to meet the unique needs of all platforms—Instagram, YouTube, Facebook, Linkedin, and Pinterest. They stop your audience, spark conversations, build connections, and drive conversations."],
-      img:"/impulse-website/branding creative service section 520 x 340 - Product packaging.jpg" },
+      img:"/impulse-website/Social Media Creatives.jpg" },
     { n:"02", title:"Branding",
       points:["Who are you, what do you do, and why should your audience buy from you? Your branding is your unique identity that tells your audience everything about you. We make sure it sets you apart rather than putting you on the list of ‘Oh this is just like brand XYZ.’"],
-      img:"/impulse-website/branding creative service section 520 x 340 - Branding.jpg" },
+      img:"/impulse-website/Branding.jpg" },
     { n:"03", title:"Logo identity",
       points:["Your logo is one aspect of your branding that’s going to be everywhere, quite literally—social media, website, packaging, gift notes. Our logo identity goes beyond aesthetics to capture your brand’s essence. Whether you want it to be sleek, modern, or timeless, our logos create instant recognition for you. "],
       img:"/impulse-website/branding creative service section 520 x 340 - Logo Identity.jpg" },

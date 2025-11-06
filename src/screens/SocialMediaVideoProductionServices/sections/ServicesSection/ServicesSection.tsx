@@ -33,7 +33,7 @@ const ServicesSection = () => {
     {
       n:"03", title:"Content shoot",
       points:["With a team of skilled content photographers and videographers, our content shoots focus on creativity, lighting, and composition to create visuals that deliver emotions, your brand values, and engagement. Be it influencer collaborations, lifestyle content, every piece or behind-the-scenes, we promise to get you the best. "],
-      img:"/impulse-website/video  service section 520 x 340 - Content shoot.jpg"},
+      img:"/impulse-website/Content Shoot.jpg"},
       {
         n:"04", title:"Product shoot",
         points:["Our product shoot services are designed to make your product the HERO of your campaign. Our team carefully weaves the product into the scene, focusing on its key details, positioning, and lighting, ensuring every detail is well-suited for your eCommerce, lifestyle shots, and promotional videos."],
