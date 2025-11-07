@@ -148,7 +148,7 @@ export const BlogSection = (): JSX.Element => {
       {/* ✅ Mobile "See All Articles" button BEFORE controllers */}
       <div className="flex justify-center mt-4">
         <Button className="w-[220px] h-[44px] group flex items-center justify-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
-          <Link to="/contact"
+          <Link to="/blogs"
             className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm group-hover:text-[#543d98] transition-colors duration-300">
             See All Articles
           </Link>
@@ -204,7 +204,7 @@ export const BlogSection = (): JSX.Element => {
           {/* ✅ Hide header button on mobile, keep on desktop */}
           <div className="flex-shrink-0 hidden md:block">
             <Button className="w-[220px] h-[44px] group inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
-              <Link to="/contact"
+              <Link to="/blogs"
                 className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300">
                 See All Articles
               </Link>

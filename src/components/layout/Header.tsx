@@ -1,7 +1,11 @@
 // src/components/layout/Header.tsx
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown as ChevronDownIcon, Menu as MenuIcon, X as XIcon } from "lucide-react";
+import {
+  ChevronDown as ChevronDownIcon,
+  Menu as MenuIcon,
+  X as XIcon,
+} from "lucide-react";
 import { Button } from "../../components/ui/button";
 
 type DropdownItem = {
@@ -70,6 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
 
   const navRef = useRef<HTMLDivElement | null>(null);
   const [headerH, setHeaderH] = useState<number>(0);
+
   useEffect(() => {
     const update = () => setHeaderH(navRef.current ? navRef.current.offsetHeight : 0);
     update();
@@ -88,37 +93,40 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menus on navigation AND force page to start at top
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
     setOpenMobileDropdown(null);
+
+    // 🔝 Ensure new route starts at top (instant jump; use "smooth" if you prefer)
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [location.pathname]);
 
+  // Active state helper
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
     return location.pathname.startsWith(href);
   };
 
-  /* ▼▼▼ ADDED: show/hide on scroll direction ▼▼▼ */
+  /* ▼▼▼ show/hide on scroll direction ▼▼▼ */
   const [showNav, setShowNav] = useState(true);
   const lastYRef = useRef<number>(0);
-  const threshold = 6; // small delta to avoid jitter
+  const threshold = 6;
 
   useEffect(() => {
-    lastYRef.current = window.scrollY; // initialize
+    lastYRef.current = window.scrollY;
     let ticking = false;
 
     const handleScroll = () => {
       const curr = window.scrollY;
-
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const diff = curr - lastYRef.current;
           if (Math.abs(diff) > threshold) {
             if (curr <= 0) {
-              setShowNav(true); // always show at very top
+              setShowNav(true);
             } else {
-              // hide when scrolling down, show when scrolling up
               setShowNav(diff < 0);
             }
             lastYRef.current = curr;
@@ -137,16 +145,15 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
   useEffect(() => {
     if (isMobileMenuOpen) setShowNav(true);
   }, [isMobileMenuOpen]);
-  /* ▲▲▲ ADDED END ▲▲▲ */
+  /* ▲▲▲ END ▲▲▲ */
 
-  // CHANGED: make it sticky using fixed; keep your top offsets the same
+  // Sticky/fixed behavior
   const positionClasses = overlay ? "fixed top-4" : "fixed top-0";
-  const headerBg =
-    overlay
-      ? "bg-[#020018]"
-      : (scrolled || isMobileMenuOpen)
-        ? "bg-[#16132A] backdrop-blur-sm border-b border-white/10 shadow-md"
-        : "bg-transparent";
+  const headerBg = overlay
+    ? "bg-[#020018]"
+    : (scrolled || isMobileMenuOpen)
+      ? "bg-[#16132A] backdrop-blur-sm border-b border-white/10 shadow-md"
+      : "bg-transparent";
 
   return (
     <>
@@ -330,38 +337,38 @@ export const Header: React.FC<HeaderProps> = ({ overlay = false, items }) => {
       </nav>
 
       {!overlay && <div style={{ height: headerH }} />}
+
+      <style>{`
+        w-30 {
+          width: 30% !important;
+          max-width: 30% !important;
+        }
+        .contact-arrow {
+          width: 16px;
+          height: 16px;
+          transition: transform 0.3s ease;
+          pointer-events: none;
+        }
+        .contact-btn:hover .contact-arrow {
+          transform: rotate(45deg);
+        }
+        .contact-arrow {
+          transition: transform 0.2s ease;
+          pointer-events: none;
+        }
+        @media (hover: hover) {
+          .group:hover .contact-arrow {
+            transform: rotate(45deg);
+          }
+        }
+        @media (hover: none) {
+          .group:active .contact-arrow {
+          transform: rotate(45deg);
+          }
+        }
+      `}</style>
     </>
   );
 };
-
-<style>{`
-w-30 {
-  width: 30% !important;
-  max-width: 30% !important;
-}
-.contact-arrow {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-}
-.contact-btn:hover .contact-arrow {
-  transform: rotate(45deg);
-}
-.contact-arrow {
-  transition: transform 0.2s ease;
-  pointer-events: none;
-}
-@media (hover: hover) {
-  .group:hover .contact-arrow {
-    transform: rotate(45deg);
-  }
-}
-@media (hover: none) {
-  .group:active .contact-arrow {
-    transform: rotate(45deg);
-  }
-}
-`}</style>
 
 export default Header;

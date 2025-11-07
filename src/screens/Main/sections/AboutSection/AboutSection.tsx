@@ -151,7 +151,7 @@ export const AboutSection = (): JSX.Element => {
 
           <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
             <Link
-              to="/contact"
+              to="/contact-us"
               className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
             >
               Connect Now
