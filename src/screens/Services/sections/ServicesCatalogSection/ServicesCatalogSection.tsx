@@ -19,7 +19,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Craft compelling, SEO-driven content that tells your brand story and drives measurable engagement across platforms.",
       features: ["Blog Writing", "Website Copy", "Landing Pages", "Corporate Communication"],
       image: "/impulse-website/servicepage-COntent writing.jpg",
-      link: "#",
+      link: "/impulse-website/services/content-writing-services",
     },
     {
       id: "ppc",
@@ -28,7 +28,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Run targeted campaigns across Google, Meta, and more to maximize ROI through data-backed performance marketing strategies.",
       features: ["Google Ads", "Meta Campaigns", "Bid Optimization", "Landing Page Testing"],
       image: "/impulse-website/servicepage-PPC.jpg",
-      link: "#",
+      link: "/impulse-website/services/performance-marketing",
     },
     {
       id: "social",
@@ -37,7 +37,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Build strong social communities and boost engagement through creative content and performance-driven strategies.",
       features: ["Strategy & Planning", "Content Creation", "Paid Campaigns", "Community Management"],
       image: "/impulse-website/servicepage-Social Media Marketing.jpg",
-      link: "#",
+      link: "/impulse-website/services/social-media-marketing",
     },
     {
       id: "seo",
@@ -46,7 +46,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Improve your website visibility and rankings with robust SEO strategies built to deliver sustainable growth.",
       features: ["Technical SEO", "On-Page Optimization", "Off-Page SEO", "Local SEO"],
       image: "/impulse-website/servicepage-SEO.jpg",
-      link: "#",
+      link: "/impulse-website/services/search-engine-optimization",
     },
     {
       id: "web",
@@ -55,7 +55,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Design and develop user-focused websites that look great, perform well, and convert visitors into customers.",
       features: ["UI/UX Design", "Responsive Development", "CMS Setup", "Website SEO"],
       image: "/impulse-website/servicepage-Website Development.jpg",
-      link: "#",
+      link: "/impulse-website/services/website-development",
     },
     {
       id: "branding",
@@ -64,7 +64,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Shape your brand’s visual and emotional identity through design, storytelling, and creative strategy.",
       features: ["Logo Design", "Brand Guidelines", "Campaign Design", "Creative Strategy"],
       image: "/impulse-website/servicepage-Branding and Identity.jpg",
-      link: "#",
+      link: "/impulse-website/services/branding-creative-services",
     },
     {
       id: "employer",
@@ -73,7 +73,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Build a strong employer brand that attracts, engages, and retains top talent aligned with your company’s values.",
       features: ["EVP Creation", "Recruitment Marketing", "Internal Campaigns", "Culture Storytelling"],
       image: "/impulse-website/servicepage-Employeer Branding.jpg",
-      link: "#",
+      link: "/impulse-website/services/employee-branding-agency",
     },
     {
       id: "corporate",
@@ -81,8 +81,8 @@ export const ServicesCatalogSection = (): JSX.Element => {
       description:
         "Deliver impactful corporate messaging that strengthens your reputation and builds trust across stakeholders.",
       features: ["Press Releases", "Internal Communication", "Crisis Communication", "Leadership Messaging"],
-      image: "/impulse-website/servicepage-PPC.jpg",
-      link: "#",
+      image: "/impulse-website/Corporate Communication.jpg",
+      link: "/impulse-website/services/corporate-communication-agency",
     },
     {
       id: "video",
@@ -91,11 +91,10 @@ export const ServicesCatalogSection = (): JSX.Element => {
         "Produce short-form videos, reels, and branded storytelling content that stand out and drive engagement.",
       features: ["Concept Development", "Scriptwriting", "Production", "Editing & Animation"],
       image: "/impulse-website/servicepage-Video Production.jpg",
-      link: "#",
+      link: "/impulse-website/services/social-media-video-production",
     },
   ];
 
-  // Track expanded feature lists per card
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   const toggleExpanded = (id: string) =>
@@ -142,7 +141,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-3 group-hover:text-[#543d98] transition-colors">
+                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-3 transition-colors">
                     {service.title}
                   </h3>
 
@@ -197,7 +196,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
                   {/* CTA */}
                   <div className="mt-6">
-                    <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
+                    <Button className="cta-btn w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] border border-[#543d98] transition-all duration-300">
                       <a
                         href={service.link}
                         className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
@@ -207,7 +206,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
                       <img
                         src="/impulse-website/button-icon.svg"
                         alt="Arrow"
-                        className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert pointer-events-none"
+                        className="cta-icon w-4 h-4 transition-all duration-300 group-hover:rotate-45 pointer-events-none"
                       />
                     </Button>
                   </div>
@@ -218,16 +217,27 @@ export const ServicesCatalogSection = (): JSX.Element => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-base mb-6">
             Need a custom solution? We create tailored strategies for unique business needs.
           </p>
-          <Button className="bg-[#543d98] hover:bg-[#543d98]/90 text-white px-8 py-4 rounded-xl font-bold">
+          <Button className="cta-btn bg-[#543d98] hover:bg-white hover:text-[#543d98] text-white px-8 py-4 rounded-xl font-bold border border-[#543d98] transition-all duration-300 group inline-flex items-center gap-2">
             Get Custom Quote
-            <img className="w-4 h-4 ml-2" alt="Arrow" src="/button-icon.svg" />
+            <img
+              className="cta-icon w-4 h-4 ml-2 transition-all duration-300 group-hover:rotate-45 pointer-events-none"
+              alt="Arrow"
+              src="/impulse-website/button-icon.svg"
+            />
           </Button>
-        </div>
+        </div> */}
       </div>
+
+      {/* ✅ Shared CTA hover behavior for all buttons */}
+      <style>{`
+        .cta-btn:hover .cta-icon {
+          filter: brightness(0); /* makes icon black on hover */
+        }
+      `}</style>
     </section>
   );
 };
