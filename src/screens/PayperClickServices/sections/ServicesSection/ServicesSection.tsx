@@ -30,7 +30,7 @@ const ServicesSection = () => {
       points: [
         "Capture high-intent customers at the precise moment they search for your products or services online. Our Google search ads services leverage strategic keyword targeting and compelling ad copy to drive qualified traffic directly to your website.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google search ads.jpg",
+      img: "/impulse-website/Google Search Ads.jpg",
     },
     {
       n: "02",
@@ -38,7 +38,7 @@ const ServicesSection = () => {
       points: [
         "Want to reach a broader audience? Our Google display ad services will make it possible with creative banners and rich media ads that capture attention, drive interest, and offer targeted advertising solutions across millions of websites and apps.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google display ads.jpg",
+      img: "/impulse-website/Display Ads.jpg",
     },
     {
       n: "03",
@@ -54,7 +54,7 @@ const ServicesSection = () => {
       points: [
         "Merge your digital advertising efforts across Search, Display, YouTube, and more with 1 single campaign. Our PPC services harness machine learning to optimize this goal-based campaign automatically to ensure your ads reach valuable consumers online.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Google Performance max ads.jpg",
+      img: "/impulse-website/Google Performance Max Ads.jpg",
     },
     {
       n: "05",
@@ -62,7 +62,7 @@ const ServicesSection = () => {
       points: [
         "Bring together the power of strategic brand storytelling with targeted lead generation techniques on Meta platforms. We craft creative content and visually appealing ads tailored for Facebook and Instagram to focus on both brand awareness and conversions.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Meta ads & lead gen.jpg",
+      img: "/impulse-website/Meta Branding.jpg",
     },
     {
       n: "06",
@@ -78,7 +78,7 @@ const ServicesSection = () => {
       points: [
         "Want to reach out to decision-makers at top companies in the world? Our highly targeted LinkedIn ads leverage detailed demographic and job role data to connect you with the right audience to support your business’s sustainable growth in the B2B arena.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/Linkedin Ads.jpg",
     },
     {
       n: "08",
@@ -94,7 +94,7 @@ const ServicesSection = () => {
       points: [
         "Leverage audience insights to place your ads in front of interested viewers for maximum impact. Our ad experts combine engaging visuals, persuasive copy and strategic CTA to boost your conversions, expand your reach, and solidify your online presence.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Youtube Ads.jpg",
+      img: "/impulse-website/Youtube Das.jpg",
     },
   ];
 
