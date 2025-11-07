@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../FooterSection/FooterSection.css";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Share2 } from "lucide-react"; // Added Share icon
 import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 
 export const FooterSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showConnectOptions, setShowConnectOptions] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) setIsVisible(true);
-      else setIsVisible(false);
+      setIsVisible(window.scrollY > 300);
     };
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
@@ -59,13 +59,10 @@ export const FooterSection: React.FC = () => {
               <li><a href="/impulse-website/">Home</a></li>
               <li><a href="/impulse-website/about-us">About Us</a></li>
               <li><a href="/impulse-website/services">Services</a></li>
-              {/* <li><a href="#">Clients & Work</a></li> */}
             </ul>
             <ul className="footer__col">
               <strong>Resources</strong>
-              {/* <li><a href="#">Case Studies</a></li> */}
               <li><a href="/blog">Blog</a></li>
-              {/* <li><a href="#">Resources</a></li> */}
               <li><a href="/impulse-website/career">Career</a></li>
             </ul>
             <ul className="footer__col">
@@ -122,40 +119,104 @@ export const FooterSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll To Top */}
-      {isVisible && (
+      {/* === FIXED SOCIAL SHARE + SCROLL BUTTONS === */}
+      <div className="fixedButtons">
+        {/* Social Share Button (toggle) */}
         <button
-          onClick={scrollToTop}
-          className="scrollToTopBtn"
-          aria-label="Back to Top"
+          onClick={() => setShowConnectOptions(!showConnectOptions)}
+          className="actionBtn"
+          aria-label="Share or Connect"
         >
-          <ArrowUp size={18} />
+          <Share2 size={20} color="white" />
         </button>
-      )}
 
-      {/* === MOBILE-ONLY STICKY CONTACT BAR === */}
-      <div className="footerMobileBar" role="region" aria-label="Quick contact">
-        <span className="footerMobileBar__text">
-          Have a project in mind? Let’s talk.
-        </span>
-        <Button
-            variant="outline"
-            className="w-[150px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-5 bg-white rounded-xl hover:bg-[#543d98] hover:text-[#ffffff] text-[#543d98]"
-          >
-            <Link
-              to="/contact"
-              className="[font-family:'DM_Sans',Helvetica] font-bold text-sm md:text-base"
+        {/* WhatsApp + Call buttons appear when clicked */}
+        {showConnectOptions && (
+          <div className="connectOptions">
+            <a
+              href="https://wa.me/919769285224"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="actionBtn"
+              aria-label="Chat on WhatsApp"
             >
-              Contact Us
-            </Link>
-            <img
-              src="/impulse-website/vector-1-3.svg"
-              alt="Arrow"
-              className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-0 group-hover:invert pointer-events-none"
-            />
-          </Button>
+              <img src="/impulse-website/whatsapp.png" alt="WhatsApp" />
+            </a>
+
+            <a href="tel:+919769285224" className="actionBtn" aria-label="Call Impulse Digital">
+              <img src="/impulse-website/footer-call.png" alt="Call" />
+            </a>
+          </div>
+        )}
+
+        {/* Scroll to Top */}
+        {isVisible && (
+          <button onClick={scrollToTop} className="actionBtn" aria-label="Back to Top">
+            <ArrowUp size={18} color="white" />
+          </button>
+        )}
       </div>
-      {/* === END MOBILE-ONLY STICKY CONTACT BAR === */}
+
+      <style>{`
+        .fixedButtons {
+          position: fixed;
+          right: 20px;
+          bottom: 20px;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 12px;
+          z-index: 999;
+        }
+
+        .connectOptions {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 10px;
+          animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .actionBtn {
+          background-color: #543d98;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .actionBtn img {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+
+        .actionBtn:hover {
+          transform: translateY(-3px);
+          background-color: #6b4bc7;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media(max-width: 768px) {
+          .fixedButtons {
+            right: 15px;
+            bottom: 15px;
+            gap: 10px;
+          }
+          .actionBtn {
+            width: 44px;
+            height: 44px;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
