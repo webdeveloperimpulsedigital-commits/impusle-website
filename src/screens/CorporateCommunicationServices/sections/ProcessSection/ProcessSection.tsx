@@ -11,38 +11,48 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Initial consultation ",
-      description: "We have the solutions and the strategies but we want to hear your unique challenges first. Our initial consultation is all about you—your challenges",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Communication audit ",
-      description: "We then conduct an audit to identify discrepancies in messaging, channel effectiveness, and intent gaps. We also see if there’s a disbalance",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Develop a customized communication strategy",
-      description: "Based on our findings, we create a customized communication strategy that meets your audience where they are.",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Bring the strategy to life",
-      description: "This is where we put on our gears and get to action. Each expert oversees their well-defined tasks while collaborating with others on the team",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Reports & Analysis ",
-      description: "Once the communication starts, analytics come into the picture. We track every communication for the impact it was able to drive.",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    
-  ];
+  {
+    id: 1,
+    title: "Initial Consultation",
+    description:
+      "We have the solutions and the strategies but we want to hear your unique challenges first.",
+    expandedContent:
+      "We have the solutions and the strategies but we want to hear your unique challenges first. Our initial consultation is all about you—your challenges, what you have done so far, results obtained, and finally, how we can contribute.",
+  },
+  {
+    id: 2,
+    title: "Communication Audit",
+    description:
+      "We conduct an audit to identify discrepancies in messaging, channel effectiveness, and intent gaps.",
+    expandedContent:
+      "We then conduct an audit to identify discrepancies in messaging, channel effectiveness, and intent gaps. We also see if there’s a disbalance in communication and how the intended audience has received the previous communications.",
+  },
+  {
+    id: 3,
+    title: "Develop a Customized Communication Strategy",
+    description:
+      "Based on our findings, we create a communication strategy tailored to your audience’s preferences.",
+    expandedContent:
+      "Based on our findings, we create a customized communication strategy that meets your audience where they are. This means accounting for their preferences for channels and mediums of communication, interests, and personalities. Each pain point is individually addressed to create a cohesive whole.",
+  },
+  {
+    id: 4,
+    title: "Bring the Strategy to Life",
+    description:
+      "This is where our team of experts collaborates to execute the strategy seamlessly.",
+    expandedContent:
+      "This is where we put on our gears and get to action. Each expert oversees their well-defined tasks while collaborating with others on the team to ensure a consistent outcome. All the challenges are promptly addressed, and you are always kept in the loop for real-time feedback.",
+  },
+  {
+    id: 5,
+    title: "Reports & Analysis",
+    description:
+      "We track every communication piece for the impact and insights it generates.",
+    expandedContent:
+      "Once the communication starts, analytics come into the picture. We track every communication for the impact it was able to drive. We check how well it was received, what the takeaway was, and if there’s any feedback on the same to fine-tune future communication.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

@@ -11,43 +11,56 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Research and Development ",
-      description: "We start by hearing your story, going through the existing branding resources, and researching your competitors and audience.",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Brainstorming and mood boarding ",
-      description: "Based on the feedback, we start putting together a mood board—this is to answer the personality of your brand, the emotions it will evoke",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Design curation & implementation",
-      description: "Once the mood board is approved, we get to the designing process, starting with the most important branding aspect: logo. Templates",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Design refining",
-      description: "The templates are just the starting point. Our team sits with you, explains to you the logic behind the designs and takes your feedback.",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Presenting the design ",
-      description: "The final designs are presented to you—exactly the way your audience and everyone else will see them. Every aspect of these designs is detailed",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    {
-      id: 6,
-      title: "Final delivery",
-      description: "Once everything is locked in, our team hands over all the files in the required file formats to you. We ensure these files are of the highest",
-      expandedContent: "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience."
-    }
-  ];
+  {
+    id: 1,
+    title: "Research and Development",
+    description:
+      "We start by hearing your story, going through the existing branding resources, and researching your competitors and audience.",
+    expandedContent:
+      "We start by hearing your story, going through the existing branding resources, and researching your competitors and audience. Our team gathers insights and feedback on what’s working and what’s not to correctly identify the aspects that need a change.",
+  },
+  {
+    id: 2,
+    title: "Brainstorming and Mood Boarding",
+    description:
+      "Based on the feedback, we start putting together a mood board—this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
+    expandedContent:
+      "Based on the feedback, we start putting together a mood board—this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
+  },
+  {
+    id: 3,
+    title: "Design Curation & Implementation",
+    description:
+      "Once the mood board is approved, we get to the designing process, starting with the most important branding aspect: logo.",
+    expandedContent:
+      "Once the mood board is approved, we get to the designing process, starting with the most important branding aspect: logo. Templates for other collaterals like brochures and stationary come to life as well. We make sure every element is carefully and thoughtfully placed.",
+  },
+  {
+    id: 4,
+    title: "Design Refining",
+    description:
+      "The templates are just the starting point.",
+    expandedContent:
+      "The templates are just the starting point. Our team sits with you, explains to you the logic behind the designs and takes your feedback. Here we lay our thinking process to see if it aligns with yours and the outcome or if there’s a need to refine them.",
+  },
+  {
+    id: 5,
+    title: "Presenting the Design",
+    description:
+      "The final designs are presented to you—exactly the way your audience and everyone else will see them.",
+    expandedContent:
+      "The final designs are presented to you—exactly the way your audience and everyone else will see them. Every aspect of these designs is detailed to perfection which helps you decide how close the designs are to your vision.",
+  },
+  {
+    id: 6,
+    title: "Final Delivery",
+    description:
+      "Once everything is locked in, our team hands over all the files in the required file formats to you.",
+    expandedContent:
+      "Once everything is locked in, our team hands over all the files in the required file formats to you. We ensure these files are of the highest quality for the best outcomes. Additionally, we maintain a backup in case you need them at any point in the future.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

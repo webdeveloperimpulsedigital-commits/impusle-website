@@ -11,55 +11,56 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "High-quality Research",
-      description:
-        "We start by identifying your industry competitors and learning everything about them to contrast them with you. We dig in on what's working.",
-      expandedContent:
-        "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy.",
-    },
-    {
-      id: 2,
-      title: "Trend-focused Content Ideas",
-      description:
-        "Post identifying relevant data, keywords, and trends, our team sits and brainstorms content ideas. We make sure they are trendy yet.",
-      expandedContent:
-        "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve.",
-    },
-    {
-      id: 3,
-      title: "Content Writing-driven Topics",
-      description:
-        "We have all the ideas, what's next. We put them into content buckets that are relevant for you to make sure your brand has the right mix of pieces.",
-      expandedContent:
-        "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives.",
-    },
-    {
-      id: 4,
-      title: "Strategic Content Creation",
-      description:
-        "Then begins the process of drafting pieces. Here, we take care of multiple aspects such as SEO, keyword insertion, and storytelling to craft.",
-      expandedContent:
-        "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively.",
-    },
-    {
-      id: 5,
-      title: "Understanding Target Audience",
-      description:
-        "Writing for the audience begins with understanding what the audience wants to learn and hear. When we study your target audience.",
-      expandedContent:
-        "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers.",
-    },
-    {
-      id: 6,
-      title: "Powerful Storytelling",
-      description:
-        "A brand without a story is a business. We help you transform from a business to a brand that your audience recognizes and recalls.",
-      expandedContent:
-        "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience.",
-    },
-  ];
+  {
+    id: 1,
+    title: "High-quality Research",
+    description:
+      "We start by identifying your industry competitors and learning everything about them to contrast them with you.",
+    expandedContent:
+      "We dig in on what’s working, what’s not, areas where you have an upper hand, and areas where you can improve.",
+  },
+  {
+    id: 2,
+    title: "Trend-focused Content Ideas",
+    description:
+      "Post identifying relevant data, keywords, and trends, our team sits and brainstorms content ideas.",
+    expandedContent:
+      "We make sure they are trendy yet actionable to ensure the content reflects the latest industry standards and drives your audience to take the next step.",
+  },
+  {
+    id: 3,
+    title: "Content Writing-driven Topics",
+    description:
+      "We have all the ideas, what’s next. We put them into content buckets that are relevant for you.",
+    expandedContent:
+      "The buckets are carefully created to resonate with your audience’s pain points and interests.",
+  },
+  {
+    id: 4,
+    title: "Strategic Content Creation",
+    description:
+      "Then begins the process of drafting pieces, taking care of multiple aspects such as SEO, keyword insertion, and storytelling.",
+    expandedContent:
+      "We craft content designed to drive traffic, engagement, and conversions — where creativity and purpose come together to create a message that truly connects with your audience.",
+  },
+  {
+    id: 5,
+    title: "Understanding Target Audience",
+    description:
+      "Writing for the audience begins with understanding what the audience wants to learn and hear.",
+    expandedContent:
+      "When we study your target audience, we study their search behavior, preferences, needs, and language to create personalized content that connects on a deeper level and encourages action.",
+  },
+  {
+    id: 6,
+    title: "Powerful Storytelling",
+    description:
+      "A brand without a story is a business — we help you transform from a business to a brand that your audience recognizes and recalls.",
+    expandedContent:
+      "We humanize your content because humans talk to humans — strategically sharing the founder’s story, the brand’s journey, and day-to-day events to stir emotions and strike conversations.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

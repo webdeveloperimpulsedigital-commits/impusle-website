@@ -10,44 +10,57 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Comprehensive SEO Audits",
-      description: "It begins with understanding your website’s structure and what’s working and what’s not. Our analysis analyzes key factors like site structure",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Keyword Research and Targeting",
-      description: "You don’t want to be found for just anything. It needs to be precise, relevant, and traffic-driven. We uncover high-value, low-competition",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Optimize Google My Business Profile",
-      description: "If you want to target a larger audience, setting up a Google My Business (GMB) is a non-negotiable. We ensure that your GMB is well-set with",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Technical SEO Optimization",
-      description: "Next, our goal is to make your website search engine’s best friend. Here, we focus on essentials like crawlability and site architecture, as well",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Content Creation and Optimization",
-      description: "High-quality, relevant content is your way to speak to your audience. We take a dual approach by creating new pieces and updating information",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    {
-      id: 6,
-      title: "Analytics and Reporting",
-      description: "We are all about measuring how far we have to see how far we still have to go. Our detailed analytics and reporting tracks metrics like organic traffic",
-      expandedContent: "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience."
-    }
-  ];
+ const processSteps: ProcessStep[] = [
+  {
+    id: 1,
+    title: "Comprehensive SEO Audits",
+    description:
+      "It begins with understanding your website’s structure and what’s working and what’s not.",
+    expandedContent:
+      "It begins with understanding your website’s structure and what’s working and what’s not. Our analysis analyzes key factors like site structure, page loading speed, backlinking quality, and content audits. The goal is to identify loopholes, technical issues, missed opportunities, and areas for improvement, setting the perfect stage for the next steps.",
+  },
+  {
+    id: 2,
+    title: "Keyword Research and Targeting",
+    description:
+      "You don’t want to be found for just anything. It needs to be precise, relevant, and traffic-driven.",
+    expandedContent:
+      "You don’t want to be found for just anything. It needs to be precise, relevant, and traffic-driven. We uncover high-value, low-competition keywords that your users keep searching for. End goal? The best balance of volume and specific for visibility.",
+  },
+  {
+    id: 3,
+    title: "Optimize Google My Business Profile",
+    description:
+      "If you want to target a larger audience, setting up a Google My Business (GMB) is a non-negotiable.",
+    expandedContent:
+      "If you want to target a larger audience, setting up a Google My Business (GMB) is a non-negotiable. We ensure that your GMB is well-set with relevant keywords, high-quality images, and updated business details 24/7. This boosts your chance of appearing in ‘local packs,’ setting you up for increased foot traffic, inquiries, and stronger connections.",
+  },
+  {
+    id: 4,
+    title: "Technical SEO Optimization",
+    description:
+      "Our goal is to make your website search engine’s best friend by improving technical performance.",
+    expandedContent:
+      "Next, our goal is to make your website search engine’s best friend. Here, we focus on essentials like crawlability and site architecture, as well as resolve concerns like broken links and duplicate content to improve your audience’s experience for higher organic traffic and reduced bounce rates.",
+  },
+  {
+    id: 5,
+    title: "Content Creation and Optimization",
+    description:
+      "High-quality, relevant content is your way to speak to your audience.",
+    expandedContent:
+      "High-quality, relevant content is your way to speak to your audience. We take a dual approach by creating new pieces and updating information to make sure your content ranks and resonates. This is where we help you build trust and authority.",
+  },
+  {
+    id: 6,
+    title: "Analytics and Reporting",
+    description:
+      "We are all about measuring how far we have come and how far we still have to go.",
+    expandedContent:
+      "We are all about measuring how far we have to see how far we still have to go. Our detailed analytics and reporting tracks metrics like organic traffic, bounce rates, and conversions to identify trends, refine our strategy, and make sure that every action is toward your business goals. This is what makes up the best SEO marketing company.",
+  },
+];
+
 
 
   return (

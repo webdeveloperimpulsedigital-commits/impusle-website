@@ -10,46 +10,57 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-   const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Comprehensive SEO Audits",
-      description: "It begins with understanding your website’s structure and what’s working and what’s not. Our analysis analyzes key factors like site structure",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Optimize Google My Business",
-      description: "Your GMB is like your company’s online visiting card. It needs to be accurate and consistent across all key business details. Think name,",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Perform Local Keyword Research",
-      description: "Local search is specific to the T. Our focus is on location-specific keywords like “best [service] near me,” “top [product] in [city],” and more.",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 4,
-      title: "Ensure NAP Consistency Across All Listings",
-      description: "NAP—Number, Address, Phone—consistency is crucial for building trust. Our team ensures all your business details are consistent across ",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    {
-      id: 5,
-      title: "Create and optimize local content",
-      description: "Think of content that does not align with your audience. That’s a way NOT to SERVE your audience and waste their time, too. ",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 6,
-      title: "Monitor and track local SEO performance",
-      description: "The audience needs to keep altering. Local SEO is an ongoing process of tracking metrics like local search rankings, traffic",
-      expandedContent: "We continuously monitor performance metrics, conduct A/B testing, and refine strategies based on data insights to ensure sustained growth and improved ROI."
-    }
-    
-    
-  ];
+  const processSteps: ProcessStep[] = [
+  {
+    id: 1,
+    title: "Comprehensive SEO Audits",
+    description:
+      "It begins with understanding your website’s structure and what’s working and what’s not.",
+    expandedContent:
+      "It begins with understanding your website’s structure and what’s working and what’s not. Our audit examines key factors like site structure, page loading speed, backlinking quality, and content audits. The goal is to identify loopholes, technical issues, missed opportunities, and areas for improvement, setting the perfect stage for the next steps.",
+  },
+  {
+    id: 2,
+    title: "Optimize Google My Business",
+    description:
+      "Your GMB is like your company’s online visiting card — it needs to be accurate and consistent.",
+    expandedContent:
+      "Your GMB is like your company’s online visiting card. It needs to be accurate and consistent across all key business details — think name, phone, address, visiting hours, category, and services. We also design it with high-quality photos and keyword-infused descriptions so that your business stands out.",
+  },
+  {
+    id: 3,
+    title: "Perform Local Keyword Research",
+    description:
+      "Local search is specific to the T — we focus on location-based keywords that bring real traffic.",
+    expandedContent:
+      "Local search is specific to the T. Our focus is on location-specific keywords like “best [service] near me,” “top [product] in [city],” and more. Once we have them, we strategically integrate them into your website, GMB, and listings to improve your local rankings.",
+  },
+  {
+    id: 4,
+    title: "Ensure NAP Consistency Across All Listings",
+    description:
+      "NAP consistency (Number, Address, Phone) is crucial for building trust and improving ranking.",
+    expandedContent:
+      "NAP—Number, Address, Phone—consistency is crucial for building trust. Our team ensures all your business details are consistent across online directories, business listings, social media profiles, and websites because any inconsistency will confuse the search engine and the audience — and that’ll hurt your ranking.",
+  },
+  {
+    id: 5,
+    title: "Create and Optimize Local Content",
+    description:
+      "We create geo-targeted blogs, service pages, and landing pages tailored for your audience.",
+    expandedContent:
+      "Think of content that does not align with your audience — that’s a way NOT to serve your audience and waste their time, too. Our content writing services ensure your blogs, service pages, and landing pages are incorporated with geo-targeted keywords so that your audience (and search engine) recognize your relevance.",
+  },
+  {
+    id: 6,
+    title: "Monitor and Track Local SEO Performance",
+    description:
+      "Local SEO is an ongoing process of tracking rankings, traffic, and GMB performance.",
+    expandedContent:
+      "The audience needs to keep altering. Local SEO is an ongoing process of tracking metrics like local search rankings, traffic, GMB performance, and user behavior to keep your business up to date with search algorithms and local search. That means consistent visibility, enquiries, and growth.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

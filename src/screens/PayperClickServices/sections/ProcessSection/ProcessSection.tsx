@@ -10,56 +10,57 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Keyword research and targeting",
-      description:
-        "Once we understand your business and its audience, our team starts to research what your audience is looking for.",
-      expandedContent:
-        "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy.",
-    },
-    {
-      id: 2,
-      title: "Ad creation and optimization",
-      description:
-        "With all this information, we start drafting your ad copies and visuals. The copies are persuasive to get the audience to visit.",
-      expandedContent:
-        "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve.",
-    },
-    {
-      id: 3,
-      title: "Campaign management",
-      description:
-        "Our PPC management services include end-to-end campaign management for you, right from strategizing the campaign idea, defining",
-      expandedContent:
-        "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives.",
-    },
-    {
-      id: 4,
-      title: "Landing page optimization",
-      description:
-        "When your audience clicks on the ad, they are directed to a landing page, which must be optimized for conversion. Our team ensures that your",
-      expandedContent:
-        "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively",
-    },
-    {
-      id: 5,
-      title: "Performance tracking & reporting",
-      description:
-        "Once the ad goes live, we continuously work on the backend, monitoring its performance. We compare different ads on various factors to decide the",
-      expandedContent:
-        "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers.",
-    },
-    {
-      id: 6,
-      title: "Remarketing campaigns",
-      description:
-        "We remind your customers why they chose you in the first place. We retarget them via personalized emails and ad campaigns on their preferred",
-      expandedContent:
-        "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience.",
-    },
-  ];
+ const processSteps: ProcessStep[] = [
+  {
+    id: 1,
+    title: "Keyword research and targeting",
+    description:
+      "Once we understand your business and its audience, our team starts to research what your audience is looking for.",
+    expandedContent:
+      "Once we understand your business and its audience, our team starts to research what your audience is looking for. What phrases are they exactly searching for, which products or services are they most interested in and more. Based on this, we decide the keywords we want to integrate and the audience segment to aim for.",
+  },
+  {
+    id: 2,
+    title: "Ad creation and optimization",
+    description:
+      "With all this information, we start drafting your ad copies and visuals.",
+    expandedContent:
+      "With all this information, we start drafting your ad copies and visuals. The copies are persuasive to get the audience to visit and click on the checkout buttons. At the same time, the visuals are designed to be eye-catching and attention-seeking. All of them are optimized as per the required standards.",
+  },
+  {
+    id: 3,
+    title: "Campaign management",
+    description:
+      "Our PPC management services include end-to-end campaign management for you.",
+    expandedContent:
+      "Our PPC management services include end-to-end campaign management for you, right from strategizing the campaign idea, defining the audience, deciding the budget to selecting the marketing channels and A/B testing the ad copies. We set your campaign goals and link them back to the broader marketing goals to ensure every effort is in the same direction.",
+  },
+  {
+    id: 4,
+    title: "Landing page optimization",
+    description:
+      "When your audience clicks on the ad, they are directed to a landing page, which must be optimized for conversion.",
+    expandedContent:
+      "When your audience clicks on the ad, they are directed to a landing page, which must be optimized for conversion. Our team ensures that your landing page tells a story and includes the necessary keywords while guiding your visitors to the action you want them to take.",
+  },
+  {
+    id: 5,
+    title: "Performance tracking & reporting",
+    description:
+      "Once the ad goes live, we continuously work on the backend, monitoring its performance.",
+    expandedContent:
+      "Once the ad goes live, we continuously work on the backend, monitoring its performance. We compare different ads on various factors to decide the best performing ones and optimize the rest. This informs our decision to continue, stop, or change the ads for your business.",
+  },
+  {
+    id: 6,
+    title: "Remarketing campaigns",
+    description:
+      "We remind your customers why they chose you in the first place.",
+    expandedContent:
+      "We remind your customers why they chose you in the first place. We retarget them via personalized emails and ad campaigns on their preferred social media platforms to improve your brand recall and spark renewed interest. For ones who abandoned the carts? We reach out to them, too, to nudge them to come back to your brand.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

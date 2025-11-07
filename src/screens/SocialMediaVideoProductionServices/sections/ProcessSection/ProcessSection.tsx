@@ -11,38 +11,48 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
    const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Planning & strategy ",
-      description: "Every outcome requires a clear, intentional process. Our first step is to gauge your exact requirements, expected outcome, and idea behind",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Storyboarding & scripting ",
-      description: "Next, our team of storyboarders and scripters sit down with the brief to create a storyline that hits right on the mark. We shape up characters",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Filming/recording",
-      description: "With a detailed plan, we move on to actually creating the content. It’s all about lights, camera, and action for everyone working on the project.",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Editing & assembly",
-      description: "It’s time to gather all the raw footage and put it together. Our editing team sits down to view each footage and image one by one",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Publishing and performance marketing ",
-      description: "Once you approve of the final outcome, our team goes live with social media videos. We spread the word, promote the video",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    
-  ];
+  {
+    id: 1,
+    title: "Planning & Strategy",
+    description:
+      "Every outcome requires a clear, intentional process. Our first step is to gauge your exact requirements, expected outcome, and vision behind the video.",
+    expandedContent:
+      "Every outcome requires a clear, intentional process. Our first step is to gauge your exact requirements, expected outcome, and idea behind the video. This means digging into your inspiration, finding references for specific elements, and doing our creative research.",
+  },
+  {
+    id: 2,
+    title: "Storyboarding & Scripting",
+    description:
+      "Our team of storyboarders and scripters create a storyline that hits the mark and captures your brand’s essence.",
+    expandedContent:
+      "Next, our team of storyboarders and scripters sit down with the brief to create a storyline that hits right on the mark. We shape up characters, set up the scene, decide the background, scout for shoot locations, and craft the dialogues. For products, we look into photography concepts, color contrasts, and setup.",
+  },
+  {
+    id: 3,
+    title: "Filming / Recording",
+    description:
+      "With a detailed plan, we move on to actual creation—lights, camera, and action come together to tell your story.",
+    expandedContent:
+      "With a detailed plan, we move on to actually creating the content. It’s all about lights, camera, and action for everyone working on the project. We carefully shoot each sequence and product to highlight the details and bring out the story.",
+  },
+  {
+    id: 4,
+    title: "Editing & Assembly",
+    description:
+      "All the raw footage comes together here—edited, refined, and perfected for the final outcome.",
+    expandedContent:
+      "It’s time to gather all the raw footage and put it together. Our editing team sits down to view each footage and image one by one, make the necessary corrections for lighting, contrast, sound, etc., and assemble it together for the final outcome.",
+  },
+  {
+    id: 5,
+    title: "Publishing & Performance Marketing",
+    description:
+      "Once approved, we launch your video, promote it, and track performance for maximum ROI.",
+    expandedContent:
+      "Once you approve of the final outcome, our team goes live with social media videos. We spread the word, promote the video, and run our analytics to measure its performance. After all, all that effort needs to translate into ROIs.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

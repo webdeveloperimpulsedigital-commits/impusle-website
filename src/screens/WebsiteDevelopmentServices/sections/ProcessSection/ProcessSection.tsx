@@ -11,43 +11,56 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
  const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Initial Consultation",
-      description: "Our team begins with a detailed discussion on your business goals, audience, challenges, and vision.",
-      expandedContent: "We touch upon everything here, from aesthetics to features and functionality, to create a custom web development plan that exceeds your expectations."
-    },
-    {
-      id: 2,
-      title: "Access & Backup",
-      description: "Before development begins, we request access to existing resources and create a secure backup.",
-      expandedContent: "This step guarantees safety and allows for easy restoration if required, ensuring a seamless transition and minimized risks."
-    },
-    {
-      id: 3,
-      title: "Design & Development",
-      description: "We design a custom website tailored to your visual and functional goals.",
-      expandedContent: "Once you approve the design, we begin development, ensuring every element is optimized for performance, resulting in a secure, scalable, and adaptable website."
-    },
-    {
-      id: 4,
-      title: "Regular Communication",
-      description: "Our team shares updates as we achieve project milestones.",
-      expandedContent: "Clear communication addresses concerns promptly, making the entire process transparent and aligned with your expectations."
-    },
-    {
-      id: 5,
-      title: "Quality Assurance (QA) Testing",
-      description: "Before going live, our team conducts rigorous QA tests to uncover errors and optimization opportunities.",
-      expandedContent: "Based on the outcome, we optimize the website further to run smoothly with minimal downtime, ensuring reliability and performance."
-    },
-    {
-      id: 6,
-      title: "Ongoing Support & Maintenance",
-      description: "Even after launch, we provide expert maintenance and support.",
-      expandedContent: "We regularly update websites, scan for bugs, and fix issues in real-time, giving you a seamless user experience while you focus on growing your business."
-    }
-  ];
+  {
+    id: 1,
+    title: "Initial Consultation",
+    description:
+      "Our team begins with a detailed discussion on your business’s goals, audience, and vision.",
+    expandedContent:
+      "Our team begins with a detailed discussion on your business’s goals, audience, current challenges, and vision for the website or the store. We touch upon everything here, from aesthetics to features and functionality, to create a custom web development plan that exceeds your expectations.",
+  },
+  {
+    id: 2,
+    title: "Access & Backup",
+    description:
+      "Before development begins, we request access to existing resources and create a secure backup.",
+    expandedContent:
+      "Before we begin the development, we request access to the existing resources and create a secure backup of the existing website. This step guarantees safety and allows for easy restoration if required, ensuring a seamless transition and minimized risks.",
+  },
+  {
+    id: 3,
+    title: "Design & Development",
+    description:
+      "We design and develop a custom website optimized for performance and scalability.",
+    expandedContent:
+      "The process starts with designing a custom website, keeping in mind your visual and end goal for approval. Once you approve the design, we begin development, ensuring every element is optimized for performance. The result is a secure, scalable, and adaptable website.",
+  },
+  {
+    id: 4,
+    title: "Regular Communication",
+    description:
+      "We ensure transparent updates and milestone communication throughout the project.",
+    expandedContent:
+      "Our team will keep sharing important updates as we achieve project milestones. Clear communication is paramount to address concerns and roadblocks promptly and responsibly. Open communication, therefore, ensures the entire process is transparent and aligned with your expectations.",
+  },
+  {
+    id: 5,
+    title: "Quality Assurance (QA) Testing",
+    description:
+      "Before going live, we conduct rigorous QA tests to ensure performance and stability.",
+    expandedContent:
+      "Before going live with the website, our team conducts rigorous Quality Assurance tests to uncover any loopholes, dysfunctionality, errors in messaging, and areas for optimization. Based on the outcome, we optimize the website further to run smoothly with minimal downtime.",
+  },
+  {
+    id: 6,
+    title: "Ongoing Support & Maintenance",
+    description:
+      "Even after launch, we provide expert maintenance and real-time issue resolution.",
+    expandedContent:
+      "We are here for you even after the website is live. Our team regularly updates the websites, scans them for bugs, and fixes them in real time for a seamless user experience. With our expert support, you can focus on growing your business while we handle the technicalities.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

@@ -10,44 +10,57 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Defining goals",
-      description: "Want more followers? Wish to build a community? Or do you want more sales? The first step is to set a clear goal and more importantly get it right.",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Strategy Development",
-      description: "Research, research, and some more research about everything—your brand, its offering, USP, your competitors and their brands",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Content Creation",
-      description: "Strategy’s in? Content next. This means shooting, editing, and refining pictures and videos as well as drafting and reviewing copies as per",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Implementation & management",
-      description: "Once everything is run by you, it is our job to take it live and take care of engagement activities. Whether it is commenting, replying to DMs",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Advertising and optimizing",
-      description: "Paid ads complement our growth strategy; they don’t replace it. We skillfully identify the best ad copies & visuals to run them at optimized",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    {
-      id: 6,
-      title: "Reporting and analytics",
-      description: "We are ‘K’razy about KPIs to learn how far we have to see how far we still have to go. Our detailed analytics and reporting tracks metrics like organic",
-      expandedContent: "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience."
-    }
-  ];
+ const processSteps: ProcessStep[] = [
+  {
+    id: 1,
+    title: "Defining goals",
+    description:
+      "Want more followers? Wish to build a community? Or do you want more sales? The first step is to set a clear goal and more importantly get it right.",
+    expandedContent:
+      "Want more followers? Wish to build a community? Or do you want more sales? The first step is to set a clear goal and more importantly get it right. This means the goal has to be SMART - Specific, measurable, achievable, reasonable, and time-bound.",
+  },
+  {
+    id: 2,
+    title: "Strategy Development",
+    description:
+      "Research, research, and some more research about everything—your brand, its offering, USP, your competitors and their brands, target audience and suitable practices.",
+    expandedContent:
+      "Research, research, and some more research about everything—your brand, its offering, USP, your competitors and their brands, target audience and suitable practices. We learn everything and put the pieces together to create a brand strategy that’s uniquely yours.",
+  },
+  {
+    id: 3,
+    title: "Content Creation",
+    description:
+      "Strategy’s in? Content next. This means shooting, editing, and refining pictures and videos as well as drafting and reviewing copies as per the calendar set in place.",
+    expandedContent:
+      "Strategy’s in? Content next. This means shooting, editing, and refining pictures and videos as well as drafting and reviewing copies as per the calendar set in place. We align the content topics with content formats and platform suitability to make sure we are platform-specific for best results.",
+  },
+  {
+    id: 4,
+    title: "Implementation & management",
+    description:
+      "Once everything is run by you, it is our job to take it live and take care of engagement activities.",
+    expandedContent:
+      "Once everything is run by you, it is our job to take it live and take care of engagement activities. Whether it is commenting, replying to DMs, or engaging with potential brand partners, leave it to us.",
+  },
+  {
+    id: 5,
+    title: "Advertising and optimizing",
+    description:
+      "Paid ads complement our growth strategy; they don’t replace it.",
+    expandedContent:
+      "Paid ads complement our growth strategy; they don’t replace it. We skillfully identify the best ad copies & visuals to run them at optimized costs. This means we won't spend too much unnecessarily and get you the desired results. Plus, we are constantly learning from what we have done to make it more effective.",
+  },
+  {
+    id: 6,
+    title: "Reporting and analytics",
+    description:
+      "We are ‘K’razy about KPIs to learn how far we have to see how far we still have to go.",
+    expandedContent:
+      "We are ‘K’razy about KPIs to learn how far we have to see how far we still have to go. Our detailed analytics and reporting tracks metrics like organic traffic, views, interactions, new followers, accounts reached and more to make sure that every action is in line with the SMM goals. This is what makes us the best social media marketing agency.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">

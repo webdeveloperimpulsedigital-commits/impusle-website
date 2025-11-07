@@ -11,43 +11,56 @@ export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
  const processSteps: ProcessStep[] = [
-    {
-      id: 1,
-      title: "Researching the brand and competitor analysis ",
-      description: "We start by hearing your story, going through the existing branding resources, and researching your competitors and audience.",
-      expandedContent: "Our research phase includes comprehensive competitor analysis, keyword research, audience behavior studies, and industry trend analysis to create a solid foundation for your content strategy."
-    },
-    {
-      id: 2,
-      title: "Aligning research and strategizing branding ",
-      description: "Once we complete the research, we gather the insights and shape them into a strategy. This means identifying how your values and offerings",
-      expandedContent: "We analyze current market trends, social media conversations, and search patterns to develop content ideas that resonate with your audience while staying ahead of the curve."
-    },
-    {
-      id: 3,
-      title: "Creating content based on strategy: copy and design",
-      description: "How do you communicate? Via content and visuals. Our team weaves interesting narratives supported by eye-catching visuals that match",
-      expandedContent: "Our content categorization ensures a balanced mix of educational, promotional, and engaging content that aligns with your brand voice and business objectives."
-    },
-    {
-      id: 4,
-      title: "Execution of the strategy",
-      description: "What channels do you distribute the content to? Where are your employees and potential hires spending their time? We uncover this insight",
-      expandedContent: "Our writers craft compelling content that balances SEO optimization with engaging storytelling, ensuring each piece serves both search engines and human readers effectively."
-    },
-    {
-      id: 5,
-      title: "Analyzing content performance ",
-      description: "Key metrics like engagement rates, application numbers, social media interactions, and website traffic offer invaluable insights.",
-      expandedContent: "We create detailed audience personas, analyze their pain points, preferences, and content consumption habits to ensure every piece resonates with your ideal customers."
-    },
-    {
-      id: 6,
-      title: "Optimizing strategy based on results ",
-      description: "Continuous testing and tweaking—whether that’s adjusting copies, exploring new social media channels, or updating content—help",
-      expandedContent: "Through strategic narrative development, we weave your brand values, mission, and unique selling propositions into compelling stories that create emotional connections with your audience."
-    }
-  ];
+  {
+    id: 1,
+    title: "Researching the Brand and Competitor Analysis",
+    description:
+      "We start by hearing your story, going through the existing branding resources, and researching your competitors and audience.",
+    expandedContent:
+      "What makes your company different from your competitors? Research unfolds this. We break down your organization and your competitors on various aspects like culture, values, and employee experiences. This allows us to benchmark and uncover differentiating opportunities and attract the best-fit talents.",
+  },
+  {
+    id: 2,
+    title: "Aligning Research and Strategizing Branding",
+    description:
+      "Once we complete the research, we gather the insights and shape them into a strategy.",
+    expandedContent:
+      "Once we complete the research, we gather the insights and shape them into a strategy. This means identifying how your values and offerings can resonate with your employees and potential hires. It also aligns the approach with your specific business goals.",
+  },
+  {
+    id: 3,
+    title: "Creating Content Based on Strategy: Copy and Design",
+    description:
+      "Our team weaves interesting narratives supported by eye-catching visuals that match your employer brand identity.",
+    expandedContent:
+      "How do you communicate? Via content and visuals. Our team weaves interesting narratives supported by eye-catching visuals that match your employer brand identity. We take care of everything—social media, employee testimonials, job descriptions, and career pages—for you in the perfect tone and style.",
+  },
+  {
+    id: 4,
+    title: "Execution of the Strategy",
+    description:
+      "We uncover insights to decide the right platforms and channels to distribute content effectively.",
+    expandedContent:
+      "What channels do you distribute the content to? Where are your employees and potential hires spending their time? We uncover this insight and post relevant content on job boards, social media platforms, and the company’s website. With regular updates and consistent execution, we make sure your employer brand stays on the top of their minds.",
+  },
+  {
+    id: 5,
+    title: "Analyzing Content Performance",
+    description:
+      "We track engagement rates, application numbers, and social interactions to measure success.",
+    expandedContent:
+      "Key metrics like engagement rates, application numbers, social media interactions, and website traffic offer invaluable insights. Based on these data points and trends, we analyze how the content is performing to determine where improvements are needed.",
+  },
+  {
+    id: 6,
+    title: "Optimizing Strategy Based on Results",
+    description:
+      "Continuous testing and tweaking help keep your employer brand relevant and effective.",
+    expandedContent:
+      "Continuous testing and tweaking—whether that’s adjusting copies, exploring new social media channels, or updating content—help you fine-tune the strategy and achieve better results. Our goal is to keep your employer brand fresh, relevant, and effective in attracting the right kind of talent.",
+  },
+];
+
   return (
     <section className="w-full bg-white py-8 lg:py-20" data-section="content-process">
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
