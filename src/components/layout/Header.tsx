@@ -58,8 +58,9 @@ const DEFAULT_ITEMS: NavItem[] = [
       { label: "Social Media Video Production", href: "/services/social-media-video-production" },
     ],
   },
-  { label: "Case Studies", href: "#" },
+  { label: "Case Studies", href: "/casestudies" },
   { label: "Blog", href: "#" },
+  { label: "Resouces", href: "/resources"},
   { label: "Career", href: "/career" },
 ];
 

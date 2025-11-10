@@ -18,6 +18,9 @@ import { CorporateCommunicationServices } from "./screens/CorporateCommunication
 import { SocialMediaVideoProductionServices } from "./screens/SocialMediaVideoProductionServices/SocialMediaVideoProductionServices";
 import { AiSeoAgency } from "./screens/AiSeoAgency";
 //import { AgenticAi } from "./screens/AgenticAi";
+
+import { Casestudies } from "./screens/Casestudies";
+import { Resources } from "./screens/Resources";
 import { Careers } from "./screens/Careers/Careers";
 
 import { Contact } from "./screens/Contact";
@@ -53,7 +56,9 @@ export const App = (): JSX.Element => {
       <Route path="/services/social-media-video-production" element={<SocialMediaVideoProductionServices />}/>
       <Route path="/ai-seo-agency" element={<AiSeoAgency />} />
       {/* <Route path="/agentic-ai" element={<AgenticAi />} /> */}
-      
+
+      <Route path="/casestudies" element={<Casestudies/>}/>
+      <Route path="/resources" element={<Resources/>}/>
     <Route path="/career" element={<Careers />} />
 
       <Route path="/contact-us" element={<Contact />} />
