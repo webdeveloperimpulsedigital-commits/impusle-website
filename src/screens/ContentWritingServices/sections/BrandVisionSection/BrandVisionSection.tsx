@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "As brands, there's so much you want to communicate to your audience what do you stand for";
+    "Where strategy, storytelling, and SEO come together to make every word matter.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({

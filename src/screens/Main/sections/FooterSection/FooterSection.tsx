@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../FooterSection/FooterSection.css";
-import { ArrowUp, Share2 } from "lucide-react"; // Added Share icon
+import { ArrowUp, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/button";
 
@@ -119,20 +119,20 @@ export const FooterSection: React.FC = () => {
         </div>
       </div>
 
-      {/* === FIXED SOCIAL SHARE + SCROLL BUTTONS === */}
+      {/* === FIXED ACTION BUTTONS === */}
       <div className="fixedButtons">
-        {/* Social Share Button (toggle) */}
+        {/* Share toggle (mobile only) */}
         <button
           onClick={() => setShowConnectOptions(!showConnectOptions)}
-          className="actionBtn"
+          className="actionBtn mobileOnly"
           aria-label="Share or Connect"
         >
           <Share2 size={20} color="white" />
         </button>
 
-        {/* WhatsApp + Call buttons appear when clicked */}
+        {/* WhatsApp + Call (mobile only) */}
         {showConnectOptions && (
-          <div className="connectOptions">
+          <div className="connectOptions mobileOnly">
             <a
               href="https://wa.me/919769285224"
               target="_blank"
@@ -149,7 +149,7 @@ export const FooterSection: React.FC = () => {
           </div>
         )}
 
-        {/* Scroll to Top */}
+        {/* Scroll to Top (keeps working on desktop) */}
         {isVisible && (
           <button onClick={scrollToTop} className="actionBtn" aria-label="Back to Top">
             <ArrowUp size={18} color="white" />
@@ -200,12 +200,15 @@ export const FooterSection: React.FC = () => {
           background-color: #6b4bc7;
         }
 
+        /* Hide mobile-only stuff on desktop */
+        .mobileOnly { display: none; }
+
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
           .fixedButtons {
             right: 15px;
             bottom: 15px;
@@ -215,6 +218,8 @@ export const FooterSection: React.FC = () => {
             width: 44px;
             height: 44px;
           }
+          /* Show these only on mobile */
+          .mobileOnly { display: flex; }
         }
       `}</style>
     </footer>
