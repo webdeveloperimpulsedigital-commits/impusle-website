@@ -105,20 +105,17 @@ export const AbtZoomGridSection = (): JSX.Element => {
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-4 md:mb-1">
               <div className="flex flex-col items-start mb-4 lg:mb-0">
                 <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-xl md:text-2xl lg:text-[34px] mb-5">
-                  Our Results
+                  Together
                 </h2>
                 <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-2xl md:text-3xl lg:text-[52px] lg:mb-5">
-                  Speak for Us
+                  We Create the Difference
                 </h3>
               </div>
             </div>
 
             <div className="mb-8 md:mb-16">
               <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-sm md:text-base lg:text-[26px] xl:text[26px] sm:text-[13px] lg:leading-[40px] lg:w-6xl xl:w-7xl">
-                Our clients have heard it, experienced it, and loved it. Now, it's
-                your turn. Take a look at what our digital marketing agency has
-                created and achieved out of our love for creating brands, building
-                their stories. We promise to love it up if you are ready too.
+               At Impulse Digital, every idea is a team effort. From creative sparks to data-driven strategies, we collaborate, challenge, and cheer each other on to build brands that inspire. Because when great minds come together, difference isn’t just made - it’s created.
               </p>
             </div>
           </div>
@@ -253,12 +250,7 @@ export const AbtZoomGridSection = (): JSX.Element => {
 
       {/* ===== Mobile / Tablet ONLY slider (new) ===== */}
       <section className="block lg:hidden w-full bg-white py-8" aria-label="Our Work Gallery">
-        <div className="mx-auto px-4">
-          {/* Optional small heading for context */}
-          <h3 className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-lg font-semibold mb-3">
-            Our Work
-          </h3>
-        </div>
+      
 
         <div className="mobile-slider">
           {/* Slides: show a hint of the next one with 80% width cards */}

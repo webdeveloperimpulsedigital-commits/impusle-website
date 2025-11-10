@@ -7,7 +7,7 @@ import { AbtZoomGridSection } from "./sections/AbtZoomGridSection";
 // import { BlogSection } from "../Main/sections/BlogSection/BlogSection";
 // import { ContactSection } from "./sections/ContactSection/ContactSection";
 // import { FAQSection } from "./sections/FAQSection/FAQSection";
-// import { TeamSection } from "./sections/TeamSection/TeamSection";
+import { TeamSection } from "./sections/TeamSection/TeamSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
 
 export const AboutUs = (): JSX.Element => {
@@ -23,7 +23,7 @@ export const AboutUs = (): JSX.Element => {
         <BlogSection />
         <ContactSection />
         <FAQSection /> */}
-        {/* <TeamSection /> */}
+        <TeamSection />
         <FooterSection />
       </div>
     </main>
