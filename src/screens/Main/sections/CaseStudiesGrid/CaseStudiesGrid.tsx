@@ -392,7 +392,8 @@ export const CaseStudiesGrid = (): JSX.Element => {
                 </span>
                 <br />
                 <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[26px]">
-                  Demonstrating Real-life Results
+                Playbook of Proven Wins 
+
                 </span>
               </h2>
             </div>
