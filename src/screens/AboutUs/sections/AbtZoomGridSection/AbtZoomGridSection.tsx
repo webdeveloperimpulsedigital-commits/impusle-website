@@ -11,28 +11,27 @@ export const AbtZoomGridSection = (): JSX.Element => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  // ✅ Track screen size
+  // Track screen size
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
+    const checkScreenSize = () => setIsLargeScreen(window.innerWidth >= 1024);
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // ✅ Ensure video plays once and stays continuous
+  // Ensure video plays
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => console.log("Autoplay prevented"));
-      }
-      video.loop = true; // keep looping smoothly
+      const p = video.play();
+      if (p !== undefined) p.catch(() => {/* autoplay blocked */});
+      video.loop = true;
+      video.muted = true;
+      (video as any).playsInline = true;
     }
   }, []);
 
+  // Desktop zoom/pin only (no change to your desktop behavior)
   useLayoutEffect(() => {
     if (!isLargeScreen) return;
 
@@ -75,7 +74,6 @@ export const AbtZoomGridSection = (): JSX.Element => {
       },
     });
 
-    // ✅ Smooth zooming while keeping video playing
     tl.to(others, { opacity: 0.15, duration: 0.2 }, 0)
       .to(
         tile,
@@ -99,74 +97,76 @@ export const AbtZoomGridSection = (): JSX.Element => {
   }, [isLargeScreen]);
 
   return (
-    <div className="page bg-gray pt-8 md:pt-16 hidden lg:block" data-section="portfolio">
-      <section id="zoom-grid-section">
-        <div className="wrap-grid">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-4 md:mb-1">
-            <div className="flex flex-col items-start mb-4 lg:mb-0">
-              <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-xl md:text-2xl lg:text-[34px] mb-5">
-                Our Results
-              </h2>
-              <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-2xl md:text-3xl lg:text-[52px] lg:mb-5">
-                Speak for Us
-              </h3>
+    <>
+      {/* ===== Desktop / Laptop (unchanged) ===== */}
+      <div className="page bg-gray pt-8 md:pt-16 hidden lg:block" data-section="portfolio">
+        <section id="zoom-grid-section">
+          <div className="wrap-grid">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-4 md:mb-1">
+              <div className="flex flex-col items-start mb-4 lg:mb-0">
+                <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-xl md:text-2xl lg:text-[34px] mb-5">
+                  Our Results
+                </h2>
+                <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-2xl md:text-3xl lg:text-[52px] lg:mb-5">
+                  Speak for Us
+                </h3>
+              </div>
+            </div>
+
+            <div className="mb-8 md:mb-16">
+              <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-sm md:text-base lg:text-[26px] xl:text[26px] sm:text-[13px] lg:leading-[40px] lg:w-6xl xl:w-7xl">
+                Our clients have heard it, experienced it, and loved it. Now, it's
+                your turn. Take a look at what our digital marketing agency has
+                created and achieved out of our love for creating brands, building
+                their stories. We promise to love it up if you are ready too.
+              </p>
             </div>
           </div>
 
-          <div className="mb-8 md:mb-16">
-            <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-sm md:text-base lg:text-[26px] xl:text[26px] sm:text-[13px] lg:leading-[40px] lg:w-6xl xl:w-7xl">
-              Our clients have heard it, experienced it, and loved it. Now, it's
-              your turn. Take a look at what our digital marketing agency has
-              created and achieved out of our love for creating brands, building
-              their stories. We promise to love it up if you are ready too.
-            </p>
-          </div>
-        </div>
+          <div className="grid-wrap" ref={gridWrapRef}>
+            <div className="grid1" ref={gridRef}>
+              {/* Row 1 */}
+              <div className="tile" data-grid-item>
+                <img src="/impulse-website/12_Mastercard.jpg" alt="Project 1" />
+              </div>
 
-        <div className="grid-wrap" ref={gridWrapRef}>
-          <div className="grid1" ref={gridRef}>
-            {/* Row 1 */}
-            <div className="tile" data-grid-item>
-              <img src="/impulse-website/12_Mastercard.jpg" alt="Project 1" />
-            </div>
+              {/* Center video tile */}
+              <div className="tile video" data-grid-item id="zoom-tile" ref={tileRef}>
+                <video
+                  id="zoom-video"
+                  ref={videoRef}
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  preload="auto"
+                >
+                  <source src="/impulse-website/impulse-video.mp4" type="video/mp4" />
+                </video>
+              </div>
 
-            {/* ✅ VIDEO (continues playing even while scrolling) */}
-            <div className="tile video" data-grid-item id="zoom-tile" ref={tileRef}>
-              <video
-                id="zoom-video"
-                ref={videoRef}
-                autoPlay
-                muted
-                playsInline
-                loop
-                preload="auto"
-              >
-                <source src="/impulse-website/impulse-video.mp4" type="video/mp4" />
-              </video>
-            </div>
+              <div className="tile" data-grid-item>
+                <img src="/impulse-website/10_Dmart.jpg" alt="Project 3" />
+              </div>
 
-            <div className="tile" data-grid-item>
-              <img src="/impulse-website/10_Dmart.jpg" alt="Project 3" />
-            </div>
-
-            {/* Row 2 */}
-            <div className="tile" data-grid-item>
-              <img src="/impulse-website/11_Emech.jpg" alt="Project 4" />
-            </div>
-            <div className="tile" data-grid-item>
-              <img src="/impulse-website/12_HEM.jpg" alt="Project 5" />
-            </div>
-            <div className="tile" data-grid-item>
-              <img src="/impulse-website/09_Automag.jpg" alt="Project 6" />
+              {/* Row 2 */}
+              <div className="tile" data-grid-item>
+                <img src="/impulse-website/11_Emech.jpg" alt="Project 4" />
+              </div>
+              <div className="tile" data-grid-item>
+                <img src="/impulse-website/12_HEM.jpg" alt="Project 5" />
+              </div>
+              <div className="tile" data-grid-item>
+                <img src="/impulse-website/09_Automag.jpg" alt="Project 6" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* === Scoped Styles === */}
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
+        {/* Desktop styles (unchanged) */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
 :root { --gap: 16px; --radius: 12px; }
 
 .page { min-height: 200vh; }
@@ -215,7 +215,7 @@ export const AbtZoomGridSection = (): JSX.Element => {
   pointer-events: none; 
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
   #zoom-grid-section .grid1 { 
     grid-template-columns: repeat(2, 1fr); 
@@ -225,6 +225,7 @@ export const AbtZoomGridSection = (): JSX.Element => {
   }
 }
 
+/* Mobile */
 @media (max-width: 640px) {
   #zoom-grid-section .grid-wrap { 
     padding: 0 1rem; 
@@ -241,14 +242,77 @@ export const AbtZoomGridSection = (): JSX.Element => {
   }
 }
 
-      .wrap-grid{max-width:100%;margin:auto;position:relative;background:var(--bg);padding:0rem 6rem 0rem}
-
-      @media (max-width:980px){
-      .wrap-grid{max-width:100%;margin:auto;position:relative;background:var(--bg);padding:0rem 1.2rem 0rem}
-      }
+.wrap-grid{max-width:100%;margin:auto;position:relative;background:var(--bg);padding:0rem 6rem 0rem}
+@media (max-width:980px){
+  .wrap-grid{padding:0rem 1.2rem 0rem}
+}
           `,
-        }}
-      />
-    </div>
+          }}
+        />
+      </div>
+
+      {/* ===== Mobile / Tablet ONLY slider (new) ===== */}
+      <section className="block lg:hidden w-full bg-white py-8" aria-label="Our Work Gallery">
+        <div className="mx-auto px-4">
+          {/* Optional small heading for context */}
+          <h3 className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-lg font-semibold mb-3">
+            Our Work
+          </h3>
+        </div>
+
+        <div className="mobile-slider">
+          {/* Slides: show a hint of the next one with 80% width cards */}
+          <div className="mobile-slide">
+            <img src="/impulse-website/12_Mastercard.jpg" alt="Mastercard Campaign" />
+          </div>
+          <div className="mobile-slide">
+            <img src="/impulse-website/10_Dmart.jpg" alt="DMart Campaign" />
+          </div>
+          <div className="mobile-slide">
+            <img src="/impulse-website/11_Emech.jpg" alt="Emech Project" />
+          </div>
+          <div className="mobile-slide">
+            <img src="/impulse-website/12_HEM.jpg" alt="HEM Initiative" />
+          </div>
+          <div className="mobile-slide">
+            <img src="/impulse-website/09_Automag.jpg" alt="Automag Project" />
+          </div>
+        </div>
+
+        {/* Mobile slider styles */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+.mobile-slider{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  gap:12px;
+  padding: 0 16px 6px;
+}
+.mobile-slider::-webkit-scrollbar{ height:6px; }
+.mobile-slider::-webkit-scrollbar-thumb{ background:#d9d9d9; border-radius:4px; }
+
+.mobile-slide{
+  flex:0 0 80%;
+  scroll-snap-align:start;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,0.12);
+  background:#f5f5f5;
+}
+.mobile-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  aspect-ratio: 4 / 5;
+}
+            `,
+          }}
+        />
+      </section>
+    </>
   );
 };
