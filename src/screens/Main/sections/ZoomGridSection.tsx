@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // ⬇️ Import your grid section
-import { CaseStudiesGrid } from "../CaseStudiesGrid/CaseStudiesGrid"; // <-- change path as needed
+import { CaseStudiesGrid } from "..CaseStudiesGrid/CaseStudiesGrid"; // <-- change path as needed
 
 gsap.registerPlugin(ScrollTrigger);
 
