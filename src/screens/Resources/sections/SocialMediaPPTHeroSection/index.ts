@@ -1,0 +1,1 @@
+export { SocialMediaPPTHeroSection } from "./SocialMediaPPTHeroSection";

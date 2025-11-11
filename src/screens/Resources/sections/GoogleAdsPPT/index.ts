@@ -1,0 +1,1 @@
+export { GoogleAdsPPT } from "./GoogleAdsPPT";

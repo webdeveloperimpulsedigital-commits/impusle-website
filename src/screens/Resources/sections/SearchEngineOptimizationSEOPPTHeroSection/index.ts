@@ -1,0 +1,1 @@
+export { SearchEngineOptimizationSEOPPTHeroSection } from "./SearchEngineOptimizationSEOPPTHeroSection";

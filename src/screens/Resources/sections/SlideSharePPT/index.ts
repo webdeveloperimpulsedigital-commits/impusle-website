@@ -1,0 +1,1 @@
+export { SlideSharePPT } from "./SlideSharePPT";

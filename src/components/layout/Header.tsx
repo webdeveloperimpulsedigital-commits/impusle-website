@@ -60,7 +60,16 @@ const DEFAULT_ITEMS: NavItem[] = [
   },
   { label: "Case Studies", href: "/casestudies" },
   { label: "Blog", href: "#" },
-  { label: "Resouces", href: "/resources"},
+  // { label: "Resouces", href: "/resources"},
+
+  {
+    label: "Resouces",
+    href: "/resources",
+    hasDropdown: true,
+    dropdownItems: [
+      { label: "Slideshare PPT", href: "/resources/Slideshare-PPT/" }
+    ]
+    },
   { label: "Career", href: "/career" },
 ];
 
