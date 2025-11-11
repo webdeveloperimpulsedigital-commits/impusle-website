@@ -254,7 +254,7 @@ export const ApplicationFormSection = (): JSX.Element => {
             >
               <img src="/impulse-website/footer-call.png" alt="Phone" className="w-4 h-4" />
               <span className="[font-family:'DM_Sans',Helvetica] font-medium">
-                +91-9769285224
+                +91-8850234353
               </span>
             </a>
           </div>

@@ -96,9 +96,9 @@ export const FooterSection: React.FC = () => {
               <span className="footer__circleIcon">
                 <img src="/impulse-website/footer-location.png" alt="Location" />
               </span>
-              304 – 305, Chirag Infotech, Road No. 16/Z,
-              Ambica Nagar, Wagle Industrial Estate,
-              Thane, Mumbai 400604
+              304 - 305, Chirag Infotech, Road No. 16/Z,
+  Ambica Nagar, Wagle Industrial Estate,
+  Thane, Mumbai 400604
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export const FooterSection: React.FC = () => {
           </div>
           <div className="footer__links">
             <a href="#">Privacy Policy</a>
-            <span className="footer__dot">•</span>
+            <span className="footer__dot">|</span>
             <a href="#">Terms & Conditions</a>
           </div>
         </div>
