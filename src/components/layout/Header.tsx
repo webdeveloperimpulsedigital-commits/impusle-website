@@ -37,7 +37,7 @@ const DEFAULT_ITEMS: NavItem[] = [
     href: "/services",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Content Writing Services", href: "/services/content-writing-services" },
+      { label: "Content Writing ", href: "/services/content-writing-services" },
       { label: "Performance Marketing (PPC)", href: "/services/performance-marketing" },
       { label: "Social Media Marketing", href: "/services/social-media-marketing" },
       {
@@ -45,10 +45,10 @@ const DEFAULT_ITEMS: NavItem[] = [
         href: "/services/search-engine-optimization",
         hasSubDropdown: true,
         subItems: [
-          { label: "Enterprise SEO Services", href: "/services/search-engine-optimization/enterprise-seo-services" },
-          { label: "eCommerce SEO Services", href: "/services/search-engine-optimization/ecommerce-seo-services" },
-          { label: "B2B SEO Services", href: "/services/search-engine-optimization/b2b-seo-services" },
-          { label: "Local SEO Services", href: "/services/search-engine-optimization/local-seo-services" },
+          { label: "Enterprise SEO ", href: "/services/search-engine-optimization/enterprise-seo-services" },
+          { label: "eCommerce SEO ", href: "/services/search-engine-optimization/ecommerce-seo-services" },
+          { label: "B2B SEO", href: "/services/search-engine-optimization/b2b-seo-services" },
+          { label: "Local SEO ", href: "/services/search-engine-optimization/local-seo-services" },
         ],
       },
       { label: "Website Development", href: "/services/website-development" },

@@ -24,7 +24,7 @@ const servicesData: Service[] = [
   },
   {
     number: "03",
-    title: "Production",
+    title: " Video Production",
     description: ["Scriptwriting and Storyboarding", "Facebook and Instagram videography", "YouTube videography", "Voiceover recording"],
     image: "/rectangle-37-6.png",
   },

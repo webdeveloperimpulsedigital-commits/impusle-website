@@ -392,14 +392,15 @@ export const CaseStudiesGrid = (): JSX.Element => {
                 </span>
                 <br />
                 <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[26px]">
-                 Where Ideas Solve Challenges 
+                Playbook of Proven Wins 
+
                 </span>
               </h2>
             </div>
 
             <Button className="w-[220px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
               >
                 See All Case Studies

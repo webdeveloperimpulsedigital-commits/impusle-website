@@ -13,41 +13,36 @@ export const ScrollingStripsSection = (): JSX.Element => {
   ];
 
   const logos = [
+    { name: "abg-hindalco", src: "abg-hindalco.jpg" },
     { name: "Hindustan Unilever Limited", src: "client-logo6.png" },
+    { name: "TATA", src: "Tata_Soulfull.png" },
+    { name: "abg-chemicals", src: "abg-chemicals.png" },
     { name: "Amazon", src: "client-logo2.png" },
     { name: "OLA", src: "client-logo3.png" },
     { name: "Dmart", src: "client-logo4.png" },
-    { name: "OLA", src: "Aditya_Birla_Group_Logo.svg (1).png" },
+    { name: "Aditya Birla Group", src: "Aditya_Birla_Group_Logo.svg (1).png" },
     { name: "Tata", src: "Tata-Consumer-Logo (1).jpg" },
     { name: "HDFC Securities", src: "client-logo5.png" },
-    { name: "MasterCard", src: "client-logo1.png" },
-    { name: "OLA", src: "aditya-birla-fashion.jpg" },
-    { name: "birla_cellulose_99fde4a4bc (1)", src: "birla_cellulose_99fde4a4bc (1).webp" },
-    { name: "Croda_Masterbrand_LockUp_GREEN_RGB (1)", src: "Croda_Masterbrand_LockUp_GREEN_RGB (1).png" },
-    { name: "Tata", src: "Tata-Consumer-Logo (1).jpg" },
+     { name: "Chings", src: "chings.png" },
+    { name: "MasterCard", src: "client-logo1.png"},
+    { name: "Birla Cellulose", src: "birla_cellulose_99fde4a4bc (1).webp" },
+    { name: "Croda", src: "Croda_Masterbrand_LockUp_GREEN_RGB (1).png" },
     { name: "brand-ico", src: "brand-ico.png" },
     { name: "navyasa", src: "images (1).png" },
     { name: "vendiman", src: "vendiman.jpg" },
     { name: "rk-bazar", src: "rk-bazar.jpg" },
     { name: "Goma", src: "Goma-new.png" },
-    { name: "GoldGym (1)", src: "GoldGym (1).png" },
-    { name: "dechen", src: "dechen.jpg" },
     { name: "ismg", src: "ismg.jpg" },
-    { name: "falcon-logo-1", src: "falcon-logo-1.png" },
-    { name: "datar (1)", src: "datar (1).png" },
-    { name: "JB (1)", src: "JB (1).png" },
-    { name: "keva-group (1)", src: "keva-group (1).png" },
-    { name: "emequip-logo (1)", src: "emequip-logo (1).png" },
-    { name: "emechyale-logo (1)", src: "emechyale-logo (1).png" },
-    { name: "cranedge (1)", src: "cranedge (1).jpg" },
-    { name: "electromech (1)", src: "electromech (1).jpg" },
-    { name: "aster (2)", src: "aster (2).jpg" },
-    { name: "lg (1)", src: "lg (1).png" },
-    { name: "hem-logo-1 (1)", src: "hem-logo-1 (1).png" },
+    { name: "datar", src: "datar (1).png" },
+    { name: "JB", src: "JB (1).png" },
+    { name: "keva-group", src: "keva-group (1).png" },
+    { name: "electromech", src: "electromech (1).jpg" },
+    { name: "aster", src: "aster (2).jpg" },
+    { name: "lg", src: "lg (1).png" },
+    { name: "hem-logo", src: "hem-logo-1 (1).png" },
     { name: "tjsb", src: "tjsb.jpg" },
     { name: "more", src: "more.jpg" },
-    { name: "hdfc_logo (1)", src: "hdfc_logo (1).jpg" },
-    
+    { name: "hdfc_logo", src: "hdfc_logo (1).jpg" },
   ];
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -106,18 +101,18 @@ export const ScrollingStripsSection = (): JSX.Element => {
             <div className="flex flex-col items-start mb-6 lg:mb-0">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#030019] lg:text-[34px] sm:text-[16px]">
-                  Businesses
+                  Brands
                 </span>
                 <br />
                 <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[26px]">
-                  We Have Transformed
+                  That Trust Our Impulse
                 </span>
               </h2>
             </div>
 
             <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
               >
                 Connect Now
@@ -133,9 +128,9 @@ export const ScrollingStripsSection = (): JSX.Element => {
       </div>
 
       {/* Logo Carousel */}
-      <div className="relative overflow-visible group">
-        <div className="flex animate-marquee-fast group-hover:[animation-play-state:paused]">
-          {[...Array(3)].map((_, setIndex) => (
+      <div className="relative overflow-hidden group m-0 p-0">
+        <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
+          {[...Array(2)].map((_, setIndex) => (
             <div
               key={`logo-set-${setIndex}`}
               className="flex items-center flex-shrink-0"
@@ -143,7 +138,7 @@ export const ScrollingStripsSection = (): JSX.Element => {
               {logos.map((logo, index) => (
                 <div
                   key={`logo-${setIndex}-${index}`}
-                  className="flex-shrink-0 w-[100px] h-[70px] md:w-[140px] md:h-[90px] lg:w-[180px] lg:h-[120px] bg-white border border-gray-200 p-2 md:p-4 flex items-center justify-center client-logo"
+                  className="flex-shrink-0 w-[100px] h-[70px] md:w-[140px] md:h-[90px] lg:w-[180px] lg:h-[120px] bg-white border border-gray-200 flex items-center justify-center client-logo"
                 >
                   <img
                     className="max-w-full max-h-full object-contain"
@@ -172,17 +167,19 @@ export const ScrollingStripsSection = (): JSX.Element => {
           }
         }
 
-        /* Logo marquee animation (only speed changed) */
-        @keyframes marquee-fast {
+        /* Infinite logo marquee */
+        @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
 
-        .animate-marquee-fast {
-          animation: marquee-fast 7s linear infinite;
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 30s linear infinite;
         }
 
-        .animate-marquee-fast:hover {
+        .animate-marquee:hover {
           animation-play-state: paused;
         }
       `}</style>

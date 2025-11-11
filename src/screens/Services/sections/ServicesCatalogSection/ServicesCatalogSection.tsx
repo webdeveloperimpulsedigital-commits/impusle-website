@@ -107,14 +107,20 @@ export const ServicesCatalogSection = (): JSX.Element => {
       id="sec-border"
     >
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        {/* Header - Left Aligned */}
+        <div className="text-left mb-12 lg:mb-16">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-lg mb-2">
             Our Expertise
           </p>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl mb-6">
+          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl mb-4">
             Comprehensive Service Portfolio
           </h2>
+          <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-base leading-relaxed max-w-none">
+            At Impulse Digital, we combine creativity with performance to deliver 
+            360° marketing services — from strategy and storytelling to execution 
+            and optimization. Explore our full range of offerings designed to help 
+            brands stand out, connect, and grow.
+          </p>
         </div>
 
         {/* Services Grid */}
@@ -215,27 +221,11 @@ export const ServicesCatalogSection = (): JSX.Element => {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        {/* <div className="text-center mt-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#666] text-base mb-6">
-            Need a custom solution? We create tailored strategies for unique business needs.
-          </p>
-          <Button className="cta-btn bg-[#543d98] hover:bg-white hover:text-[#543d98] text-white px-8 py-4 rounded-xl font-bold border border-[#543d98] transition-all duration-300 group inline-flex items-center gap-2">
-            Get Custom Quote
-            <img
-              className="cta-icon w-4 h-4 ml-2 transition-all duration-300 group-hover:rotate-45 pointer-events-none"
-              alt="Arrow"
-              src="/impulse-website/button-icon.svg"
-            />
-          </Button>
-        </div> */}
       </div>
 
-      {/* ✅ Shared CTA hover behavior for all buttons */}
       <style>{`
         .cta-btn:hover .cta-icon {
-          filter: brightness(0); /* makes icon black on hover */
+          filter: brightness(0);
         }
       `}</style>
     </section>

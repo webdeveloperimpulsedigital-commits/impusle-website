@@ -39,21 +39,47 @@ const Counter: React.FC<CounterProps> = ({
     <div className="flex flex-col items-center md:items-start w-full p-2 md:p-0">
       {/* number row */}
       <div className="counter-num flex items-end gap-1 mb-2 whitespace-nowrap">
-        <FlipNumbers
-          height={isMobile ? 26 : 88}
-          width={isMobile ? 18 : 40}
-          color="#543d98"
-          background="transparent"
-          play={isVisible}
-          perspective={1000}
-          numbers={count.toString()}
-          numberStyle={{
-            fontSize: isMobile ? "26px" : "60px",
-            fontWeight: "bold",
-            fontFamily: "DM Sans, Helvetica",
-            lineHeight: "1",
-          }}
-        />
+        <div className="flex items-baseline">
+          {/* Split number to make '.' perfectly aligned */}
+          {count.toString().split("").map((char, idx) =>
+            char === "." ? (
+              <span
+                key={idx}
+                style={{
+                  color: "#543d98", // brand violet
+                  fontSize: isMobile ? "30px" : "68px",
+                  fontWeight: "bold",
+                  fontFamily: "DM Sans, Helvetica",
+                  lineHeight: "0.8",
+                  margin: "0 3px",
+                  position: "relative",
+                  top: isMobile ? "-10px" : "-16px", // ✅ precise mid alignment
+                  display: "inline-block",
+                }}
+              >
+                {char}
+              </span>
+            ) : (
+              <FlipNumbers
+                key={idx}
+                height={isMobile ? 26 : 88}
+                width={isMobile ? 18 : 40}
+                color="#543d98"
+                background="transparent"
+                play={isVisible}
+                perspective={1000}
+                numbers={char}
+                numberStyle={{
+                  fontSize: isMobile ? "26px" : "60px",
+                  fontWeight: "bold",
+                  fontFamily: "DM Sans, Helvetica",
+                  lineHeight: "1",
+                }}
+              />
+            )
+          )}
+        </div>
+
         <span className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-[22px] md:text-[80px] leading-[1] md:leading-none pb-[2px] md:pb-0">
           {suffix}
         </span>
@@ -120,11 +146,11 @@ export const AboutSection = (): JSX.Element => {
       <div className="wrap-abt">
         <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
           <span className="text-[#030019] lg:text-[34px] sm:text-[16px]">
-            Know Your{" "}
+            Impulse Digital{" "}
           </span>
           <br />
           <span className="font-bold text-[#543d98] lg:text-[49px] xl:text-[52px] md:text-[52px] sm:text-[26px]">
-            Digital Marketing Agency
+            Where Brands Go from Seen<br></br>To Remembered
           </span>
         </h2>
       </div>
@@ -151,7 +177,7 @@ export const AboutSection = (): JSX.Element => {
 
           <Button className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-6 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border-[#543d98] hover:border hover:border-[#543d98]">
             <Link
-              to="/contact"
+              to="/contact-us"
               className="[font-family:'DM_Sans',Helvetica] font-bold text-white text-sm md:text-base group-hover:text-[#543d98] transition-colors duration-300"
             >
               Connect Now
@@ -231,7 +257,6 @@ export const AboutSection = (): JSX.Element => {
         .counter-cell br { display: none; }
         hr.abt-counter { display: none; }
 
-        /* 🔧 Fix overlap on mobile */
         .counter-num {
           min-height: 38px;  
           margin-bottom: 8px; 
