@@ -1,0 +1,1 @@
+export { SlideSharePPTHeroSection } from "./SlideSharePPTHeroSection";

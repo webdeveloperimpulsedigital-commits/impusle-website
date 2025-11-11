@@ -1,0 +1,1 @@
+export { ContentMarketingPPTHeroSection } from "./ContentMarketingPPTHeroSection";

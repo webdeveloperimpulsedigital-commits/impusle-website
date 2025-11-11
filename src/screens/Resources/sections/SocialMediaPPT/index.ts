@@ -1,0 +1,1 @@
+export { SocialMediaPPT } from "./SocialMediaPPT";

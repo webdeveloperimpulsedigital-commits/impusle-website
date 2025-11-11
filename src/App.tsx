@@ -21,6 +21,13 @@ import { AiSeoAgency } from "./screens/AiSeoAgency";
 
 import { Casestudies } from "./screens/Casestudies";
 import { Resources } from "./screens/Resources";
+import { SlideSharePPTS } from "./screens/Resources/SlideSharePPTS";
+import { SearchEngineOptimizationSEOS } from "./screens/Resources/SearchEngineOptimizationSEOS";
+import { SocialMediaPPTS } from "./screens/Resources/SocialMediaPPTS";
+import { GoogleAdsPPTS } from "./screens/Resources/GoogleAdsPPTS";
+import { ContentMarketingPPTS } from "./screens/Resources/ContentMarketingPPTS";
+import { WebsiteDesignDevelopmentPPTS } from "./screens/Resources/WebsiteDesignDevelopmentPPTS";
+import { EmployerBrandingPPTS } from "./screens/Resources/EmployerBrandingPPTS";
 import { Careers } from "./screens/Careers/Careers";
 
 import { Contact } from "./screens/Contact";
@@ -59,6 +66,15 @@ export const App = (): JSX.Element => {
 
       <Route path="/casestudies" element={<Casestudies/>}/>
       <Route path="/resources" element={<Resources/>}/>
+<Route path="/resources/slideshare-ppt" element={<SlideSharePPTS />} />
+<Route path="/resources/search-engine-optimization-PPT" element={<SearchEngineOptimizationSEOS />} />
+<Route path="/resources/social-media-PPT" element={<SocialMediaPPTS />} />
+<Route path="/resources/google-ads-PPT" element={<GoogleAdsPPTS />} />
+<Route path="/resources/content-marketing-PPT" element={<ContentMarketingPPTS />} />
+<Route path="/resources/website-design-development-PPT" element={<WebsiteDesignDevelopmentPPTS/>} />
+<Route path="/resources/employer-branding-PPT" element={<EmployerBrandingPPTS />} />
+
+
     <Route path="/career" element={<Careers />} />
 
       <Route path="/contact-us" element={<Contact />} />

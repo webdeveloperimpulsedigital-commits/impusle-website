@@ -1,0 +1,77 @@
+/* Make sure this filename matches the import exactly */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+.slideshare-page .row{
+  display: flex;
+}
+.slideshare-page { background: #f7f7f7; }
+
+/* ——— GRID ——— */
+.ppt-grid {
+  display: grid !important;                /* force grid even if Bootstrap tries flex */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 991.98px) { .ppt-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 575.98px) { .ppt-grid { grid-template-columns: 1fr; } }
+
+.ppt-card { width: 100%; }
+
+.ppt-link { display: block; text-decoration: none; }
+
+.ppt-thumb-wrap {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+  padding: 10px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.ppt-thumb {
+  display: block;
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  background: #fafafa;
+}
+
+/* Corner brackets */
+.bracket { position: absolute; width: 26px; height: 26px; border: 2px solid transparent; pointer-events: none; }
+.bracket.tl { top: 6px; left: 6px; border-left-color:#e7e7e7; border-top-color:#e7e7e7; }
+.bracket.tr { top: 6px; right: 6px; border-right-color:#e7e7e7; border-top-color:#e7e7e7; }
+.bracket.bl { bottom: 6px; left: 6px; border-left-color:#e7e7e7; border-bottom-color:#e7e7e7; }
+.bracket.br { bottom: 6px; right: 6px; border-right-color:#e7e7e7; border-bottom-color:#e7e7e7; }
+
+.ppt-thumb-wrap:hover {
+  transform: translateY(-3px);
+  border-color: #e0e0e0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ——— SIDEBAR ——— */
+.ppt-sidebar { padding-left: 18px; }
+@media (min-width: 992px) { .ppt-sidebar { position: sticky; top: 24px; } }
+
+.ppt-search {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.ppt-input {
+  height: 44px; border: 1px solid #e3e3e3; padding: 0 12px; border-radius: 2px; background:#fff;
+}
+.ppt-search-btn { height: 44px; border: 0; background: #543d98; color: #fff; font-weight: 600; border-radius: 2px; cursor: pointer; }
+.ppt-search-btn:hover { filter: brightness(0.95); }
+
+/* Categories */
+.ppt-cats__title { font-weight: 700; margin: 0 0 16px; position: relative; }
+.ppt-cats__title::after { content:""; display:block; width:56px; height:3px; background:#543d98; margin-top:6px; }
+
+.ppt-cats__list { list-style:none; margin:0; padding:0; border-top:1px solid #ececec; }
+.ppt-cats__list li { border-bottom:1px solid #ececec; padding:14px 0; }
+.ppt-cat { color:#222; text-decoration:none; }
+.ppt-cat:hover { color: #543d98; }
