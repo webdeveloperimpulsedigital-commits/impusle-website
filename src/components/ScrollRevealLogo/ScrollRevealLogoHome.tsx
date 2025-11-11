@@ -132,7 +132,7 @@ export const ScrollRevealLogoHome: React.FC<ScrollRevealLogoProps> = ({
               width: size,
               height: size,
               zIndex: 999,
-              transition: 'all 2s cubic-bezier(0.22, 1, 0.36, 1)',
+              transition: 'all 3s cubic-bezier(0.22, 1, 0.36, 1)',
             });
           } else if (sectionName === 'case-studies') {
             const size = isMobile ? '50px' : isTablet ? '70px' : '80px';

@@ -476,7 +476,5 @@ const ServicesSection = () => {
   );
 };
 
-
-
 export default ServicesSection;
 export { ServicesSection };
