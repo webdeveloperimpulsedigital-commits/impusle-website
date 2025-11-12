@@ -10,8 +10,8 @@ type Member = {
 export const TeamSection = (): JSX.Element => {
   const teamMembers: Member[] = [
     {
-      name: "Mahendra Prajapati",
-      position: "SEO Manager",
+      name: "Adwait Joshi",
+      position: "Founder & Director",
       image: "/impulse-website/adwait-sir.jpg",
     },
     {
