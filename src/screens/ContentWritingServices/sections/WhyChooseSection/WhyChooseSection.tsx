@@ -143,7 +143,7 @@ export const WhyChooseSection = (): JSX.Element => {
           <div>
             <div className="relative overflow-hidden rounded-[28px] shadow-lg">
               <img
-                src="/impulse-website/content-full-width-img.jpg"
+                src="/impulse-website/Why CHoose - Data Driven Creativity.jpg"
                 alt="Content strategy workspace"
                 className="w-full h-[510px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                 loading="lazy"
