@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "There are thousands of brands in India. Probably hundreds in the same industry as yours struggling for attention. How would you differentiate yours ?";
+    "We help you define who you are and make the world remember it.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -217,7 +217,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Having a logo is not branding. What does your brand stand for? What is its identity? How does it communicate with its audience? What’s the tone, voice, language, appeal, look and feel? A creative branding agency is the one who’ll help you put all of this into consistent visual and messaging for you. A strong brand builds trust, loyalty, and sets you apart from your competitors with help of a distinct identity, personal story, and an emotional connection.
+            Every brand begins with a story, and we help you tell yours with authenticity and depth. Impulse brings together design, tone, and strategy to create identities that connect. From logos to campaigns, we shape how your audience perceives and remembers you. We focus on creating consistency across every platform and touchpoint. Our branding process is grounded in your values and driven by creativity. We turn your vision into visuals and narratives that feel true to your purpose. With us, your brand becomes distinct, memorable, and trusted.
           </p>
         </div>
       </div>

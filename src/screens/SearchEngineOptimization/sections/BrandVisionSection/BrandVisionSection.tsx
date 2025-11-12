@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Finding out the best way to be found online or drive more traffic for your brand?";
+    "SEO - Turning your online presence into a search engine’s favorite destination";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -223,7 +223,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            We are an SEO marketing agency that has cracked the complex and multifaceted SEO field to help your brand’s online assets appear within the searches of your users and become more intelligible and discoverable to your audience as well as the search engine. We employ multiple SEO efforts broken down into on-page, off-page, and technical SEO to make sure that the search engine matches your content to the perceived intent of the search queries. The better the search engines understand you, the higher your chances of ranking on top of your audience’s search results.
+            We go beyond keywords and backlinks to build sustainable visibility. Our team dives deep into your audience’s search intent, competitor landscape, and on-page performance to create strategies that work smarter, not louder. Every technical and creative improvement strengthens your digital presence. From metadata to meaningful content, Impulse ensures your brand gets found and chosen. We align SEO with business goals, not vanity metrics, so every improvement translates into growth. Our goal is simple: to help you rank higher, reach further, and stay relevant. With Impulse, your SEO is optimized for both today and tomorrow.
           </p>
         </div>
       </div>

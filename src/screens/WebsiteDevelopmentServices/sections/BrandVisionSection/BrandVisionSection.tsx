@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "In an increasingly connected world where more than 50% of individuals turn to the internet for their queries, a website is a direct gateway to your brand";
+    "Your website should not just be seen, it should be remembered.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -204,10 +204,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body Copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            The challenge begins when this gateway takes minutes to load, crashes frequently, is incompatible with the browser, or worse, confuses your audience. 
-            This is why you need to partner up with a website development company — a team of experts who can build your website from scratch or optimize the one you already have 
-            for a digital-first experience. These website design and development services ensure that all aspects of your business’s website — aesthetics, communication, and ease of use — 
-            are optimized for your audience.
+            We design websites that work as beautifully as they look. At Impulse, design meets development to create seamless, high-performing digital experiences. We focus on clarity, speed, and engagement to turn visitors into believers. From structure to storytelling, every element serves your brand’s purpose. Our team ensures your website aligns perfectly with your goals and visual identity. With responsive design and strong functionality, your site becomes your most effective marketing tool. We do not just develop websites, we craft digital experiences that leave a lasting impression. 
           </p>
         </div>
       </div>

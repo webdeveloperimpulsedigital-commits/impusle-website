@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Imagine having an eCommerce store that serves no purpose. You think you’ve done everything right—the products are";
+    "We help your online store get found, drive traffic, and turn searches into sales.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -212,7 +212,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            the payment gateway is working, and you’ve spread the word, but still, there are little to no visitors, and those who somehow manage to find you don’t stay around for long. What are you missing? Maybe your store is not being found. Or it’s taking too long to load, Or worse, it isn't very clear for the user. eCommerce SEO will fix all of this and do more. eCommerce SEO services aim to make your store discoverable and improve your audience's shopping experience, which, in the long run, gives you better sales.
+            Your products deserve attention, and we make sure they get it. We optimize your store to rank higher, load faster, and convert better. Our team refines every element, from product pages and category layouts to checkout flow, ensuring a seamless user experience. Impulse makes your brand visible where customers are ready to buy. We align design, content, and analytics to create shopping experiences that inspire trust. Beyond visibility, we focus on repeat conversions and long-term ROI. More clicks, better carts, and higher sales are all part of our strategy.
           </p>
         </div>
       </div>

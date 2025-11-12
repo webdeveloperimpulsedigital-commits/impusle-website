@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "B2B is unlike B2C or D2C. There is a unique struggle to be seen and heard. Here, you are dealing with multiple decision";
+    "We help your business get noticed, trusted, and chosen by the right people.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -217,7 +217,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            and toughest challenge of all? Creating credibility and maintaining authority to influence high-value transactions. The B2B audience, a mix of C-suite executives and department heads, are not driven by emotions or impulses. They are driven by numbers, ROI, and long-term benefits, necessitating communication that is detailed, logical, and solution-oriented. B2B SEO services address every stage of your buyer’s journey, from awareness to consideration and decision-making, with a strong focus on informative resources.
+           B2B audiences make decisions based on information, and we help you deliver it effectively. We position your brand as an expert voice that resonates with decision-makers. Through research-driven SEO, we elevate your visibility across the platforms that matter most to your audience. Impulse strengthens credibility by combining thought leadership with measurable strategy. We build engagement that nurtures leads, builds authority, and drives results. Our methods support long sales cycles while maintaining trust throughout the process. With Impulse, your brand is not only visible but respected and remembered. 
           </p>
         </div>
       </div>

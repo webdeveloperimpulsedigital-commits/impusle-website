@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Over 5.2 billion people are expected to scroll, post, and engage on social media. That’s more than half the planet";
+    "We bring your brand to life through conversations that matter and results that last.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -208,7 +208,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            accessible to your brand in a matter of a few clicks. The power of social media marketing is driven by social media’s unparalleled capacity in 3 marketing areas: connections, interactions, and customer data. It is your chance to speak to your audience DIRECTLY, leverage the positive contagion effect from word-of-mouth, listen to what they have to say about you, and respond in real-time. Think compelling stories supported with emotion-evoking visuals that spark conversations, get you noticed by your target audience, and convert them to brand advocates and loyalists.
+            We make your brand part of the conversations people care about. From eye-catching visuals to intelligent storytelling, every piece of content we create has a clear purpose. Our team combines creativity with analytics to ensure your social media performs as effectively as it looks. We understand each platform’s language and tailor your message accordingly. For us, engagement is not just about likes, it is about lasting value. We measure, optimize, and evolve your content to deliver measurable outcomes. With Impulse, your social media presence builds communities that connect and care. 
           </p>
         </div>
       </div>

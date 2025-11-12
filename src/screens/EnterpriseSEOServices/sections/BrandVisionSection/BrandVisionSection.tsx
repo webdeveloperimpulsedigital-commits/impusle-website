@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Enterprise SEO is not like your everyday traditional SEO. It is different, large-scaled, and has its own unique challenges.";
+    "We scale your SEO to match your enterprise ambitions across markets and millions of pages.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -217,7 +217,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-           Imagine making sure hundreds, thousands, or even millions (yes, millions) of pages stay up-to-date? This means you need to optimise for different target audiences, languages, regions, and search engines. That’s a lot at once. Mind you, there’s more. You will also have to bring in international SEO. And since it's global, it is not a one department job. You will have to coordinate between different teams—marketing, content, IT, and even legal—and align them. Think buy-ins that could take anywhere from weeks to months.
+           Large websites require large-scale thinking, and that is where we excel. We simplify complex SEO ecosystems with automation, advanced tools, and enterprise-grade strategy. From managing thousands of URLs to optimizing multilingual and multi-region content, Impulse ensures every page performs efficiently. We help large organizations achieve consistency across departments, devices, and geographies. Our approach unites marketing, technical, and content teams toward shared growth goals. Through continuous tracking and adaptive optimization, we ensure long-term performance, not temporary results. At Impulse, scale is not a challenge, it is where we thrive.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Competition for talent is cut-throat. Besides the job description, you also have to convince the potential candidates why they should join you. ";
+    "We help you show why working with you feels worth it.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -217,7 +217,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            And for the ones already with you? You need to make them believe that they made the right choice. This means communicating your values, what you have to offer, how you look after your employees, and a lot more. It’s an ongoing effort that requires strategy, authenticity, and commitment because your reputation as an employer and an organization is at stake here. Employer branding services help you build and maintain an effective employer
+            We help you show why working with you feels worth it. Impulse transforms employee experiences into stories that attract and inspire great talent. We create employer brands that balance authenticity with aspiration, showing who you are and why it matters. From internal communication to external campaigns, we build genuine connections with potential hires. Our work enhances your reputation and strengthens retention by turning employees into advocates. We help you become the workplace people want to grow with. With Impulse, your culture becomes your strongest selling point.
           </p>
         </div>
       </div>

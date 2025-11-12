@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Every message you send out to your internal or external audience—via your social media channels, organization’s communication platform";
+    "We turn everyday communication into a reflection of who your company truly is.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -201,7 +201,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Emails - says a lot about your company’s philosophy, values, and beliefs. This communication needs to be designed and developed strategically, ensuring that it reaches the intended audience. And who’s this intended audience? Employees, investors, customers, and the world at large. A corporate communication agency is tasked with the responsibility of creating favorable messaging around your brand and leading its reputation.
+            Every message your company shares shapes how people perceive your brand. We help you find a voice that is genuine, clear, and strategic. From employee updates to media releases, we ensure every message aligns with your values. Our team manages both internal and external communication to maintain consistency and trust. We help you navigate crises, share achievements, and communicate with confidence. By blending structure and sensitivity, we strengthen your reputation through thoughtful communication.  
           </p>
         </div>
       </div>

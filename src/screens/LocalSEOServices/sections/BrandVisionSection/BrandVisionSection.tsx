@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "If you can get your local business in front of google searches, there’s a good chance your customers will give you a call or walk through your door.";
+    "Turning nearby searches into real visits and loyal customers.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -210,7 +210,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            That’s purely Google statistics speaking : 76% of people who do local searches on their phones visit a business within 24 hours, and 28% of those searches end in a purchase. Local SEO service makes this possible. And no, it’s not like a normal Google search. Things are significantly different here. The “near me” is not so near. Think of a fully optimized Google Business Profile listing, sentiments in online reviews, keywords used in online reviews, the location of the searcher, and even Google Maps star rating for that business.
+            We optimize your Google Business Profile, maps, and reviews to enhance your local presence. We ensure accuracy and consistency in your business information so customers trust what they see. Every optimization, from location keywords to citations, strengthens your local credibility. Our strategy connects you directly with people ready to visit or call. We track performance to help you grow within your community. With Impulse, your brand becomes a trusted name in every neighborhood.
           </p>
         </div>
       </div>

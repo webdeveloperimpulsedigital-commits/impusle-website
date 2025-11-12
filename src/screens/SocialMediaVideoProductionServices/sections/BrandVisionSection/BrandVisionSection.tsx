@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Go back to all the reels you have scrolled and YouTube videos you have watched on repeat. What made you like them?";
+    "We make your content too good to skip and too real to ignore.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -217,7 +217,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            A successful social media profile knows how to grab attention and without good visuals, it is nearly impossible to keep your audience engaged. At our social media video production company, we specialize in crafting high-quality, scroll-stopping social media videos for business. Whether you need instagram video production, facebook video production, instagram videography, or youtube video production—our expert team delivers content that captivates
+           Attention is fleeting, but great stories always hold it. We create videos that engage instantly and leave a mark. We blend storytelling with strategy to make your content perform on every platform. From Reels to YouTube videos, we handle scripting, shooting, and editing with precision. Every frame is crafted to capture emotion and reflect your brand’s energy. Our videos are designed to look great and deliver measurable engagement. With us, your brand gets the kind of attention that lasts beyond the scroll.
           </p>
         </div>
       </div>
