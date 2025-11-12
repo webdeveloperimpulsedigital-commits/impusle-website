@@ -4,7 +4,13 @@ import { Button } from "../../../../components/ui/button";
 
 const ServicesSection = () => {
   const services = [
-    "Employer Branding",
+    "Employer Branding11",
+    "SEO",
+    "Website Development",
+    "Branding",
+    "Performance Marketing",
+    "Content Writing Services",
+    "Employer Branding11",
     "SEO",
     "Website Development",
     "Branding",
@@ -23,7 +29,7 @@ const ServicesSection = () => {
   // 👉 added state for dots
   const [slide, setSlide] = useState(0);
 
-  const data = [
+   const data = [
     {
       n: "01",
       title: "SEO",

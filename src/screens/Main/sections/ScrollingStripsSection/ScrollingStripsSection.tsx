@@ -10,6 +10,12 @@ export const ScrollingStripsSection = (): JSX.Element => {
     "Content Strategy",
     "Digital Marketing",
     "Brand Strategy",
+    "Services",
+    "Production",
+    "Social Media Marketing",
+    "Content Strategy",
+    "Digital Marketing",
+    "Brand Strategy",
   ];
 
   const logos = [
@@ -20,7 +26,7 @@ export const ScrollingStripsSection = (): JSX.Element => {
     { name: "hdfc", src: "./impulse-clients/hdfc.jpg" },
     { name: "godrej", src: "./impulse-clients/godrej.jpg" },
     { name: "amazone", src: "./impulse-clients/amazone.jpg" },
-     { name: "ola", src: "./impulse-clients/ola.jpg" },
+    { name: "ola", src: "./impulse-clients/ola.jpg" },
     { name: "chings", src: "./impulse-clients/chings.jpg" },
     { name: "d-mart", src: "./impulse-clients/d-mart.jpg" },
     { name: "mastercard", src: "./impulse-clients/mastercard.jpg" },
@@ -53,7 +59,6 @@ export const ScrollingStripsSection = (): JSX.Element => {
       if (videoRef.current) {
         const rect = videoRef.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-
         if (rect.top < windowHeight && rect.bottom > 0) {
           const progress = 1 - rect.top / windowHeight;
           const zoom = 1 + progress * 0.3;
@@ -61,32 +66,35 @@ export const ScrollingStripsSection = (): JSX.Element => {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section
-      className="relative w-full bg-white overflow-hidden"
-      data-section="clients"
-    >
+    <section className="relative w-full bg-white overflow-hidden" data-section="clients">
       {/* Scrolling Strips */}
       <div className="relative h-[100px] md:h-[200px] w-full">
         {/* Black Strip */}
-        <div className="absolute lg:top-[100px] md:top-[100px] left-0 w-full h-[80px] md:h-[100px] bg-[#000000] transform skew-y-3 origin-bottom-left overflow-hidden z-999">
-          <div className="marquee-wrapper animate-marquee-reverse transform -skew-y-3 h-full flex">
-            <div className="marquee-content flex items-center gap-6 md:gap-8">
-              {servicesSecond.concat(servicesSecond).map((service, index) => (
-                <React.Fragment key={index}>
-                  <span className="font-semibold text-white text-2xl md:text-4xl lg:text-5xl whitespace-nowrap">
-                    {service}
-                  </span>
-                  <img
-                    className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] mx-2 md:mx-4"
-                    alt="Vector"
-                    src="vector-6.png"
-                  />
+        <div className="absolute lg:top-[100px] md:top-[100px] left-0 w-full h-[80px] md:h-[100px] bg-[#000000] transform skew-y-3 origin-bottom-left overflow-hidden z-[999]">
+          {/* Animated track — no transform classes here */}
+          <div className="flex items-center h-full marquee-track-3x-reverse whitespace-nowrap">
+            <div className="flex items-center gap-6 md:gap-8 md:px-8">
+              {[...Array(3)].map((_, setIndex) => (
+                <React.Fragment key={`black-set-${setIndex}`}>
+                  {servicesSecond.map((service, index) => (
+                    <React.Fragment key={`black-${setIndex}-${index}`}>
+                      <span className="[font-family:'DM_Sans',Helvetica] font-semibold text-white text-2xl md:text-4xl lg:text-5xl whitespace-nowrap flex-shrink-0">
+                        {service}
+                      </span>
+                      <img
+                        className="flex-shrink-0 w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] mx-2 md:mx-4"
+                        alt="Vector"
+                        src="vector-6.png"
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </React.Fragment>
+                  ))}
                 </React.Fragment>
               ))}
             </div>
@@ -100,9 +108,7 @@ export const ScrollingStripsSection = (): JSX.Element => {
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 md:mb-16">
             <div className="flex flex-col items-start mb-6 lg:mb-0">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
-                <span className="text-[#030019] lg:text-[34px] sm:text-[16px]">
-                  Brands
-                </span>
+                <span className="text-[#030019] lg:text-[34px] sm:text-[16px]">Brands</span>
                 <br />
                 <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[26px]">
                   That Trust Our Impulse
@@ -129,22 +135,15 @@ export const ScrollingStripsSection = (): JSX.Element => {
 
       {/* Logo Carousel */}
       <div className="relative overflow-hidden group m-0 p-0">
-        <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
+        <div className="flex marquee-track-logos group-hover:[animation-play-state:paused]">
           {[...Array(2)].map((_, setIndex) => (
-            <div
-              key={`logo-set-${setIndex}`}
-              className="flex items-center flex-shrink-0"
-            >
+            <div key={`logo-set-${setIndex}`} className="flex items-center flex-shrink-0">
               {logos.map((logo, index) => (
                 <div
                   key={`logo-${setIndex}-${index}`}
                   className="flex-shrink-0 w-[100px] h-[70px] md:w-[140px] md:h-[90px] lg:w-[180px] lg:h-[120px] bg-white border border-gray-200 flex items-center justify-center client-logo"
                 >
-                  <img
-                    className="max-w-full max-h-full object-contain"
-                    alt={logo.name}
-                    src={logo.src}
-                  />
+                  <img className="max-w-full max-h-full object-contain" alt={logo.name} src={logo.src} />
                 </div>
               ))}
             </div>
@@ -160,27 +159,57 @@ export const ScrollingStripsSection = (): JSX.Element => {
           background: var(--bg);
           padding: 0rem 6rem 0rem;
         }
-
         @media (max-width:980px) {
-          .wrap-clients {
-            padding: 0rem 1.2rem 0rem;
-          }
+          .wrap-clients { padding: 0rem 1.2rem 0rem; }
         }
 
-        /* Infinite logo marquee */
-        @keyframes marquee {
-          0% { transform: translateX(0); }
+        :root{
+          /* Adjust speeds here */
+          --strip-speed: 10s;   /* services strips (3x clones) */
+          --logos-speed: 60s;   /* logos (2x clones) */
+        }
+
+        /* ========== SERVICES STRIPS (3 clones → move 33.3333%) ========== */
+        @keyframes marquee3x {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-33.3333%); }
+        }
+        .marquee-track-3x {
+          display:flex;
+          will-change: transform;
+          animation: marquee3x var(--strip-speed) linear infinite;
+          white-space: nowrap;
+        }
+        .marquee-track-3x-reverse {
+          display:flex;
+          will-change: transform;
+          animation: marquee3x var(--strip-speed) linear infinite reverse;
+          white-space: nowrap;
+        }
+
+        /* ========== LOGO MARQUEE (2 clones → move 50%) ========== */
+        @keyframes marqueeLogos {
+          0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-
-        .animate-marquee {
-          display: flex;
+        .marquee-track-logos {
+          display:flex;
           width: max-content;
-          animation: marquee 60s linear infinite;
+          will-change: transform;
+          animation: marqueeLogos var(--logos-speed) linear infinite;
         }
 
-        .animate-marquee:hover {
-          animation-play-state: paused;
+        /* Safety: keep timing strictly linear and avoid transitions creeping in */
+        .marquee-track-3x, .marquee-track-3x * ,
+        .marquee-track-3x-reverse, .marquee-track-3x-reverse * ,
+        .marquee-track-logos, .marquee-track-logos * {
+          animation-timing-function: linear !important;
+        }
+
+        @media (prefers-reduced-motion: reduce){
+          .marquee-track-3x,
+          .marquee-track-3x-reverse,
+          .marquee-track-logos { animation: none; transform: none; }
         }
       `}</style>
     </section>
