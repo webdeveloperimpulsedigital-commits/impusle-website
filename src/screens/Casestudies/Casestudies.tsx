@@ -6,7 +6,7 @@ import { ServicesCatalogSection } from "./sections/ServicesCatalogSection/Servic
 //import { WhyChooseUsSection } from "./sections/WhyChooseUsSection/WhyChooseUsSection";
 //import { ServicesCTASection } from "./sections/ServicesCTASection/ServicesCTASection";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
-import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
+//import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
 
 export const Casestudies = (): JSX.Element => {
@@ -21,7 +21,7 @@ export const Casestudies = (): JSX.Element => {
         <WhyChooseUsSection />
         <ServicesCTASection /> */}
         <ContactSection />
-        <FAQSection />
+        {/* <FAQSection /> */}
         <FooterSection />
       </div>
     </main>
