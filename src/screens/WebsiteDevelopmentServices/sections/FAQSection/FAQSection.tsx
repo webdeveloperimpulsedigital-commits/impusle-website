@@ -63,7 +63,7 @@ export const FAQSection: React.FC<{ items?: QA[] }> = ({ items = DEFAULT_QA }) =
    <section className="max-w-[1280px] mx-auto px-4 lg:px-8 lg:pt-20 lg:pb-20" data-section="faq">
       <div className="faq__header">
         <p className="faq__eyebrow">FAQ</p>
-        <h2 className="faq__title">Frequently Asked Questions</h2>
+        <h2 className="faq__title">Curious Much ?</h2>
       </div>
 
       <div className="faq__grid">
