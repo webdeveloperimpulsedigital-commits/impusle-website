@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Where strategy, storytelling, and SEO come together to make every word matter.";
+    "Making every word count, we write what moves minds and markets.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -208,7 +208,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            What do you have in store, where are you coming from, and why are you the best fit for your audience? Here’s the catch. Poorly written content can lead to lost leads, lower search engine rankings, and a diminishing brand image. A reliable content writing agency or content writing company transforms your brand’s vision into actionable words that attract, engage, and retain your audience. From blogs that position you as thought leaders to marketing email copy that makes your readers click the button, every piece is tailored for action.
+            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
           </p>
         </div>
       </div>

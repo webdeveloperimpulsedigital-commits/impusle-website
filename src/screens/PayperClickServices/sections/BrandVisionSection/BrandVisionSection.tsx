@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
   const overlayText =
-    "Getting organic rankings for your business isn’t exactly an easy process. It takes time and much effort. Enter PPC services - Pay-Per-Click.";
+    "We make paid ads feel less like spending and more like scaling.";
 
   // ================== COUNTERS ==================
   const [counters, setCounters] = useState({
@@ -208,7 +208,7 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Body copy */}
         <div className="text-left mb-12">
           <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Unlike other search engine marketing efforts, PPC services are laser-focused on driving immediate, tangible results. It leverages advanced targeted techniques and data analytics to overcome common marketing pitfalls like wasted spending, low click-through rates, and ineffective keyword strategy. Our approach as the best PPC agency cuts through every noise and directs highly qualified traffic to your site, accelerating lead generation.
+            Clicks are easy; conversions are earned. We build PPC campaigns that reaches the right audience with purpose and precision. We analyze, optimize, and refine every ad to ensure strong performance and return on investment. From Google Ads to Meta campaigns, we design data-led strategies that deliver. Every campaign is tracked, measured, and improved for continuous growth. Our focus is on real business impact, not empty metrics. With Impulse, your paid media becomes a growth engine that scales effortlessly. 
           </p>
         </div>
       </div>

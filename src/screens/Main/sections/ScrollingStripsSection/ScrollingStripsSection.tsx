@@ -13,35 +13,36 @@ export const ScrollingStripsSection = (): JSX.Element => {
   ];
 
   const logos = [
-    { name: "abg-hindalco", src: "abg-hindalco.jpg" },
-    { name: "Hindustan Unilever Limited", src: "client-logo6.png" },
-    { name: "TATA", src: "Tata_Soulfull.png" },
-    { name: "abg-chemicals", src: "abg-chemicals.png" },
-    { name: "Amazon", src: "client-logo2.png" },
-    { name: "OLA", src: "client-logo3.png" },
-    { name: "Dmart", src: "client-logo4.png" },
-    { name: "Aditya Birla Group", src: "Aditya_Birla_Group_Logo.svg (1).png" },
-    { name: "Tata", src: "Tata-Consumer-Logo (1).jpg" },
-    { name: "HDFC Securities", src: "client-logo5.png" },
-     { name: "Chings", src: "chings.png" },
-    { name: "MasterCard", src: "client-logo1.png"},
-    { name: "Birla Cellulose", src: "birla_cellulose_99fde4a4bc (1).webp" },
-    { name: "Croda", src: "Croda_Masterbrand_LockUp_GREEN_RGB (1).png" },
-    { name: "brand-ico", src: "brand-ico.png" },
-    { name: "navyasa", src: "images (1).png" },
-    { name: "vendiman", src: "vendiman.jpg" },
-    { name: "Goma", src: "Goma-new.png" },
-    { name: "ismg", src: "ismg.jpg" },
-    { name: "datar", src: "datar (1).png" },
-    { name: "JB", src: "JB (1).png" },
-    { name: "keva-group", src: "keva-group (1).png" },
-    { name: "electromech", src: "electromech (1).jpg" },
-    { name: "aster", src: "aster (2).jpg" },
-    { name: "lg", src: "lg (1).png" },
-    { name: "hem-logo", src: "hem-logo-1 (1).png" },
-    { name: "tjsb", src: "tjsb.jpg" },
-    { name: "more", src: "more.jpg" },
-    { name: "hdfc_logo", src: "hdfc_logo (1).jpg" },
+    { name: "abg-chemical", src: "./impulse-clients/abg-chemical.jpg" },
+    { name: "hindalco", src: "./impulse-clients/hindalco.jpg" },
+    { name: "abps", src: "./impulse-clients/abps.jpg" },
+    { name: "amazone", src: "./impulse-clients/amazone.jpg" },
+    { name: "chings", src: "./impulse-clients/chings.jpg" },
+    { name: "qure-ai", src: "./impulse-clients/qure-ai.jpg" },
+    { name: "tjsb", src: "./impulse-clients/tjsb.jpg" },
+    { name: "tata-soulful", src: "./impulse-clients/tata-soulful.jpg" },
+    { name: "tata", src: "./impulse-clients/tata.jpg" },
+    { name: "birla-celilues", src: "./impulse-clients/birla-celilues.jpg" },
+    { name: "croda", src: "./impulse-clients/croda.jpg" },
+    { name: "aster", src: "./impulse-clients/aster.jpg" },
+    { name: "automag", src: "./impulse-clients/automag.jpg" },
+    { name: "datar", src: "./impulse-clients/datar.jpg" },
+    { name: "d-mart", src: "./impulse-clients/d-mart.jpg" },
+    { name: "dts", src: "./impulse-clients/dts.jpg" },
+    { name: "emech", src: "./impulse-clients/emech.jpg" },
+    { name: "enpro", src: "./impulse-clients/enpro.jpg" },
+    { name: "godrej", src: "./impulse-clients/godrej.jpg" },
+    { name: "goma", src: "./impulse-clients/goma.jpg" },
+    { name: "hdfc", src: "./impulse-clients/hdfc.jpg" },
+    { name: "hem", src: "./impulse-clients/hem.jpg" },
+    { name: "jankalyan", src: "./impulse-clients/jankalyan.jpg" },
+    { name: "lg", src: "./impulse-clients/lg.jpg" },
+    { name: "mastercard", src: "./impulse-clients/mastercard.jpg" },
+    { name: "more", src: "./impulse-clients/more.jpg" },
+    { name: "navayasa", src: "./impulse-clients/navayasa.jpg" },
+    { name: "ola", src: "./impulse-clients/ola.jpg" },
+    { name: "shree-rubber", src: "./impulse-clients/shree-rubber.jpg" },
+    { name: "vendiman", src: "./impulse-clients/vendiman.jpg" },
   ];
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -175,7 +176,7 @@ export const ScrollingStripsSection = (): JSX.Element => {
         .animate-marquee {
           display: flex;
           width: max-content;
-          animation: marquee 30s linear infinite;
+          animation: marquee 60s linear infinite;
         }
 
         .animate-marquee:hover {
