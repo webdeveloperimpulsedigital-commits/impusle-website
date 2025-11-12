@@ -6,6 +6,8 @@ import { BrandVisionSection } from "./sections/BrandVisionSection/BrandVisionSec
 import { ServicesSection } from "./sections/ServicesSection";
 import { WhyChooseSection } from "./sections/WhyChooseSection/WhyChooseSection";
 import { ProcessSection } from "./sections/ProcessSection/ProcessSection";
+import { ClientsSection } from "./sections/ClientsSection";
+import { TestimonilasServiceSection } from "./sections/TestimonilasServiceSection";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
@@ -21,6 +23,8 @@ export const SearchEngineOptimization = (): JSX.Element => {
         <ServicesSection />
         <WhyChooseSection />
         <ProcessSection />
+        <ClientsSection />
+        <TestimonilasServiceSection />
         <ContactSection />
         <FAQSection />
         <FooterSection />
