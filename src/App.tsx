@@ -20,7 +20,7 @@ import { AiSeoAgency } from "./screens/AiSeoAgency";
 //import { AgenticAi } from "./screens/AgenticAi";
 
 import { Casestudies } from "./screens/Casestudies";
-import { Resources } from "./screens/Resources";
+import { Ebooks, Resources } from "./screens/Resources";
 import { SlideSharePPTS } from "./screens/Resources/SlideSharePPTS";
 import { SearchEngineOptimizationSEOS } from "./screens/Resources/SearchEngineOptimizationSEOS";
 import { SocialMediaPPTS } from "./screens/Resources/SocialMediaPPTS";
@@ -36,6 +36,7 @@ import { DigitalMarketingAgencyinIndia } from "./screens/DigitalMarketingAgencyi
 import { AgencyinThane } from "./screens/AgencyinThane/AgencyinThane";
 import { AgencyinNaviMumbai } from "./screens/AgencyinNaviMumbai/AgencyinNaviMumbai";
 import { AgencyinPune } from "./screens/AgencyinPune/AgencyinPune";
+import { Videos } from "./screens/Resources/Videos";
 
 
 
@@ -66,6 +67,9 @@ export const App = (): JSX.Element => {
 
       <Route path="/casestudies" element={<Casestudies/>}/>
       <Route path="/resources" element={<Resources/>}/>
+
+      <Route path="/resources/EBooks" element={<Ebooks />} />
+      <Route path="/resources/videos" element={<Videos />} />
 <Route path="/resources/slideshare-ppt" element={<SlideSharePPTS />} />
 <Route path="/resources/search-engine-optimization-PPT" element={<SearchEngineOptimizationSEOS />} />
 <Route path="/resources/social-media-PPT" element={<SocialMediaPPTS />} />

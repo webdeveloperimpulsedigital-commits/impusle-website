@@ -1,0 +1,1 @@
+export { EbookHeroSection } from "./EbookHeroSection";

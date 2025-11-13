@@ -1,17 +1,17 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
-import { SlideSharePPTHeroSection } from "./sections/SlideSharePPTHeroSection";
-import { SlideSharePPT } from "../Resources/sections/SlideSharePPT";
+import { VideosHeroSection } from "./sections/VideosHeroSection";
+import { Video } from "./sections/Videos";
 //import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 //import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
 
-export const SlideSharePPTS = (): JSX.Element => {
+export const Videos = (): JSX.Element => {
   return (
     <main className="relative w-full min-h-screen">
       {/* <ScrollRevealLogo /> */}
       <div className="relative w-full space-y-0">
-        <SlideSharePPTHeroSection />
-        <SlideSharePPT />
+        <VideosHeroSection />
+        <Video />
         {/* <ContactSection />
         <FAQSection /> */}
         <FooterSection />

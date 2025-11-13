@@ -5,3 +5,5 @@ export { GoogleAdsPPTS } from "./GoogleAdsPPTS";
 export { ContentMarketingPPTS } from "./ContentMarketingPPTS";
 export { WebsiteDesignDevelopmentPPTS } from "./WebsiteDesignDevelopmentPPTS";
 export { EmployerBrandingPPTS } from "./EmployerBrandingPPTS";
+export { Ebooks } from "./Ebooks";
+export { Videos } from "./Videos";
