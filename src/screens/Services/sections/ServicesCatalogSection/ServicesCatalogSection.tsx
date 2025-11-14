@@ -115,12 +115,6 @@ export const ServicesCatalogSection = (): JSX.Element => {
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl mb-4">
             Comprehensive Service Portfolio
           </h2>
-          <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-base leading-relaxed max-w-none">
-            At Impulse Digital, we combine creativity with performance to deliver 
-            360° marketing services — from strategy and storytelling to execution 
-            and optimization. Explore our full range of offerings designed to help 
-            brands stand out, connect, and grow.
-          </p>
         </div>
 
         {/* Services Grid */}
