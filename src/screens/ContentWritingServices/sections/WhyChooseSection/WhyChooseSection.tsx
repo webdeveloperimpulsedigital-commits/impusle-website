@@ -50,7 +50,7 @@ export const WhyChooseSection = (): JSX.Element => {
           <div>
             <div className="relative overflow-hidden rounded-[24px] shadow-lg mb-4">
               <img
-                src="/impulse-website/why-choose-2.png"
+                src="/impulse-website/why-choose-2.jpg"
                 alt="Laptop with content writing screen"
                 className="w-full h-[320px] sm:h-[400px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                 loading="lazy"
@@ -130,7 +130,7 @@ export const WhyChooseSection = (): JSX.Element => {
  
               <div className="relative overflow-hidden rounded-[24px] shadow-lg">
                 <img
-                  src="/impulse-website/why-choose-2.png"
+                  src="/impulse-website/why-choose-2.jpg"
                   alt="Creative workspace content writing"
                   className="w-full h-[630px] object-cover transition-transform duration-300 hover:scale-[1.03]"
                   loading="lazy"

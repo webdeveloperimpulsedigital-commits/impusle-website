@@ -70,7 +70,7 @@ const ServicesSection = () => {
       points: [
         "Our Amazon Sales & Branding PPC services focus on optimizing your presence on the world’s largest online marketplace. Our team crafts targeted ad strategies and engaging content that reflect your brand’s identity, ensuring your listing stands out.",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/Amazon sales and branding.jpg",
     },
     {
       n: "07",

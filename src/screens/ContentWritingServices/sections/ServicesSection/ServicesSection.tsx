@@ -70,7 +70,7 @@ const ServicesSection = () => {
       points: [
         "A white paper is your chance to show what you’ve really got—expertise, experience, and insights. Our content writing company combines in-depth research and fact-checking with persuasive writing to create white papers that build trust, develop authority, and talk business. Paired with sleek, custom designs, these white papers convey complex information effectively. Hello, new leads!",
       ],
-      img: "/impulse-website/service section 520 x 340 - Amazon Sales & Branding.jpg",
+      img: "/impulse-website/WHite Paper.jpg",
     },
     {
       n: "07",
@@ -94,7 +94,7 @@ const ServicesSection = () => {
       points: [
         "One platform, a million buyers, and a million products—where are you? Our content writing agency specializes in crafting keyword-optimized product descriptions, titles, and bullet points tailored to please Amazon’s algorithms. Trust us to highlight your product’s unique features in a way that makes the buyers click ‘Add to cart’ almost immediately. ",
       ],
-      img: "/impulse-website/service section 520 x 340 - Youtube Ads.jpg",
+      img: "/impulse-website/Amazon Contet writing.jpg",
     },
     {
       n: "10",
