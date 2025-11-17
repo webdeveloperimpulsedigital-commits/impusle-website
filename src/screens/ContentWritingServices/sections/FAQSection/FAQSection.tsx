@@ -48,10 +48,16 @@ export const FAQSection: React.FC<{ items?: QA[] }> = ({ items = DEFAULT_QA }) =
 
   return (
    <section className="max-w-[1280px] mx-auto px-4 lg:px-8 lg:pt-20 lg:pb-20" data-section="faq">
-      <div className="faq__header">
-        <p className="faq__eyebrow">FAQ</p>
-        <h2 className="faq__title">Curious Much ?</h2>
-      </div>
+       <h2 className="text-center [font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight mx-auto">
+  <span className="text-[#000000] lg:text-[34px] sm:text-[16px]">
+    FAQ's
+  </span>
+  <br />
+  <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[20px]">
+    Curious Much?
+  </span>
+</h2>
+
 
       <div className="faq__grid">
         {/* Left: Accordion */}

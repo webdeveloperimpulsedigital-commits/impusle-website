@@ -26,7 +26,7 @@ const ServicesSection = () => {
   const data = [
     {
       n: "01",
-      title: "Google search ads",
+      title: "Google Search ads",
       points: [
         "Capture high-intent customers at the precise moment they search for your products or services online. Our Google search ads services leverage strategic keyword targeting and compelling ad copy to drive qualified traffic directly to your website.",
       ],
@@ -34,7 +34,7 @@ const ServicesSection = () => {
     },
     {
       n: "02",
-      title: "Google display ads",
+      title: "Google Display ads",
       points: [
         "Want to reach a broader audience? Our Google display ad services will make it possible with creative banners and rich media ads that capture attention, drive interest, and offer targeted advertising solutions across millions of websites and apps.",
       ],
@@ -42,7 +42,7 @@ const ServicesSection = () => {
     },
     {
       n: "03",
-      title: "Google shopping ads",
+      title: "Google Shopping ads",
       points: [
         "Show off your product listing to audiences who are already searching for them. Our PPC services design visually rich ads with high-quality product images, optimized titles and descriptions, and prices to attract customers who are ready to buy.",
       ],
@@ -50,7 +50,7 @@ const ServicesSection = () => {
     },
     {
       n: "04",
-      title: "Google Performance max ads",
+      title: "Google Performance Max ads",
       points: [
         "Merge your digital advertising efforts across Search, Display, YouTube, and more with 1 single campaign. Our PPC services harness machine learning to optimize this goal-based campaign automatically to ensure your ads reach valuable consumers online.",
       ],

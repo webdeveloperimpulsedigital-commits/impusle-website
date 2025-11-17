@@ -36,10 +36,10 @@ const ServicesSection = () => {
     { n:"04", title:"Advertising",
       points:["While we love organic growth, paid growth has its own place in the industry and we know it. But you know where most people go wrong? They spend too much and think too little. We do the opposite. We strategize and study first, followed by running ads on optimized budgets."],
       img:"/impulse-website/Advertising.jpg" },
-    { n:"05", title:"Analytics and reporting",
+    { n:"05", title:"Analytics and Reporting",
       points:["No effort should go wasted. Everything from what your audience is saying about you in their comments and mentions to where they are sharing your content, we listen and learn from everything. And not just once, but every month like clockwork because success requires clockwork activity."],
       img:"/impulse-website/service section 520 x 340 - Analytics and reporting.jpg" },
-    { n:"06", title:"Specialized campaigns",
+    { n:"06", title:"Specialized Campaigns",
       points:["The year is filled with special occasions and initiatives. How do you stand out as a brand? Our social media marketing agency creates unique campaigns that change the narrative. These campaigns highlight your brand’s perspective and voice in the sea of noise."],
       img:"/impulse-website/Campaigns.jpg" },
     { n:"07", title:"Advanced Services",
@@ -226,10 +226,10 @@ const ServicesSection = () => {
             <div className="mx-auto relative">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#ffffffb2]  lg:text-[34px] sm:text-[16px]">
-                  Our Social Media
+                  Your Brand
                 </span>
                 <span className="font-bold text-[#ffffff] lg:text-[52px] md:text-[52px] sm:text-[26px]">
-                  Services
+                  Reimagined for the Feed
                 </span>
               </h2>
             </div>

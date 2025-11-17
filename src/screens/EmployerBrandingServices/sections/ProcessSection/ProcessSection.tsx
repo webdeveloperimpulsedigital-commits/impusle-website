@@ -69,11 +69,10 @@ export const ProcessSection = (): JSX.Element => {
           
 
           <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px]">
-
-            Branding Creative
+    How We Turn Culture Into a 
              </p>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Process That Works
+            Compelling Talent Story
           </h2>
 
 

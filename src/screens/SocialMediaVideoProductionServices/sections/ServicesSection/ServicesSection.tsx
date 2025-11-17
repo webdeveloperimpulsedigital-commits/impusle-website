@@ -27,24 +27,24 @@ const ServicesSection = () => {
     { n:"01", title:"Video Editing",
       points:["Great content deserves seamless execution. Our social media video production services transform your raw footage into high-quality, visually compelling videos that turn your audience into fans. Be it color correction, sound design, smooth transitions or text overlays, we craft polish videos that tell a story."],
       img:"/impulse-website/video  service section 520 x 340 - Video editing.jpg" },
-    { n:"02", title:"Video production",
+    { n:"02", title:"Video Production",
       points:["Want us to take care of the entire process end-to-end? No problem, We will script, design, shoot, edit, and handle the post-production as well for you. Our high-tech equipment, creative strategists, and sound experience of creative shoots ensure that the final outcome is professional-grade videos tailored for your audience."],
       img:"/impulse-website/video  service section 520 x 340 - Video production.jpg" },
     {
-      n:"03", title:"Content shoot",
+      n:"03", title:"Content Shoot",
       points:["With a team of skilled content photographers and videographers, our content shoots focus on creativity, lighting, and composition to create visuals that deliver emotions, your brand values, and engagement. Be it influencer collaborations, lifestyle content, every piece or behind-the-scenes, we promise to get you the best. "],
       img:"/impulse-website/Content Shoot.jpg"},
       {
-        n:"04", title:"Product shoot",
+        n:"04", title:"Product Shoot",
         points:["Our product shoot services are designed to make your product the HERO of your campaign. Our team carefully weaves the product into the scene, focusing on its key details, positioning, and lighting, ensuring every detail is well-suited for your eCommerce, lifestyle shots, and promotional videos."],
         img:"/impulse-website/video  service section 520 x 340 - Product shoot.jpg"},
       {
-        n:"05", title:"Motion graphics",
+        n:"05", title:"Motion Graphics",
         points:["Motion graphics bring your vision to life with engaging animations, dynamic typography and awesome visual effects. With every element that moves, your audience gets hooked and you get better engagement. Best for explainer videos, logo animations, and social media visuals, our services simplify complex ideas into memorable content."],
         img:"/impulse-website/video  service section 520 x 340 - Motion graphics.jpg"
       },
       {
-        n:"06", title:"Television and OTT platform assets",
+        n:"06", title:"Television And OTT Platform Assets",
         points:["Promotional videos, ad spots, title sequences, show intros, trailer edits, and full-scale commercials—our expertise in video production and motion graphics ensure visually compelling content optimized for digital and broadcast audiences for maximum reach and viewer engagement. "],
         img:"/impulse-website/video  service section 520 x 340 - Television and OTT platform assets.jpg"
       }
@@ -288,11 +288,11 @@ const ServicesSection = () => {
             <div className="mx-auto relative">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#ffffffb2]  lg:text-[34px] sm:text-[16px]">
-                  Our Social Media Video Production
+                  Crafting Scroll-Stopping Stories
                 </span>
 
                 <span className="font-bold text-[#ffffff] lg:text-[52px] md:text-[52px] sm:text-[26px]">
-                  Services
+                  for Every Screen 
                 </span>
               </h2>
             </div>

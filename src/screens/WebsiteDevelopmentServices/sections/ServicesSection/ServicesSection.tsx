@@ -24,19 +24,19 @@ const ServicesSection = () => {
   const [slide, setSlide] = useState(0);
 
   const data = [
-    { n:"01", title:"Custom website design",
+    { n:"01", title:"Custom Website Design",
       points:["Every business has a story, and a template design isn’t going to get the story out. For one, they lack the elements that make your brand unique. Our website design and development services understand the story behind your brand, brainstorm elements, and create a custom design from scratch."],
       img:"/impulse-website/web  service section 520 x 340 - Custom Website Design.jpg" },
-    { n:"02", title:"eCommerce website design",
+    { n:"02", title:"eCommerce Website Design",
       points:["TTurn visitors into loyal customers with our eCommerce website design. These visually stunning, user-friendly online stores are tailored for your brand to offer seamless navigation and secure checkouts, ensuring that your shoppers are engaged in an experience that boosts their satisfaction and revenue."],
       img:"/impulse-website/web  service section 520 x 340 - ecommerce website design.jpg" },
-    { n:"03", title:"Web maintenance & support",
+    { n:"03", title:"Web Maintenance & Support",
       points:["Designing and deploying a website is just the beginning. It needs constant maintenance efforts to keep it running smoothly. Our website development company handles updates, security checks, and performance optimization, ensuring your website is fast, secure, and bug-free."],
       img:"/impulse-website/web  service section 520 x 340 - Web maintenance & support.jpg" },
-    { n:"04", title:"Responsive web design",
+    { n:"04", title:"Responsive Web Design",
       points:["Your audience can be searching for you through any and all their devices. Our website design company ensures that your website is suited for viewing and accessing on all device types—desktops, laptops, tablets, phones—to deliver a flawless user experience."],
       img:"/impulse-website/web service section 520 x 340 - Responsive web design.jpg" },
-    { n:"05", title:"Website redesign",
+    { n:"05", title:"Website Redesign",
       points:["What if you already have a website? We can help you redesign it, transforming outdated or non-performing websites into a modern, highly functional, and high-performing platform optimized for usability, speed, and conversions. Rest assured that your brand will set benchmarks for visuals, content, and all things website."],
       img:"/impulse-website/web  service section 520 x 340 - Website redesign.jpg" },
     { n:"06", title:"Landing Page Design",
@@ -232,10 +232,10 @@ const ServicesSection = () => {
             <div className="mx-auto relative">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#ffffffb2]  lg:text-[34px] sm:text-[16px]">
-                  Our Web Development
+                  Building Digital Experiences
                 </span>
                 <span className="font-bold text-[#ffffff] lg:text-[52px] md:text-[52px] sm:text-[26px]">
-                 Services
+                 That Convert
                 </span>
               </h2>
             </div>
