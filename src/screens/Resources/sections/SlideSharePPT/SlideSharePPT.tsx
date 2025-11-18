@@ -1,56 +1,69 @@
 import { useMemo, useState } from "react";
+import { Button } from "../../../../components/ui/button";
 
 export const seoPpts = [
   {
     id: "PPT1",
-    title: "Evolution of workplace perks – What employers are doing to redefine them",
+    title:
+      "Evolution of workplace perks – What employers are doing to redefine them",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/evolution-of-workplace-perks-what-employers-are-doing-to-redefine-them.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/evolution-of-workplace-perks-what-employers-are-doing-to-redefine-them.pdf",
     thumbnail: "/impulse-website/slideshow/ppt1.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT2",
-    title: "3 reasons why your B2B marketing strategy framework is not generating quality leads",
+    title:
+      "3 reasons why your B2B marketing strategy framework is not generating quality leads",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/3-reasons-why-your-b2b-marketing-strategy-framework-is-not-generating-quality-leads.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/3-reasons-why-your-b2b-marketing-strategy-framework-is-not-generating-quality-leads.pdf",
     thumbnail: "/impulse-website/slideshow/ppt2.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT3",
-    title: "Transforming your traditional B2B business into a thriving online enterprise",
+    title:
+      "Transforming your traditional B2B business into a thriving online enterprise",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/transforming-your-traditional-B2B-business-into-a-thriving-online-enterprise-a-comprehensive-guide.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/transforming-your-traditional-B2B-business-into-a-thriving-online-enterprise-a-comprehensive-guide.pdf",
     thumbnail: "/impulse-website/slideshow/ppt3.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT4",
-    title: "Embracing LGBTQ Pride – Employer branding for workplace diversity and inclusion",
+    title:
+      "Embracing LGBTQ Pride – Employer branding for workplace diversity and inclusion",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion.pdf",
     thumbnail: "/impulse-website/slideshow/ppt4.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT5",
-    title: "How evoking emotions and different appeals is key to a successful advertising strategy",
+    title:
+      "How evoking emotions and different appeals is key to a successful advertising strategy",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy.pdf",
     thumbnail: "/impulse-website/slideshow/ppt5.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT6",
-    title: "Why employer branding should be an essential element of your marketing plan",
+    title:
+      "Why employer branding should be an essential element of your marketing plan",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.pdf",
     thumbnail: "/impulse-website/slideshow/ppt6.png",
     tag: "PPT",
     meta: "2023 • Presentation",
@@ -59,16 +72,19 @@ export const seoPpts = [
     id: "PPT7",
     title: "Planning to order from ONDC – But is it worth it?",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/planning-to-order-from-ondc-but-is-it-worth-it.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/planning-to-order-from-ondc-but-is-it-worth-it.pdf",
     thumbnail: "/impulse-website/slideshow/ppt7.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
   {
     id: "PPT8",
-    title: "How Apple’s VR headset is going to change the game for marketers",
+    title:
+      "How Apple’s VR headset is going to change the game for marketers",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-apple%E2%80%99s-vr-headset-is-going-to-change-the-game-for-marketers.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-apple%E2%80%99s-vr-headset-is-going-to-change-the-game-for-marketers.pdf",
     thumbnail: "/impulse-website/slideshow/ppt8.png",
     tag: "PPT",
     meta: "2023 • Presentation",
@@ -77,17 +93,18 @@ export const seoPpts = [
     id: "PPT9",
     title: "Father’s Day – How brands cash in on celebrating dads",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/father%E2%80%99s-day-how-brands-cash-in-on-celebrating-dads.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/father%E2%80%99s-day-how-brands-cash-in-on-celebrating-dads.pdf",
     thumbnail: "/impulse-website/slideshow/ppt9.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT10",
     title: "Key takeaways from the ONDC report",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/dissecting-the-key-takeaways-from-the-ondc-report.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/dissecting-the-key-takeaways-from-the-ondc-report.pdf",
     thumbnail: "/impulse-website/slideshow/ppt10.png",
     tag: "PPT",
     meta: "2023 • Presentation",
@@ -96,7 +113,8 @@ export const seoPpts = [
     id: "PPT11",
     title: "Best AI tools for Indian audience to use",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/best-ai-tools-for-indian-audience-to-use.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/best-ai-tools-for-indian-audience-to-use.pdf",
     thumbnail: "/impulse-website/slideshow/ppt11.png",
     tag: "PPT",
     meta: "2023 • Presentation",
@@ -105,192 +123,198 @@ export const seoPpts = [
     id: "PPT12",
     title: "B2B entrepreneur’s guide to reach your high-hanging fruits!",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/b2b-entrepreneur%E2%80%99s-guide-to-reach-your-high-hanging-fruits!.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/b2b-entrepreneur%E2%80%99s-guide-to-reach-your-high-hanging-fruits!.pdf",
     thumbnail: "/impulse-website/slideshow/ppt12.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT13",
-    title: "Facebook scam alert – Copyright infringement: Here’s how to not fall for one",
+    title:
+      "Facebook scam alert – Copyright infringement: Here’s how to not fall for one",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/facebook-scam-alert-copyright-infringement-here%E2%80%99s-how-to-not-fall-for-one.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/facebook-scam-alert-copyright-infringement-here%E2%80%99s-how-to-not-fall-for-one.pdf",
     thumbnail: "/impulse-website/slideshow/ppt13.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT14",
     title: "April Fool’s Day – Brand ideas gone wrong",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/april-fool%E2%80%99s-day-brand-ideas-gone-wrong.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/april-fool%E2%80%99s-day-brand-ideas-gone-wrong.pdf",
     thumbnail: "/impulse-website/slideshow/ppt14.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT15",
     title: "Online behavior between an Indian and USA internet user",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/online-behavior-between-an-indian-and-usa-internet-user%20.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/online-behavior-between-an-indian-and-usa-internet-user%20.pdf",
     thumbnail: "/impulse-website/slideshow/ppt15.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT16",
     title: "LinkedIn vs Facebook – What’s better for B2B",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/linkedin-vs-facebook-what%E2%80%99s-a-better-platform-for-b2b-business.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/linkedin-vs-facebook-what%E2%80%99s-a-better-platform-for-b2b-business.pdf",
     thumbnail: "/impulse-website/slideshow/ppt16.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT17",
     title: "Impactful Women’s Day campaign ideas 2023 – With examples",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/impactful-women%E2%80%99s-day-campaign-ideas-2023-with-examples.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/impactful-women%E2%80%99s-day-campaign-ideas-2023-with-examples.pdf",
     thumbnail: "/impulse-website/slideshow/ppt17.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT18",
     title: "Can you use memes in advertising? Perks of meme marketing",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/can-you-use-memes-in-advertising-perks-of-meme-marketing.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/can-you-use-memes-in-advertising-perks-of-meme-marketing.pdf",
     thumbnail: "/impulse-website/slideshow/ppt18.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT19",
     title: "Transform employer branding for hybrid & remote employees",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/transform-employer-branding-for-hybrid-&-remote-working-employees-know-how.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/transform-employer-branding-for-hybrid-&-remote-working-employees-know-how.pdf",
     thumbnail: "/impulse-website/slideshow/ppt19.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT20",
-    title: "How can you use emojis in advertising to drive better results?",
+    title:
+      "How can you use emojis in advertising to drive better results?",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-can-you-use-emojis-in-advertising-to-drive-better-results.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-can-you-use-emojis-in-advertising-to-drive-better-results.pdf",
     thumbnail: "/impulse-website/slideshow/ppt20.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT21",
     title: "Valentine’s Day promotion ideas for retail",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/valentine%E2%80%99s-day-promotion-ideas-for-retail-make-profitable-sales.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/valentine%E2%80%99s-day-promotion-ideas-for-retail-make-profitable-sales.pdf",
     thumbnail: "/impulse-website/slideshow/ppt21.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT22",
     title: "7 next-gen digital marketing trends for 2023",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/7-next-gen-digital-marketing-trends-for-2023-company.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/7-next-gen-digital-marketing-trends-for-2023-company.pdf",
     thumbnail: "/impulse-website/slideshow/ppt22.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT23",
     title: "Short-form content will sweep the internet – Know why",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/short-form-content-will-sweep-off-the-internet-know-why.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/short-form-content-will-sweep-off-the-internet-know-why.pdf",
     thumbnail: "/impulse-website/slideshow/ppt23.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT24",
-    title: "Top 5 limitations of ChatGPT & why SEO doesn’t recommend it",
+    title:
+      "Top 5 limitations of ChatGPT & why SEO doesn’t recommend it",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/top-5-limitations-of-chatgpt-and-why-seo-does-not-recommend-it.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-5-limitations-of-chatgpt-and-why-seo-does-not-recommend-it.pdf",
     thumbnail: "/impulse-website/slideshow/ppt24.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT25",
     title: "How to choose the right content management system",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-to-choose-the-right-content-management-system.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-choose-the-right-content-management-system.pdf",
     thumbnail: "/impulse-website/slideshow/ppt25.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT26",
     title: "Top marketing trends of 2022 you need to know",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/top-marketing-trends-of-2022-you-need-to-know-to-grow-your-business.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-marketing-trends-of-2022-you-need-to-know-to-grow-your-business.pdf",
     thumbnail: "/impulse-website/slideshow/ppt26.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT27",
-    title: "5 ways to enhance your business using YouTube marketing",
+    title:
+      "5 ways to enhance your business using YouTube marketing",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/5-ways-to-enhance-your-business-using-youtube-marketing.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/5-ways-to-enhance-your-business-using-youtube-marketing.pdf",
     thumbnail: "/impulse-website/slideshow/ppt27.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT28",
-    title: "How employer branding transforms the future of your organisation",
+    title:
+      "How employer branding transforms the future of your organisation",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how_employer_branding_transforms_the%20future_of_your_organisation.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how_employer_branding_transforms_the%20future_of_your_organisation.pdf",
     thumbnail: "/impulse-website/slideshow/ppt28.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT29",
     title: "Did you know how much and what Google knows about you?",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/did_you_know_how_much_and_what_google_knows_about_you.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/did_you_know_how_much_and_what_google_knows_about_you.pdf",
     thumbnail: "/impulse-website/slideshow/ppt29.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-
   {
     id: "PPT30",
     title: "Is YouTube too competitive? 5 alternatives you must know",
     year: "2023",
-    pdfUrl: "https://www.theimpulsedigital.com/slideshare/is_youtube_too_competitive_5_alternatives_you_must_know.pdf",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/is_youtube_too_competitive_5_alternatives_you_must_know.pdf",
     thumbnail: "/impulse-website/slideshow/ppt30.png",
     tag: "PPT",
     meta: "2023 • Presentation",
   },
-   {
+  {
     id: "PPT31",
     title: "Top marketing predictions you must know for 2022",
     year: "2022",
@@ -300,7 +324,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT32",
     title: "Not to be missed – Top SEO strategies for D2C websites",
@@ -311,7 +334,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT33",
     title: "Digital marketing insights for retail businesses in India",
@@ -322,7 +344,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT34",
     title: "Is AI helping digital marketers? A transparency review",
@@ -333,7 +354,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT35",
     title: "How to boost your content strategy using Google Trends",
@@ -344,7 +364,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT36",
     title: "5 compelling reasons why your brand needs a SEO audit",
@@ -355,7 +374,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT37",
     title: "How to choose the right digital marketing agency",
@@ -366,7 +384,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT38",
     title: "All there is to hyperlocal SEO & how to leverage it",
@@ -377,7 +394,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT39",
     title: "5 creative ways to repurpose your long-form content",
@@ -388,10 +404,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT40",
-    title: "Understanding how buyer persona drives your marketing success",
+    title:
+      "Understanding how buyer persona drives your marketing success",
     year: "2022",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/understanding-how-buyer-persona-drives-your-marketing-success.pdf",
@@ -399,7 +415,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT41",
     title: "How to improve landing page conversions with psychology",
@@ -410,7 +425,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT42",
     title: "Why storytelling is powerful in digital ads",
@@ -421,7 +435,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT43",
     title: "People Also Ask (PAA) and its significance for your SEO",
@@ -432,7 +445,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT44",
     title: "Why competitor analysis is important in SEO",
@@ -443,7 +455,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT45",
     title: "Which is better: In-house marketing vs outsourcing",
@@ -454,7 +465,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT46",
     title: "5 social media strategies brands must follow for growth",
@@ -465,7 +475,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT47",
     title: "7 mistakes brands should avoid on Instagram",
@@ -476,7 +485,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT48",
     title: "Top YouTube SEO practices to rank high",
@@ -487,7 +495,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT49",
     title: "Instagram algorithm explained for brands",
@@ -498,10 +505,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT50",
-    title: "How to increase customer loyalty through digital retention strategies",
+    title:
+      "How to increase customer loyalty through digital retention strategies",
     year: "2022",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/how-to-increase-customer-loyalty-through-digital-retention-strategies.pdf",
@@ -509,7 +516,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT51",
     title: "Top content marketing predictions for 2022",
@@ -520,10 +526,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT52",
-    title: "What every marketer should know about email marketing success",
+    title:
+      "What every marketer should know about email marketing success",
     year: "2022",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/what-every-marketer-should-know-about-email-marketing-success.pdf",
@@ -531,7 +537,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT53",
     title: "The rise of voice assistants and its marketing impact",
@@ -542,7 +547,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT54",
     title: "Understanding micro-moments in consumer decision-making",
@@ -553,7 +557,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT55",
     title: "How mobile-first indexing impacts your SEO",
@@ -564,7 +567,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT56",
     title: "Using psychology to design high-converting ads",
@@ -575,7 +577,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT57",
     title: "How to build a brand identity on social media",
@@ -586,7 +587,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT58",
     title: "Understanding the power of digital customer journeys",
@@ -597,7 +597,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT59",
     title: "The impact of UX on conversions – A must-know guide",
@@ -608,7 +607,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2022 • Presentation",
   },
-
   {
     id: "PPT60",
     title: "The importance of page speed for SEO performance",
@@ -629,7 +627,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT62",
     title: "A beginner’s guide to Google Ads for small businesses",
@@ -640,7 +637,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT63",
     title: "Top voice technology trends in 2021 you ought to know",
@@ -651,10 +647,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT64",
-    title: "The rise of D2C brands in India – What marketers should know",
+    title:
+      "The rise of D2C brands in India – What marketers should know",
     year: "2021",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/the-rise-of-d2c-brands-in-india.pdf",
@@ -662,7 +658,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT65",
     title: "Google’s E-A-T principle explained for modern SEO",
@@ -673,7 +668,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT66",
     title: "Best practices to increase engagement on social media",
@@ -684,7 +678,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT67",
     title: "Top tools every digital marketer should use in 2021",
@@ -695,7 +688,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT68",
     title: "Marketing funnel explained with real-world examples",
@@ -706,7 +698,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT69",
     title: "The complete guide to influencer marketing in India",
@@ -717,7 +708,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT70",
     title: "Understanding social listening – Why brands must adopt it",
@@ -728,7 +718,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT71",
     title: "How content clusters help you improve SEO ranking",
@@ -739,7 +728,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT72",
     title: "Must-follow branding principles for modern Indian startups",
@@ -750,7 +738,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT73",
     title: "How to build an effective B2B demand-generation strategy",
@@ -761,7 +748,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT74",
     title: "Creative ways to promote your brand during festivals",
@@ -772,7 +758,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT75",
     title: "The science behind viral content – A deep dive",
@@ -783,7 +768,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT76",
     title: "Why customer feedback is gold for marketing teams",
@@ -794,10 +778,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT77",
-    title: "Everything you must know about consumer psychology in marketing",
+    title:
+      "Everything you must know about consumer psychology in marketing",
     year: "2021",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/consumer-psychology-in-marketing.pdf",
@@ -805,7 +789,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT78",
     title: "The future of media planning – Trends shaping 2021",
@@ -816,7 +799,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT79",
     title: "Why brands must embrace omnichannel customer experience",
@@ -827,7 +809,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT80",
     title: "How digital PR helps brands grow in competitive markets",
@@ -838,7 +819,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT81",
     title: "The rise of meme marketing – Why it works",
@@ -849,7 +829,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT82",
     title: "Indian consumer trends every marketer must know",
@@ -860,7 +839,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT83",
     title: "How to create evergreen content that ranks",
@@ -871,7 +849,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT84",
     title: "A complete guide to hashtag strategy for social media",
@@ -882,7 +859,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT85",
     title: "Google My Business optimization tips for local ranking",
@@ -893,7 +869,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT86",
     title: "How to write ad copy that converts",
@@ -904,7 +879,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT87",
     title: "Understanding the basics of Google Analytics",
@@ -915,7 +889,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT88",
     title: "How copywriting impacts brand recall",
@@ -926,7 +899,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT89",
     title: "SEO vs SEM – When should brands choose what?",
@@ -937,7 +909,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT90",
     title: "Guide to creating a winning digital marketing plan",
@@ -948,7 +919,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT91",
     title: "The future of SEO – Predictions that matter",
@@ -959,18 +929,15 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT92",
     title: "SEO trends",
     year: "2021",
-    pdfUrl:
-      "https://www.theimpulsedigital.com/slideshare/seo-trends.pdf",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/seo-trends.pdf",
     thumbnail: "/impulse-website/slideshow/ppt92.png",
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT93",
     title: "Why every business must invest in digital transformation",
@@ -981,7 +948,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT94",
     title: "Top content formats that will dominate 2021",
@@ -992,7 +958,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT95",
     title: "Why retention marketing matters more than acquisition",
@@ -1003,10 +968,10 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT96",
-    title: "How brands can strategize during uncertain market conditions",
+    title:
+      "How brands can strategize during uncertain market conditions",
     year: "2021",
     pdfUrl:
       "https://www.theimpulsedigital.com/slideshare/strategize-during-uncertain-market-conditions.pdf",
@@ -1014,7 +979,6 @@ export const seoPpts = [
     tag: "PPT",
     meta: "2021 • Presentation",
   },
-
   {
     id: "PPT97",
     title: "The evolution of consumer behaviour post-pandemic",
@@ -1027,16 +991,13 @@ export const seoPpts = [
   },
 ];
 
-
-
-const years = ["all", "2020", "2021", "2022", "2023"];
+const years = ["all", "2023", "2022", "2021"];
 
 export const SlideSharePPT = (): JSX.Element => {
   const [search, setSearch] = useState("");
   const [year, setYear] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(9); // for Load More
+  const [visibleCount, setVisibleCount] = useState(9);
 
-  // Filtered list based on search + year
   const filteredPpts = useMemo(() => {
     const s = search.trim().toLowerCase();
     return seoPpts.filter((ppt) => {
@@ -1046,7 +1007,6 @@ export const SlideSharePPT = (): JSX.Element => {
     });
   }, [search, year]);
 
-  // Slice for pagination (Load More)
   const visiblePpts = useMemo(
     () => filteredPpts.slice(0, visibleCount),
     [filteredPpts, visibleCount]
@@ -1055,106 +1015,104 @@ export const SlideSharePPT = (): JSX.Element => {
   const clearFilters = () => {
     setSearch("");
     setYear("all");
-    setVisibleCount(9); // reset pagination
+    setVisibleCount(9);
   };
 
   const showEmpty = filteredPpts.length === 0;
 
   return (
-    <div className="bg-white text-slate-50 min-h-screen">
+    <div className="min-h-screen bg-[#ffffff] from-slate-50 via-white to-slate-100 text-slate-900" id="sec-border">
       <div className="max-w-6xl mx-auto px-4 py-10 lg:py-14">
-        {/* Breadcrumb */}
-        {/* <nav className="text-xs text-slate-400 mb-4">
-          <a href="/" className="hover:text-slate-700">
-            Home
-          </a>
-          <span className="mx-1">/</span>
-          <a href="/slideshare-ppt" className="hover:text-slate-700">
-            Slideshare PPTs
-          </a>
-          <span className="mx-1">/</span>
-          <span className="text-slate-900 font-medium">
-            Search Engine Optimization (SEO) PPT
-          </span>
-        </nav> */}
+        
 
         {/* Header */}
-        {/* <header className="mb-6 lg:mb-8">
-          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-500 mb-2">
-            SEO Resources
-          </p>
-          <h1 className="text-slate-900 text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3">
-            Search Engine Optimization (SEO) PPTs &amp; Presentations
-          </h1>
-          <p className="text-sm sm:text-base text-slate-600 max-w-3xl">
-            Explore our curated SEO PPTs on search engine trends, D2C SEO
-            strategies, hyperlocal SEO, voice search, Google updates and more.
-            Download and use these presentations for learning, training or
-            client pitches.
-          </p>
-        </header> */}
+        <header className="mb-8 lg:mb-10 flex flex-col gap-3">
+          
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl mb-6">
+                Download expert{" "}
+                <span className="text-[#543d98]">marketing & SEO</span> PPTs
+              </h2>
+              <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-lg mb-2 max-w-3xl">
+                Browse 90+ decks on SEO, social media, content, D2C, ONDC,
+                branding, and more — built by Impulse Digital for real business
+                problems, not just theory.
+              </p>
+            </div>
+
+            <p className="mt-2 sm:mt-0 text-xs sm:text-sm text-slate-500">
+              <span className="font-semibold text-slate-800">
+                {seoPpts.length}+
+              </span>{" "}
+              PPTs •{" "}
+              <span className="font-medium text-indigo-600 text-[#543d98]">2021–2023</span>
+            </p>
+          </div>
+        </header>
 
         {/* Category Tabs */}
         <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3 text-xs sm:text-sm">
           <a
             href="/search-engine-optimization-PPT"
-            className="px-3 py-1.5 rounded-full bg-indigo-600 text-white font-medium"
+            className="px-3 py-1.5 rounded-full text-white font-medium bg-[#543d98]"
           >
-            SEO PPT
+            All PPTs
           </a>
           <a
             href="/social-media-PPT"
-            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Social Media PPT
           </a>
           <a
             href="/google-ads-PPT"
-            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Google Ads / SEM PPT
           </a>
           <a
             href="/content-marketing-PPT"
-            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Content Marketing PPT
           </a>
           <a
             href="/employer-branding-PPT"
-            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Employer Branding PPT
           </a>
         </div>
 
-        {/* Filters */}
-        <section className="bg-[#030019] border border-slate-800 rounded-2xl p-4 sm:p-5 mb-8 sticky top-0 z-10 backdrop-blur">
+        {/* Filters 
+        <section className="bg-white/80 border border-slate-200 shadow-sm rounded-2xl p-4 sm:p-5 mb-8 sticky top-2 z-10 backdrop-blur">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            {/* Search */}
+            {/* Search *
             <div className="relative w-full sm:max-w-md">
               <input
                 id="searchInput"
                 type="text"
-                placeholder="Search within SEO PPT titles..."
+                placeholder="Search by topic, keyword, or title..."
                 value={search}
                 onChange={(e) => {
                   setSearch(e.target.value);
-                  setVisibleCount(9); // reset pagination on new search
+                  setVisibleCount(9);
                 }}
-                className="w-full rounded-xl bg-slate-950/70 border border-slate-800 px-10 py-2.5 text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-100"
+                className="w-full rounded-xl bg-slate-50 border border-slate-200 px-10 py-2.5 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-900"
               />
-              <span className="absolute left-3 top-2.5 text-slate-500 text-sm">
+              <span className="absolute left-3 top-2.5 text-slate-400 text-sm">
                 🔍
               </span>
             </div>
 
-            {/* Year + Clear in one line */}
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            {/* Year + Clear 
+            <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
               <div className="flex items-center gap-2">
                 <label
                   htmlFor="yearSelect"
-                  className="text-xs font-medium text-slate-400 whitespace-nowrap"
+                  className="text-xs font-medium text-slate-500 uppercase tracking-wide"
                 >
                   Year
                 </label>
@@ -1163,13 +1121,13 @@ export const SlideSharePPT = (): JSX.Element => {
                   value={year}
                   onChange={(e) => {
                     setYear(e.target.value);
-                    setVisibleCount(9); // reset pagination on filter change
+                    setVisibleCount(9);
                   }}
-                  className="rounded-xl bg-slate-950/70 border border-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-100"
+                  className="rounded-xl bg-slate-50 border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-900"
                 >
                   {years.map((y) => (
                     <option key={y} value={y}>
-                      {y === "all" ? "All" : y}
+                      {y === "all" ? "All years" : y}
                     </option>
                   ))}
                 </select>
@@ -1178,24 +1136,37 @@ export const SlideSharePPT = (): JSX.Element => {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="text-xs sm:text-sm px-3 py-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-200"
+                className="text-xs sm:text-sm px-3 py-2 rounded-full border border-slate-200 hover:border-slate-400 text-slate-600 hover:text-slate-900 bg-white transition-colors"
               >
                 Clear filters
               </button>
             </div>
           </div>
-        </section>
+
+          {/* Small helper text *
+          <p className="mt-3 text-[11px] text-slate-500">
+            Showing{" "}
+            <span className="font-semibold text-slate-800">
+              {visiblePpts.length}
+            </span>{" "}
+            of{" "}
+            <span className="font-semibold text-slate-800">
+              {filteredPpts.length}
+            </span>{" "}
+            matching PPTs.
+          </p>
+        </section> */}
 
         {/* Empty state */}
         {showEmpty && (
-          <div className="text-center py-12 border border-dashed border-slate-800 rounded-2xl bg-slate-900/40">
-            <p className="text-sm text-slate-300 mb-2">
-              No SEO PPTs match your filters right now.
+          <div className="text-center py-12 border border-dashed border-slate-300 rounded-2xl bg-white/60">
+            <p className="text-sm text-slate-600 mb-2">
+              No PPTs match your filters right now.
             </p>
             <button
               type="button"
               onClick={clearFilters}
-              className="mt-1 text-xs px-3 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white"
+              className="mt-1 text-xs px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white"
             >
               Clear all filters
             </button>
@@ -1211,61 +1182,66 @@ export const SlideSharePPT = (): JSX.Element => {
             >
               {visiblePpts.map((ppt) => (
                 <article
-                  key={ppt.id}
-                  className="ppt-card group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden flex flex-col hover:border-indigo-500/70 hover:bg-slate-900 transition-all duration-200"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={ppt.thumbnail}
-                      alt={ppt.title}
-                      className="h-[180px] w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                    />
-                    <span className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.16em] bg-slate-950/80 border border-slate-700 px-2 py-1 rounded-full text-slate-200">
-                      {ppt.tag}
-                    </span>
-                  </div>
+                      key={ppt.id}
+                      className="ppt-card group relative bg-white rounded-3xl border border-slate-200 
+                                shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+                    >
+                      {/* Thumbnail */}
+                      <div className="relative">
+                        <img
+                          src={ppt.thumbnail}
+                          alt={ppt.title}
+                          className="w-full h-[200px] object-fill rounded-t-3xl transition-all duration-500 
+                                    group-hover:scale-[1.02]"
+                        />
 
-                  <div className="bg-[#030019] flex flex-col flex-1 px-4 py-4">
-                    <h2 className="text-sm sm:text-base font-semibold line-clamp-2 mb-2 text-slate-50">
-                      {ppt.title}
-                    </h2>
 
-                    <p className="text-xs text-slate-400 mb-3">{ppt.meta}</p>
 
-                    <div className="mt-auto flex items-center justify-between gap-2 pt-2">
-                      <a
-                        href={ppt.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center text-xs sm:text-sm px-3 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium"
-                      >
-                        View PPT
-                      </a>
+                        {/* Soft gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-3xl" />
 
-                      <a
-                        href={ppt.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[11px] sm:text-xs text-slate-300 hover:text-slate-100 underline-offset-2 hover:underline"
-                      >
-                        Download
-                      </a>
-                    </div>
-                  </div>
-                </article>
+                        {/* Tag */}
+                        <span className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.16em] 
+                                        bg-[#543d98] text-white px-2 py-1 rounded-full border border-white/20">
+                          {ppt.tag}
+                        </span>
+                      </div>
+
+                      {/* Content */}
+                      <div className="px-4 py-5 bg-white rounded-b-3xl">
+                        <h2 className="text-slate-900 text-sm sm:text-base font-semibold line-clamp-2 mb-2">
+                          {ppt.title}
+                        </h2>
+
+                        <p className="text-xs text-slate-500 mb-4">{ppt.meta}</p>
+
+                        {/* Buttons */}
+                        <div className="mt-auto flex items-center justify-between gap-2">
+                          
+                          {/* VIEW PPT */}
+                          <Button as="a" href={ppt.pdfUrl} target="_blank" rel="noopener noreferrer" className="w-[120px] h-[40px] group/view inline-flex items-center gap-2 px-4 py-5 bg-white rounded-xl text-[#543d98] hover:bg-[#543d98] hover:text-white transition-colors duration-300" > <span className="font-bold text-sm md:text-base font-['DM_Sans'] group-hover/view:text-white transition-colors duration-300"> View PPT </span> <img src="/impulse-website/vector-1-3.svg" alt="Arrow" className="w-4 h-4 transition-all duration-300 group-hover/view:rotate-45 group-hover/view:brightness-0 group-hover/view:invert" /> </Button>
+
+                          {/* DOWNLOAD */}
+                          <Button as="a" href={ppt.pdfUrl} target="_blank" rel="noopener noreferrer" className="w-[120px] h-[40px] group/download sm:inline-flex items-center gap-2 px-4 py-5 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border border-[#543d98]" > <span className="font-bold text-sm md:text-base font-['DM_Sans'] group-hover/download:text-[#543d98] transition-colors duration-300"> Download </span> <img src="/impulse-website/button-icon.svg" alt="Arrow" className="w-4 h-4 transition-all duration-300 group-hover/download:rotate-45 group-hover/download:brightness-1 group-hover/download:invert " /> </Button>
+                        </div>
+                      </div>
+              </article>
+
               ))}
             </section>
 
             {/* Load More button */}
             {visibleCount < filteredPpts.length && (
               <div className="flex justify-center mt-10">
-                <button
-                  type="button"
+                <Button
+                  
                   onClick={() => setVisibleCount((prev) => prev + 9)}
-                  className="px-6 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium"
+                  className="w-[180px] h-[44px] group sm:inline-flex items-center gap-2 px-4 py-5 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border border-[#543d98]"
                 >
-                  Load More
-                </button>
+                  Load more PPTs
+                  <img src="/impulse-website/button-icon.svg" alt="Arrow" className="w-4 h-4 transition-all duration-300 group-hover:rotate-45 group-hover:brightness-1 group-hover:invert " /> 
+                </Button>
               </div>
             )}
           </>
