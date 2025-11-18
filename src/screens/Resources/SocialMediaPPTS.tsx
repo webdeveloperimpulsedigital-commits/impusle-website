@@ -1,6 +1,6 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
 import { SocialMediaPPTHeroSection } from "./sections/SocialMediaPPTHeroSection";
-import { SlideSharePPT } from "../Resources/sections/SlideSharePPT";
+import { SocialMediaPPT } from "../Resources/sections/SocialMediaPPT";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
@@ -11,7 +11,7 @@ export const SocialMediaPPTS = (): JSX.Element => {
       {/* <ScrollRevealLogo /> */}
       <div className="relative w-full space-y-0">
         <SocialMediaPPTHeroSection />
-        <SlideSharePPT />
+        <SocialMediaPPT />
         <ContactSection />
         <FAQSection />
         <FooterSection />

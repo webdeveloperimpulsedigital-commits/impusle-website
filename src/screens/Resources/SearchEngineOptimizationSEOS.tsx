@@ -1,6 +1,6 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
 import { SearchEngineOptimizationSEOPPTHeroSection } from "./sections/SearchEngineOptimizationSEOPPTHeroSection";
-import { SlideSharePPT } from "../Resources/sections/SlideSharePPT";
+import { SlideShareSsoPPT } from "../Resources/sections/SearchEngineOptimizationSEOPPT";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
@@ -11,7 +11,7 @@ export const SearchEngineOptimizationSEOS = (): JSX.Element => {
       {/* <ScrollRevealLogo /> */}
       <div className="relative w-full space-y-0">
         <SearchEngineOptimizationSEOPPTHeroSection />
-        <SlideSharePPT />
+        <SlideShareSsoPPT />
         <ContactSection />
         <FAQSection />
         <FooterSection />

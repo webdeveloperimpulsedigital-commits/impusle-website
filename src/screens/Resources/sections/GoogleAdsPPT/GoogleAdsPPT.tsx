@@ -4,15 +4,64 @@ import "./GoogleAdsPPT.css"; // ← ensure file name EXACTLY matches
 type Slide = { id: string; title: string; image: string; href: string };
 
 const SLIDES: Slide[] = [
-  { id: "1", title: "Embracing LGBTQ+ Pride in 2023", image: "/impulse-website/ppt1.jpg", href: "https://www.slideshare.net/theimpulsedigital/lgbtq-pride" },
-  { id: "2", title: "How Emotions Drive Advertising", image: "/impulse-website/ppt2.jpg", href: "https://www.slideshare.net/theimpulsedigital/emotional-advertising" },
-  { id: "3", title: "Why Employer Branding Matters", image: "/impulse-website/ppt3.jpg", href: "https://www.slideshare.net/theimpulsedigital/employer-branding-plan" },
-  { id: "4", title: "Planning to Order from ONDC?", image: "/impulse-website/ppt4.jpg", href: "https://www.slideshare.net/theimpulsedigital/ondc-planning" },
-  { id: "5", title: "Apple’s VR: What Changes for Marketers", image: "/impulse-website/ppt5.jpg", href: "https://www.slideshare.net/theimpulsedigital/apple-vr-marketing" },
-  { id: "6", title: "Father’s Day: Brand Playbook", image: "/impulse-website/ppt6.jpg", href: "https://www.slideshare.net/theimpulsedigital/fathers-day-campaign" },
-  { id: "7", title: "ONDC: Key Takeaways", image: "/impulse-website/ppt7.jpg", href: "https://www.slideshare.net/theimpulsedigital/ondc-report" },
-  { id: "8", title: "Best AI Tools for India", image: "/impulse-website/ppt8.jpg", href: "https://www.slideshare.net/theimpulsedigital/ai-tools" },
-  { id: "9", title: "B2B Entrepreneur’s Guide", image: "/impulse-website/ppt9.jpg", href: "https://www.slideshare.net/theimpulsedigital/b2b-guide" },
+
+  {
+    id: "PPT90",
+    title: "Remarketing – A digital magnet",
+    href: "https://www.theimpulsedigital.com/slideshare/remarketing-a-digital-magnet.pdf",
+    image: "/impulse-website/slideshow/ppt90.png",
+  },
+  {
+    id: "PPT48",
+    title: "What is a lead magnet & how to use it effectively?",
+    href: "https://www.theimpulsedigital.com/slideshare/what-is-a-lead-magnet-and-how-to-use-it-effectively.pdf",
+    image: "/impulse-website/slideshow/ppt48.png",
+  },
+  {
+    id: "PPT52",
+    title: "Five best lead generation trends in 2021",
+    href: "https://www.theimpulsedigital.com/slideshare/five-best-lead-generation-trends-in-2021.pdf",
+    image: "/impulse-website/slideshow/ppt52.png",
+  },
+  {
+    id: "PPT36",
+    title: "More about Quora marketing – 5 detailed steps to Quora ads",
+    href: "https://www.theimpulsedigital.com/slideshare/more-about-quora-marketing5-detailed-steps-to-quora-ads.pdf",
+    image: "/impulse-website/slideshow/ppt36.png",
+  },
+  {
+    id: "PPT54",
+    title: "5 perks of Google’s Performance Max campaigns",
+    href: "https://www.theimpulsedigital.com/slideshare/do-you-know-these-5-perks-of-google%E2%80%99s-performance-max-campaigns.pdf",
+    image: "/impulse-website/slideshow/ppt54.png",
+  },
+  {
+    id: "PPT59",
+    title: "Why your brand needs to ace conversational marketing",
+    href: "https://www.theimpulsedigital.com/slideshare/why-your-brand-needs-to-ace-the-conversational-marketing-strategy.pdf",
+    image: "/impulse-website/slideshow/ppt59.png",
+  },
+  {
+    id: "PPT60",
+    title: "The ultimate guide to creating a perfect landing page for your business",
+    href: "https://www.theimpulsedigital.com/slideshare/the-ultimate-guide-to-creating-a-perfect-landing-page-for-your-business.pdf",
+    image: "/impulse-website/slideshow/ppt60.png",
+  },
+  {
+    id: "PPT66",
+    title: "Advertisements that have bowled us over – Top picks from IPL season",
+    href: "https://www.theimpulsedigital.com/slideshare/advertisements-that-have-bowled-us-over-this-ipl-season.pdf",
+    image: "/impulse-website/slideshow/ppt66.png",
+  },
+  {
+    id: "PPT35",
+    title: "All you need to know about programmatic advertising",
+    href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-programmatic-advertising.pdf",
+    image: "/impulse-website/slideshow/ppt35.png",
+  }
+
+
+
 ];
 
 export const GoogleAdsPPT = (): JSX.Element => {
@@ -51,22 +100,22 @@ export const GoogleAdsPPT = (): JSX.Element => {
           </div>
 
           {/* Right: sidebar */}
-          <aside className="col-lg-3 mt-5 mt-lg-0">
+          <aside className="col-lg-1 mt-5 mt-lg-0 pt-16">
             <div className="ppt-sidebar">
-              <div className="ppt-search">
+              {/* <div className="ppt-search">
                 <input type="text" placeholder="Search" className="ppt-input" />
                 <button className="ppt-search-btn">Search</button>
-              </div>
+              </div> */}
 
               <div className="ppt-cats">
                 <h5 className="ppt-cats__title">Categories</h5>
                 <ul className="ppt-cats__list">
-                  <li><Link to="#" className="ppt-cat">Search  Engine Optimization (SEO) PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Social Media PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Google Ads (SEM) PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Content Marketing PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Website Design & Development  PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Employer Branding</Link></li>
+                  <li><Link to="/resources/search-engine-optimization-PPT" className="ppt-cat">Search Engine Optimization (SEO) PPT</Link></li>
+                  <li><Link to="/resources/social-media-PPT" className="ppt-cat">Social Media PPT</Link></li>
+                  <li><Link to="/resources/google-ads-PPT" className="ppt-cat">Google Ads (SEM) PPT</Link></li>
+                  <li><Link to="/resources/content-marketing-PPT" className="ppt-cat">Content Marketing PPT</Link></li>
+                  <li><Link to="/resources/website-design-development-PPT" className="ppt-cat">Website Design & Development  PPT</Link></li>
+                  <li><Link to="/resources/employer-branding-PPT" className="ppt-cat">Employer Branding</Link></li>
                 </ul>
               </div>
             </div>

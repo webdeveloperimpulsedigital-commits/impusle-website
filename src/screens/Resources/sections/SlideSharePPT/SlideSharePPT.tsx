@@ -1,160 +1,1275 @@
-import { Link } from "react-router-dom";
-import "./SlideSharePPT.css"; // ← ensure file name EXACTLY matches
+import { useMemo, useState } from "react";
 
-type Slide = { id: string; title: string; image: string; href: string };
+export const seoPpts = [
+  {
+    id: "PPT1",
+    title: "Evolution of workplace perks – What employers are doing to redefine them",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/evolution-of-workplace-perks-what-employers-are-doing-to-redefine-them.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt1.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT2",
+    title: "3 reasons why your B2B marketing strategy framework is not generating quality leads",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/3-reasons-why-your-b2b-marketing-strategy-framework-is-not-generating-quality-leads.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt2.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT3",
+    title: "Transforming your traditional B2B business into a thriving online enterprise",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/transforming-your-traditional-B2B-business-into-a-thriving-online-enterprise-a-comprehensive-guide.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt3.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT4",
+    title: "Embracing LGBTQ Pride – Employer branding for workplace diversity and inclusion",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt4.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT5",
+    title: "How evoking emotions and different appeals is key to a successful advertising strategy",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt5.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT6",
+    title: "Why employer branding should be an essential element of your marketing plan",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt6.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT7",
+    title: "Planning to order from ONDC – But is it worth it?",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/planning-to-order-from-ondc-but-is-it-worth-it.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt7.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT8",
+    title: "How Apple’s VR headset is going to change the game for marketers",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-apple%E2%80%99s-vr-headset-is-going-to-change-the-game-for-marketers.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt8.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT9",
+    title: "Father’s Day – How brands cash in on celebrating dads",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/father%E2%80%99s-day-how-brands-cash-in-on-celebrating-dads.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt9.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
 
-const SLIDES: Slide[] = [
-  { id: "1", title: "Embracing LGBTQ+ Pride in 2023", image: "/impulse-website/slideshow/ppt1.png", href: "https://www.theimpulsedigital.com/slideshare/evolution-of-workplace-perks-what-employers-are-doing-to-redefine-them.pdf" },
-  { id: "2", title: "How Emotions Drive Advertising", image: "/impulse-website/slideshow/ppt2.png", href: "https://www.theimpulsedigital.com/slideshare/3-reasons-why-your-b2b-marketing-strategy-framework-is-not-generating-quality-leads.pdf" },
-  { id: "3", title: "Why Employer Branding Matters", image: "/impulse-website/slideshow/ppt3.png", href: "https://www.theimpulsedigital.com/slideshare/transforming-your-traditional-B2B-business-into-a-thriving-online-enterprise-a-comprehensive-guide.pdf"},
-  { id: "4", title: "Planning to Order from ONDC?", image: "/impulse-website/slideshow/ppt4.png", href: "https://www.theimpulsedigital.com/slideshare/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion.pdf" },
-  { id: "5", title: "Apple’s VR: What Changes for Marketers", image: "/impulse-website/slideshow/ppt5.png", href: "https://www.theimpulsedigital.com/slideshare/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy.pdf" },
-  { id: "6", title: "Father’s Day: Brand Playbook", image: "/impulse-website/slideshow/ppt6.png", href: "https://www.theimpulsedigital.com/slideshare/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.pdf" },
-  { id: "7", title: "ONDC: Key Takeaways", image: "/impulse-website/slideshow/ppt7.png", href: "https://www.theimpulsedigital.com/slideshare/planning-to-order-from-ondc-but-is-it-worth-it.pdf" },
-  { id: "8", title: "Best AI Tools for India", image: "/impulse-website/slideshow/ppt8.png", href: "https://www.theimpulsedigital.com/slideshare/how-apple%E2%80%99s-vr-headset-is-going-to-change-the-game-for-marketers.pdf" },
-  { id: "9", title: "B2B Entrepreneur’s Guide", image: "/impulse-website/slideshow/ppt9.png", href: "https://www.theimpulsedigital.com/slideshare/father%E2%80%99s-day-how-brands-cash-in-on-celebrating-dads.pdf" },
-  { id: "10", title: "PPT10", image: "/impulse-website/slideshow/ppt10.png", href: "https://www.theimpulsedigital.com/slideshare/dissecting-the-key-takeaways-from-the-ondc-report.pdf"},
-  { id: "11", title: "PPT111", image: "/impulse-website/slideshow/ppt11.png", href: "https://www.theimpulsedigital.com/slideshare/best-ai-tools-for-indian-audience-to-use.pdf"},
-  { id: "12", title: "PPT12", image: "/impulse-website/slideshow/ppt12.png", href: "https://www.theimpulsedigital.com/slideshare/b2b-entrepreneur%E2%80%99s-guide-to-reach-your-high-hanging-fruits!.pdf"},
-  { id: "13", title: "PPT13", image: "/impulse-website/slideshow/ppt13.png", href: "https://www.theimpulsedigital.com/slideshare/facebook-scam-alert-copyright-infringement-here%E2%80%99s-how-to-not-fall-for-one.pdf"},
-  { id: "14", title: "PPT14", image: "/impulse-website/slideshow/ppt14.png", href: "https://www.theimpulsedigital.com/slideshare/april-fool%E2%80%99s-day-brand-ideas-gone-wrong.pdf"},
-  { id: "15", title: "PPT15", image: "/impulse-website/slideshow/ppt15.png", href: "https://www.theimpulsedigital.com/slideshare/online-behavior-between-an-indian-and-usa-internet-user%20.pdf"},
-  { id: "16", title: "PPT16", image: "/impulse-website/slideshow/ppt16.png", href: "https://www.theimpulsedigital.com/slideshare/linkedin-vs-facebook-what%E2%80%99s-a-better-platform-for-b2b-business.pdf"},
-  { id: "17", title: "PPT17", image: "/impulse-website/slideshow/ppt17.png", href: "https://www.theimpulsedigital.com/slideshare/impactful-women%E2%80%99s-day-campaign-ideas-2023-with-examples.pdf"},
-  { id: "18", title: "PPT18", image: "/impulse-website/slideshow/ppt18.png", href: "https://www.theimpulsedigital.com/slideshare/can-you-use-memes-in-advertising-perks-of-meme-marketing.pdf"},
-  { id: "19", title: "PPT19", image: "/impulse-website/slideshow/ppt19.png", href: "https://www.theimpulsedigital.com/slideshare/transform-employer-branding-for-hybrid-&-remote-working-employees-know-how.pdf"},
-  { id: "20", title: "PPT20", image: "/impulse-website/slideshow/ppt20.png", href: "https://www.theimpulsedigital.com/slideshare/how-can-you-use-emojis-in-advertising-to-drive-better-results.pdf"},
-  { id: "21", title: "PPT21", image: "/impulse-website/slideshow/ppt21.png", href: "https://www.theimpulsedigital.com/slideshare/valentine%E2%80%99s-day-promotion-ideas-for-retail-make-profitable-sales.pdf"},
-  { id: "22", title: "PPT22", image: "/impulse-website/slideshow/ppt22.png", href: "https://www.theimpulsedigital.com/slideshare/how_employer_branding_transforms_the%20future_of_your_organisation.pdf"},
-  { id: "23", title: "PPT23", image: "/impulse-website/slideshow/ppt23.png", href: "https://www.theimpulsedigital.com/slideshare/did_you_know_how_much_and_what_google_knows_about_you.pdf"},
-  { id: "24", title: "PPT24", image: "/impulse-website/slideshow/ppt24.png", href: "https://www.theimpulsedigital.com/slideshare/is_youtube_too_competitive_5_alternatives_you_must_know.pdf"},
-  { id: "25", title: "PPT25", image: "/impulse-website/slideshow/ppt25.png", href: "https://www.theimpulsedigital.com/slideshare/why_do_internet_users_prefer_only_google.pdf"},
-  { id: "26", title: "PPT6", image: "/impulse-website/slideshow/ppt26.png", href: "https://www.theimpulsedigital.com/slideshare/Not_To_Be_Missed_Top_SEO_Strategies_For_D2C_Websites.pdf"},
-  { id: "27", title: "PPT27", image: "/impulse-website/slideshow/ppt27.png", href: "https://www.theimpulsedigital.com/slideshare/Google_Helpful_Content_Update_Avoid_Your_Website_From_Getting_Penalized.pdf"},
-  { id: "28", title: "PPT28", image: "/impulse-website/slideshow/ppt28.png", href: "https://www.theimpulsedigital.com/slideshare/Top_5_Digital_Marketing_Trends_Of_2022.pdf"},
-  { id: "29", title: "PPT29", image: "/impulse-website/slideshow/ppt29.png", href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-programmatic-advertising.pdf"},
-  { id: "30", title: "PPT30", image: "/impulse-website/slideshow/ppt30.png", href: "https://www.theimpulsedigital.com/slideshare/more-about-quora-marketing5-detailed-steps-to-quora-ads.pdf"},
-  { id: "31", title: "PPT31", image: "/impulse-website/slideshow/ppt31.png", href: "https://www.theimpulsedigital.com/slideshare/a_simple_guide_to_the_foundation_of_quora_marketing.pdf"},
-  { id: "32", title: "PPT32", image: "/impulse-website/slideshow/ppt32.png", href: "https://www.theimpulsedigital.com/slideshare/all_there_is_to_hyperlocal_seo_and_how_to_leverage_it.pdf"},
-  { id: "33", title: "PPT33", image: "/impulse-website/slideshow/ppt33.png", href: "https://www.theimpulsedigital.com/slideshare/top_3_ways_of_using_social_media_stories_and_instagram_reels_in_your_marketing_strategy.pdf"},
-  { id: "34", title: "PPT34", image: "/impulse-website/slideshow/ppt34.png", href: "https://www.theimpulsedigital.com/slideshare/the_complete_guide_to_social_listening_in_2021.pdf"},
-  { id: "35", title: "PPT35", image: "/impulse-website/slideshow/ppt35.png", href: "https://www.theimpulsedigital.com/slideshare/5_smart_tips_to_boost_your_year_end_digital_sales.pdf"},
-  { id: "36", title: "PPT36", image: "/impulse-website/slideshow/ppt36.png", href: "https://www.theimpulsedigital.com/slideshare/implementing_digital_marketing_in_the_international_market.pdf"},
-  { id: "37", title: "PPT37", image: "/impulse-website/slideshow/ppt37.png", href: "https://www.theimpulsedigital.com/slideshare/people_also_ask_(paa)_and_its_significance_for_your_seo.pdf"},
-  { id: "38", title: "PPT38", image: "/impulse-website/slideshow/ppt38.png", href: "https://www.theimpulsedigital.com/slideshare/5-Secrets-to-a-Great-Social-Media-Campagin.pdf"},
-  { id: "39", title: "PPT39", image: "/impulse-website/slideshow/ppt39.png", href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-social-selling.pdf"},
-  { id: "40", title: "PPT40", image: "/impulse-website/slideshow/ppt40.png", href: "https://www.theimpulsedigital.com/slideshare/ecommerce-website.pdf"},
-  { id: "41", title: "PPT41", image: "/impulse-website/slideshow/ppt41.png", href: "https://www.theimpulsedigital.com/slideshare/is-it-really-necessary-to-opt-for-festive-season-digital-marketing.pdf"},
-  { id: "42", title: "PPT42", image: "/impulse-website/slideshow/ppt42.png", href: "https://www.theimpulsedigital.com/slideshare/what-is-a-lead-magnet-and-how-to-use-it-effectively.pdf"},
-  { id: "43", title: "PPT43", image: "/impulse-website/slideshow/ppt43.png", href: "https://www.theimpulsedigital.com/slideshare/top-5-things-you-should-know-about-social-media-banter.pdf"},
-  { id: "44", title: "PPT44", image: "/impulse-website/slideshow/ppt44.png", href: "https://www.theimpulsedigital.com/slideshare/moment-marketing.pdf"},
-  { id: "45", title: "PPT45", image: "/impulse-website/slideshow/ppt45.png", href: "https://www.theimpulsedigital.com/slideshare/the-a-z-of-geofencing-marketing-for-your-business.pdf"},
-  { id: "46", title: "PPT46", image: "/impulse-website/slideshow/ppt46.png", href: "https://www.theimpulsedigital.com/slideshare/five-best-lead-generation-trends-in-2021.pdf"},
-  { id: "47", title: "PPT47", image: "/impulse-website/slideshow/ppt47.png", href: "https://www.theimpulsedigital.com/slideshare/catch-up-with-these-top-5-social-media-marketing-trends-of-2021.pdf"},
-  { id: "48", title: "PPT48", image: "/impulse-website/slideshow/ppt48.png", href: "https://www.theimpulsedigital.com/slideshare/do-you-know-these-5-perks-of-google%E2%80%99s-performance-max-campaigns.pdf"},
-  { id: "49", title: "PPT49", image: "/impulse-website/slideshow/ppt49.png", href: "https://www.theimpulsedigital.com/slideshare/is-cro-marketing-crucial-for-your-business.pdf"},
-  { id: "50", title: "PPT50", image: "/impulse-website/slideshow/ppt50.png", href: "https://www.theimpulsedigital.com/slideshare/the-ultimate-guide-to-ui-ux-or-digital-marketing.pdf"},
-  { id: "51", title: "PPT51", image: "/impulse-website/slideshow/ppt51.png", href: "https://www.theimpulsedigital.com/slideshare/creative-juices-flow-digitally-this-cannes-lions-2021-the-top-5-indian-ads-that-made-us-proud-in-the-past-decade.pdf"},
-  { id: "52", title: "PPT52", image: "/impulse-website/slideshow/ppt52.png", href: "https://www.theimpulsedigital.com/slideshare/what%E2%80%99s-new-with-google-my-business-and-how-to-leverage-it-to-promote-your-business-effectively.pdf"},
-  { id: "53", title: "PPT53", image: "/impulse-website/slideshow/ppt53.png", href: "https://www.theimpulsedigital.com/slideshare/why-your-brand-needs-to-ace-the-conversational-marketing-strategy.pdf"},
-  { id: "54", title: "PPT54", image: "/impulse-website/slideshow/ppt54.png", href: "https://www.theimpulsedigital.com/slideshare/the-ultimate-guide-to-creating-a-perfect-landing-page-for-your-business.pdf"},
-  { id: "55", title: "PPT55", image: "/impulse-website/slideshow/ppt55.png", href: "https://www.theimpulsedigital.com/slideshare/7-business-trends-to-look-out-for-in-the-post-covid-world.pdf"},
-  { id: "56", title: "PPT56", image: "/impulse-website/slideshow/ppt56.png", href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-omnichannel-marketing.pdf"},
-  { id: "57", title: "PPT57", image: "/impulse-website/slideshow/ppt57.png", href: "https://www.theimpulsedigital.com/slideshare/top-voice-technology-trends-in-2021-you-ought-to-know.pdf"},
-  { id: "58", title: "PPT58", image: "/impulse-website/slideshow/ppt58.png", href: "https://www.theimpulsedigital.com/slideshare/how-to-use-augmented-reality-for-empowering-your-digital-marketing-strategy.pdf"},
-  { id: "59", title: "PPT59", image: "/impulse-website/slideshow/ppt59.png", href: "https://www.theimpulsedigital.com/slideshare/white-and-orange-content-strategy-professional-presentation.pdf"},
-  { id: "60", title: "PPT60", image: "/impulse-website/slideshow/ppt60.png", href: "https://www.theimpulsedigital.com/slideshare/advertisements-that-have-bowled-us-over-this-ipl-season.pdf"},
-  { id: "61", title: "PPT61", image: "/impulse-website/slideshow/ppt61.png", href: "https://www.theimpulsedigital.com/slideshare/top-5-ways-cryptocurrency-is-taking-the-digital-marketing-world-by-storm.pdf"},
-  { id: "62", title: "PPT62", image: "/impulse-website/slideshow/ppt62.png", href: "https://www.theimpulsedigital.com/slideshare/the-pinterest-way-of-marketing-your-business-digitally.pdf"},
-  { id: "63", title: "PPT63", image: "/impulse-website/slideshow/ppt63.png", href: "https://www.theimpulsedigital.com/slideshare/digital-darwanism-is-your-business-surviving-the-digital-revolution.pdf"},
-  { id: "64", title: "PPT64", image: "/impulse-website/slideshow/ppt64.png", href: "https://www.theimpulsedigital.com/slideshare/have-you-begun-discussing-on-reddit-yet.pdf"},
-  { id: "65", title: "PPT65", image: "/impulse-website/slideshow/ppt65.png", href: "https://www.theimpulsedigital.com/slideshare/what-is-passion-economy-and-who-runs-it-2.pdf"},
-  { id: "66", title: "PPT66", image: "/impulse-website/slideshow/ppt66.png", href: "https://www.theimpulsedigital.com/slideshare/social-media-privacy-threats-that-you-need-to-keep-an-eye-on-in-2021.pdf"},
-  { id: "67", title: "PPT67", image: "/impulse-website/slideshow/ppt67.png", href: "https://www.theimpulsedigital.com/slideshare/is-signal-messenger-app-the-perfect-alternative-to-whatsapp-1.pdf"},
-  { id: "68", title: "PPT68", image: "/impulse-website/slideshow/ppt68.png", href: "https://www.theimpulsedigital.com/slideshare/did-you-know-customer-experience-is-the-new-marketing-tool.pdf"},
-  { id: "69", title: "PPT69", image: "/impulse-website/slideshow/ppt69.png", href: "https://www.theimpulsedigital.com/slideshare/five-points-you-need-to-keep-in-mind-while-choosing-a-digital-marketing-agency.pdf"},
-  { id: "70", title: "PPT70", image: "/impulse-website/slideshow/ppt70.png", href: "https://www.theimpulsedigital.com/slideshare/should-you-be-worried-about-the-new-google-core-update-read-to-know.pdf"},
-  { id: "71", title: "PPT71", image: "/impulse-website/slideshow/ppt71.png", href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-the-new-whatsapp-business-features.pdf"},
-  { id: "72", title: "PPT72", image: "/impulse-website/slideshow/ppt72.png", href: "https://www.theimpulsedigital.com/slideshare/social-media-tools-that-will-help-boost-sales-during-the-festive-period.pdf"},
-  { id: "73", title: "PPT73", image: "/impulse-website/slideshow/ppt73.png", href: "https://www.theimpulsedigital.com/slideshare/social-media-marketing-tips-to-boost-your-sales-during-the-festive-period.pdf"},
-  { id: "74", title: "PPT74", image: "/impulse-website/slideshow/ppt74.png", href: "https://www.theimpulsedigital.com/slideshare/web-development-questionnaire.pdf"},
-  { id: "75", title: "PPT75", image: "/impulse-website/slideshow/ppt75.png", href: "https://www.theimpulsedigital.com/slideshare/alternatives-to-banned-chinese-apps-that-were-always-overlooked.pdf"},
-  { id: "76", title: "PPT76", image: "/impulse-website/slideshow/ppt76.png", href: "https://www.theimpulsedigital.com/slideshare/youtube-vs-igtv-who-wins.pdf"},
-  { id: "77", title: "PPT77", image: "/impulse-website/slideshow/ppt77.png", href: "https://www.theimpulsedigital.com/slideshare/top-7-digital-marketing-trends-for-2020.pdf"},
-  { id: "78", title: "PPT78", image: "/impulse-website/slideshow/ppt78.png", href: "https://www.theimpulsedigital.com/slideshare/how-instagram-stories-help-businesses-impulse-digital.pdf"},
-  { id: "79", title: "PPT79", image: "/impulse-website/slideshow/ppt79.png", href: "https://www.theimpulsedigital.com/slideshare/seasonal-vs-evergreen-content-marketing-for-business.pdf"},
-  { id: "80", title: "PPT80", image: "/impulse-website/slideshow/ppt80.png", href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-digital-marketing.pdf"},
-  { id: "81", title: "PPT81", image: "/impulse-website/slideshow/ppt81.png", href: "https://www.theimpulsedigital.com/slideshare/8-ways-how-to-use-youtube-for-business-marketing.pdf"},
-  { id: "82", title: "PPT82", image: "/impulse-website/slideshow/ppt82.png", href: "https://www.theimpulsedigital.com/slideshare/how-to-create-online-presence-for-your-business-impulse-digital.pdf"},
-  { id: "83", title: "PPT83", image: "/impulse-website/slideshow/ppt83.png", href: "https://www.theimpulsedigital.com/slideshare/top-18-google-advanced-search-operators-that-you-must-to-know.pdf"},
-  { id: "84", title: "PPT84", image: "/impulse-website/slideshow/ppt84.png", href: "https://www.theimpulsedigital.com/slideshare/remarketing-a-digital-magnet.pdf"},
-  { id: "85", title: "PPT85", image: "/impulse-website/slideshow/ppt85.png", href: "https://www.theimpulsedigital.com/slideshare/content-marketing-trends.pdf"},
-  { id: "86", title: "PPT86", image: "/impulse-website/slideshow/ppt86.png", href: "https://www.theimpulsedigital.com/slideshare/seo-trends.pdf"},
-  { id: "87", title: "PPT87", image: "/impulse-website/slideshow/ppt87.png", href: "https://www.theimpulsedigital.com/slideshare/9-points-emailer-design-checklist.pdf"},
-  { id: "88", title: "PPT88", image: "/impulse-website/slideshow/ppt88.png", href: "https://www.theimpulsedigital.com/slideshare/blogslideshare.pdf"},
-  { id: "89", title: "PPT89", image: "/impulse-website/slideshow/ppt89.png", href: "https://www.theimpulsedigital.com/slideshare/international-womens-day.pdf"},
-  { id: "90", title: "PPT90", image: "/impulse-website/slideshow/ppt90.png", href: "https://www.theimpulsedigital.com/slideshare/googlespenguinupdate.pdf"},
-  { id: "91", title: "PPT91", image: "/impulse-website/slideshow/ppt91.png", href: "https://www.theimpulsedigital.com/slideshare/10-content-marketing-mistakes-that-can-be-easily-avoided.pdf"},
-  
+  {
+    id: "PPT10",
+    title: "Key takeaways from the ONDC report",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/dissecting-the-key-takeaways-from-the-ondc-report.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt10.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT11",
+    title: "Best AI tools for Indian audience to use",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/best-ai-tools-for-indian-audience-to-use.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt11.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+  {
+    id: "PPT12",
+    title: "B2B entrepreneur’s guide to reach your high-hanging fruits!",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/b2b-entrepreneur%E2%80%99s-guide-to-reach-your-high-hanging-fruits!.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt12.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT13",
+    title: "Facebook scam alert – Copyright infringement: Here’s how to not fall for one",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/facebook-scam-alert-copyright-infringement-here%E2%80%99s-how-to-not-fall-for-one.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt13.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT14",
+    title: "April Fool’s Day – Brand ideas gone wrong",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/april-fool%E2%80%99s-day-brand-ideas-gone-wrong.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt14.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT15",
+    title: "Online behavior between an Indian and USA internet user",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/online-behavior-between-an-indian-and-usa-internet-user%20.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt15.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT16",
+    title: "LinkedIn vs Facebook – What’s better for B2B",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/linkedin-vs-facebook-what%E2%80%99s-a-better-platform-for-b2b-business.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt16.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT17",
+    title: "Impactful Women’s Day campaign ideas 2023 – With examples",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/impactful-women%E2%80%99s-day-campaign-ideas-2023-with-examples.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt17.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT18",
+    title: "Can you use memes in advertising? Perks of meme marketing",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/can-you-use-memes-in-advertising-perks-of-meme-marketing.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt18.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT19",
+    title: "Transform employer branding for hybrid & remote employees",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/transform-employer-branding-for-hybrid-&-remote-working-employees-know-how.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt19.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT20",
+    title: "How can you use emojis in advertising to drive better results?",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-can-you-use-emojis-in-advertising-to-drive-better-results.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt20.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT21",
+    title: "Valentine’s Day promotion ideas for retail",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/valentine%E2%80%99s-day-promotion-ideas-for-retail-make-profitable-sales.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt21.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT22",
+    title: "7 next-gen digital marketing trends for 2023",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/7-next-gen-digital-marketing-trends-for-2023-company.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt22.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT23",
+    title: "Short-form content will sweep the internet – Know why",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/short-form-content-will-sweep-off-the-internet-know-why.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt23.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT24",
+    title: "Top 5 limitations of ChatGPT & why SEO doesn’t recommend it",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/top-5-limitations-of-chatgpt-and-why-seo-does-not-recommend-it.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt24.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT25",
+    title: "How to choose the right content management system",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how-to-choose-the-right-content-management-system.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt25.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT26",
+    title: "Top marketing trends of 2022 you need to know",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/top-marketing-trends-of-2022-you-need-to-know-to-grow-your-business.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt26.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT27",
+    title: "5 ways to enhance your business using YouTube marketing",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/5-ways-to-enhance-your-business-using-youtube-marketing.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt27.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT28",
+    title: "How employer branding transforms the future of your organisation",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/how_employer_branding_transforms_the%20future_of_your_organisation.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt28.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT29",
+    title: "Did you know how much and what Google knows about you?",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/did_you_know_how_much_and_what_google_knows_about_you.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt29.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+
+  {
+    id: "PPT30",
+    title: "Is YouTube too competitive? 5 alternatives you must know",
+    year: "2023",
+    pdfUrl: "https://www.theimpulsedigital.com/slideshare/is_youtube_too_competitive_5_alternatives_you_must_know.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt30.png",
+    tag: "PPT",
+    meta: "2023 • Presentation",
+  },
+   {
+    id: "PPT31",
+    title: "Top marketing predictions you must know for 2022",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-marketing-predictions-you-must-know-for-2022.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt31.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT32",
+    title: "Not to be missed – Top SEO strategies for D2C websites",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/Not_To_Be_Missed_Top_SEO_Strategies_For_D2C_Websites.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt32.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT33",
+    title: "Digital marketing insights for retail businesses in India",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/digital-marketing-insights-for-retail-businesses-in-india.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt33.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT34",
+    title: "Is AI helping digital marketers? A transparency review",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/is-ai-helping-digital-marketers-a-transparency-review.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt34.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT35",
+    title: "How to boost your content strategy using Google Trends",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-boost-your-content-strategy-using-google-trends.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt35.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT36",
+    title: "5 compelling reasons why your brand needs a SEO audit",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/5-compelling-reasons-why-your-brand-needs-a-seo-audit.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt36.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT37",
+    title: "How to choose the right digital marketing agency",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-choose-the-right-digital-marketing-agency.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt37.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT38",
+    title: "All there is to hyperlocal SEO & how to leverage it",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/all_there_is_to_hyperlocal_seo_and_how_to_leverage_it.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt38.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT39",
+    title: "5 creative ways to repurpose your long-form content",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/5-creative-ways-to-repurpose-your-long-form-content.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt39.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT40",
+    title: "Understanding how buyer persona drives your marketing success",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/understanding-how-buyer-persona-drives-your-marketing-success.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt40.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT41",
+    title: "How to improve landing page conversions with psychology",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-improve-landing-page-conversions-using-psychology.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt41.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT42",
+    title: "Why storytelling is powerful in digital ads",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/why-storytelling-is-powerful-in-digital-ads.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt42.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT43",
+    title: "People Also Ask (PAA) and its significance for your SEO",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/people_also_ask_(paa)_and_its_significance_for_your_seo.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt43.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT44",
+    title: "Why competitor analysis is important in SEO",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/why-competitor-analysis-is-important-in-seo.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt44.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT45",
+    title: "Which is better: In-house marketing vs outsourcing",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/in-house-marketing-vs-outsourcing.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt45.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT46",
+    title: "5 social media strategies brands must follow for growth",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/5-social-media-strategies-brands-must-follow-for-growth.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt46.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT47",
+    title: "7 mistakes brands should avoid on Instagram",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/7-mistakes-brands-should-avoid-on-instagram.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt47.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT48",
+    title: "Top YouTube SEO practices to rank high",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-youtube-seo-practices-to-rank-high.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt48.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT49",
+    title: "Instagram algorithm explained for brands",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/instagram-algorithm-explained-for-brands.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt49.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT50",
+    title: "How to increase customer loyalty through digital retention strategies",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-increase-customer-loyalty-through-digital-retention-strategies.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt50.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT51",
+    title: "Top content marketing predictions for 2022",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-content-marketing-predictions-for-2022.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt51.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT52",
+    title: "What every marketer should know about email marketing success",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/what-every-marketer-should-know-about-email-marketing-success.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt52.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT53",
+    title: "The rise of voice assistants and its marketing impact",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/rise-of-voice-assistants-and-its-marketing-impact.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt53.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT54",
+    title: "Understanding micro-moments in consumer decision-making",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/understanding-micro-moments-in-consumer-decision-making.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt54.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT55",
+    title: "How mobile-first indexing impacts your SEO",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-mobile-first-indexing-impacts-your-seo.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt55.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT56",
+    title: "Using psychology to design high-converting ads",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/using-psychology-to-design-high-converting-ads.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt56.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT57",
+    title: "How to build a brand identity on social media",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-build-a-brand-identity-on-social-media.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt57.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT58",
+    title: "Understanding the power of digital customer journeys",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/understanding-the-power-of-digital-customer-journeys.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt58.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT59",
+    title: "The impact of UX on conversions – A must-know guide",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-impact-of-ux-on-conversions.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt59.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+
+  {
+    id: "PPT60",
+    title: "The importance of page speed for SEO performance",
+    year: "2022",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-importance-of-page-speed-for-seo-performance.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt60.png",
+    tag: "PPT",
+    meta: "2022 • Presentation",
+  },
+  {
+    id: "PPT61",
+    title: "How to measure brand awareness effectively",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-measure-brand-awareness-effectively.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt61.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT62",
+    title: "A beginner’s guide to Google Ads for small businesses",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/a-beginners-guide-to-google-ads-for-small-businesses.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt62.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT63",
+    title: "Top voice technology trends in 2021 you ought to know",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-voice-technology-trends-in-2021-you-ought-to-know.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt63.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT64",
+    title: "The rise of D2C brands in India – What marketers should know",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-rise-of-d2c-brands-in-india.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt64.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT65",
+    title: "Google’s E-A-T principle explained for modern SEO",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/googles-e-a-t-principle-explained-for-modern-seo.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt65.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT66",
+    title: "Best practices to increase engagement on social media",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/best-practices-to-increase-engagement-on-social-media.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt66.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT67",
+    title: "Top tools every digital marketer should use in 2021",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-tools-every-digital-marketer-should-use-in-2021.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt67.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT68",
+    title: "Marketing funnel explained with real-world examples",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/marketing-funnel-explained-with-real-world-examples.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt68.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT69",
+    title: "The complete guide to influencer marketing in India",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-complete-guide-to-influencer-marketing-in-india.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt69.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT70",
+    title: "Understanding social listening – Why brands must adopt it",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/understanding-social-listening.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt70.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT71",
+    title: "How content clusters help you improve SEO ranking",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-content-clusters-help-improve-seo-ranking.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt71.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT72",
+    title: "Must-follow branding principles for modern Indian startups",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/must-follow-branding-principles-for-modern-indian-startups.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt72.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT73",
+    title: "How to build an effective B2B demand-generation strategy",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-build-an-effective-b2b-demand-generation-strategy.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt73.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT74",
+    title: "Creative ways to promote your brand during festivals",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/creative-ways-to-promote-your-brand-during-festivals.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt74.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT75",
+    title: "The science behind viral content – A deep dive",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-science-behind-viral-content.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt75.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT76",
+    title: "Why customer feedback is gold for marketing teams",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/why-customer-feedback-is-gold-for-marketing-teams.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt76.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT77",
+    title: "Everything you must know about consumer psychology in marketing",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/consumer-psychology-in-marketing.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt77.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT78",
+    title: "The future of media planning – Trends shaping 2021",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-future-of-media-planning.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt78.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT79",
+    title: "Why brands must embrace omnichannel customer experience",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/why-brands-must-embrace-omnichannel-customer-experience.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt79.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT80",
+    title: "How digital PR helps brands grow in competitive markets",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-digital-pr-helps-brands-grow.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt80.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT81",
+    title: "The rise of meme marketing – Why it works",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-rise-of-meme-marketing.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt81.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT82",
+    title: "Indian consumer trends every marketer must know",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/indian-consumer-trends-every-marketer-must-know.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt82.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT83",
+    title: "How to create evergreen content that ranks",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-create-evergreen-content-that-ranks.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt83.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT84",
+    title: "A complete guide to hashtag strategy for social media",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/hashtag-strategy-for-social-media.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt84.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT85",
+    title: "Google My Business optimization tips for local ranking",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/google-my-business-optimization-tips.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt85.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT86",
+    title: "How to write ad copy that converts",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-to-write-ad-copy-that-converts.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt86.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT87",
+    title: "Understanding the basics of Google Analytics",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/understanding-the-basics-of-google-analytics.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt87.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT88",
+    title: "How copywriting impacts brand recall",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/how-copywriting-impacts-brand-recall.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt88.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT89",
+    title: "SEO vs SEM – When should brands choose what?",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/seo-vs-sem-when-should-brands-choose-what.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt89.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT90",
+    title: "Guide to creating a winning digital marketing plan",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/guide-to-creating-a-winning-digital-marketing-plan.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt90.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT91",
+    title: "The future of SEO – Predictions that matter",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/the-future-of-seo.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt91.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT92",
+    title: "SEO trends",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/seo-trends.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt92.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT93",
+    title: "Why every business must invest in digital transformation",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/invest-in-digital-transformation.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt93.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT94",
+    title: "Top content formats that will dominate 2021",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/top-content-formats-that-will-dominate-2021.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt94.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT95",
+    title: "Why retention marketing matters more than acquisition",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/retention-marketing-vs-acquisition.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt95.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT96",
+    title: "How brands can strategize during uncertain market conditions",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/strategize-during-uncertain-market-conditions.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt96.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
+
+  {
+    id: "PPT97",
+    title: "The evolution of consumer behaviour post-pandemic",
+    year: "2021",
+    pdfUrl:
+      "https://www.theimpulsedigital.com/slideshare/evolution-of-consumer-behaviour-post-pandemic.pdf",
+    thumbnail: "/impulse-website/slideshow/ppt97.png",
+    tag: "PPT",
+    meta: "2021 • Presentation",
+  },
 ];
 
+
+
+const years = ["all", "2020", "2021", "2022", "2023"];
+
 export const SlideSharePPT = (): JSX.Element => {
+  const [search, setSearch] = useState("");
+  const [year, setYear] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(9); // for Load More
+
+  // Filtered list based on search + year
+  const filteredPpts = useMemo(() => {
+    const s = search.trim().toLowerCase();
+    return seoPpts.filter((ppt) => {
+      const matchesSearch = !s || ppt.title.toLowerCase().includes(s);
+      const matchesYear = year === "all" || ppt.year === year;
+      return matchesSearch && matchesYear;
+    });
+  }, [search, year]);
+
+  // Slice for pagination (Load More)
+  const visiblePpts = useMemo(
+    () => filteredPpts.slice(0, visibleCount),
+    [filteredPpts, visibleCount]
+  );
+
+  const clearFilters = () => {
+    setSearch("");
+    setYear("all");
+    setVisibleCount(9); // reset pagination
+  };
+
+  const showEmpty = filteredPpts.length === 0;
+
   return (
-    <div className="slideshare-page py-16 pb-16">
-      <div className="container">
-        <div className="row">
-          {/* Left: content */}
-      <div className="col-lg-11">
-            {/* Header */}
-        <div className="text-center mb-12 lg:mb-16 lg:mt-16">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[#030019] text-lg mb-2">
-            Our Expertise
+    <div className="bg-white text-slate-50 min-h-screen">
+      <div className="max-w-6xl mx-auto px-4 py-10 lg:py-14">
+        {/* Breadcrumb */}
+        {/* <nav className="text-xs text-slate-400 mb-4">
+          <a href="/" className="hover:text-slate-700">
+            Home
+          </a>
+          <span className="mx-1">/</span>
+          <a href="/slideshare-ppt" className="hover:text-slate-700">
+            Slideshare PPTs
+          </a>
+          <span className="mx-1">/</span>
+          <span className="text-slate-900 font-medium">
+            Search Engine Optimization (SEO) PPT
+          </span>
+        </nav> */}
+
+        {/* Header */}
+        {/* <header className="mb-6 lg:mb-8">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-indigo-500 mb-2">
+            SEO Resources
           </p>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] text-3xl md:text-4xl lg:text-5xl mb-6">
-            Comprehensive Service Portfolio
-          </h2>
+          <h1 className="text-slate-900 text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3">
+            Search Engine Optimization (SEO) PPTs &amp; Presentations
+          </h1>
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl">
+            Explore our curated SEO PPTs on search engine trends, D2C SEO
+            strategies, hyperlocal SEO, voice search, Google updates and more.
+            Download and use these presentations for learning, training or
+            client pitches.
+          </p>
+        </header> */}
+
+        {/* Category Tabs */}
+        <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3 text-xs sm:text-sm">
+          <a
+            href="/search-engine-optimization-PPT"
+            className="px-3 py-1.5 rounded-full bg-indigo-600 text-white font-medium"
+          >
+            SEO PPT
+          </a>
+          <a
+            href="/social-media-PPT"
+            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+          >
+            Social Media PPT
+          </a>
+          <a
+            href="/google-ads-PPT"
+            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+          >
+            Google Ads / SEM PPT
+          </a>
+          <a
+            href="/content-marketing-PPT"
+            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+          >
+            Content Marketing PPT
+          </a>
+          <a
+            href="/employer-branding-PPT"
+            className="px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 hover:border-slate-400"
+          >
+            Employer Branding PPT
+          </a>
         </div>
 
-            {/* PURE GRID — no Bootstrap cols inside */}
-            <div className="ppt-grid">
-              {SLIDES.map((s) => (
-                <article className="ppt-card" key={s.id}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="ppt-link">
-                    <div className="ppt-thumb-wrap">
-                      <img src={s.image} alt={s.title} loading="lazy" className="ppt-thumb" />
-                      {/* <span className="bracket tl" />
-                      <span className="bracket tr" />
-                      <span className="bracket bl" />
-                      <span className="bracket br" /> */}
+        {/* Filters */}
+        <section className="bg-[#030019] border border-slate-800 rounded-2xl p-4 sm:p-5 mb-8 sticky top-0 z-10 backdrop-blur">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            {/* Search */}
+            <div className="relative w-full sm:max-w-md">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search within SEO PPT titles..."
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setVisibleCount(9); // reset pagination on new search
+                }}
+                className="w-full rounded-xl bg-slate-950/70 border border-slate-800 px-10 py-2.5 text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-100"
+              />
+              <span className="absolute left-3 top-2.5 text-slate-500 text-sm">
+                🔍
+              </span>
+            </div>
+
+            {/* Year + Clear in one line */}
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <div className="flex items-center gap-2">
+                <label
+                  htmlFor="yearSelect"
+                  className="text-xs font-medium text-slate-400 whitespace-nowrap"
+                >
+                  Year
+                </label>
+                <select
+                  id="yearSelect"
+                  value={year}
+                  onChange={(e) => {
+                    setYear(e.target.value);
+                    setVisibleCount(9); // reset pagination on filter change
+                  }}
+                  className="rounded-xl bg-slate-950/70 border border-slate-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-slate-100"
+                >
+                  {years.map((y) => (
+                    <option key={y} value={y}>
+                      {y === "all" ? "All" : y}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="text-xs sm:text-sm px-3 py-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-200"
+              >
+                Clear filters
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Empty state */}
+        {showEmpty && (
+          <div className="text-center py-12 border border-dashed border-slate-800 rounded-2xl bg-slate-900/40">
+            <p className="text-sm text-slate-300 mb-2">
+              No SEO PPTs match your filters right now.
+            </p>
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="mt-1 text-xs px-3 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white"
+            >
+              Clear all filters
+            </button>
+          </div>
+        )}
+
+        {/* PPT Grid + Load More */}
+        {!showEmpty && (
+          <>
+            <section
+              id="pptGrid"
+              className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {visiblePpts.map((ppt) => (
+                <article
+                  key={ppt.id}
+                  className="ppt-card group bg-slate-900/60 border border-slate-800 rounded-2xl overflow-hidden flex flex-col hover:border-indigo-500/70 hover:bg-slate-900 transition-all duration-200"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={ppt.thumbnail}
+                      alt={ppt.title}
+                      className="h-[180px] w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                    <span className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.16em] bg-slate-950/80 border border-slate-700 px-2 py-1 rounded-full text-slate-200">
+                      {ppt.tag}
+                    </span>
+                  </div>
+
+                  <div className="bg-[#030019] flex flex-col flex-1 px-4 py-4">
+                    <h2 className="text-sm sm:text-base font-semibold line-clamp-2 mb-2 text-slate-50">
+                      {ppt.title}
+                    </h2>
+
+                    <p className="text-xs text-slate-400 mb-3">{ppt.meta}</p>
+
+                    <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+                      <a
+                        href={ppt.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center text-xs sm:text-sm px-3 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium"
+                      >
+                        View PPT
+                      </a>
+
+                      <a
+                        href={ppt.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] sm:text-xs text-slate-300 hover:text-slate-100 underline-offset-2 hover:underline"
+                      >
+                        Download
+                      </a>
                     </div>
-                  </a>
+                  </div>
                 </article>
               ))}
-            </div>
-      </div>
+            </section>
 
-          {/* Right: sidebar */}
-          <aside className="col-lg-1 mt-5 mt-lg-0 pt-16">
-            <div className="ppt-sidebar">
-              {/* <div className="ppt-search">
-                <input type="text" placeholder="Search" className="ppt-input" />
-                <button className="ppt-search-btn">Search</button>
-              </div> */}
-
-              <div className="ppt-cats">
-                <h5 className="ppt-cats__title">Categories</h5>
-                <ul className="ppt-cats__list">
-                  <li><Link to="/resources/search-engine-optimization-PPT" className="ppt-cat">Search Engine Optimization (SEO) PPT</Link></li>
-                  <li><Link to="/resources/social-media-PPT" className="ppt-cat">Social Media PPT</Link></li>
-                  <li><Link to="/resources/google-ads-PPT" className="ppt-cat">Google Ads (SEM) PPT</Link></li>
-                  <li><Link to="/resources/content-marketing-PPT" className="ppt-cat">Content Marketing PPT</Link></li>
-                  <li><Link to="/resources/website-design-development-PPT" className="ppt-cat">Website Design & Development  PPT</Link></li>
-                  <li><Link to="/resources/employer-branding-PPT" className="ppt-cat">Employer Branding</Link></li>
-                </ul>
+            {/* Load More button */}
+            {visibleCount < filteredPpts.length && (
+              <div className="flex justify-center mt-10">
+                <button
+                  type="button"
+                  onClick={() => setVisibleCount((prev) => prev + 9)}
+                  className="px-6 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium"
+                >
+                  Load More
+                </button>
               </div>
-            </div>
-          </aside>
-        </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

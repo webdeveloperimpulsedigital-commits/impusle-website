@@ -1,6 +1,7 @@
 export { Resources } from "./Resources";
 export { SlideSharePPTS } from"./SlideSharePPTS";
 export { SearchEngineOptimizationSEOS } from "./SearchEngineOptimizationSEOS";
+export { SocialMediaPPTS } from "./SocialMediaPPTS";
 export { GoogleAdsPPTS } from "./GoogleAdsPPTS";
 export { ContentMarketingPPTS } from "./ContentMarketingPPTS";
 export { WebsiteDesignDevelopmentPPTS } from "./WebsiteDesignDevelopmentPPTS";

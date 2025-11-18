@@ -2,17 +2,123 @@ import { Link } from "react-router-dom";
 import "./SocialMediaPPT.css"; // ← ensure file name EXACTLY matches
 
 type Slide = { id: string; title: string; image: string; href: string };
-
 const SLIDES: Slide[] = [
-  { id: "1", title: "Embracing LGBTQ+ Pride in 2023", image: "/impulse-website/ppt1.jpg", href: "https://www.slideshare.net/theimpulsedigital/lgbtq-pride" },
-  { id: "2", title: "How Emotions Drive Advertising", image: "/impulse-website/ppt2.jpg", href: "https://www.slideshare.net/theimpulsedigital/emotional-advertising" },
-  { id: "3", title: "Why Employer Branding Matters", image: "/impulse-website/ppt3.jpg", href: "https://www.slideshare.net/theimpulsedigital/employer-branding-plan" },
-  { id: "4", title: "Planning to Order from ONDC?", image: "/impulse-website/ppt4.jpg", href: "https://www.slideshare.net/theimpulsedigital/ondc-planning" },
-  { id: "5", title: "Apple’s VR: What Changes for Marketers", image: "/impulse-website/ppt5.jpg", href: "https://www.slideshare.net/theimpulsedigital/apple-vr-marketing" },
-  { id: "6", title: "Father’s Day: Brand Playbook", image: "/impulse-website/ppt6.jpg", href: "https://www.slideshare.net/theimpulsedigital/fathers-day-campaign" },
-  { id: "7", title: "ONDC: Key Takeaways", image: "/impulse-website/ppt7.jpg", href: "https://www.slideshare.net/theimpulsedigital/ondc-report" },
-  { id: "8", title: "Best AI Tools for India", image: "/impulse-website/ppt8.jpg", href: "https://www.slideshare.net/theimpulsedigital/ai-tools" },
-  { id: "9", title: "B2B Entrepreneur’s Guide", image: "/impulse-website/ppt9.jpg", href: "https://www.slideshare.net/theimpulsedigital/b2b-guide" },
+  {
+    id: "PPT9",
+    title: "Father’s Day – How brands cash in on celebrating dads",
+    href: "https://www.theimpulsedigital.com/slideshare/father%E2%80%99s-day-how-brands-cash-in-on-celebrating-dads.pdf",
+    image: "/impulse-website/slideshow/ppt9.png",
+  },
+ 
+{
+  id: "PPT39",
+  title: "Top 3 ways of using social media stories & Instagram Reels in marketing",
+  href: "https://www.theimpulsedigital.com/slideshare/top_3_ways_of_using_social_media_stories_and_instagram_reels_in_your_marketing_strategy.pdf",
+  image: "/impulse-website/slideshow/ppt39.png",
+},
+{
+  id: "PPT40",
+  title: "The complete guide to social listening in 2021",
+  href: "https://www.theimpulsedigital.com/slideshare/the_complete_guide_to_social_listening_in_2021.pdf",
+  image: "/impulse-website/slideshow/ppt40.png",
+},
+
+{
+  id: "PPT44",
+  title: "5 secrets to a great social media campaign",
+  href: "https://www.theimpulsedigital.com/slideshare/5-Secrets-to-a-Great-Social-Media-Campagin.pdf",
+  image: "/impulse-website/slideshow/ppt44.png",
+},
+{
+  id: "PPT45",
+  title: "All you need to know about social selling",
+  href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-social-selling.pdf",
+  image: "/impulse-website/slideshow/ppt45.png",
+},
+
+{
+  id: "PPT49",
+  title: "Top 5 things you should know about social media banter",
+  href: "https://www.theimpulsedigital.com/slideshare/top-5-things-you-should-know-about-social-media-banter.pdf",
+  image: "/impulse-website/slideshow/ppt49.png",
+},
+
+{
+  id: "PPT53",
+  title: "Top 5 social media marketing trends of 2021",
+  href: "https://www.theimpulsedigital.com/slideshare/catch-up-with-these-top-5-social-media-marketing-trends-of-2021.pdf",
+  image: "/impulse-website/slideshow/ppt53.png",
+},
+
+{
+  id: "PPT68",
+  title: "The Pinterest way of marketing your business digitally",
+  href: "https://www.theimpulsedigital.com/slideshare/the-pinterest-way-of-marketing-your-business-digitally.pdf",
+  image: "/impulse-website/slideshow/ppt68.png",
+},
+
+{
+  id: "PPT70",
+  title: "Have you begun discussing on Reddit yet?",
+  href: "https://www.theimpulsedigital.com/slideshare/have-you-begun-discussing-on-reddit-yet.pdf",
+  image: "/impulse-website/slideshow/ppt70.png",
+},
+
+{
+  id: "PPT73",
+  title: "Is Signal messenger the perfect alternative to WhatsApp?",
+  href: "https://www.theimpulsedigital.com/slideshare/is-signal-messenger-app-the-perfect-alternative-to-whatsapp-1.pdf",
+  image: "/impulse-website/slideshow/ppt73.png",
+},
+{
+  id: "PPT72",
+  title: "Social media privacy threats you need to keep an eye on in 2021",
+  href: "https://www.theimpulsedigital.com/slideshare/social-media-privacy-threats-that-you-need-to-keep-an-eye-on-in-2021.pdf",
+  image: "/impulse-website/slideshow/ppt72.png",
+},
+{
+  id: "PPT87",
+  title: "8 ways to use YouTube for business marketing",
+  href: "https://www.theimpulsedigital.com/slideshare/8-ways-how-to-use-youtube-for-business-marketing.pdf",
+  image: "/impulse-website/slideshow/ppt87.png",
+},
+
+{
+  id: "PPT77",
+  title: "All you need to know about the new WhatsApp Business features",
+  href: "https://www.theimpulsedigital.com/slideshare/all-you-need-to-know-about-the-new-whatsapp-business-features.pdf",
+  image: "/impulse-website/slideshow/ppt77.png",
+},
+{
+  id: "PPT78",
+  title: "Social media tools that help boost festive season sales",
+  href: "https://www.theimpulsedigital.com/slideshare/social-media-tools-that-will-help-boost-sales-during-the-festive-period.pdf",
+  image: "/impulse-website/slideshow/ppt78.png",
+},
+{
+  id: "PPT79",
+  title: "Social media marketing tips to boost festive season sales",
+  href: "https://www.theimpulsedigital.com/slideshare/social-media-marketing-tips-to-boost-your-sales-during-the-festive-period.pdf",
+  image: "/impulse-website/slideshow/ppt79.png",
+},
+
+{
+  id: "PPT82",
+  title: "YouTube vs IGTV – Who wins?",
+  href: "https://www.theimpulsedigital.com/slideshare/youtube-vs-igtv-who-wins.pdf",
+  image: "/impulse-website/slideshow/ppt82.png",
+},
+
+{
+  id: "PPT84",
+  title: "How Instagram Stories help businesses",
+  href: "https://www.theimpulsedigital.com/slideshare/how-instagram-stories-help-businesses-impulse-digital.pdf",
+  image: "/impulse-website/slideshow/ppt84.png",
+},
+
+
+
+
 ];
 
 export const SocialMediaPPT = (): JSX.Element => {
@@ -51,22 +157,22 @@ export const SocialMediaPPT = (): JSX.Element => {
           </div>
 
           {/* Right: sidebar */}
-          <aside className="col-lg-3 mt-5 mt-lg-0">
+          <aside className="col-lg-1 mt-5 mt-lg-0 pt-16">
             <div className="ppt-sidebar">
-              <div className="ppt-search">
+              {/* <div className="ppt-search">
                 <input type="text" placeholder="Search" className="ppt-input" />
                 <button className="ppt-search-btn">Search</button>
-              </div>
+              </div> */}
 
               <div className="ppt-cats">
                 <h5 className="ppt-cats__title">Categories</h5>
                 <ul className="ppt-cats__list">
-                  <li><Link to="#" className="ppt-cat">Search  Engine Optimization (SEO) PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Social Media PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Google Ads (SEM) PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Content Marketing PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Website Design & Development  PPT</Link></li>
-                  <li><Link to="#" className="ppt-cat">Employer Branding</Link></li>
+                  <li><Link to="/resources/search-engine-optimization-PPT" className="ppt-cat">Search Engine Optimization (SEO) PPT</Link></li>
+                  <li><Link to="/resources/social-media-PPT" className="ppt-cat">Social Media PPT</Link></li>
+                  <li><Link to="/resources/google-ads-PPT" className="ppt-cat">Google Ads (SEM) PPT</Link></li>
+                  <li><Link to="/resources/content-marketing-PPT" className="ppt-cat">Content Marketing PPT</Link></li>
+                  <li><Link to="/resources/website-design-development-PPT" className="ppt-cat">Website Design & Development  PPT</Link></li>
+                  <li><Link to="/resources/employer-branding-PPT" className="ppt-cat">Employer Branding</Link></li>
                 </ul>
               </div>
             </div>
