@@ -1,8 +1,8 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
 import { AiSeoAgencyHeroSection } from "./sections/AiSeoAgencyHeroSection/AiSeoAgencyHeroSection";
 import { BrandVisionSection } from "./sections/BrandVisionSection/BrandVisionSection";
-import { InteractiveGallerySection } from "./sections/InteractiveGallerySection/InteractiveGallerySection";
-import { InteractiveSliderSection } from "./sections/InteractiveSliderSection/InteractiveSliderSection";
+// import { InteractiveGallerySection } from "./sections/InteractiveGallerySection/InteractiveGallerySection";
+// import { InteractiveSliderSection } from "./sections/InteractiveSliderSection/InteractiveSliderSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { WhyChooseSection } from "./sections/WhyChooseSection/WhyChooseSection";
 import { ProcessSection } from "./sections/ProcessSection/ProcessSection";
@@ -16,8 +16,8 @@ export const AiSeoAgency = (): JSX.Element => {
       <div className="relative w-full space-y-0">
         <AiSeoAgencyHeroSection />
         <BrandVisionSection />
-        <InteractiveGallerySection />
-        <InteractiveSliderSection />
+        {/* <InteractiveGallerySection /> */}
+        {/* <InteractiveSliderSection /> */}
         <ServicesSection />
         <WhyChooseSection />
         <ProcessSection />

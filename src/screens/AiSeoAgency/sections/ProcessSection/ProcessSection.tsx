@@ -10,54 +10,59 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps: ProcessStep[] = [
+ const processSteps: ProcessStep[] = [
   {
     id: 1,
-    title: "High-quality Research",
+    title: "Entity Optimization",
     description:
-      "We start by identifying your industry competitors and learning everything about them to contrast them with you.",
+      "Strengthening your brand’s digital identity across AI ecosystems through entity mapping and contextual clarity.",
     expandedContent:
-      "We dig in on what’s working, what’s not, areas where you have an upper hand, and areas where you can improve.",
+      "We refine how AI engines interpret your brand by optimizing entity relationships, improving semantic clarity, and ensuring consistent representation across the entire digital landscape.",
   },
+
   {
     id: 2,
-    title: "Trend-focused Content Ideas",
+    title: "Content for AI Answers",
     description:
-      "Post identifying relevant data, keywords, and trends, our team sits and brainstorms content ideas.",
+      "Creating authoritative, conversational, and structured content designed for AI summarization and featured responses.",
     expandedContent:
-      "We make sure they are trendy yet actionable to ensure the content reflects the latest industry standards and drives your audience to take the next step.",
+      "We craft content intentionally for AI engines—clear, concise, authoritative, and optimized for answer boxes, AI overviews, conversational responses, and instant summaries across platforms.",
   },
+
   {
     id: 3,
-    title: "Content Writing-driven Topics",
+    title: "Structured Data & Schema",
     description:
-      "We have all the ideas, what’s next. We put them into content buckets that are relevant for you.",
+      "Implementing schema markup to help AI understand products, services, and reviews with precision.",
     expandedContent:
-      "The buckets are carefully created to resonate with your audience’s pain points and interests.",
+      "By adding advanced schema markup, we give AI models the context they need—improving visibility, comprehension, and the likelihood of appearing in rich results, snippets, and AI-driven answers.",
   },
+
   {
     id: 4,
-    title: "Strategic Content Creation",
+    title: "LLM Content Training Alignment",
     description:
-      "Then begins the process of drafting pieces, taking care of multiple aspects such as SEO, keyword insertion, and storytelling.",
+      "Optimizing brand content to align with how large language models like GPT, Gemini, and Perplexity interpret information.",
     expandedContent:
-      "We craft content designed to drive traffic, engagement, and conversions — where creativity and purpose come together to create a message that truly connects with your audience.",
+      "We structure your content in formats that LLMs prefer—factually strong, context-rich, logically layered, and highly interpretable—ensuring your brand is represented accurately by AI.",
   },
+
   {
     id: 5,
-    title: "Understanding Target Audience",
+    title: "Authority Building",
     description:
-      "Writing for the audience begins with understanding what the audience wants to learn and hear.",
+      "Enhancing brand credibility through strategic PR, citations, and high-authority digital placements.",
     expandedContent:
-      "When we study your target audience, we study their search behavior, preferences, needs, and language to create personalized content that connects on a deeper level and encourages action.",
+      "We strengthen your brand’s trust signals through authoritative mentions, high-quality references, digital PR, and credibility markers that AI models prioritize while ranking and answering.",
   },
+
   {
     id: 6,
-    title: "Powerful Storytelling",
+    title: "Multimedia Optimization",
     description:
-      "A brand without a story is a business — we help you transform from a business to a brand that your audience recognizes and recalls.",
+      "Enriching all digital assets like text, visuals, and videos with metadata that improves AI comprehension and ranking signals.",
     expandedContent:
-      "We humanize your content because humans talk to humans — strategically sharing the founder’s story, the brand’s journey, and day-to-day events to stir emotions and strike conversations.",
+      "We optimize every asset—images, documents, videos, and graphics—with metadata, alt text, transcripts, and contextual signals to improve multimodal AI understanding and cross-platform visibility.",
   },
 ];
 

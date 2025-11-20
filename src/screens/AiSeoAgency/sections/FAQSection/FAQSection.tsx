@@ -6,42 +6,39 @@ type QA = { q: string; a: string };
 
 const DEFAULT_QA: QA[] = [
   {
-    q: "What does a content writing agency like Impulse Digital do beyond writing?",
-    a: "As a full-service content writing agency, we go beyond copy creation to build a complete content ecosystem for your brand. We translate business goals into a focused strategy, combining research, audience analysis, SEO alignment, and messaging consistency. Every piece of content we deliver from blogs to landing pages is designed to inform, engage, and convert. Our content writing services are built to deliver measurable business impact, not just words."
+    q: "What is AI SEO and how is it different from traditional SEO?",
+    a: "AI SEO applies machine learning, predictive analytics, and automation to decisions that traditionally relied on manual research. It accelerates insight discovery, improves targeting, and adapts in real time—while still maintaining the fundamentals of relevance, authority, and user experience.",
   },
   {
-    q: "How do you ensure that our content performs well on search engines?",
-    a: "As an experienced content writing company, we begin with keyword and topic research mapped to buyer intent. Each piece is structured with a clear hierarchy, optimized metadata, internal links, and image alt text. Our content writing services include SEO audits and performance tracking through analytics tools to ensure visibility and continuous improvement."
+    q: "What are AEO and GEO and why do they matter now?",
+    a: "AEO (Answer Engine Optimization) focuses on improving visibility across voice assistants and AI-driven answer experiences. GEO (Generative Engine Optimization) focuses on gaining visibility inside AI summaries, recommendations, and generated responses. Both are essential as users increasingly expect direct answers rather than browsing multiple links.",
   },
   {
-    q: "What content formats and channels do you cover?",
-    a: "Our content writing agency creates diverse formats including blogs, website copy, landing pages, infographics, video scripts, white papers, and product descriptions. We also craft eCommerce listings, Amazon content, and corporate communication pieces. Each deliverable is aligned with your funnel stage and marketing objective ensuring maximum relevance and engagement."
+    q: "How do you use AI for keyword and intent research?",
+    a: "We analyze intent clusters, entities, query patterns, and user journeys to surface high-intent themes and conversion-ready opportunities. AI-driven models help identify gaps, emerging trends, and supporting topics that guide page structure and internal linking.",
   },
   {
-    q: "What is included in website content creation with your content writing services?",
-    a: "As part of our website content writing services, we define your page goals, tone of voice, and messaging hierarchy. We create persuasive, SEO-friendly copy that blends storytelling with performance. Deliverables include on-page text, microcopy, and CTAs developed in coordination with design and web teams for a cohesive experience."
+    q: "How do you optimize content for AI answers and summaries?",
+    a: "We create authoritative, conversational, and well-structured content with verified facts, examples, and clear formatting. Content is aligned to common questions, use cases, and real-world outcomes so AI systems can extract accurate, helpful responses.",
   },
   {
-    q: "How do you measure content success?",
-    a: "Our content writing company sets measurable KPIs for every engagement, including visibility, engagement, conversion rate, and assisted leads. We track data in real-time dashboards and share periodic reports. This data-driven approach ensures our content writing services continuously evolve to meet performance goals."
+    q: "What is entity optimization and how does it improve results?",
+    a: "Entity optimization clarifies your brand’s identity, offerings, attributes, and relationships with products, people, and locations. By standardizing this information across your website and profiles, AI systems can better connect your brand with relevant queries.",
   },
   {
-    q: "What is your process from brief to publication?",
-    a: "Our structured workflow covers discovery, research, ideation, drafting, editing, optimization, and publishing. Every stage is backed by internal quality checks to maintain accuracy and tone. Post-launch, we monitor content performance and refine future strategies, a hallmark of our process-driven content writing agency."
+    q: "Do you implement structured data and schema, and why is it important?",
+    a: "Yes. We implement schema markup for products, services, FAQs, reviews, how-to guides, and more. Structured data helps AI and search engines understand page meaning clearly, increasing eligibility for rich results and answer experiences.",
   },
   {
-    q: "Can you adapt to our brand voice and compliance requirements?",
-    a: "Yes. Our team ensures that every deliverable reflects your brand personality and complies with industry standards. We study brand guidelines, tone of voice, and legal frameworks to maintain authenticity and precision, one of the key reasons brands trust our content writing company for long-term partnerships."
+    q: "How do you align content with large language models like GPT or Gemini?",
+    a: "We structure content using model-friendly patterns including concise definitions, step-by-step lists, comparisons, and evidence-backed explanations. By removing ambiguity and adding contextual depth, we ensure LLMs interpret and summarize your information accurately.",
   },
   {
-    q: "Do you offer content design such as infographics and digital brochures?",
-    a: "Yes. We integrate content writing services with visual storytelling. Our writers and designers collaborate to create infographics, brochures, and presentations that combine clarity, creativity, and data storytelling ensuring every asset communicates effectively and looks professional."
+    q: "How is performance tracked and reported in an AI SEO program?",
+    a: "We monitor visibility across search and AI answer surfaces, track entity coverage, measure engagement and conversions, and analyze cross-channel impact. Dashboards highlight trends and insights, guiding the next stage of optimization.",
   },
-  {
-    q: "How quickly can we get started, and what are the usual timelines?",
-    a: "Once the project scope is confirmed, onboarding begins immediately. Smaller deliverables like blogs or pages are typically delivered within one to two weeks. Larger projects such as websites, campaigns, or white papers follow a phased schedule with shared milestones. As a reliable content writing agency, we keep clients informed at every stage."
-  }
 ];
+
 
 export const FAQSection: React.FC<{ items?: QA[] }> = ({ items = DEFAULT_QA }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

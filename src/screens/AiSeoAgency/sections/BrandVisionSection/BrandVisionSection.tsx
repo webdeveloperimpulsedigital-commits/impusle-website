@@ -128,10 +128,10 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* Title */}
         <div className="mb-6 lg:mb-8 pt-10">
           <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
+            AI SEO 
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
+            Agency Overview 
           </h2>
         </div>
 

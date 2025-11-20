@@ -17,10 +17,10 @@ export const WhyChooseSection = (): JSX.Element => {
 
         <div className="mb-6 lg:mb-8 pt-0">
           <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-             Our Two 
+             Why Choose
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-             Cents on Marketing
+             Agentic AI
                        </h2>
         </div>
  
@@ -37,13 +37,13 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Content Writing Optimized Writing
+              Tailored AI solutions built for your business goals 
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
               Optimized content is more than just inserting keywords. It’s
               about understanding your audience’s intent and creating content
               that resonates with their needs and level of understanding.
-            </p>
+            </p> */}
           </div>
  
           {/* 2) Versatile Writing Styles */}
@@ -57,14 +57,14 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Versatile Writing Styles
+              Data-driven intelligence that learns and adapts
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
               Every business or brand has a distinct voice. It needs to align
               with your values, strike a chord with your audience, and reflect
               your personality. Our content writing adapts to your voice
               seamlessly.
-            </p>
+            </p> */}
           </div>
  
           {/* 3) Tailored Content Strategy */}
@@ -78,13 +78,13 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Tailored Content Strategy
+              Seamless integration across your existing digital stack 
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
               You’ve written the best piece of content—great! What’s next? With
               the right channel, timing, and format, it performs. Our strategy
               makes sure it does.
-            </p>
+            </p> */}
           </div>
         </div>
  
@@ -105,27 +105,27 @@ export const WhyChooseSection = (): JSX.Element => {
               </div><br></br>
               {/* Content 1 */}
               <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2 pt-16">
-                Versatile Writing Styles
+                Data-driven intelligence that learns and adapts 
               </h3>
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed mb-0">
+              {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed mb-0">
                 Every business or brand has a distinct voice. It needs to align
                 with your values, strike a chord with your audience, and reflect
                 your personality. Our content writing adapts to your voice
                 seamlessly.
-              </p>
+              </p> */}
             </div>
  
             {/* Right Column */}
             <div className="lg:col-span-6 flex flex-col">
               <div className="pr-2 mb-8 mt-12 pb-16">
                 <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2">
-                  Content Writing Optimized Writing
+                  Tailored AI solutions built for your business goals 
                 </h3>
-                <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed max-w-[620px]">
+                {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed max-w-[620px]">
                   Optimized content is more than just inserting keywords. It’s
                   about understanding your audience’s intent and creating content
                   that resonates with their needs and level of understanding.
-                </p>
+                </p> */}
               </div>
  
               <div className="relative overflow-hidden rounded-[24px] shadow-lg">
@@ -152,13 +152,13 @@ export const WhyChooseSection = (): JSX.Element => {
  
             <div className="mt-6 max-w-12xl">
               <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2">
-                Tailored Content Strategy
+                Seamless integration across your existing digital stack 
               </h3>
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+              {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
                 You’ve written the best piece of content—great! What’s next? With
                 the right channel, timing, and format, it performs. Our strategy
                 makes sure it does.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

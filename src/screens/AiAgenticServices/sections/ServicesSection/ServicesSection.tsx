@@ -24,87 +24,56 @@ const ServicesSection = () => {
   const [slide, setSlide] = useState(0);
 
   const data = [
-    {
-      n: "01",
-      title: "eCommerce Content Writing",
-      points: [
-        "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories–everything optimized and backed up by research and storytelling—not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
-      ],
-      img: "/impulse-website/Ecommerce.jpg",
-    },
-    {
-      n: "02",
-      title: "Blogs",
-      points: [
-        "Too many words and yet no clear message? That’s something we have never experienced before because every word we write is well-researched and SEO-friendly. Whether it is industry insights or how-to guides, we are known for crafting content that educates, inspires, and boosts search engine rankings–all at once.",
-      ],
-      img: "/impulse-website/Blog.jpg",
-    },
-    {
-      n: "03",
-      title: "Website Content Creation",
-      points: [
-        "Your website is the face of your brand online, and if readers aren’t sticking along for long, there’s something wrong. It could be your messaging. Our website content writing services ensure that every copy is clear, persuasive, SEO-optimized, and actionable, tailored to your brand voice.",
-      ],
-      img: "/impulse-website/Website content.jpg",
-    },
-    {
-      n: "04",
-      title: "Videos",
-      points: [
-        "Videos are the future of information consumption, and a compelling script is the only way to make them work. Our content writing services strike the right balance between audience-focused, educative, entertaining, and engaging. With storytelling expertise and strategic keyword integration, we ensure your videos rank well and resonate with viewers.",
-      ],
-      img: "/impulse-website/Video.jpg",
-    },
-    {
-      n: "05",
-      title: "Landing Page Content",
-      points: [
-        "Landing pages are designed to focus your audience’s attention on specific results like lead generation and product promotion. We make sure every landing page we create is highly optimized for conversions, down to every last element and detail. Let our content writing agency take your audience through a journey from introduction to action.",
-      ],
-      img: "/impulse-website/Landing Page.jpg",
-    },
-    {
-      n: "06",
-      title: "White Paper Creation & Design",
-      points: [
-        "A white paper is your chance to show what you’ve really got—expertise, experience, and insights. Our content writing company combines in-depth research and fact-checking with persuasive writing to create white papers that build trust, develop authority, and talk business. Paired with sleek, custom designs, these white papers convey complex information effectively. Hello, new leads!",
-      ],
-      img: "/impulse-website/WHite Paper.jpg",
-    },
-    {
-      n: "07",
-      title: "Corporate Communication",
-      points: [
-        "Do you know where most businesses go wrong? They become professionally robotic in their communication. We take care of all your communication—email, press releases, internal newsletters, and more—to create professional yet engaging copy that resonates with your employees, stakeholders, and customers alike. ",
-      ],
-      img: "/impulse-website/Corporate Communication.jpg",
-    },
-    {
-      n: "08",
-      title: "Digital Brochure Creation",
-      points: [
-        "When everything is online, why should brochures be offline? They’re your chance to showcase your brand’s USP and offerings. With expertise in strategic layout, crafting compelling copy, and visually striking designs, our digital brochures are nothing short of your brand coming to life, quite literally.",
-      ],
-      img: "/impulse-website/Digital Brochure.jpg",
-    },
-    {
-      n: "09",
-      title: "Amazon Content Writing",
-      points: [
-        "One platform, a million buyers, and a million products—where are you? Our content writing agency specializes in crafting keyword-optimized product descriptions, titles, and bullet points tailored to please Amazon’s algorithms. Trust us to highlight your product’s unique features in a way that makes the buyers click ‘Add to cart’ almost immediately. ",
-      ],
-      img: "/impulse-website/Amazon Contet writing.jpg",
-    },
-    {
-      n: "10",
-      title: "Infographic Creation and Design",
-      points: [
-        "Infographics can get confusing pretty quickly. They demand an eye for detail, simplicity, and accuracy to create graphics and pair them with compelling copy, one that captures attention and enhances information retention.",
-      ],
-      img: "/impulse-website/Infographic.jpg",
-    },
-  ];
+  {
+    n: "01",
+    title: "WhatsApp",
+    points: [
+      "Multilingual conversations, instant responses, smart follow-ups, and secure document sharing—all powered by intelligent automation. We help you turn WhatsApp into a high-converting communication channel that feels personal, fast, and effortless for your customers."
+    ],
+    img: "/impulse-website/Whatsapp.jpg",
+  },
+  {
+    n: "02",
+    title: "Email",
+    points: [
+      "AI-powered email communication that listens, understands, and responds just like your best sales rep. From inquiries to follow-ups to nurturing flows, we craft emails that persuade, convert, and maintain a consistent brand voice—24/7."
+    ],
+    img: "/impulse-website/Email.jpg",
+  },
+  {
+    n: "03",
+    title: "Voice Notes",
+    points: [
+      "Personalized, context-rich voice notes that feel human, authentic, and action-driven. Whether it's sales follow-ups, service updates, or onboarding messages, our AI-generated voice drops help you build stronger emotional connections at scale."
+    ],
+    img: "/impulse-website/VoiceNotes.jpg",
+  },
+  {
+    n: "04",
+    title: "Facebook Messenger",
+    points: [
+      "Engage audiences instantly with conversational AI that answers questions, guides users, handles queries, and keeps them connected to your brand. Perfect for lead generation, customer care, and nurturing prospects without manual effort."
+    ],
+    img: "/impulse-website/FacebookMessenger.jpg",
+  },
+  {
+    n: "05",
+    title: "Instagram DM",
+    points: [
+      "Automated, human-like Instagram DM interactions that convert casual chats into long-term customer relationships. From keyword triggers to personalized replies and funnel journeys, we help you turn your DMs into a sales-ready powerhouse."
+    ],
+    img: "/impulse-website/InstagramDM.jpg",
+  },
+  {
+    n: "05",
+    title: "SMS",
+    points: [
+      "Fast, direct, and effective communication with customers, right where they are."
+    ],
+    img: "/impulse-website/InstagramDM.jpg",
+  },
+];
+
 
   // Desktop: active sticky card
   useEffect(() => {

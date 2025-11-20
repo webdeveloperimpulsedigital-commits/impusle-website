@@ -10,56 +10,57 @@ interface ProcessStep {
 export const ProcessSection = (): JSX.Element => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps: ProcessStep[] = [
+ const processSteps: ProcessStep[] = [
   {
     id: 1,
-    title: "High-quality Research",
+    title: "Discovery & Goal-Setting",
     description:
-      "We start by identifying your industry competitors and learning everything about them to contrast them with you.",
+      "We begin by defining your business objectives and identifying how autonomous AI agents can drive measurable outcomes.",
     expandedContent:
-      "We dig in on what’s working, what’s not, areas where you have an upper hand, and areas where you can improve.",
+      "This phase ensures clarity on expectations, success metrics, and real-world use cases where AI agents can deliver maximum impact.",
   },
   {
     id: 2,
-    title: "Trend-focused Content Ideas",
+    title: "Data & CRM Integration",
     description:
-      "Post identifying relevant data, keywords, and trends, our team sits and brainstorms content ideas.",
+      "We connect all relevant data sources and CRM systems to build a unified intelligence layer.",
     expandedContent:
-      "We make sure they are trendy yet actionable to ensure the content reflects the latest industry standards and drives your audience to take the next step.",
+      "This integrated data foundation enables seamless agent performance, personalization, and high-accuracy responses across customer interactions.",
   },
   {
     id: 3,
-    title: "Content Writing-driven Topics",
+    title: "Persona & Conversation Design",
     description:
-      "We have all the ideas, what’s next. We put them into content buckets that are relevant for you.",
+      "We design human-like AI personas and conversation flows aligned with your brand voice.",
     expandedContent:
-      "The buckets are carefully created to resonate with your audience’s pain points and interests.",
+      "From tone to journey mapping, this step ensures every interaction feels natural, meaningful, and consistent with your customer experience goals.",
   },
   {
     id: 4,
-    title: "Strategic Content Creation",
+    title: "Multi-Channel Agent Configuration",
     description:
-      "Then begins the process of drafting pieces, taking care of multiple aspects such as SEO, keyword insertion, and storytelling.",
+      "We deploy and configure AI agents across all your preferred platforms.",
     expandedContent:
-      "We craft content designed to drive traffic, engagement, and conversions — where creativity and purpose come together to create a message that truly connects with your audience.",
+      "Whether web, chat, email, or social media, your AI agents deliver cohesive, omni-channel engagement that adapts to customer behavior.",
   },
   {
     id: 5,
-    title: "Understanding Target Audience",
+    title: "Pilot Launch & Monitoring",
     description:
-      "Writing for the audience begins with understanding what the audience wants to learn and hear.",
+      "We run a controlled pilot to test and fine-tune the AI agent's behavior.",
     expandedContent:
-      "When we study your target audience, we study their search behavior, preferences, needs, and language to create personalized content that connects on a deeper level and encourages action.",
+      "Real-time insights help us adjust responses, decision flows, personalization logic, and edge-case handling for peak performance.",
   },
   {
     id: 6,
-    title: "Powerful Storytelling",
+    title: "Scale-Up with Ongoing Optimization",
     description:
-      "A brand without a story is a business — we help you transform from a business to a brand that your audience recognizes and recalls.",
+      "We expand AI capabilities across more teams, platforms, and use cases.",
     expandedContent:
-      "We humanize your content because humans talk to humans — strategically sharing the founder’s story, the brand’s journey, and day-to-day events to stir emotions and strike conversations.",
+      "Through continuous monitoring and learning loops, your AI agents evolve, improve accuracy, and consistently deliver better results over time.",
   },
 ];
+
 
 
   return (
@@ -71,11 +72,11 @@ export const ProcessSection = (): JSX.Element => {
 
           <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px]">
 
-              How Great Content
+              Agentic AI
 
              </p>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-           Comes to Life 
+           Process That Work
           </h2>
 
 

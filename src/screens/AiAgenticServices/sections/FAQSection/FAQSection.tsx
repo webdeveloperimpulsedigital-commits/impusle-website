@@ -6,42 +6,39 @@ type QA = { q: string; a: string };
 
 const DEFAULT_QA: QA[] = [
   {
-    q: "What does a content writing agency like Impulse Digital do beyond writing?",
-    a: "As a full-service content writing agency, we go beyond copy creation to build a complete content ecosystem for your brand. We translate business goals into a focused strategy, combining research, audience analysis, SEO alignment, and messaging consistency. Every piece of content we deliver from blogs to landing pages is designed to inform, engage, and convert. Our content writing services are built to deliver measurable business impact, not just words."
+    q: "What is agentic AI and how is it different from traditional automation?",
+    a: "Agentic AI uses intelligent agents that can analyze data, make contextual decisions, and execute tasks in real time. Unlike rule-based automation, agents learn from outcomes, adapt to new inputs, and coordinate actions across multiple channels."
   },
   {
-    q: "How do you ensure that our content performs well on search engines?",
-    a: "As an experienced content writing company, we begin with keyword and topic research mapped to buyer intent. Each piece is structured with a clear hierarchy, optimized metadata, internal links, and image alt text. Our content writing services include SEO audits and performance tracking through analytics tools to ensure visibility and continuous improvement."
+    q: "Which use cases do your AI agents support today?",
+    a: "Our agents support lead qualification, customer support, appointment booking, pricing and offer responses, reactivation journeys, win-back flows, campaign reporting, and creative testing. Supported channels include WhatsApp, email, voice notes, Facebook Messenger, Instagram DM, and SMS."
   },
   {
-    q: "What content formats and channels do you cover?",
-    a: "Our content writing agency creates diverse formats including blogs, website copy, landing pages, infographics, video scripts, white papers, and product descriptions. We also craft eCommerce listings, Amazon content, and corporate communication pieces. Each deliverable is aligned with your funnel stage and marketing objective ensuring maximum relevance and engagement."
+    q: "How do agents integrate with our tools and data sources?",
+    a: "We integrate with your CRM, marketing platforms, analytics tools, and data warehouses through secure APIs and Webhooks. A unified data layer enables agents to read context, write events, and maintain synchronized records across all connected systems."
   },
   {
-    q: "What is included in website content creation with your content writing services?",
-    a: "As part of our website content writing services, we define your page goals, tone of voice, and messaging hierarchy. We create persuasive, SEO-friendly copy that blends storytelling with performance. Deliverables include on-page text, microcopy, and CTAs developed in coordination with design and web teams for a cohesive experience."
+    q: "How do you ensure brand voice, accuracy, and multilingual experiences?",
+    a: "We design brand-specific AI personas, conversation flows, and approval rules. Translation workflows and content libraries support multiple languages, ensuring responses remain accurate, culturally aligned, and consistent with your approved brand voice."
   },
   {
-    q: "How do you measure content success?",
-    a: "Our content writing company sets measurable KPIs for every engagement, including visibility, engagement, conversion rate, and assisted leads. We track data in real-time dashboards and share periodic reports. This data-driven approach ensures our content writing services continuously evolve to meet performance goals."
+    q: "How are risks controlled and when do humans step in?",
+    a: "Guardrails, allow/deny lists, and verification checks restrict agent actions to approved scopes. Confidence thresholds trigger human review, and escalation paths seamlessly hand conversations to live teams when needed."
   },
   {
-    q: "What is your process from brief to publication?",
-    a: "Our structured workflow covers discovery, research, ideation, drafting, editing, optimization, and publishing. Every stage is backed by internal quality checks to maintain accuracy and tone. Post-launch, we monitor content performance and refine future strategies, a hallmark of our process-driven content writing agency."
+    q: "What does a typical implementation timeline look like?",
+    a: "Our timeline includes discovery, integration, conversation design, pilot launch, and scale-up. Actual duration depends on scope and data readiness. We share a milestone-based project plan with owners and acceptance criteria."
   },
   {
-    q: "Can you adapt to our brand voice and compliance requirements?",
-    a: "Yes. Our team ensures that every deliverable reflects your brand personality and complies with industry standards. We study brand guidelines, tone of voice, and legal frameworks to maintain authenticity and precision, one of the key reasons brands trust our content writing company for long-term partnerships."
+    q: "How is performance measured and improved over time?",
+    a: "We track response quality, resolution rate, time to action, conversion lift, channel cost, and customer satisfaction. Continuous feedback loops and controlled experiments refine prompts, flows, and policies for steady improvements."
   },
   {
-    q: "Do you offer content design such as infographics and digital brochures?",
-    a: "Yes. We integrate content writing services with visual storytelling. Our writers and designers collaborate to create infographics, brochures, and presentations that combine clarity, creativity, and data storytelling ensuring every asset communicates effectively and looks professional."
-  },
-  {
-    q: "How quickly can we get started, and what are the usual timelines?",
-    a: "Once the project scope is confirmed, onboarding begins immediately. Smaller deliverables like blogs or pages are typically delivered within one to two weeks. Larger projects such as websites, campaigns, or white papers follow a phased schedule with shared milestones. As a reliable content writing agency, we keep clients informed at every stage."
+    q: "What do you need from us to get started?",
+    a: "We require your business goals, KPIs, access to key systems, sample customer conversations, and approved tone/action guidelines. Once provided, we configure the pilot and align on the scale-up roadmap."
   }
 ];
+
 
 export const FAQSection: React.FC<{ items?: QA[] }> = ({ items = DEFAULT_QA }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

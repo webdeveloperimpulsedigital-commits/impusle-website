@@ -17,10 +17,10 @@ export const WhyChooseSection = (): JSX.Element => {
 
         <div className="mb-6 lg:mb-8 pt-0">
           <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-             Our Two 
+            Why Choose
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-             Cents on Marketing
+            AI SEO Agency
                        </h2>
         </div>
  
@@ -37,13 +37,11 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Content Writing Optimized Writing
+              Tailored strategies aligned with your brand goals 
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-              Optimized content is more than just inserting keywords. It’s
-              about understanding your audience’s intent and creating content
-              that resonates with their needs and level of understanding.
-            </p>
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+              At Impulse Digital, we optimize for the next era of search, ensuring your brand is discoverable across AI-driven engines and voice assistants through context-rich, conversational content. 
+            </p> */}
           </div>
  
           {/* 2) Versatile Writing Styles */}
@@ -57,14 +55,11 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Versatile Writing Styles
+              Data-driven decisions backed by analytics 
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-              Every business or brand has a distinct voice. It needs to align
-              with your values, strike a chord with your audience, and reflect
-              your personality. Our content writing adapts to your voice
-              seamlessly.
-            </p>
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+              We craft content that earns your brand a place in AI-generated answers, summaries, and recommendations making sure you stay visible where audiences seek instant insights.
+            </p> */}
           </div>
  
           {/* 3) Tailored Content Strategy */}
@@ -78,13 +73,12 @@ export const WhyChooseSection = (): JSX.Element => {
               />
             </div>
             <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-xl mb-2">
-              Tailored Content Strategy
+              Creative campaigns that deliver measurable results 
+
             </h3>
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-              You’ve written the best piece of content—great! What’s next? With
-              the right channel, timing, and format, it performs. Our strategy
-              makes sure it does.
-            </p>
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+              Powered by leading AI tools and automation, we combine data intelligence with creativity to deliver SEO strategies that adapt, perform, and scale in real time. 
+            </p> */}
           </div>
         </div>
  
@@ -105,27 +99,24 @@ export const WhyChooseSection = (): JSX.Element => {
               </div><br></br>
               {/* Content 1 */}
               <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2 pt-16">
-                Versatile Writing Styles
+                
+                Data-driven decisions backed by analytics 
               </h3>
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed mb-0">
-                Every business or brand has a distinct voice. It needs to align
-                with your values, strike a chord with your audience, and reflect
-                your personality. Our content writing adapts to your voice
-                seamlessly.
-              </p>
+              {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed mb-0">
+                At Impulse Digital, we optimize for the next era of search, ensuring your brand is discoverable across AI-driven engines and voice assistants through context-rich, conversational content. 
+                
+              </p> */}
             </div>
  
             {/* Right Column */}
             <div className="lg:col-span-6 flex flex-col">
               <div className="pr-2 mb-8 mt-12 pb-16">
                 <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2">
-                  Content Writing Optimized Writing
+                  Tailored strategies aligned with your brand goals
                 </h3>
-                <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed max-w-[620px]">
-                  Optimized content is more than just inserting keywords. It’s
-                  about understanding your audience’s intent and creating content
-                  that resonates with their needs and level of understanding.
-                </p>
+                {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed max-w-[620px]">
+                 We craft content that earns your brand a place in AI-generated answers, summaries, and recommendations making sure you stay visible where audiences seek instant insights. 
+                </p> */}
               </div>
  
               <div className="relative overflow-hidden rounded-[24px] shadow-lg">
@@ -152,13 +143,11 @@ export const WhyChooseSection = (): JSX.Element => {
  
             <div className="mt-6 max-w-12xl">
               <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-2xl mb-2">
-                Tailored Content Strategy
+                Creative campaigns that deliver measurable results 
               </h3>
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-                You’ve written the best piece of content—great! What’s next? With
-                the right channel, timing, and format, it performs. Our strategy
-                makes sure it does.
-              </p>
+              {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
+                Powered by leading AI tools and automation, we combine data intelligence with creativity to deliver SEO strategies that adapt, perform, and scale in real time. 
+              </p> */}
             </div>
           </div>
         </div>
