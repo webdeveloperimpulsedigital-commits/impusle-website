@@ -12,10 +12,10 @@ export const WhyChooseSection = (): JSX.Element => {
     
         <div className="mb-6 lg:mb-8 pt-0">
           <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Why Choose
+            Enterprise SEO
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-             Impulse Digital’s Enterprise SEO Services ? 
+             Elevated by Impulse 
           </h2>
         </div>
  

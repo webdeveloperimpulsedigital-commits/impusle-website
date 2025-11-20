@@ -45,12 +45,12 @@ const ServicesSection = () => {
     { n:"07", title:"Shopify SEO",
       points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores—better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
       img:"/impulse-website/service section 520 x 340 - Shopify SEO.jpg" },
-    { n:"08", title:"Content writing SEO",
+    { n:"08", title:"Content writing",
       points:["Content has to be more than words. It has to be high-quality, matching the reader’s needs, aligned with the algorithm, and value-laden. Our content writing services sit at the sweet point where authenticity, research, relevancy, and rankings meet. "],
       img:"/impulse-website/local  service section 520 x 340 - Content writing SEO.jpg",
     },
     {
-      n:"09", title:"Conversion Rate SEO",
+      n:"09", title:"Conversion Rate Optimization",
       points:["Got website visitors but no paying customers? We will solve that problem here by analyzing user behavior, improving navigation, and tailoring content to match the audience’s needs. Be ready for an influx of loyal customers."],
       img:"/impulse-website/service section 520 x 340 - Conversion Rate SEO.jpg",
     },
@@ -294,12 +294,12 @@ const ServicesSection = () => {
             <div className="mx-auto relative">
               <h2 className="[font-family:'DM_Sans',Helvetica] font-normal text-[20px] md:text-[34px] leading-tight">
                 <span className="text-[#ffffffb2]  lg:text-[34px] sm:text-[16px]">
-                  Our SEO
+                  SEO That
 
                 </span>
 
                 <span className="font-bold text-[#ffffff] lg:text-[52px] md:text-[52px] sm:text-[26px]">
-                  Services
+                  Moves the Needle
                 </span>
               </h2>
             </div>

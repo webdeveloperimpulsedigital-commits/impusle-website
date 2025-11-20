@@ -131,7 +131,7 @@ export const BrandVisionSection = (): JSX.Element => {
             Get Found. Get Chosen.
           </h2>
           <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-           Get Customers Through Your DooR.
+           Get Customers Through Your Door.
           </h2>
         </div>
 
