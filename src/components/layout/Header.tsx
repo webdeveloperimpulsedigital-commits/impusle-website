@@ -56,6 +56,8 @@ const DEFAULT_ITEMS: NavItem[] = [
       { label: "Employee Branding", href: "/services/employee-branding-agency" },
       // { label: "Corporate Communication", href: "/services/corporate-communication-agency" },
       { label: "Social Media Video Production", href: "/services/social-media-video-production" },
+      { label: "Ai Seo" , href: "/services/ai-seo-agency"},
+      { label: "Ai Agentic", href: "/services/agentic-ai"},
     ],
   },
   { label: "Case Studies", href: "/casestudies" },

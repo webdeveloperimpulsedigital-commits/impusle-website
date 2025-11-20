@@ -17,7 +17,7 @@ import { EmployerBrandingServices } from "./screens/EmployerBrandingServices/Emp
 import { CorporateCommunicationServices } from "./screens/CorporateCommunicationServices";
 import { SocialMediaVideoProductionServices } from "./screens/SocialMediaVideoProductionServices/SocialMediaVideoProductionServices";
 import { AiSeoAgency } from "./screens/AiSeoAgency";
-//import { AgenticAi } from "./screens/AgenticAi";
+import { AiAgenticServices } from "./screens/AiAgenticServices";
 
 import { Casestudies } from "./screens/Casestudies";
 import { Ebooks, Resources } from "./screens/Resources";
@@ -62,8 +62,8 @@ export const App = (): JSX.Element => {
       <Route path="/services/employee-branding-agency" element={<EmployerBrandingServices />}/>
       <Route path="/services/corporate-communication-agency" element={<CorporateCommunicationServices />}/>
       <Route path="/services/social-media-video-production" element={<SocialMediaVideoProductionServices />}/>
-      <Route path="/ai-seo-agency" element={<AiSeoAgency />} />
-      {/* <Route path="/agentic-ai" element={<AgenticAi />} /> */}
+      <Route path="/services/ai-seo-agency" element={<AiSeoAgency />} />
+       <Route path="/services/agentic-ai" element={<AiAgenticServices />} /> 
 
       <Route path="/casestudies" element={<Casestudies/>}/>
       <Route path="/resources" element={<Resources/>}/>

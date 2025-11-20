@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
 
-export const AiSeoAgencyHeroSection = (): JSX.Element => {
+export const AiAgenticHeroSection = (): JSX.Element => {
   return (
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
@@ -34,7 +34,7 @@ export const AiSeoAgencyHeroSection = (): JSX.Element => {
       {/* Hero Copy */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-24 px-4">
         <h1 className="[font-family:'DM_Sans',Helvetica] font-black text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[40px] tracking-tight mb-6">
-          Ai Seo
+          Ai Agentic
         </h1>
 
         {/* Breadcrumb */}
@@ -43,7 +43,7 @@ export const AiSeoAgencyHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Ai Seo</span>
+          <span className="text-white">Ai Agentic</span>
         </nav>
       </div>
     </section>
