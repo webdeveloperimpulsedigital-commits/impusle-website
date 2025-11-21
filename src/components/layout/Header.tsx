@@ -45,7 +45,7 @@ const DEFAULT_ITEMS: NavItem[] = [
         href: "/services/search-engine-optimization",
         hasSubDropdown: true,
         subItems: [
-          { label: "Ai Seo" , href: "/services/ai-seo-agency"},
+          { label: "AI Seo" , href: "/services/ai-seo-agency"},
           { label: "Enterprise SEO ", href: "/services/search-engine-optimization/enterprise-seo-services" },
           { label: "eCommerce SEO ", href: "/services/search-engine-optimization/ecommerce-seo-services" },
           { label: "B2B SEO", href: "/services/search-engine-optimization/b2b-seo-services" },
@@ -57,7 +57,7 @@ const DEFAULT_ITEMS: NavItem[] = [
       { label: "Employee Branding", href: "/services/employee-branding-agency" },
       // { label: "Corporate Communication", href: "/services/corporate-communication-agency" },
       { label: "Social Media Video Production", href: "/services/social-media-video-production" },
-      { label: "Ai Agentic", href: "/services/agentic-ai"},
+      { label: " Agentic AI", href: "/services/agentic-ai"},
     ],
   },
   { label: "Case Studies", href: "/casestudies" },

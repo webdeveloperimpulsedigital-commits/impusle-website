@@ -9,12 +9,6 @@ export const WhyChooseSection = (): JSX.Element => {
     >
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
         {/* Header */}
-        
-
-
-        
-
-
         <div className="mb-6 lg:mb-8 pt-0">
           <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
             Why Choose

@@ -24,54 +24,40 @@ const ServicesSection = () => {
   const [slide, setSlide] = useState(0);
 
    const data = [
-    { n:"01", title:"Social Media Creatives",
-      points:["Capture attention with scroll-stopping creatives designed to engage your audience. From eye-catching visuals to compelling copies, our creatives are tailored to meet the unique needs of all platforms—Instagram, YouTube, Facebook, Linkedin, and Pinterest. They stop your audience, spark conversations, build connections, and drive conversations."],
-      img:"/impulse-website/Social Media Creatives.jpg" },
-    { n:"02", title:"Branding",
+    { n:"01", title:"Branding",
       points:["Who are you, what do you do, and why should your audience buy from you? Your branding is your unique identity that tells your audience everything about you. We make sure it sets you apart rather than putting you on the list of ‘Oh this is just like brand XYZ.’"],
-      img:"/impulse-website/Branding.jpg" },
-    { n:"03", title:"Logo Identity",
-      points:["Your logo is one aspect of your branding that’s going to be everywhere, quite literally—social media, website, packaging, gift notes. Our logo identity goes beyond aesthetics to capture your brand’s essence. Whether you want it to be sleek, modern, or timeless, our logos create instant recognition for you. "],
-      img:"/impulse-website/branding creative service section 520 x 340 - Logo Identity.jpg" },
-    { n:"04", title:"Emailers",
-      points:["Email campaigns are seriously underrated because most brands don’t use it well. Our emailers, crafted with relevant visuals and actionable copies, ensure high click and open rates. Whether you are launching a new product, offering a special discount, or sending a newsletter, we deliver your message effectively."],
-      img:"/impulse-website/branding creative service section 520 x 340 - Emailers.jpg" },
-    { n:"05", title:"Website Design",
-      points:["Website is a platform that makes your brand accessible to your audience 24/7. It breaks geographical barriers and time zones. Our website design services ensure that your website looks appealing yet easy to navigate. Our custom web design services bring out the beauty of your brand via color, typography, and elements."],
-      img:"/impulse-website/branding creative service section 520 x 340 - Website design.jpg" },
-    { n:"06", title:"Television and OTT Platform Assets",
-      points:["Attention is a scarce resource and we help you capture it with visually stunning assets. Think show banners, thumbnails, and promo graphics. These creatives are optimized for screens, telling a lot in mere seconds in crowded digital spaces, driving views and engagements."],
-      img:"/impulse-website/branding creative service section 520 x 340 - Television and OTT platform assets.jpg" },
-    { n:"07", title:"Brand Style Guideline",
-      points:["Imagine every communication in a different color scheme, font, or voice. One sounds like a friend, another like a grandmother. Pst! Your brand is lost. We create detailed guidelines that define your brand's tone, typography, color schemes, and imagery, ensuring all communication aligns with your identity at all touchpoints. Not one missed. "],
-      img:"/impulse-website/branding creative service section 520 x 340 - Brand style guideline.jpg" },
-    {
-      n:"08", title:"OOH ads",
-      points:["We never miss a chance to put your brand in front of your audience, even when they are out of the house. Our team ensures your brand is visible where your audience is, then be it on billboards, bus wraps, or transit ads. Why? Every message counts!"],
-      img:"/impulse-website/branding creative service section 520 x 340 - OOH Ads.jpg"
+      img:"/impulse-website/Branding.jpg"
     },
-    
-    {
-      n:"09", title:"Paper ads",
-      points:["A significant part of the world still reads newspapers, magazines, and brochures, believe it or not. In fact, every publication has its own credibility and we aim to get your brand featured in the best one, blending a traditional approach with modern visuals and messaging."],
-      img:"/impulse-website/branding creative service section 520 x 340 - Paper Ads.jpg"
+
+    { n:"02", title:"Logo Identity",
+      points:["Your logo is one aspect of your branding that’s going to be everywhere, quite literally—social media, website, packaging, gift notes. Our logo identity goes beyond aesthetics to capture your brand’s essence. Whether you want it to be sleek, modern, or timeless, our logos create instant recognition for you."],
+      img:"/impulse-website/branding creative service section 520 x 340 - Logo Identity.jpg"
     },
+
+    { n:"03", title:"Brand Style Guideline",
+      points:["Imagine every communication in a different color scheme, font, or voice. One sounds like a friend, another like a grandmother. Pst! Your brand is lost. We create detailed guidelines that define your brand's tone, typography, color schemes, and imagery, ensuring all communication aligns with your identity at all touchpoints. Not one missed."],
+      img:"/impulse-website/branding creative service section 520 x 340 - Brand style guideline.jpg"
+    },
+
     {
-      n:"10", title:"Brand Lookbook",
+      n:"04", title:"Brand Lookbook",
       points:["Showcase your brand’s story, products, and journey with a well-crafted lookbook. With elegant, cohesive layouts that highlight your strengths and create an immersive experience for your audience, these lookbooks are perfect for client pitches, coffee tables, or product launches."],
       img:"/impulse-website/branding creative service section 520 x 340 - Brand lookbook.jpg"
     },
+
     {
-      n:"11", title:"Product Packaging",
-      points:["Every touchpoint should reinforce your brand’s messaging and product packaging is a lot more than just words. There’s design thinking and consumer psychology in there. Our team designs innovative packaging that grabs the eye of the audience from the shelves, creates a memorable unboxing experience, and keeps your customer hooked. "],
+      n:"05", title:"Product Packaging",
+      points:["Every touchpoint should reinforce your brand’s messaging and product packaging is a lot more than just words. There’s design thinking and consumer psychology in there. Our team designs innovative packaging that grabs the eye of the audience from the shelves, creates a memorable unboxing experience, and keeps your customer hooked."],
       img:"/impulse-website/branding creative service section 520 x 340 - Product packaging.jpg"
     },
+
     {
-      n:"12", title:"Branding Collaterals",
+      n:"06", title:"Branding Collaterals",
       points:["Equip your band with professional collaterals that impress at every interaction. Be it a business card, brochure, presentation or custom stationary, we design collaterals that speak for your brand louder than words could, enhances your visibility, and engraves you in the mind of your audience."],
       img:"/impulse-website/branding creative service section 520 x 340 - Branding collaterals.jpg"
     }
-  ];
+];
+
 
   // Desktop: active sticky card (same IntersectionObserver logic)
   useEffect(() => {
