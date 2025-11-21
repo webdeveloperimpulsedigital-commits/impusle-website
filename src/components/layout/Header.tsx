@@ -45,7 +45,7 @@ const DEFAULT_ITEMS: NavItem[] = [
         href: "/services/search-engine-optimization",
         hasSubDropdown: true,
         subItems: [
-          { label: "AI Seo" , href: "/services/ai-seo-agency"},
+          { label: "AI Seo" , href: "/services/search-engine-optimization/ai-seo-agency"},
           { label: "Enterprise SEO ", href: "/services/search-engine-optimization/enterprise-seo-services" },
           { label: "eCommerce SEO ", href: "/services/search-engine-optimization/ecommerce-seo-services" },
           { label: "B2B SEO", href: "/services/search-engine-optimization/b2b-seo-services" },

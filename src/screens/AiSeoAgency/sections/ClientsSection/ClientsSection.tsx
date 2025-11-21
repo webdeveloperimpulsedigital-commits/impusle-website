@@ -5,36 +5,36 @@ export const ClientsSection = (): JSX.Element => {
 
  
   const logos = [
-    { name: "abg-chemical1", src: "http://localhost:5173/impulse-website/impulse-clients/abg-chemical.jpg" },
-    { name: "hindalco", src: "http://localhost:5173/impulse-website/impulse-clients/hindalco.jpg" },
-    { name: "abps", src: "http://localhost:5173/impulse-website/impulse-clients/abps.jpg" },
-    { name: "birla-celilues", src: "http://localhost:5173/impulse-website/impulse-clients/birla-celilues.jpg" },
-    { name: "hdfc", src: "http://localhost:5173/impulse-website/impulse-clients/hdfc.jpg" },
-    { name: "godrej", src: "http://localhost:5173/impulse-website/impulse-clients/godrej.jpg" },
-    { name: "amazone", src: "http://localhost:5173/impulse-website/impulse-clients/amazone.jpg" },
-    { name: "ola", src: "http://localhost:5173/impulse-website/impulse-clients/ola.jpg" },
-    { name: "chings", src: "http://localhost:5173/impulse-website/impulse-clients/chings.jpg" },
-    { name: "d-mart", src: "http://localhost:5173/impulse-website/impulse-clients/d-mart.jpg" },
-    { name: "mastercard", src: ".http://localhost:5173/impulse-website/impulse-clients/mastercard.jpg" },
-    { name: "tjsb", src: "http://localhost:5173/impulse-website/impulse-clients/tjsb.jpg" },
-    { name: "tata-soulful", src: "http://localhost:5173/impulse-website/tata-soulful.jpg" },
-    { name: "tata", src: "http://localhost:5173/impulse-website/impulse-clients/tata.jpg" },
-    { name: "jankalyan", src: "http://localhost:5173/impulse-website/impulse-clients/jankalyan.jpg" },
-    { name: "croda", src: "http://localhost:5173/impulse-website/impulse-clients/croda.jpg" },
-    { name: "qure-ai", src: "http://localhost:5173/impulse-website/impulse-clients/qure-ai.jpg" },
-    { name: "aster", src: "http://localhost:5173/impulse-website/impulse-clients/aster.jpg" },
-    { name: "automag", src: "http://localhost:5173/impulse-website/impulse-clients/automag.jpg" },
-    { name: "datar", src: "http://localhost:5173/impulse-website/impulse-clients/datar.jpg" },
-    { name: "dts", src: "http://localhost:5173/impulse-website/impulse-clients/dts.jpg" },
-    { name: "emech", src: "http://localhost:5173/impulse-website/impulse-clients/emech.jpg" },
-    { name: "enpro", src: "http://localhost:5173/impulse-website/impulse-clients/enpro.jpg" },
-    { name: "goma", src: "http://localhost:5173/impulse-website/impulse-clients/goma.jpg" },
-    { name: "hem", src: "http://localhost:5173/impulse-website/impulse-clients/hem.jpg" },
-    { name: "lg", src: "http://localhost:5173/impulse-website/impulse-clients/lg.jpg" },
-    { name: "more", src: "http://localhost:5173/impulse-website/impulse-clients/more.jpg" },
-    { name: "navayasa", src: "http://localhost:5173/impulse-website/impulse-clients/navayasa.jpg" },
-    { name: "shree-rubber", src: "http://localhost:5173/impulse-website/impulse-clients/shree-rubber.jpg" },
-    { name: "vendiman", src: "http://localhost:5173/impulse-website/impulse-clients/vendiman.jpg" },
+    { name: "abg-chemical", src: "/impulse-website/impulse-clients/abg-chemical.jpg" },
+    { name: "hindalco", src: "/impulse-website/impulse-clients/hindalco.jpg" },
+    { name: "abps", src: "/impulse-website/impulse-clients/abps.jpg" },
+    { name: "birla-celilues", src: "/impulse-website/impulse-clients/birla-celilues.jpg" },
+    { name: "hdfc", src: "/impulse-website/impulse-clients/hdfc.jpg" },
+    { name: "godrej", src: "/impulse-website/impulse-clients/godrej.jpg" },
+    { name: "amazone", src: "/impulse-website/impulse-clients/amazone.jpg" },
+    { name: "ola", src: "/impulse-website/impulse-clients/ola.jpg" },
+    { name: "chings", src: "/impulse-website/impulse-clients/chings.jpg" },
+    { name: "d-mart", src: "/impulse-website/impulse-clients/d-mart.jpg" },
+    { name: "mastercard", src: "/impulse-website/impulse-clients/mastercard.jpg" },
+    { name: "tjsb", src: "/impulse-website/impulse-clients/tjsb.jpg" },
+    { name: "tata-soulful", src: "/impulse-website/impulse-clients/tata-soulful.jpg" },
+    { name: "tata", src: "/impulse-website/impulse-clients/tata.jpg" },
+    { name: "jankalyan", src: "/impulse-website/impulse-clients/jankalyan.jpg" },
+    { name: "croda", src: "/impulse-website/impulse-clients/croda.jpg" },
+    { name: "qure-ai", src: "/impulse-website/impulse-clients/qure-ai.jpg" },
+    { name: "aster", src: "/impulse-website/impulse-clients/aster.jpg" },
+    { name: "automag", src: "/impulse-website/impulse-clients/automag.jpg" },
+    { name: "datar", src: "/impulse-website/impulse-clients/datar.jpg" },
+    { name: "dts", src: "/impulse-website/impulse-clients/dts.jpg" },
+    { name: "emech", src: "/impulse-website/impulse-clients/emech.jpg" },
+    { name: "enpro", src: "/impulse-website/impulse-clients/enpro.jpg" },
+    { name: "goma", src: "/impulse-website/impulse-clients/goma.jpg" },
+    { name: "hem", src: "/impulse-website/impulse-clients/hem.jpg" },
+    { name: "lg", src: "/impulse-website/impulse-clients/lg.jpg" },
+    { name: "more", src: "/impulse-website/impulse-clients/more.jpg" },
+    { name: "navayasa", src: "/impulse-website/impulse-clients/navayasa.jpg" },
+    { name: "shree-rubber", src: "/impulse-website/impulse-clients/shree-rubber.jpg" },
+    { name: "vendiman", src: "/impulse-website/impulse-clients/vendiman.jpg" },
   ];
  
   // Video zoom state
@@ -66,7 +66,7 @@ export const ClientsSection = (): JSX.Element => {
  
       {/* Businesses We Have Transformed Section */}
        {/* Businesses We Have Transformed Section */}
-            <div className="relative bg-white pt-8 md:pt-16">
+            <div className="relative bg-white pt-0 md:pt-0">
               <div className="wrap-clients">
                 <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-8 md:mb-16">
                   <div className="flex flex-col items-start mb-6 lg:mb-0">
@@ -97,7 +97,7 @@ export const ClientsSection = (): JSX.Element => {
             </div>
       
             {/* Logo Carousel */}
-            <div className="relative overflow-hidden group m-0 p-0">
+            <div className="relative overflow-hidden group mb-16 p-0">
               <div className="flex marquee-track-logos group-hover:[animation-play-state:paused]">
                 {[...Array(2)].map((_, setIndex) => (
                   <div key={`logo-set-${setIndex}`} className="flex items-center flex-shrink-0">
@@ -112,7 +112,7 @@ export const ClientsSection = (): JSX.Element => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div><br></br>
 
       <style>{`
         .wrap-clients {

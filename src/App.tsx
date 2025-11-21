@@ -62,7 +62,7 @@ export const App = (): JSX.Element => {
       <Route path="/services/employee-branding-agency" element={<EmployerBrandingServices />}/>
       <Route path="/services/corporate-communication-agency" element={<CorporateCommunicationServices />}/>
       <Route path="/services/social-media-video-production" element={<SocialMediaVideoProductionServices />}/>
-      <Route path="/services/ai-seo-agency" element={<AiSeoAgency />} />
+      <Route path="/services/search-engine-optimization/ai-seo-agency" element={<AiSeoAgency />} />
        <Route path="/services/agentic-ai" element={<AiAgenticServices />} /> 
 
       <Route path="/casestudies" element={<Casestudies/>}/>

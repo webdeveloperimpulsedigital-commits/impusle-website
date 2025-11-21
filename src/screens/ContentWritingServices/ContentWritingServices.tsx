@@ -7,7 +7,7 @@ import { WhyChooseSection } from "./sections/WhyChooseSection/WhyChooseSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { ProcessSection } from "./sections/ProcessSection/ProcessSection";
 import { ClientsSection } from "./sections/ClientsSection";
-import { TestimonilasServiceSection } from "./sections/TestimonilasServiceSection";
+import { TestimonialsSection } from "../Main/sections/TestimonialsSection/TestimonialsSection";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
@@ -23,8 +23,8 @@ export const ContentWritingServices = (): JSX.Element => {
         <ServicesSection />
         <WhyChooseSection />
         <ProcessSection />
-        <ClientsSection/>
-        <TestimonilasServiceSection />
+        <ClientsSection/> 
+        <TestimonialsSection />
         <ContactSection />
         <FAQSection />
         <FooterSection />
