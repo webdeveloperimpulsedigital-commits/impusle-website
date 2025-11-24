@@ -64,6 +64,12 @@ const DEFAULT_ITEMS: NavItem[] = [
      hasDropdown: true,
     dropdownItems: [
       { label: "Shree Rubber Works ", href: "/casestudies/shree-rubber-works" },
+      { label: "Automag India", href: "/casestudies/automag-india" },
+      { label: "Grasim Pulp and Fibre", href: "/casestudies/grasim-pulp-and-fibre" },
+      { label: "Crafting the Employer Value Proposition for Amazon India", href: "/casestudies/crafting-the-employer-value-proposition-for-amazon-india" },
+      { label: "Atrac Engine Parts", href: "/casestudies/atrac-engine-parts" },
+      { label: "Amazon EB", href: "/casestudies/amazon-eb" },
+
     ]
   },
   { label: "Blog", href: "#" },

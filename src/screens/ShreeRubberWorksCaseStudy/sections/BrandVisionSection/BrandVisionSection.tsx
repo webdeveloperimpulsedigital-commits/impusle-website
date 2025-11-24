@@ -1,254 +1,154 @@
-import { useEffect, useRef, useState } from "react";
+// src/pages/services/content-writing/sections/BrandVisionSection.tsx
+
+import React from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
-  const overlayText =
-    "Making every word count, we write what moves minds and markets.";
-
-  // ================== COUNTERS ==================
-  const [counters, setCounters] = useState({
-    first: 0, // 95%
-    second: 0, // 70%
-    third: 0, // 10,000+
-  });
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const hasAnimated = useRef(false);
-  const rafId = useRef<number | null>(null);
-
-  // ---- Helper: animate a single counter with rAF + easing
-  const animateCounter = (
-    target: number,
-    duration: number,
-    onTick: (value: number) => void,
-    options?: { decimals?: number }
-  ) =>
-    new Promise<void>((resolve) => {
-      const start = performance.now();
-      const decimals = options?.decimals ?? 0;
-
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        let current = target * ease;
-
-        if (decimals === 0) current = Math.floor(current);
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
-
-        onTick(current);
-
-        if (t < 1) {
-          rafId.current = requestAnimationFrame(tick);
-        } else {
-          onTick(target);
-          resolve();
-        }
-      };
-
-      rafId.current = requestAnimationFrame(tick);
-    });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-
-          // 1) 0 -> 95 (int)
-          await animateCounter(95, 1200, (v) =>
-            setCounters((c) => ({ ...c, first: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 2) 0 -> 70 (int)
-          await animateCounter(70, 1000, (v) =>
-            setCounters((c) => ({ ...c, second: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 3) 0 -> 10000 (int, with +)
-          await animateCounter(10000, 900, (v) =>
-            setCounters((c) => ({ ...c, third: v }))
-          );
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      observer.disconnect();
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-    };
-  }, []);
-
-  const steps = [
+  const challenges = [
     {
-      title: "Discovery and Research",
-      description:
-        "We begin by understanding your goals, audience, and tone, supported by keyword and market research to build performance-driven content",
+      title: "Minimal SEO Visibility",
+      description: "Website buried in search results with almost no organic traffic",
     },
     {
-      title: "Strategy and Structure",
-      description:
-        "We define messaging, map it to funnel stages, and create a clear structure and tone aligned with your objectives",
+      title: "Zero Keyword Rankings",
+      description: "Critical industry keywords not appearing in top search positions",
     },
     {
-      title: "Creation and Optimization",
-      description:
-        "Our writers craft original, SEO optimized content that blends brand context, clarity, and engagement for maximum visibility",
-    },
-    {
-      title: "Review and Performance",
-      description:
-        "Every piece goes through editorial checks and client review, followed by tracking visibility, engagement, and conversions to improve future content.",
+      title: "Poor Lead Quality",
+      description: "Struggled to attract qualified prospects ready to convert",
     },
   ];
 
-  const loopedSteps = [...steps, ...steps];
-
-  const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
-    if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
-    return rows as any;
-  }, [] as any);
+  const approachPoints = [
+    {
+      title: "Complete Website Revamp",
+      description: "Modern, conversion-focused design with improved UX and structure.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8 stroke-[#543d98]"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 7h18M3 12h18M3 17h18"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Advanced SEO Implementation",
+      description: "Technical optimization, keyword research, and structured content.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8 stroke-[#543d98]"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M8.757 17.243l-2.121 2.121M17.243 17.243l-2.121-2.121M8.757 6.343 6.636 4.222"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Continuous Optimization",
+      description: "Refinements based on analytics, CRO, and performance insights.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-8 h-8 stroke-[#543d98]"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 3v18h18M7 16l3-3 2 2 4-4"
+          />
+        </svg>
+      ),
+    },
+  ];
 
   return (
-    <section
-      className="w-full bg-white lg:py-5 sm:py-8"
-      id="sec-border"
-      data-section="brand-vision"
-      ref={sectionRef}
-    >
-      <div className="max-w-[1280px] mx-auto px-2 lg:px-5 sm:py-10">
-        {/* Title */}
-        <div className="mb-6 lg:mb-8 pt-10">
-          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
+    <section className="w-full bg-[#F6F6FA] py-16" data-section="brand-vision">
+      <div className="max-w-[1280px] mx-auto px-4">
+
+        {/* ======================== THE CHALLENGE =========================== */}
+        <div className="mb-20">
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[36px] mb-10">
+            The Challenge
           </h2>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
-          </h2>
-        </div>
 
-        {/* Image + Overlay + Counters */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-start mb-6">
-          {/* IMAGE */}
-          <div className="lg:col-span-5 lg:w-[600px]">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg ">
-              <img
-                src="/impulse-website/content-wrriting-service-about-us.jpg"
-                alt="SEO workspace"
-                className="w-full sm:h-[400px] lg:h-[700px] object-cover"
-              />
-            </div>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {challenges.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white border border-[#E5E5EC] rounded-lg shadow-sm p-6 relative"
+              >
+                {/* Left Gradient Accent Line */}
+                <div className="absolute top-0 left-0 h-full w-[6px] bg-gradient-to-b from-[#4F3BC4] to-[#6B4EEA] rounded-l-lg" />
 
-          {/* MOBILE OVERLAY TEXT */}
-          <div
-            className="block lg:hidden -mt-8 px-2 mt-0"
-            style={{ marginTop: "-18%", zIndex: "999" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[20px] leading-[20px] text-left p-7">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-
-          {/* STATS / COUNTERS */}
-          <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
-            <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 95% */}
-              <div className="absolute top-6 left-0 text-center">
-                <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
-                  {Math.round(counters.first)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    client satisfaction rate with the content delivered.
-                  </p>
+                <h3 className="text-[#030019] font-semibold text-[22px] mb-2 [font-family:'DM_Sans',Helvetica]">
+                  {item.title}
                 </h3>
-              </div>
 
-              {/* 70% */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.second)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    average increase in organic traffic for clients due to our SEO-optimized content.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 10,000+ */}
-              <div className="absolute bottom-6 left-0 text-center">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.third).toLocaleString()}+
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    successful content pieces published for clients across various industries.
-                  </p>
-                </h3>
-              </div>
-            </div>
-          </div>
-
-          {/* DESKTOP CENTER OVERLAY */}
-          <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
-            <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Body copy */}
-        <div className="text-left mb-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
-          </p>
-        </div>
-      </div>
-
-      {/* Hidden steps section (kept for structure) */}
-      <div className="hidden opacity-0 pointer-events-none">
-        <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
-        <div className="overflow-hidden">
-          <div className="steps-track flex gap-16 py-6 will-change-transform relative z-10">
-            {loopedSteps.map((s, i) => (
-              <div key={i} className="min-w-[260px] max-w-[300px] relative">
-                <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                <div className="pt-10">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[20px] mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#666] text-[18px] leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
+                <p className="text-[#5D5D6C] text-[16px] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @keyframes scroll-rtl {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .steps-track {
-          animation: scroll-rtl 24s linear infinite;
-        }
-        .steps-track:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .steps-track { animation: none; transform: translateX(0); }
-        }
-        .mb-14 { margin-bottom: 40px; }
-      `}</style>
+        {/* ==================== OUR STRATEGIC APPROACH ===================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+          {/* LEFT IMAGE */}
+          <div className="rounded-2xl overflow-hidden shadow-md">
+            <img
+              src="/impulse-website/team-discussion.png"
+              alt="Team discussion and analytics dashboard"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* RIGHT CONTENT */}
+          <div>
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[36px] mb-8">
+              Our Strategic Approach
+            </h2>
+
+            <div className="space-y-10">
+              {approachPoints.map((point, index) => (
+                <div key={index} className="flex gap-5 items-start">
+                  <div className="w-16 h-16 rounded-xl bg-white shadow flex items-center justify-center border border-[#E7E3F4]">
+                    {point.icon}
+                  </div>
+
+                  <div>
+                    <h3 className="text-[#030019] font-semibold text-[22px] mb-1">
+                      {point.title}
+                    </h3>
+                    <p className="text-[#5D5D6C] text-[16px] leading-relaxed">
+                      {point.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 };

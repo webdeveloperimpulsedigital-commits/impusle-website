@@ -1,0 +1,1 @@
+export { AutomagIndiaCaseStudy } from "./AutomagIndiaCaseStudy";
