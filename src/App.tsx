@@ -20,6 +20,9 @@ import { AiSeoAgency } from "./screens/AiSeoAgency";
 import { AiAgenticServices } from "./screens/AiAgenticServices";
 
 import { Casestudies } from "./screens/Casestudies";
+import { ShreeRubberWorksCaseStudy } from "./screens/ShreeRubberWorksCaseStudy"
+
+
 import { Ebooks, Resources } from "./screens/Resources";
 import { SlideSharePPTS } from "./screens/Resources/SlideSharePPTS";
 import { SearchEngineOptimizationSEOS } from "./screens/Resources/SearchEngineOptimizationSEOS";
@@ -66,6 +69,7 @@ export const App = (): JSX.Element => {
        <Route path="/services/agentic-ai" element={<AiAgenticServices />} /> 
 
       <Route path="/casestudies" element={<Casestudies/>}/>
+      <Route path="/casestudies/shree-rubber-works" element={<ShreeRubberWorksCaseStudy />} />
       <Route path="/resources" element={<Resources/>}/>
 
       <Route path="/resources/EBooks" element={<Ebooks />} />

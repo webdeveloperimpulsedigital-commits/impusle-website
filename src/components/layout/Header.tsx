@@ -60,7 +60,12 @@ const DEFAULT_ITEMS: NavItem[] = [
       { label: " Agentic AI", href: "/services/agentic-ai"},
     ],
   },
-  { label: "Case Studies", href: "/casestudies" },
+  { label: "Case Studies", href: "/casestudies",
+     hasDropdown: true,
+    dropdownItems: [
+      { label: "Shree Rubber Works ", href: "/casestudies/shree-rubber-works" },
+    ]
+  },
   { label: "Blog", href: "#" },
   // { label: "Resouces", href: "/resources"},
 
