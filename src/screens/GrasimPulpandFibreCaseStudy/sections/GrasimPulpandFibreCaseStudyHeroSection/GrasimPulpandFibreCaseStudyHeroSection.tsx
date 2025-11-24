@@ -43,7 +43,7 @@ export const GrasimPulpandFibreCaseStudyHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Content Writing</span>
+          <span className="text-white"> Grasim Pulp and Fibre</span>
         </nav>
       </div>
     </section>

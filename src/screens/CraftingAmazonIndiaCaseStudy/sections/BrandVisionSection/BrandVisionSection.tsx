@@ -1,254 +1,343 @@
-import { useEffect, useRef, useState } from "react";
+// src/pages/services/content-writing/sections/BrandVisionSection.tsx
+import React from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
-  const overlayText =
-    "Making every word count, we write what moves minds and markets.";
-
-  // ================== COUNTERS ==================
-  const [counters, setCounters] = useState({
-    first: 0, // 95%
-    second: 0, // 70%
-    third: 0, // 10,000+
-  });
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const hasAnimated = useRef(false);
-  const rafId = useRef<number | null>(null);
-
-  // ---- Helper: animate a single counter with rAF + easing
-  const animateCounter = (
-    target: number,
-    duration: number,
-    onTick: (value: number) => void,
-    options?: { decimals?: number }
-  ) =>
-    new Promise<void>((resolve) => {
-      const start = performance.now();
-      const decimals = options?.decimals ?? 0;
-
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        let current = target * ease;
-
-        if (decimals === 0) current = Math.floor(current);
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
-
-        onTick(current);
-
-        if (t < 1) {
-          rafId.current = requestAnimationFrame(tick);
-        } else {
-          onTick(target);
-          resolve();
-        }
-      };
-
-      rafId.current = requestAnimationFrame(tick);
-    });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-
-          // 1) 0 -> 95 (int)
-          await animateCounter(95, 1200, (v) =>
-            setCounters((c) => ({ ...c, first: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 2) 0 -> 70 (int)
-          await animateCounter(70, 1000, (v) =>
-            setCounters((c) => ({ ...c, second: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 3) 0 -> 10000 (int, with +)
-          await animateCounter(10000, 900, (v) =>
-            setCounters((c) => ({ ...c, third: v }))
-          );
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      observer.disconnect();
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-    };
-  }, []);
-
-  const steps = [
-    {
-      title: "Discovery and Research",
-      description:
-        "We begin by understanding your goals, audience, and tone, supported by keyword and market research to build performance-driven content",
-    },
-    {
-      title: "Strategy and Structure",
-      description:
-        "We define messaging, map it to funnel stages, and create a clear structure and tone aligned with your objectives",
-    },
-    {
-      title: "Creation and Optimization",
-      description:
-        "Our writers craft original, SEO optimized content that blends brand context, clarity, and engagement for maximum visibility",
-    },
-    {
-      title: "Review and Performance",
-      description:
-        "Every piece goes through editorial checks and client review, followed by tracking visibility, engagement, and conversions to improve future content.",
-    },
-  ];
-
-  const loopedSteps = [...steps, ...steps];
-
-  const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
-    if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
-    return rows as any;
-  }, [] as any);
-
   return (
     <section
-      className="w-full bg-white lg:py-5 sm:py-8"
+      className="w-full bg-white py-16 lg:py-20"
       id="sec-border"
       data-section="brand-vision"
-      ref={sectionRef}
     >
-      <div className="max-w-[1280px] mx-auto px-2 lg:px-5 sm:py-10">
-        {/* Title */}
-        <div className="mb-6 lg:mb-8 pt-10">
-          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
-          </h2>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
-          </h2>
-        </div>
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-6 space-y-20">
+        {/* ======================= HERO / INTRO ======================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Copy */}
+          <div className="lg:col-span-7">
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#6B7280] text-sm md:text-base mb-3 uppercase tracking-[0.12em]">
+              Case Study · Employer Branding & EVP
+            </p>
+            <h1 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[30px] sm:text-[34px] lg:text-[44px] leading-tight mb-4">
+              Crafting the Employer Value Proposition for{" "}
+              <span className="text-[#543d98]">Amazon India</span>
+            </h1>
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B5563] text-[15px] sm:text-[16px] leading-relaxed max-w-[720px] mb-6">
+              How we partnered with Amazon India to turn scattered perceptions
+              into a sharp, India-first EVP that speaks to the next generation
+              of talent while staying true to the global Amazon narrative.
+            </p>
 
-        {/* Image + Overlay + Counters */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-start mb-6">
-          {/* IMAGE */}
-          <div className="lg:col-span-5 lg:w-[600px]">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg ">
+            <div className="flex flex-wrap gap-3">
+              {[
+                "EVP Strategy",
+                "Qualitative Research",
+                "Talent Insights",
+                "Employer Branding",
+              ].map((chip) => (
+                <span
+                  key={chip}
+                  className="inline-flex items-center rounded-full border border-[#E5E7EB] bg-[#F9FAFB] px-3 py-1 text-xs md:text-[13px] text-[#4B5563]"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="lg:col-span-5">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#F6F6FB] shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
               <img
-                src="/impulse-website/content-wrriting-service-about-us.jpg"
-                alt="SEO workspace"
-                className="w-full sm:h-[400px] lg:h-[700px] object-cover"
+                src="/impulse-website/Crafting the Employer Value.png"
+                alt="Team reviewing EVP frameworks and talent insights"
+                className="w-full h-[260px] sm:h-[320px] lg:h-[360px] object-cover"
+                loading="lazy"
               />
-            </div>
-          </div>
 
-          {/* MOBILE OVERLAY TEXT */}
-          <div
-            className="block lg:hidden -mt-8 px-2 mt-0"
-            style={{ marginTop: "-18%", zIndex: "999" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[20px] leading-[20px] text-left p-7">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-
-          {/* STATS / COUNTERS */}
-          <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
-            <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 95% */}
-              <div className="absolute top-6 left-0 text-center">
-                <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
-                  {Math.round(counters.first)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    client satisfaction rate with the content delivered.
-                  </p>
-                </h3>
+              {/* small overlay label */}
+              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm">
+                {/* <p className="[font-family:'DM_Sans',Helvetica] text-[11px] md:text-[12px] text-[#4B5563]">
+                  Internal research, focus groups & leadership alignment
+                </p> */}
               </div>
-
-              {/* 70% */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.second)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    average increase in organic traffic for clients due to our SEO-optimized content.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 10,000+ */}
-              <div className="absolute bottom-6 left-0 text-center">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.third).toLocaleString()}+
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    successful content pieces published for clients across various industries.
-                  </p>
-                </h3>
-              </div>
-            </div>
-          </div>
-
-          {/* DESKTOP CENTER OVERLAY */}
-          <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
-            <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
-                {overlayText}
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Body copy */}
-        <div className="text-left mb-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
+        {/* ================= OBJECTIVE & CHALLENGE ==================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Objective */}
+          <div className="rounded-3xl bg-[#F6F6FB] border border-[#E5E7EB] p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#6B7280] mb-2 [font-family:'DM_Sans',Helvetica]">
+              Objective
+            </p>
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-semibold text-[22px] md:text-[26px] mb-3">
+              Define a clear, research-backed EVP for Amazon India
+            </h2>
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B5563] text-[15px] leading-relaxed">
+              Build a compelling value proposition that reflects life at Amazon
+              India for 21–35 year-old talent, unifies multiple internal
+              narratives, and can be activated consistently across hiring,
+              internal communication, and leadership storytelling.
+            </p>
+          </div>
+
+          {/* Challenge */}
+          <div className="rounded-3xl bg-white border border-[#F3E8FF] p-6 md:p-8 shadow-[0_16px_40px_rgba(84,61,152,0.08)]">
+            <p className="text-xs uppercase tracking-[0.16em] text-[#8B5CF6] mb-2 [font-family:'DM_Sans',Helvetica]">
+              The Challenge
+            </p>
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-semibold text-[22px] md:text-[26px] mb-3">
+              Many strong stories, one unified promise
+            </h2>
+            <ul className="list-disc pl-5 space-y-2 [font-family:'DM_Sans',Helvetica] text-[#4B5563] text-[15px] leading-relaxed">
+              <li>Multiple internal narratives across teams and locations.</li>
+              <li>
+                Need to localize the global Amazon story for the Indian talent
+                market.
+              </li>
+              <li>
+                Ensure the EVP is aspirational yet honest about the pace,
+                ownership, and expectations at Amazon.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* ======================= OUR APPROACH ======================== */}
+        <div>
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[18px] md:text-[22px] mb-2">
+            Our Strategic Approach
+          </h2>
+          <p className="[font-family:'DM_Sans',Helvetica] text-[#4B5563] text-[15px] md:text-[16px] leading-relaxed max-w-[780px] mb-8">
+            We followed a structured, people-first process that blended
+            on-ground employee insight with leadership vision to build an EVP
+            that feels both credible and exciting for current and future
+            Amazonians.
           </p>
-        </div>
-      </div>
 
-      {/* Hidden steps section (kept for structure) */}
-      <div className="hidden opacity-0 pointer-events-none">
-        <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
-        <div className="overflow-hidden">
-          <div className="steps-track flex gap-16 py-6 will-change-transform relative z-10">
-            {loopedSteps.map((s, i) => (
-              <div key={i} className="min-w-[260px] max-w-[300px] relative">
-                <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                <div className="pt-10">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[20px] mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#666] text-[18px] leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 1 */}
+            <div className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-6">
+              <div className="w-10 h-10 rounded-xl bg-[#F5EBFF] flex items-center justify-center mb-4">
+                {/* magnifying-glass icon */}
+                <svg
+                  className="w-5 h-5 text-[#543d98]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M11 5a6 6 0 104.472 10.028l3.25 3.252"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[18px] text-[#030019] mb-2">
+                Audit & Alignment
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+                Reviewed existing messaging, employer brand assets, and global
+                EVP guidelines to understand the current narrative and gaps.
+              </p>
+            </div>
+
+            {/* 2 */}
+            <div className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFF] p-6">
+              <div className="w-10 h-10 rounded-xl bg-[#E0F2FE] flex items-center justify-center mb-4">
+                {/* people icon */}
+                <svg
+                  className="w-5 h-5 text-[#2563EB]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M8 11a3 3 0 100-6 3 3 0 000 6zM16 11a3 3 0 100-6 3 3 0 000 6zM4 19a4 4 0 017-2.646M13 16.354A4 4 0 0120 19"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[18px] text-[#030019] mb-2">
+                Deep-Dive Employee Research
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+                Conducted focused group discussions across levels, functions,
+                and tenure bands to uncover what people value most about working
+                at Amazon India.
+              </p>
+            </div>
+
+            {/* 3 */}
+            <div className="rounded-2xl border border-[#E5E7EB] bg-[#FDF7FF] p-6">
+              <div className="w-10 h-10 rounded-xl bg-[#FCE7F3] flex items-center justify-center mb-4">
+                {/* spark icon */}
+                <svg
+                  className="w-5 h-5 text-[#DB2777]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12 3l1.4 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.6-1.8L12 3z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M6 17l1 2m11-4l-1 3M4 11l-2 1m18-6l2-1"
+                    stroke="currentColor"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[18px] text-[#030019] mb-2">
+                EVP Design & Story Framework
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+                Translated insights into a clear promise, supporting pillars,
+                and proof points that could be activated in campaigns, JD
+                copy, and internal messaging.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ======================== PHASE TIMELINE ====================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Timeline Copy */}
+          <div className="lg:col-span-6">
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[18px] md:text-[22px] mb-2">
+              The Three-Phase Journey
+            </h2>
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B5563] text-[15px] md:text-[16px] leading-relaxed mb-6 max-w-[620px]">
+              The EVP wasn’t created in a workshop; it was built over multiple
+              phases of listening, synthesis, and refinement with Amazon India’s
+              HR and leadership teams.
+            </p>
+
+            <div className="relative pl-6 mt-4">
+              <div className="absolute left-3 top-0 bottom-0 w-px bg-[#E5E7EB]" />
+
+              <div className="space-y-6">
+                {[
+                  {
+                    label: "Phase 1 · Discovery",
+                    body: "Audit of existing communications, external perception scan, and understanding global guardrails.",
+                  },
+                  {
+                    label: "Phase 2 · Employee Voice",
+                    body: "Focus groups and stakeholder interviews across locations and functions to capture lived experiences.",
+                  },
+                  {
+                    label: "Phase 3 · Synthesis & EVP",
+                    body: "Consolidated themes into a core promise, three supporting pillars, and proof-led messaging territories.",
+                  },
+                ].map((item, idx) => (
+                  <div className="flex items-start gap-4" key={idx}>
+                    <div className="relative z-10 flex items-center justify-center w-7 h-7 rounded-full bg-white border border-[#A5B4FC] text-[#543d98] text-xs font-semibold">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <p className="[font-family:'DM_Sans',Helvetica] font-semibold text-[15px] md:text-[16px] text-[#111827] mb-1">
+                        {item.label}
+                      </p>
+                      <p className="[font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Supporting Image */}
+          <div className="lg:col-span-6">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#F6F6FB] shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+              <img
+                src="/impulse-website/Workshop session.png"
+                alt="Workshop session with teams collaborating on EVP"
+                className="w-full h-[260px] sm:h-[320px] lg:h-[360px] object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-4 right-4 bg-white/95 rounded-full px-4 py-2 shadow-sm">
+                <p className="[font-family:'DM_Sans',Helvetica] text-[11px] text-[#4B5563]">
+                  Cross-functional workshops & synthesis sessions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* =================== RESEARCH & INSIGHTS ====================== */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Research Methodology */}
+          <div className="lg:col-span-5 rounded-3xl bg-[#F6F6FB] border border-[#E5E7EB] p-6 md:p-8">
+            <p className="[font-family:'DM_Sans',Helvetica] text-xs uppercase tracking-[0.16em] text-[#6B7280] mb-2">
+              Research Methodology
+            </p>
+            <h3 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-semibold text-[20px] md:text-[22px] mb-3">
+              Listening to the people who live the EVP every day
+            </h3>
+            <ul className="space-y-2 [font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+              <li>Mix of in-person and virtual focus group discussions.</li>
+              <li>
+                Representation from tech, operations, corporate, and leadership
+                teams.
+              </li>
+              <li>
+                Participants across tenure bands to capture both fresh and long-
+                term perspectives.
+              </li>
+              <li>
+                Structured discussion guides to explore motivations, moments of
+                pride, and challenges honestly.
+              </li>
+            </ul>
+          </div>
+
+          {/* Key Insight Cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Ownership & Growth",
+                body: "Employees consistently spoke about autonomy, steep learning curves, and the chance to build from scratch.",
+              },
+              {
+                title: "Customer-First Mindset",
+                body: "Decisions are evaluated through the customer lens, creating a high bar but also a strong sense of purpose.",
+              },
+              {
+                title: "Bias for Action Culture",
+                body: "Speed, experimentation, and problem-solving define day-to-day work and differentiate Amazon from peers.",
+              },
+              {
+                title: "Supportive Ecosystem",
+                body: "Leaders and peers play a big role in making intense work feel meaningful, supported, and rewarding.",
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="rounded-2xl border border-[#E5E7EB] bg-white p-5 shadow-sm"
+              >
+                <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[16px] text-[#111827] mb-2">
+                  {card.title}
+                </h4>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[14px] text-[#4B5563] leading-relaxed">
+                  {card.body}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @keyframes scroll-rtl {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .steps-track {
-          animation: scroll-rtl 24s linear infinite;
-        }
-        .steps-track:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .steps-track { animation: none; transform: translateX(0); }
-        }
-        .mb-14 { margin-bottom: 40px; }
-      `}</style>
+       
+      </div>
     </section>
   );
 };

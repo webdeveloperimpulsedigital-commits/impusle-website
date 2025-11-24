@@ -1,254 +1,315 @@
-import { useEffect, useRef, useState } from "react";
+// src/pages/case-studies/Grasim/sections/BrandVisionSection.tsx
+import React, { useEffect, useRef, useState } from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
-  const overlayText =
-    "Making every word count, we write what moves minds and markets.";
-
-  // ================== COUNTERS ==================
-  const [counters, setCounters] = useState({
-    first: 0, // 95%
-    second: 0, // 70%
-    third: 0, // 10,000+
+  // ================== IMPACT COUNTERS ==================
+  const [metrics, setMetrics] = useState({
+    reachM: 0,        // 0 -> 1.9 (M)
+    engagementsK: 0,  // 0 -> 139 (K)
+    engagementRate: 0, // 0 -> 5.8 (%)
+    reactionsK: 0,    // 0 -> 35 (K)
   });
 
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const numbersRef = useRef<HTMLDivElement | null>(null);
   const hasAnimated = useRef(false);
   const rafId = useRef<number | null>(null);
 
-  // ---- Helper: animate a single counter with rAF + easing
-  const animateCounter = (
+  const animateNumber = (
     target: number,
-    duration: number,
-    onTick: (value: number) => void,
-    options?: { decimals?: number }
-  ) =>
-    new Promise<void>((resolve) => {
-      const start = performance.now();
-      const decimals = options?.decimals ?? 0;
+    setter: (value: number) => void,
+    duration = 1200,
+    decimals = 0
+  ) => {
+    const start = performance.now();
 
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        let current = target * ease;
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      const valueRaw = target * eased;
+      const factor = Math.pow(10, decimals);
+      const value =
+        decimals > 0
+          ? Math.round(valueRaw * factor) / factor
+          : Math.floor(valueRaw);
 
-        if (decimals === 0) current = Math.floor(current);
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
+      setter(value);
 
-        onTick(current);
+      if (progress < 1) {
+        rafId.current = requestAnimationFrame(tick);
+      }
+    };
 
-        if (t < 1) {
-          rafId.current = requestAnimationFrame(tick);
-        } else {
-          onTick(target);
-          resolve();
-        }
-      };
-
-      rafId.current = requestAnimationFrame(tick);
-    });
+    rafId.current = requestAnimationFrame(tick);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      async (entries) => {
+      (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
+        if (!entry.isIntersecting || hasAnimated.current) return;
 
-          // 1) 0 -> 95 (int)
-          await animateCounter(95, 1200, (v) =>
-            setCounters((c) => ({ ...c, first: v }))
-          );
+        hasAnimated.current = true;
 
-          await new Promise((r) => setTimeout(r, 100));
+        // 1.9M+ reach
+        animateNumber(1.9, (v) =>
+          setMetrics((m) => ({ ...m, reachM: v }))
+        , 1400, 1);
 
-          // 2) 0 -> 70 (int)
-          await animateCounter(70, 1000, (v) =>
-            setCounters((c) => ({ ...c, second: v }))
-          );
+        // 139K+ engagements
+        animateNumber(139, (v) =>
+          setMetrics((m) => ({ ...m, engagementsK: v }))
+        , 1200);
 
-          await new Promise((r) => setTimeout(r, 100));
+        // 5.8% engagement rate
+        animateNumber(5.8, (v) =>
+          setMetrics((m) => ({ ...m, engagementRate: v }))
+        , 1000, 1);
 
-          // 3) 0 -> 10000 (int, with +)
-          await animateCounter(10000, 900, (v) =>
-            setCounters((c) => ({ ...c, third: v }))
-          );
-        }
+        // 35K+ reactions & comments
+        animateNumber(35, (v) =>
+          setMetrics((m) => ({ ...m, reactionsK: v }))
+        , 1100);
       },
       { threshold: 0.4 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (numbersRef.current) observer.observe(numbersRef.current);
+
     return () => {
       observer.disconnect();
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
 
-  const steps = [
-    {
-      title: "Discovery and Research",
-      description:
-        "We begin by understanding your goals, audience, and tone, supported by keyword and market research to build performance-driven content",
-    },
-    {
-      title: "Strategy and Structure",
-      description:
-        "We define messaging, map it to funnel stages, and create a clear structure and tone aligned with your objectives",
-    },
-    {
-      title: "Creation and Optimization",
-      description:
-        "Our writers craft original, SEO optimized content that blends brand context, clarity, and engagement for maximum visibility",
-    },
-    {
-      title: "Review and Performance",
-      description:
-        "Every piece goes through editorial checks and client review, followed by tracking visibility, engagement, and conversions to improve future content.",
-    },
-  ];
-
-  const loopedSteps = [...steps, ...steps];
-
-  const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
-    if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
-    return rows as any;
-  }, [] as any);
-
   return (
     <section
-      className="w-full bg-white lg:py-5 sm:py-8"
+      className="w-full bg-[#F6F6FB] py-16 lg:py-24"
       id="sec-border"
       data-section="brand-vision"
-      ref={sectionRef}
     >
-      <div className="max-w-[1280px] mx-auto px-2 lg:px-5 sm:py-10">
-        {/* Title */}
-        <div className="mb-6 lg:mb-8 pt-10">
-          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
-          </h2>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
-          </h2>
-        </div>
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8 space-y-20">
+        {/* ================= HERO ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-6">
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-medium text-[16px] md:text-[18px] mb-3 uppercase tracking-wide">
+              LinkedIn Case Study
+            </p>
+            <h1 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[32px] md:text-[40px] lg:text-[46px] leading-tight mb-4">
+              Elevating Grasim Pulp and Fibre&apos;s LinkedIn Presence
+            </h1>
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[15px] md:text-[17px] leading-relaxed max-w-xl">
+              At <span className="font-semibold">Impulse Digital</span>, we
+              transformed Grasim Pulp and Fibre&apos;s LinkedIn presence,
+              driving measurable impact and setting new industry benchmarks.
+            </p>
+          </div>
 
-        {/* Image + Overlay + Counters */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-start mb-6">
-          {/* IMAGE */}
-          <div className="lg:col-span-5 lg:w-[600px]">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg ">
+          <div className="lg:col-span-6">
+            <div className="relative rounded-[28px] overflow-hidden shadow-lg">
               <img
-                src="/impulse-website/content-wrriting-service-about-us.jpg"
-                alt="SEO workspace"
-                className="w-full sm:h-[400px] lg:h-[700px] object-cover"
+                src="/impulse-website/Grasim Pulp and Fibre.png"
+                alt="Grasim Pulp and Fibre LinkedIn visual"
+                className="w-full h-[260px] md:h-[340px] lg:h-[380px] object-cover"
+                loading="lazy"
               />
             </div>
           </div>
-
-          {/* MOBILE OVERLAY TEXT */}
-          <div
-            className="block lg:hidden -mt-8 px-2 mt-0"
-            style={{ marginTop: "-18%", zIndex: "999" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[20px] leading-[20px] text-left p-7">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-
-          {/* STATS / COUNTERS */}
-          <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
-            <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 95% */}
-              <div className="absolute top-6 left-0 text-center">
-                <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
-                  {Math.round(counters.first)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    client satisfaction rate with the content delivered.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 70% */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.second)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    average increase in organic traffic for clients due to our SEO-optimized content.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 10,000+ */}
-              <div className="absolute bottom-6 left-0 text-center">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.third).toLocaleString()}+
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    successful content pieces published for clients across various industries.
-                  </p>
-                </h3>
-              </div>
-            </div>
-          </div>
-
-          {/* DESKTOP CENTER OVERLAY */}
-          <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
-            <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
-                {overlayText}
-              </p>
-            </div>
-          </div>
         </div>
 
-        {/* Body copy */}
-        <div className="text-left mb-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
-          </p>
-        </div>
-      </div>
-
-      {/* Hidden steps section (kept for structure) */}
-      <div className="hidden opacity-0 pointer-events-none">
-        <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
-        <div className="overflow-hidden">
-          <div className="steps-track flex gap-16 py-6 will-change-transform relative z-10">
-            {loopedSteps.map((s, i) => (
-              <div key={i} className="min-w-[260px] max-w-[300px] relative">
-                <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                <div className="pt-10">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[20px] mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#666] text-[18px] leading-relaxed">
-                    {s.description}
-                  </p>
+        {/* ================= CHALLENGE ================= */}
+        <div>
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[26px] md:text-[32px] mb-6">
+            The Challenge
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              "Increase engagement beyond the industry standard of 2–3%.",
+              "Drive meaningful interactions through reactions, comments, and shares.",
+              "Maximize impressions to strengthen the company’s position as a thought leader.",
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-sm border border-[#E5E7F0] p-6 flex items-start gap-4"
+              >
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#ECE9F8] text-[#543d98] font-bold text-lg">
+                  {index + 1}
                 </div>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[15px] leading-relaxed">
+                  {item}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @keyframes scroll-rtl {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .steps-track {
-          animation: scroll-rtl 24s linear infinite;
-        }
-        .steps-track:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .steps-track { animation: none; transform: translateX(0); }
-        }
-        .mb-14 { margin-bottom: 40px; }
-      `}</style>
+        {/* ================= STRATEGY ================= */}
+        <div>
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[26px] md:text-[32px] mb-6">
+            The Strategy
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Content Optimization",
+                desc: "Leveraged audience insights to craft posts aligned with user behaviour, peak times, and trending topics.",
+              },
+              {
+                title: "Engagement-First Framework",
+                desc: "Moved beyond standard corporate updates to deliver narratives that invite discussion and interaction.",
+              },
+              {
+                title: "Performance Benchmarking",
+                desc: "Measured every post against industry best practices to consistently outperform LinkedIn norms.",
+              },
+              {
+                title: "Strategic CTAs",
+                desc: "Structured calls-to-action designed to drive clicks, shares, and meaningful engagement.",
+              },
+            ].map((card) => (
+              <div
+                key={card.title}
+                className="bg-white rounded-2xl border border-[#E5E7F0] p-6 shadow-sm"
+              >
+                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-semibold text-[18px] mb-2">
+                  {card.title}
+                </h3>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= IMPACT IN NUMBERS ================= */}
+        <div ref={numbersRef}>
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[26px] md:text-[32px] mb-6">
+            The Impact in Numbers
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Reach */}
+            <div className="bg-white rounded-2xl border border-[#E5E7F0] p-6 text-center shadow-sm">
+              <div className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-[32px] md:text-[40px] font-bold mb-2">
+                {metrics.reachM.toFixed(1)}M+
+              </div>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                A 67% higher reach than typical B2B brand performance on
+                LinkedIn.
+              </p>
+            </div>
+
+            {/* Impressions / Engagements */}
+            <div className="bg-white rounded-2xl border border-[#E5E7F0] p-6 text-center shadow-sm">
+              <div className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-[32px] md:text-[40px] font-bold mb-2">
+                {Math.floor(metrics.engagementsK)}K+
+              </div>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                Demonstrating strong audience interest and high content
+                relevance.
+              </p>
+            </div>
+
+            {/* Engagement Rate */}
+            <div className="bg-white rounded-2xl border border-[#E5E7F0] p-6 text-center shadow-sm">
+              <div className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-[32px] md:text-[40px] font-bold mb-2">
+                {metrics.engagementRate.toFixed(1)}%
+              </div>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                More than double the industry standard of 2–3% engagement.
+              </p>
+            </div>
+
+            {/* Reactions & Comments */}
+            <div className="bg-white rounded-2xl border border-[#E5E7F0] p-6 text-center shadow-sm">
+              <div className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-[32px] md:text-[40px] font-bold mb-2">
+                {Math.floor(metrics.reactionsK)}K+
+              </div>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                34,000+ likes and 1,300+ comments — strong engagement from the
+                target audience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ================= TOP PERFORMING CONTENT ================= */}
+        <div>
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[26px] md:text-[32px] mb-6">
+            Top Performing Content Highlights
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                stat: "959K",
+                label: "Record Impressions",
+                desc: "On a single post, setting a benchmark for content reach.",
+              },
+              {
+                stat: "31%",
+                label: "Engagement Rate",
+                desc: "On leadership-driven content, far above standard benchmarks.",
+              },
+              {
+                stat: "29%",
+                label: "Click-Through Rate",
+                desc: "Showcasing a strategy that not only grabs attention but drives action.",
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-white rounded-2xl border border-[#E5E7F0] p-6 shadow-sm text-center"
+              >
+                <div className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-[32px] md:text-[40px] font-bold mb-1">
+                  {item.stat}
+                </div>
+                <div className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-semibold text-[16px] mb-2">
+                  {item.label}
+                </div>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[14px] leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ================= JOURNEY IN BRIEF ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-5">
+            <div className="relative rounded-[28px] overflow-hidden shadow-lg">
+              <img
+                src="/impulse-website/journey-dartboard.png"
+                alt="Target representing performance goals"
+                className="w-full h-[260px] md:h-[340px] lg:h-[380px] object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div className="lg:col-span-7">
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[26px] md:text-[32px] mb-6">
+              The Journey in Brief
+            </h2>
+
+            <div className="space-y-6">
+              {[
+                "Proven engagement strategies that outperform industry averages.",
+                "Data-backed content planning for maximum impact.",
+                "Consistent performance that positions brands as industry leaders.",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-[#ECE9F8] text-[#543d98] font-bold">
+                    {index + 1}
+                  </div>
+                  <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B57] text-[15px] leading-relaxed">
+                    {text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

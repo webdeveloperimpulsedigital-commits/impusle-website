@@ -1,254 +1,349 @@
-import { useEffect, useRef, useState } from "react";
+// BrandVisionSection.tsx
+import React from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
-  const overlayText =
-    "Making every word count, we write what moves minds and markets.";
-
-  // ================== COUNTERS ==================
-  const [counters, setCounters] = useState({
-    first: 0, // 95%
-    second: 0, // 70%
-    third: 0, // 10,000+
-  });
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const hasAnimated = useRef(false);
-  const rafId = useRef<number | null>(null);
-
-  // ---- Helper: animate a single counter with rAF + easing
-  const animateCounter = (
-    target: number,
-    duration: number,
-    onTick: (value: number) => void,
-    options?: { decimals?: number }
-  ) =>
-    new Promise<void>((resolve) => {
-      const start = performance.now();
-      const decimals = options?.decimals ?? 0;
-
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        let current = target * ease;
-
-        if (decimals === 0) current = Math.floor(current);
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
-
-        onTick(current);
-
-        if (t < 1) {
-          rafId.current = requestAnimationFrame(tick);
-        } else {
-          onTick(target);
-          resolve();
-        }
-      };
-
-      rafId.current = requestAnimationFrame(tick);
-    });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-
-          // 1) 0 -> 95 (int)
-          await animateCounter(95, 1200, (v) =>
-            setCounters((c) => ({ ...c, first: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 2) 0 -> 70 (int)
-          await animateCounter(70, 1000, (v) =>
-            setCounters((c) => ({ ...c, second: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 3) 0 -> 10000 (int, with +)
-          await animateCounter(10000, 900, (v) =>
-            setCounters((c) => ({ ...c, third: v }))
-          );
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      observer.disconnect();
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-    };
-  }, []);
-
-  const steps = [
-    {
-      title: "Discovery and Research",
-      description:
-        "We begin by understanding your goals, audience, and tone, supported by keyword and market research to build performance-driven content",
-    },
-    {
-      title: "Strategy and Structure",
-      description:
-        "We define messaging, map it to funnel stages, and create a clear structure and tone aligned with your objectives",
-    },
-    {
-      title: "Creation and Optimization",
-      description:
-        "Our writers craft original, SEO optimized content that blends brand context, clarity, and engagement for maximum visibility",
-    },
-    {
-      title: "Review and Performance",
-      description:
-        "Every piece goes through editorial checks and client review, followed by tracking visibility, engagement, and conversions to improve future content.",
-    },
-  ];
-
-  const loopedSteps = [...steps, ...steps];
-
-  const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
-    if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
-    return rows as any;
-  }, [] as any);
-
   return (
     <section
-      className="w-full bg-white lg:py-5 sm:py-8"
+      className="w-full bg-white py-16 lg:py-20"
       id="sec-border"
       data-section="brand-vision"
-      ref={sectionRef}
     >
-      <div className="max-w-[1280px] mx-auto px-2 lg:px-5 sm:py-10">
-        {/* Title */}
-        <div className="mb-6 lg:mb-8 pt-10">
-          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
-          </h2>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
-          </h2>
-        </div>
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8 space-y-20">
+        {/* ================= HERO / INTRO ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Text */}
+          <div className="lg:col-span-6">
+            <h2 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[32px] md:text-[40px] leading-tight mb-4">
+              How Atrac Engine Parts Revved Up Their LinkedIn Presence
+            </h2>
 
-        {/* Image + Overlay + Counters */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-start mb-6">
-          {/* IMAGE */}
-          <div className="lg:col-span-5 lg:w-[600px]">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg ">
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-4">
+              Strategic social media positioning for measurable business impact.
+            </p>
+
+            <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed">
+              Our challenge? Reposition Atrac Engine Parts as a manufacturer of
+              high-quality cylinder liners, pistons, and engine valves—not just
+              a trader—through LinkedIn.
+            </p>
+          </div>
+
+          {/* Hero Image */}
+          <div className="lg:col-span-6">
+            <div className="rounded-[28px] overflow-hidden shadow-lg">
               <img
-                src="/impulse-website/content-wrriting-service-about-us.jpg"
-                alt="SEO workspace"
-                className="w-full sm:h-[400px] lg:h-[700px] object-cover"
+                src="/impulse-website/Atrac Engine Parts.png"
+                alt="Atrac Engine Parts branded packaging"
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
+        </div>
 
-          {/* MOBILE OVERLAY TEXT */}
-          <div
-            className="block lg:hidden -mt-8 px-2 mt-0"
-            style={{ marginTop: "-18%", zIndex: "999" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[20px] leading-[20px] text-left p-7">
-                {overlayText}
+        {/* ================= CHALLENGE ================= */}
+        <div className="space-y-10">
+          <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[28px] md:text-[34px]">
+            The Challenge
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Breaking the Trader Perception
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Stakeholders saw Atrac Engine Parts as a{" "}
+                <span className="font-semibold">distributor</span>, not a{" "}
+                <span className="font-semibold">manufacturer</span>. We needed
+                to showcase production capabilities and innovation.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Low Engagement Market
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                B2B automotive brands typically see only{" "}
+                <span className="font-semibold">2–3% engagement</span> on
+                LinkedIn. We needed to exceed this benchmark.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Manufacturing Excellence
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Earlier content focused only on{" "}
+                <span className="font-semibold">products and engineering</span>.
+                We had to highlight precision manufacturing processes and
+                behind-the-scenes expertise.
               </p>
             </div>
           </div>
 
-          {/* STATS / COUNTERS */}
-          <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
-            <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 95% */}
-              <div className="absolute top-6 left-0 text-center">
-                <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
-                  {Math.round(counters.first)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    client satisfaction rate with the content delivered.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 70% */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.second)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    average increase in organic traffic for clients due to our SEO-optimized content.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 10,000+ */}
-              <div className="absolute bottom-6 left-0 text-center">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.third).toLocaleString()}+
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    successful content pieces published for clients across various industries.
-                  </p>
-                </h3>
-              </div>
-            </div>
+          {/* Factory Image */}
+          <div className="rounded-[28px] overflow-hidden shadow-lg">
+            <img
+              src="/impulse-website/atract-indsutry.png"
+              alt="Atrac Engine Parts manufacturing line"
+              className="w-full h-[320px] md:h-[420px] lg:h-[460px] object-cover"
+              loading="lazy"
+            />
           </div>
+        </div>
 
-          {/* DESKTOP CENTER OVERLAY */}
-          <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
-            <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
-                {overlayText}
+        {/* ================= OUR GAME PLAN ================= */}
+        <div className="space-y-8">
+          <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[28px] md:text-[34px]">
+            Our Game Plan
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Content Repositioning */}
+            <div className="bg-white rounded-[20px] border border-[#E4E4F0] p-5 shadow-sm">
+              <p className="text-xs text-[#543d98] font-semibold mb-1 tracking-[0.08em] uppercase">
+                01
+              </p>
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Content Repositioning
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Shifted from product-centric posts to{" "}
+                <span className="font-semibold">behind-the-scenes</span>{" "}
+                manufacturing insights with the{" "}
+                <span className="font-semibold">#BehindTheProduct</span> series.
+              </p>
+            </div>
+
+            {/* Format Optimization */}
+            <div className="bg-white rounded-[20px] border border-[#E4E4F0] p-5 shadow-sm">
+              <p className="text-xs text-[#543d98] font-semibold mb-1 tracking-[0.08em] uppercase">
+                02
+              </p>
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Format Optimization
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Increased use of{" "}
+                <span className="font-semibold">video</span>,{" "}
+                <span className="font-semibold">carousels</span>, and{" "}
+                <span className="font-semibold">case studies</span> to showcase
+                engineering expertise and factory operations.
+              </p>
+            </div>
+
+            {/* Data Driven Posting */}
+            <div className="bg-white rounded-[20px] border border-[#E4E4F0] p-5 shadow-sm">
+              <p className="text-xs text-[#543d98] font-semibold mb-1 tracking-[0.08em] uppercase">
+                03
+              </p>
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Data-Driven Posting
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Refined posting schedule based on engagement data with structured
+                storytelling and clear CTAs.
+              </p>
+            </div>
+
+            {/* Strategic Benchmarking */}
+            <div className="bg-white rounded-[20px] border border-[#E4E4F0] p-5 shadow-sm">
+              <p className="text-xs text-[#543d98] font-semibold mb-1 tracking-[0.08em] uppercase">
+                04
+              </p>
+              <h4 className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[18px] mb-2">
+                Strategic Benchmarking
+              </h4>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[14px] leading-relaxed">
+                Focused on conversations and inbound inquiries using polls,
+                Q&As, and expert insights.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Body copy */}
-        <div className="text-left mb-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
-          </p>
-        </div>
-      </div>
+        {/* ================= KEY RESULTS ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Metrics */}
+          <div className="lg:col-span-6 space-y-8">
+            <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[28px] md:text-[34px]">
+              Key Results
+            </h3>
 
-      {/* Hidden steps section (kept for structure) */}
-      <div className="hidden opacity-0 pointer-events-none">
-        <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
-        <div className="overflow-hidden">
-          <div className="steps-track flex gap-16 py-6 will-change-transform relative z-10">
-            {loopedSteps.map((s, i) => (
-              <div key={i} className="min-w-[260px] max-w-[300px] relative">
-                <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                <div className="pt-10">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[20px] mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#666] text-[18px] leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* 11K+ Impressions */}
+              <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[28px] md:text-[32px] mb-1">
+                  11K+
+                </p>
+                <p className="text-[14px] font-semibold text-[#4B4B5C] mb-1">
+                  Impressions
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Strong performance for a B2B manufacturing brand in a niche
+                  market.
+                </p>
               </div>
-            ))}
+
+              {/* 8.3% Engagement */}
+              <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[28px] md:text-[32px] mb-1">
+                  8.3%
+                </p>
+                <p className="text-[14px] font-semibold text-[#4B4B5C] mb-1">
+                  Engagement Rate
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Exceeding the industry benchmark of 2–3% for B2B automotive
+                  companies.
+                </p>
+              </div>
+
+              {/* 3.4K+ Clicks */}
+              <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[28px] md:text-[32px] mb-1">
+                  3.4K+
+                </p>
+                <p className="text-[14px] font-semibold text-[#4B4B5C] mb-1">
+                  Clicks
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Demonstrating high content relevance and audience interest.
+                </p>
+              </div>
+
+              {/* 2K+ Reactions */}
+              <div className="bg-[#F6F6FB] rounded-[20px] p-6 border border-[#E4E4F0]">
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[28px] md:text-[32px] mb-1">
+                  2K+
+                </p>
+                <p className="text-[14px] font-semibold text-[#4B4B5C] mb-1">
+                  Reactions
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  With 200+ comments indicating improved brand perception.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Engine Graphic */}
+          <div className="lg:col-span-6">
+            <div className="rounded-[28px] overflow-hidden shadow-lg">
+              <img
+                src="/impulse-website/atract-manifacturing.png"
+                alt="Engine cutaway showing internal components"
+                className="w-full h-[320px] md:h-[420px] lg:h-[460px] object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @keyframes scroll-rtl {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .steps-track {
-          animation: scroll-rtl 24s linear infinite;
-        }
-        .steps-track:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .steps-track { animation: none; transform: translateX(0); }
-        }
-        .mb-14 { margin-bottom: 40px; }
-      `}</style>
+        {/* ================= TOP CONTENT & IMPACT ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          {/* Top Performing Content */}
+          <div className="lg:col-span-6 space-y-5">
+            <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
+              Top Performing Content
+            </h3>
+
+            <ul className="space-y-4">
+              <li className="bg-white rounded-[16px] border border-[#E4E4F0] p-5">
+                <p className="text-xs text-[#543d98] font-semibold mb-1 uppercase tracking-[0.08em]">
+                  Product Video
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[15px] mb-1">
+                  79.5% Engagement
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Showcasing engineering expertise through visual storytelling.
+                </p>
+              </li>
+
+              <li className="bg-white rounded-[16px] border border-[#E4E4F0] p-5">
+                <p className="text-xs text-[#543d98] font-semibold mb-1 uppercase tracking-[0.08em]">
+                  AAPEX Event Highlight
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[15px] mb-1">
+                  42.7% Engagement
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Strengthened industry leadership positioning with strong
+                  impressions.
+                </p>
+              </li>
+
+              <li className="bg-white rounded-[16px] border border-[#E4E4F0] p-5">
+                <p className="text-xs text-[#543d98] font-semibold mb-1 uppercase tracking-[0.08em]">
+                  Behind-the-Scenes
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[15px] mb-1">
+                  8.3% Engagement
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Revealing manufacturing processes and technical expertise.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          {/* Impact */}
+          <div className="lg:col-span-6 space-y-5">
+            <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
+              The Impact
+            </h3>
+
+            <div className="space-y-4">
+              <div className="bg-[#F6F6FB] rounded-[16px] p-5 border border-[#E4E4F0]">
+                <p className="text-xs text-[#543d98] font-semibold uppercase tracking-[0.08em] mb-1">
+                  01
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[16px] mb-1">
+                  Transformed Perception
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Atrac is now recognized for manufacturing leadership—not just
+                  trading.
+                </p>
+              </div>
+
+              <div className="bg-[#F6F6FB] rounded-[16px] p-5 border border-[#E4E4F0]">
+                <p className="text-xs text-[#543d98] font-semibold uppercase tracking-[0.08em] mb-1">
+                  02
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[16px] mb-1">
+                  Industry Benchmark Success
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Outperformed standard B2B engagement metrics on LinkedIn.
+                </p>
+              </div>
+
+              <div className="bg-[#F6F6FB] rounded-[16px] p-5 border border-[#E4E4F0]">
+                <p className="text-xs text-[#543d98] font-semibold uppercase tracking-[0.08em] mb-1">
+                  03
+                </p>
+                <p className="[font-family:'DM_Sans',Helvetica] font-semibold text-[#030019] text-[16px] mb-1">
+                  Strengthened Credibility
+                </p>
+                <p className="text-[13px] text-[#6B6B7A]">
+                  Built stakeholder trust and recognition with consistent,
+                  expert-led content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
     </section>
   );
 };

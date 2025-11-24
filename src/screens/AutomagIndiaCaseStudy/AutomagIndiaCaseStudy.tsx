@@ -3,13 +3,13 @@ import { AutomagIndiaCaseStudyHeroSection } from "./sections/AutomagIndiaCaseStu
 import { BrandVisionSection } from "./sections/BrandVisionSection/BrandVisionSection";
 // import { InteractiveGallerySection } from "./sections/InteractiveGallerySection/InteractiveGallerySection";
 // import { InteractiveSliderSection } from "./sections/InteractiveSliderSection/InteractiveSliderSection";
-import { WhyChooseSection } from "./sections/WhyChooseSection/WhyChooseSection";
-import { ServicesSection } from "./sections/ServicesSection";
-import { ProcessSection } from "./sections/ProcessSection/ProcessSection";
-import { ClientsSection } from "./sections/ClientsSection";
-import { TestimonialsSection } from "../Main/sections/TestimonialsSection/TestimonialsSection";
+// import { WhyChooseSection } from "./sections/WhyChooseSection/WhyChooseSection";
+// import { ServicesSection } from "./sections/ServicesSection";
+// import { ProcessSection } from "./sections/ProcessSection/ProcessSection";
+// import { ClientsSection } from "./sections/ClientsSection";
+// import { TestimonialsSection } from "../Main/sections/TestimonialsSection/TestimonialsSection";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
-import { FAQSection } from "./sections/FAQSection/FAQSection";
+// import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
 export const AutomagIndiaCaseStudy = (): JSX.Element => {
   return (
@@ -20,13 +20,13 @@ export const AutomagIndiaCaseStudy = (): JSX.Element => {
         <BrandVisionSection />
         {/* <InteractiveGallerySection /> */}
         {/* <InteractiveSliderSection /> */}
-        <ServicesSection />
+        {/* <ServicesSection />
         <WhyChooseSection />
         <ProcessSection />
         <ClientsSection/> 
-        <TestimonialsSection />
+        <TestimonialsSection /> */}
         <ContactSection />
-        <FAQSection />
+        {/* <FAQSection /> */}
         <FooterSection />
       </div>
     </main>

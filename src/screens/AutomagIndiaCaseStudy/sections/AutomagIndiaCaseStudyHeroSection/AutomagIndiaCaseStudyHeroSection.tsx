@@ -43,7 +43,7 @@ export const AutomagIndiaCaseStudyHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Content Writing</span>
+          <span className="text-white"> Automag India</span>
         </nav>
       </div>
     </section>

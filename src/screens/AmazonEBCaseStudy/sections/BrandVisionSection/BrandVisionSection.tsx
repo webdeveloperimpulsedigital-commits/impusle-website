@@ -1,254 +1,293 @@
-import { useEffect, useRef, useState } from "react";
+// BrandVisionSection.tsx
+import React from "react";
 
 export const BrandVisionSection = (): JSX.Element => {
-  const overlayText =
-    "Making every word count, we write what moves minds and markets.";
-
-  // ================== COUNTERS ==================
-  const [counters, setCounters] = useState({
-    first: 0, // 95%
-    second: 0, // 70%
-    third: 0, // 10,000+
-  });
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const hasAnimated = useRef(false);
-  const rafId = useRef<number | null>(null);
-
-  // ---- Helper: animate a single counter with rAF + easing
-  const animateCounter = (
-    target: number,
-    duration: number,
-    onTick: (value: number) => void,
-    options?: { decimals?: number }
-  ) =>
-    new Promise<void>((resolve) => {
-      const start = performance.now();
-      const decimals = options?.decimals ?? 0;
-
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - t, 3);
-        let current = target * ease;
-
-        if (decimals === 0) current = Math.floor(current);
-        if (decimals > 0) {
-          const factor = Math.pow(10, decimals);
-          current = Math.round(current * factor) / factor;
-        }
-
-        onTick(current);
-
-        if (t < 1) {
-          rafId.current = requestAnimationFrame(tick);
-        } else {
-          onTick(target);
-          resolve();
-        }
-      };
-
-      rafId.current = requestAnimationFrame(tick);
-    });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-
-          // 1) 0 -> 95 (int)
-          await animateCounter(95, 1200, (v) =>
-            setCounters((c) => ({ ...c, first: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 2) 0 -> 70 (int)
-          await animateCounter(70, 1000, (v) =>
-            setCounters((c) => ({ ...c, second: v }))
-          );
-
-          await new Promise((r) => setTimeout(r, 100));
-
-          // 3) 0 -> 10000 (int, with +)
-          await animateCounter(10000, 900, (v) =>
-            setCounters((c) => ({ ...c, third: v }))
-          );
-        }
-      },
-      { threshold: 0.4 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      observer.disconnect();
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-    };
-  }, []);
-
-  const steps = [
-    {
-      title: "Discovery and Research",
-      description:
-        "We begin by understanding your goals, audience, and tone, supported by keyword and market research to build performance-driven content",
-    },
-    {
-      title: "Strategy and Structure",
-      description:
-        "We define messaging, map it to funnel stages, and create a clear structure and tone aligned with your objectives",
-    },
-    {
-      title: "Creation and Optimization",
-      description:
-        "Our writers craft original, SEO optimized content that blends brand context, clarity, and engagement for maximum visibility",
-    },
-    {
-      title: "Review and Performance",
-      description:
-        "Every piece goes through editorial checks and client review, followed by tracking visibility, engagement, and conversions to improve future content.",
-    },
-  ];
-
-  const loopedSteps = [...steps, ...steps];
-
-  const mobileRows = steps.reduce<string[][]>((rows, _, i) => {
-    if (i % 2 === 0) rows.push(steps.slice(i, i + 2));
-    return rows as any;
-  }, [] as any);
-
   return (
     <section
-      className="w-full bg-white lg:py-5 sm:py-8"
+      className="w-full bg-white lg:py-16 sm:py-10"
       id="sec-border"
       data-section="brand-vision"
-      ref={sectionRef}
     >
-      <div className="max-w-[1280px] mx-auto px-2 lg:px-5 sm:py-10">
-        {/* Title */}
-        <div className="mb-6 lg:mb-8 pt-10">
-          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px] ">
-            Turn Brand Vision
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+        {/* ================== HEADER ================== */}
+        <div className="mb-10 lg:mb-14 pt-4">
+          <h2 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium lg:text-[34px] sm:text-[16px]">
+            Employer Branding with Amazon India
           </h2>
-          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight ">
-            Into Words That Convert
+          <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#543d98] lg:text-[52px] sm:text-[26px] leading-tight">
+            Campaigns that Turned Employees into Storytellers
           </h2>
-        </div>
-
-        {/* Image + Overlay + Counters */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-start mb-6">
-          {/* IMAGE */}
-          <div className="lg:col-span-5 lg:w-[600px]">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg ">
-              <img
-                src="/impulse-website/content-wrriting-service-about-us.jpg"
-                alt="SEO workspace"
-                className="w-full sm:h-[400px] lg:h-[700px] object-cover"
-              />
-            </div>
-          </div>
-
-          {/* MOBILE OVERLAY TEXT */}
-          <div
-            className="block lg:hidden -mt-8 px-2 mt-0"
-            style={{ marginTop: "-18%", zIndex: "999" }}
-          >
-            <div className="bg-white rounded-2xl p-4 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-medium text-[20px] leading-[20px] text-left p-7">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-
-          {/* STATS / COUNTERS */}
-          <div className="lg:mt-[35%] lg:ml-[25%] mt-4 ml-[3%] mr-[3%] lg:col-span-7">
-            <div className="relative h-[450px] lg:h-[400px] lg:w-[520px] sm:h-[500px]">
-              {/* 95% */}
-              <div className="absolute top-6 left-0 text-center">
-                <h3 className="[font-family:'Space Grotesk', sans-serif] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2 transition-all">
-                  {Math.round(counters.first)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    client satisfaction rate with the content delivered.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 70% */}
-              <div className="absolute top-1/2 -translate-y-1/2 right-0 text-center mb-8">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.second)}%
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    average increase in organic traffic for clients due to our SEO-optimized content.
-                  </p>
-                </h3>
-              </div>
-
-              {/* 10,000+ */}
-              <div className="absolute bottom-6 left-0 text-center">
-                <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] text-4xl lg:text-6xl font-black leading-none mb-2">
-                  {Math.round(counters.third).toLocaleString()}+
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[16px] leading-relaxed max-w-[250px] font-[400]">
-                    successful content pieces published for clients across various industries.
-                  </p>
-                </h3>
-              </div>
-            </div>
-          </div>
-
-          {/* DESKTOP CENTER OVERLAY */}
-          <div className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 w-full max-w-[700px] px-4 hidden lg:block">
-            <div className="pointer-events-auto bg-white rounded-2xl p-5 lg:p-6">
-              <p className="[font-family:'DM_Sans',Helvetica] text-[#030019] text-[35px] lg:text:[34px] sm:leading-[20px] lg:leading-[42px] text-left">
-                {overlayText}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Body copy */}
-        <div className="text-left mb-12">
-          <p className="[font-family:'DM_Sans',Helvetica] font-normal text-[12px] lg:text-[24px] text-[#030019]">
-            Your brand has a story, and we give it a voice that is hard to forget. From thought-leading blogs to crisp ad copy, we craft content that informs, inspires, and converts. Our writers understand tone, purpose, and audience intent, ensuring your message always lands right. At Impulse, we blend creativity with context so your brand speaks with clarity and confidence. Every piece of content is SEO-informed, emotionally intelligent, and tailored for performance. We make sure your words sound human yet strategic, helping your brand earn attention and trust. With Impulse, your words do not just fill space, they make an impact that lasts. 
+          <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] lg:text-[17px] leading-relaxed max-w-[720px] mt-4">
+            From video podcasts to advocacy programs, our work with Amazon India
+            spans content, design, and execution across multiple employer
+            branding campaigns—each driving reach, engagement, and stronger
+            talent pipelines.
           </p>
         </div>
-      </div>
 
-      {/* Hidden steps section (kept for structure) */}
-      <div className="hidden opacity-0 pointer-events-none">
-        <div className="absolute left-0 right-0 top-[35px] h-[2px] bg-[#EAEAEA] z-0" />
-        <div className="overflow-hidden">
-          <div className="steps-track flex gap-16 py-6 will-change-transform relative z-10">
-            {loopedSteps.map((s, i) => (
-              <div key={i} className="min-w-[260px] max-w-[300px] relative">
-                <div className="absolute top-[9px] left-0 w-2 h-2 rounded-full bg-[#6B04FD]" />
-                <div className="pt-10">
-                  <h3 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[20px] mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="[font-family:'DM_Sans',Helvetica] text-[#666] text-[18px] leading-relaxed">
-                    {s.description}
+        <div className="space-y-16 lg:space-y-20">
+          {/* ============== 1. AMAZON UNPLUGGED ============== */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Visual */}
+            <div className="lg:col-span-6">
+              <div className="relative rounded-[28px] overflow-hidden shadow-lg bg-[#20124d]">
+                <img
+                  src="/impulse-website/amazon-unplugged-thumbnail.png"
+                  alt="Amazon Unplugged podcast setup"
+                  className="w-full h-[260px] md:h-[320px] lg:h-[360px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Right: Copy */}
+            <div className="lg:col-span-6">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+                Campaign 01
+              </p>
+              <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
+                Amazon Unplugged – Leadership, Unfiltered
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-5">
+                A video-podcast series designed to showcase authentic leadership
+                stories, career journeys, and the culture that powers Amazon’s
+                success. We owned the end-to-end execution—from concept and
+                scripting to shoots and edits—for 6 episodes.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Views
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    1.2M+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Impressions
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    9.5M+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Engagement
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    10K+
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* ============== 2. POWERING PRIME DAY ============== */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Copy */}
+            <div className="lg:col-span-6 order-2 lg:order-1">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+                Campaign 02
+              </p>
+              <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
+                Powering Prime Day – Employees in the Spotlight
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-5">
+                A global Prime Day themed campaign that celebrated employees
+                behind the event’s success through story-driven spotlights. We
+                handled content and design for a series of assets that travelled
+                across internal and external channels.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Organic Views
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    75K+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Employee Advocacy
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    10×
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Social Engagement
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    2.4×
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Collage */}
+            <div className="lg:col-span-6 order-1 lg:order-2">
+              <div className="rounded-[28px] overflow-hidden shadow-lg bg-[#F6F6FB]">
+                <img
+                  src="/impulse-website/Powering Prime Day.png"
+                  alt="Powering Prime Day employee collage"
+                  className="w-full h-[260px] md:h-[320px] lg:h-[360px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* ============== 3. EMPLOYEE ADVOCACY ============== */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Visual */}
+            <div className="lg:col-span-6">
+              <div className="rounded-[28px] overflow-hidden shadow-lg bg-[#F6F6FB]">
+                <img
+                  src="/impulse-website/Employee Advocacy.png"
+                  alt="Employees creating advocacy content"
+                  className="w-full h-[240px] md:h-[300px] lg:h-[340px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Right: Copy */}
+            <div className="lg:col-span-6">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+                Program 03
+              </p>
+              <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
+                Employee Advocacy – Turning Teams into Ambassadors
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-5">
+                We built a structured advocacy engine—content calendars,
+                internal campaigns, and performance tracking—to empower Amazon
+                employees to champion the brand on social media.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    ROI
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    5-digit $
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Impressions
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    2.1M+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Engagement
+                  </p>
+                  <p className="text-[#543d98] text-[22px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    67K+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ============== 4. SOCIAL & JOB BOARDS ============== */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            {/* Social Media Mgmt */}
+            <div className="lg:col-span-6 space-y-4">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
+                Always-On
+              </p>
+              <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
+                Social Media Management
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-3">
+                At the forefront of Amazon APAC’s employer-branding content, we
+                manage strategy, execution and promotion of internal programs
+                across platforms.
+              </p>
+
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Followers Gained
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    10K+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Engagement
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    23K+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Views & Impressions
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    2M+
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Job Board Optimisation */}
+            <div className="lg:col-span-6 space-y-4">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
+                Always-On
+              </p>
+              <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
+                Job Board Optimisation
+              </h3>
+              <p className="[font-family:'DM_Sans',Helvetica] text-[#4B4B5C] text-[15px] md:text-[16px] leading-relaxed mb-3">
+                We refresh careers pages and job-board profiles with updated
+                campaigns, SEO-aligned copy, and timely news so candidates see a
+                current, compelling picture of life at Amazon.
+              </p>
+
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Followers Gain
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    60K+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Impressions
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    2.4M+
+                  </p>
+                </div>
+                <div className="bg-[#F6F6FB] rounded-2xl px-4 py-3">
+                  <p className="text-[12px] text-[#7B7B8A] mb-1 [font-family:'DM_Sans',Helvetica]">
+                    Engagement
+                  </p>
+                  <p className="text-[#543d98] text-[20px] font-bold [font-family:'DM_Sans',Helvetica]">
+                    400K+
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        {/* /space-y wrapper */}
       </div>
-
-      <style>{`
-        @keyframes scroll-rtl {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .steps-track {
-          animation: scroll-rtl 24s linear infinite;
-        }
-        .steps-track:hover { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce) {
-          .steps-track { animation: none; transform: translateX(0); }
-        }
-        .mb-14 { margin-bottom: 40px; }
-      `}</style>
     </section>
   );
 };

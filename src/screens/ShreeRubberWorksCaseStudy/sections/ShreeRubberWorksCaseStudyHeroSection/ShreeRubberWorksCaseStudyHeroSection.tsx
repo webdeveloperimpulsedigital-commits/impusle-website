@@ -37,26 +37,26 @@ export const ShreeRubberWorksCaseStudyHeroSection = (): JSX.Element => {
       {/* Hero Copy */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-24 px-4">
         <h1 className="uppercase [font-family:'DM_Sans',Helvetica] font-black text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] leading-[40px] tracking-tight mb-4">
-          Shree Rubbe rWorks
+          Shree Rubber Works
         </h1>
 
         {/* ⭐ New Subtitle Line */}
-        <h2 className="text-white/90 text-lg sm:text-xl md:text-2xl max-w-3xl mb-4 font-medium">
+        {/* <h2 className="text-white/90 text-lg sm:text-xl md:text-2xl max-w-3xl mb-4 font-medium">
          From Invisible to Unstoppable
-        </h2>
+        </h2> */}
 
         {/* ⭐ New Short Description */}
-        <p className="text-white/70 text-sm sm:text-base max-w-2xl mb-6">
+        {/* <p className="text-white/70 text-sm sm:text-base max-w-2xl mb-6">
           How Impulse Digital transformed Shree Rubber Works' digital presence
 with strategic SEO
-        </p>
+        </p> */}
 
         {/* Breadcrumb */}
         <nav className="flex items-center justify-center gap-2 text-white/80 text-sm">
           <NavLink to="/" className="hover:text-white transition-colors">
             Home
           </NavLink>
-          <span className="select-none">{">"}</span>
+          <span className="select-none">{">"}</span><br></br>
           <span className="text-white">Shree Rubber Works</span>
         </nav>
       </div>
