@@ -42,7 +42,7 @@ import { AgencyinPune } from "./screens/AgencyinPune/AgencyinPune";
 import { Videos } from "./screens/Resources/Videos";
 import { AmazonEBCaseStudy } from "./screens/AmazonEBCaseStudy";
 import { AtracEnginePartsCaseStudy } from "./screens/AtracEnginePartsCaseStudy";
-import { CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudy } from "./screens/Crafting-the-Employer-Value-Proposition-for-Amazon-IndiaCaseStudy";
+import { CraftingAmazonIndiaCaseStudy } from "./screens/CraftingAmazonIndiaCaseStudy"
 import { GrasimPulpandFibreCaseStudy } from "./screens/GrasimPulpandFibreCaseStudy";
 import { AutomagIndiaCaseStudy } from "./screens/AutomagIndiaCaseStudy";
 
@@ -77,7 +77,7 @@ export const App = (): JSX.Element => {
       <Route path="/casestudies/shree-rubber-works" element={<ShreeRubberWorksCaseStudy />} />
       <Route path="/casestudies/automag-india" element={<AutomagIndiaCaseStudy />} />
       <Route path="/casestudies/grasim-pulp-and-fibre" element={<GrasimPulpandFibreCaseStudy />} />
-      <Route path="/casestudies/crafting-the-employer-value-proposition-for-amazon-india" element={<CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudy />} />
+      <Route path="/casestudies/crafting-the-employer-value-proposition-for-amazon-india" element={<CraftingAmazonIndiaCaseStudy />} />
       <Route path="/casestudies/atrac-engine-parts" element={<AtracEnginePartsCaseStudy />} />
       <Route path="/casestudies/amazon-eb" element={<AmazonEBCaseStudy />} />
 
