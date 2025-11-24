@@ -124,7 +124,7 @@ export const BrandVisionSection = (): JSX.Element => {
           {/* RIGHT CONTENT */}
           <div>
             <h2 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[36px] mb-8">
-              Our Strategic Approach
+              Our Strategic Approachh
             </h2>
 
             <div className="space-y-10">
