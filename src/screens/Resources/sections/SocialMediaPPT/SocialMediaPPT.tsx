@@ -232,30 +232,30 @@ export const SocialMediaPPT = (): JSX.Element => {
         {/* Category Tabs */}
         <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3 text-xs sm:text-sm">
           <a
-            href="/resources/Slideshare-PPT/"
+            href="/impulse-website/resources/Slideshare-PPT/"
         className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
 
             All PPTs
           </a>
           <a
-            href="/resources/SocialMediaPPTS"
+            href="/impulse-website/resources/SocialMediaPPTS"
         className="px-3 py-1.5 rounded-full text-white font-medium bg-[#543d98]">
             Social Media PPT
           </a>
           <a
-            href="/google-ads-PPT"
+            href="/impulse-website/resources/google-ads-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Google Ads / SEM PPT
           </a>
           <a
-            href="/content-marketing-PPT"
+            href="/impulse-website/resources/content-marketing-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Content Marketing PPT
           </a>
           <a
-            href="/employer-branding-PPT"
+            href="/impulse-website/resources/employer-branding-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
           >
             Employer Branding PPT

@@ -150,33 +150,33 @@ export const GoogleAdsPPT = (): JSX.Element => {
         {/* Category Tabs */}
         <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3 text-xs sm:text-sm">
           <a
-            href="/resources/Slideshare-PPT/"
+            href="/impulse-website/resources/Slideshare-PPT/"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             All PPTs
           </a>
           <a
-            href="/resources/social-media-PPT"
+            href="/impulse-website/resources/social-media-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Social Media PPT
           </a>
           <a
-            href="/resources/google-ads-PPT"
+            href="/impulse-website/resources/google-ads-PPT"
             
             className="px-3 py-1.5 rounded-full text-white font-medium bg-[#543d98]">
             Google Ads / SEM PPT
           </a>
           <a
-            href="/resources/content-marketing-PPT"
+            href="/impulse-website/resources/content-marketing-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Content Marketing PPT
           </a>
           <a
-            href="/resources/employer-branding-PPT"
+            href="/impulse-website/resources/employer-branding-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Employer Branding PPT
           </a>
            <a
-            href="/resources/website-design-development-PPT"
+            href="/impulse-website/resources/website-design-development-PPT"
             className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Website Design Development PPT
           </a>
