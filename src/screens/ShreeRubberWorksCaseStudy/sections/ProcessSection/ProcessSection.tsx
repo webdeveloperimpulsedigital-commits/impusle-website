@@ -181,7 +181,7 @@ export const ProcessSection = (): JSX.Element => {
           <div className="lg:col-span-5">
             <div className="rounded-[28px] overflow-hidden shadow-lg">
               <img
-                src="/impulse-website/SRW.mp4"
+                src="/impulse-website/Team reviewing performance dashboards in a meeting.png"
                 alt="Team reviewing performance dashboards in a meeting"
                 className="w-full h-full object-cover"
                 loading="lazy"

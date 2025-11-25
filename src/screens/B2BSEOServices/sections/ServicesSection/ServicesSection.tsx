@@ -25,7 +25,7 @@ const ServicesSection = () => {
 
  const data = [
     { n:"01", title:"Enterprise SEO",
-      points:["Enterprise site isn’t a ‘normal’ site. The difference is in the scale. Having more pages means scaling everything 100x—keyword ranking, tools, content, teams—for your desired outcome. Then there’s the need to have custom CMS, multiple department buy-ins, scheme markup—the list is endless but we have it covered for you. "],
+      points:["Enterprise site isn’t a ‘normal’ site. The difference is in the scale. Having more pages means scaling everything 100x-keyword ranking, tools, content, teams-for your desired outcome. Then there’s the need to have custom CMS, multiple department buy-ins, scheme markup-the list is endless but we have it covered for you. "],
       img:"/impulse-website/service section 520 x 340 - Enterprise SEO.jpg" },
     { n:"02", title:"E-Commerce SEO",
       points:["You can set up your store, add your products, and share the word, yet there can be zero traffic and no new leads. That’s because your audience is unable to find you and, thus, your product. Zero sales. eCommerce SEO sets you on the right path again. "],
@@ -44,7 +44,7 @@ const ServicesSection = () => {
       points:["Bridge the gap between local visibility and national branding by balancing the unique needs of a franchise with the overall brand guidelines. Franchise SEO ensures a unified digital presence while driving local traffic for higher revenues and a competitive edge locally and nationally."],
       img:"/impulse-website/Franchise SEO.jpg" },
     { n:"07", title:"Shopify SEO",
-      points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores—better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
+      points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores-better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
       img:"/impulse-website/service section 520 x 340 - Shopify SEO.jpg",
     },
     {

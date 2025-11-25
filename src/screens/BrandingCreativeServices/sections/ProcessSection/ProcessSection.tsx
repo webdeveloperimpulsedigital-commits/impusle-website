@@ -23,9 +23,9 @@ export const ProcessSection = (): JSX.Element => {
     id: 2,
     title: "Brainstorming and Mood Boarding",
     description:
-      "Based on the feedback, we start putting together a mood board—this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
+      "Based on the feedback, we start putting together a mood board-this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
     expandedContent:
-      "Based on the feedback, we start putting together a mood board—this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
+      "Based on the feedback, we start putting together a mood board-this is to answer the personality of your brand, the emotions it will evoke, the colors that go with it, and the kind of typography that will look best.",
   },
   {
     id: 3,
@@ -47,9 +47,9 @@ export const ProcessSection = (): JSX.Element => {
     id: 5,
     title: "Presenting the Design",
     description:
-      "The final designs are presented to you—exactly the way your audience and everyone else will see them.",
+      "The final designs are presented to you-exactly the way your audience and everyone else will see them.",
     expandedContent:
-      "The final designs are presented to you—exactly the way your audience and everyone else will see them. Every aspect of these designs is detailed to perfection which helps you decide how close the designs are to your vision.",
+      "The final designs are presented to you-exactly the way your audience and everyone else will see them. Every aspect of these designs is detailed to perfection which helps you decide how close the designs are to your vision.",
   },
   {
     id: 6,

@@ -45,7 +45,7 @@ const ServicesSection = () => {
       },
       {
         n:"06", title:"Television And OTT Platform Assets",
-        points:["Promotional videos, ad spots, title sequences, show intros, trailer edits, and full-scale commercials—our expertise in video production and motion graphics ensure visually compelling content optimized for digital and broadcast audiences for maximum reach and viewer engagement. "],
+        points:["Promotional videos, ad spots, title sequences, show intros, trailer edits, and full-scale commercials-our expertise in video production and motion graphics ensure visually compelling content optimized for digital and broadcast audiences for maximum reach and viewer engagement. "],
         img:"/impulse-website/video  service section 520 x 340 - Television and OTT platform assets.jpg"
       }
     

@@ -23,15 +23,15 @@ export const ProcessSection = (): JSX.Element => {
     id: 2,
     title: "Optimize Google My Business",
     description:
-      "Your GMB is like your company’s online visiting card — it needs to be accurate and consistent.",
+      "Your GMB is like your company’s online visiting card-it needs to be accurate and consistent.",
     expandedContent:
-      "Your GMB is like your company’s online visiting card. It needs to be accurate and consistent across all key business details — think name, phone, address, visiting hours, category, and services. We also design it with high-quality photos and keyword-infused descriptions so that your business stands out.",
+      "Your GMB is like your company’s online visiting card. It needs to be accurate and consistent across all key business details-think name, phone, address, visiting hours, category, and services. We also design it with high-quality photos and keyword-infused descriptions so that your business stands out.",
   },
   {
     id: 3,
     title: "Perform Local Keyword Research",
     description:
-      "Local search is specific to the T — we focus on location-based keywords that bring real traffic.",
+      "Local search is specific to the T-we focus on location-based keywords that bring real traffic.",
     expandedContent:
       "Local search is specific to the T. Our focus is on location-specific keywords like “best [service] near me,” “top [product] in [city],” and more. Once we have them, we strategically integrate them into your website, GMB, and listings to improve your local rankings.",
   },
@@ -49,7 +49,7 @@ export const ProcessSection = (): JSX.Element => {
     description:
       "We create geo-targeted blogs, service pages, and landing pages tailored for your audience.",
     expandedContent:
-      "Think of content that does not align with your audience — that’s a way NOT to serve your audience and waste their time, too. Our content writing services ensure your blogs, service pages, and landing pages are incorporated with geo-targeted keywords so that your audience (and search engine) recognize your relevance.",
+      "Think of content that does not align with your audience-that’s a way NOT to serve your audience and waste their time, too. Our content writing services ensure your blogs, service pages, and landing pages are incorporated with geo-targeted keywords so that your audience (and search engine) recognize your relevance.",
   },
   {
     id: 6,

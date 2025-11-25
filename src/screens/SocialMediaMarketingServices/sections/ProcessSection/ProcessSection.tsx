@@ -23,9 +23,9 @@ export const ProcessSection = (): JSX.Element => {
     id: 2,
     title: "Strategy Development",
     description:
-      "Research, research, and some more research about everything—your brand, its offering, USP, your competitors and their brands, target audience and suitable practices.",
+      "Research, research, and some more research about everything-your brand, its offering, USP, your competitors and their brands, target audience and suitable practices.",
     expandedContent:
-      "Research, research, and some more research about everything—your brand, its offering, USP, your competitors and their brands, target audience and suitable practices. We learn everything and put the pieces together to create a brand strategy that’s uniquely yours.",
+      "Research, research, and some more research about everything-your brand, its offering, USP, your competitors and their brands, target audience and suitable practices. We learn everything and put the pieces together to create a brand strategy that’s uniquely yours.",
   },
   {
     id: 3,

@@ -247,7 +247,7 @@ export const BrandVisionSection = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
               <img
-                src="/impulse-website/automag-serp-1.jpg"
+                src="/impulse-website/image AT1.png"
                 alt="Google SERP results screenshot 1"
                 className="w-full h-auto object-cover"
                 loading="lazy"
@@ -255,7 +255,47 @@ export const BrandVisionSection = (): JSX.Element => {
             </div>
             <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
               <img
-                src="/impulse-website/automag-serp-2.jpg"
+                src="/impulse-website/image AT2.png"
+                alt="Google SERP results screenshot 1"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
+              <img
+                src="/impulse-website/image AT3.png"
+                alt="Google SERP results screenshot 2"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+             <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
+              <img
+                src="/impulse-website/image AT4.png"
+                alt="Google SERP results screenshot 2"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+             <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
+              <img
+                src="/impulse-website/image AT5.png"
+                alt="Google SERP results screenshot 2"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
+              <img
+                src="/impulse-website/image AT6.png"
+                alt="Google SERP results screenshot 2"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="bg-white rounded-[24px] border border-[#E4E4F0] overflow-hidden shadow-sm">
+              <img
+                src="/impulse-website/image AT7.png"
                 alt="Google SERP results screenshot 2"
                 className="w-full h-auto object-cover"
                 loading="lazy"

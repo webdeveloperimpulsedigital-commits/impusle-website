@@ -30,7 +30,7 @@ const ServicesSection = () => {
     },
 
     { n:"02", title:"Logo Identity",
-      points:["Your logo is one aspect of your branding that’s going to be everywhere, quite literally—social media, website, packaging, gift notes. Our logo identity goes beyond aesthetics to capture your brand’s essence. Whether you want it to be sleek, modern, or timeless, our logos create instant recognition for you."],
+      points:["Your logo is one aspect of your branding that’s going to be everywhere, quite literally-social media, website, packaging, gift notes. Our logo identity goes beyond aesthetics to capture your brand’s essence. Whether you want it to be sleek, modern, or timeless, our logos create instant recognition for you."],
       img:"/impulse-website/branding creative service section 520 x 340 - Logo Identity.jpg"
     },
 

@@ -25,7 +25,7 @@ const ServicesSection = () => {
 
   const data = [
     { n:"01", title:"Strategy & Planning",
-      points:["Everything about your profile—bio, posts, captions, hashtags—have to speak to your audience. If they don’t, you are wasting your time, money, and effort. Our social media marketing company is strategy-first. This means we dissect your competitors, study the audience, and create pillars that match your brand’s vibe and long-term goals."],
+      points:["Everything about your profile-bio, posts, captions, hashtags—have to speak to your audience. If they don’t, you are wasting your time, money, and effort. Our social media marketing company is strategy-first. This means we dissect your competitors, study the audience, and create pillars that match your brand’s vibe and long-term goals."],
       img:"/impulse-website/service section 520 x 340 - Strategy and Planning.jpg" },
     { n:"02", title:"Content Creation",
       points:["Your content speaks volumes about you. We make sure it’s the right kind. Every piece is thoughtfully crafted, keeping in mind the format, its aim, and your brand’s messaging. When looked at individually, they are distinct. But when you look at the feed, it all comes together to paint the bigger picture."],

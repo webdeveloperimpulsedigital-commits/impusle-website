@@ -31,7 +31,7 @@ export const ProcessSection = (): JSX.Element => {
     id: 3,
     title: "Filming / Recording",
     description:
-      "With a detailed plan, we move on to actual creation—lights, camera, and action come together to tell your story.",
+      "With a detailed plan, we move on to actual creation-lights, camera, and action come together to tell your story.",
     expandedContent:
       "With a detailed plan, we move on to actually creating the content. It’s all about lights, camera, and action for everyone working on the project. We carefully shoot each sequence and product to highlight the details and bring out the story.",
   },
@@ -39,7 +39,7 @@ export const ProcessSection = (): JSX.Element => {
     id: 4,
     title: "Editing & Assembly",
     description:
-      "All the raw footage comes together here—edited, refined, and perfected for the final outcome.",
+      "All the raw footage comes together here-edited, refined, and perfected for the final outcome.",
     expandedContent:
       "It’s time to gather all the raw footage and put it together. Our editing team sits down to view each footage and image one by one, make the necessary corrections for lighting, contrast, sound, etc., and assemble it together for the final outcome.",
   },

@@ -28,7 +28,7 @@ const ServicesSection = () => {
     n: "01",
     title: "WhatsApp",
     points: [
-      "Multilingual conversations, instant responses, smart follow-ups, and secure document sharing—all powered by intelligent automation. We help you turn WhatsApp into a high-converting communication channel that feels personal, fast, and effortless for your customers."
+      "Multilingual conversations, instant responses, smart follow-ups, and secure document sharing-all powered by intelligent automation. We help you turn WhatsApp into a high-converting communication channel that feels personal, fast, and effortless for your customers."
     ],
     img: "/impulse-website/Whatsapp.jpg",
   },
@@ -36,7 +36,7 @@ const ServicesSection = () => {
     n: "02",
     title: "Email",
     points: [
-      "AI-powered email communication that listens, understands, and responds just like your best sales rep. From inquiries to follow-ups to nurturing flows, we craft emails that persuade, convert, and maintain a consistent brand voice—24/7."
+      "AI-powered email communication that listens, understands, and responds just like your best sales rep. From inquiries to follow-ups to nurturing flows, we craft emails that persuade, convert, and maintain a consistent brand voice-24/7."
     ],
     img: "/impulse-website/Email.jpg",
   },

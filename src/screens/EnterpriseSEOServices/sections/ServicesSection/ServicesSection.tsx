@@ -44,7 +44,7 @@ const ServicesSection = () => {
       points:["Bridge the gap between local visibility and national branding by balancing the unique needs of a franchise with the overall brand guidelines. Franchise SEO ensures a unified digital presence while driving local traffic for higher revenues and a competitive edge locally and nationally."],
       img:"/impulse-website/Franchise SEO.jpg" },
     { n:"07", title:"Shopify SEO",
-      points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores—better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
+      points:["Without SEO, you’d be competing in a saturated eCommerce market with low-quality traffic. Shopify SEO is the answer to enhance the performance of your Shopify stores-better descriptions, site structure, faster site loading, and more. Result? Not just a store but a discoverable and profitable platform."],
       img:"/impulse-website/service section 520 x 340 - Shopify SEO.jpg",
     },
     {

@@ -34,7 +34,7 @@ const ServicesSection = () => {
       points:["Designing and deploying a website is just the beginning. It needs constant maintenance efforts to keep it running smoothly. Our website development company handles updates, security checks, and performance optimization, ensuring your website is fast, secure, and bug-free."],
       img:"/impulse-website/web  service section 520 x 340 - Web maintenance & support.jpg" },
     { n:"04", title:"Responsive Web Design",
-      points:["Your audience can be searching for you through any and all their devices. Our website design company ensures that your website is suited for viewing and accessing on all device types—desktops, laptops, tablets, phones—to deliver a flawless user experience."],
+      points:["Your audience can be searching for you through any and all their devices. Our website design company ensures that your website is suited for viewing and accessing on all device types-desktops, laptops, tablets, phones-to deliver a flawless user experience."],
       img:"/impulse-website/web service section 520 x 340 - Responsive web design.jpg" },
     { n:"05", title:"Website Redesign",
       points:["What if you already have a website? We can help you redesign it, transforming outdated or non-performing websites into a modern, highly functional, and high-performing platform optimized for usability, speed, and conversions. Rest assured that your brand will set benchmarks for visuals, content, and all things website."],
