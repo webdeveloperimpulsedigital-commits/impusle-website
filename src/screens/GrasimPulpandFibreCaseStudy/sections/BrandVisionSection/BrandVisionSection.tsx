@@ -91,9 +91,9 @@ export const BrandVisionSection = (): JSX.Element => {
         {/* ================= HERO ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6">
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-medium text-[16px] md:text-[18px] mb-3 uppercase tracking-wide">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-medium text-[16px] md:text-[18px] mb-3 uppercase tracking-wide">
               LinkedIn Case Study
-            </p>
+            </p> */}
             <h1 className="[font-family:'DM_Sans',Helvetica] text-[#030019] font-bold text-[32px] md:text-[40px] lg:text-[46px] leading-tight mb-4">
               Elevating Grasim Pulp and Fibre&apos;s LinkedIn Presence
             </h1>

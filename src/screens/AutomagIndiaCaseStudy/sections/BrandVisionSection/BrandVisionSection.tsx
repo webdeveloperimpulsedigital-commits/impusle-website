@@ -25,9 +25,9 @@ export const BrandVisionSection = (): JSX.Element => {
 
           {/* Right: Text */}
           <div className="lg:col-span-6">
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-semibold text-[14px] md:text-[16px] mb-2 uppercase tracking-[0.12em]">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-semibold text-[14px] md:text-[16px] mb-2 uppercase tracking-[0.12em]">
               SEO Case Study
-            </p>
+            </p> */}
             <h2 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[30px] sm:text-[36px] lg:text-[42px] leading-tight mb-4">
               Automag India – Turning a Website into a B2B Lead Engine
             </h2>

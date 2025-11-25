@@ -42,9 +42,9 @@ export const BrandVisionSection = (): JSX.Element => {
 
             {/* Right: Copy */}
             <div className="lg:col-span-6">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+              {/* <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
                 Campaign 01
-              </p>
+              </p> */}
               <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
                 Amazon Unplugged – Leadership, Unfiltered
               </h3>
@@ -88,9 +88,9 @@ export const BrandVisionSection = (): JSX.Element => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Copy */}
             <div className="lg:col-span-6 order-2 lg:order-1">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+              {/* <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
                 Campaign 02
-              </p>
+              </p> */}
               <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
                 Powering Prime Day – Employees in the Spotlight
               </h3>
@@ -158,9 +158,9 @@ export const BrandVisionSection = (): JSX.Element => {
 
             {/* Right: Copy */}
             <div className="lg:col-span-6">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
+              {/* <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-2 [font-family:'DM_Sans',Helvetica]">
                 Program 03
-              </p>
+              </p> */}
               <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[26px] md:text-[30px] mb-3">
                 Employee Advocacy – Turning Teams into Ambassadors
               </h3>
@@ -203,9 +203,9 @@ export const BrandVisionSection = (): JSX.Element => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Social Media Mgmt */}
             <div className="lg:col-span-6 space-y-4">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
+              {/* <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
                 Always-On
-              </p>
+              </p> */}
               <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
                 Social Media Management
               </h3>
@@ -245,9 +245,9 @@ export const BrandVisionSection = (): JSX.Element => {
 
             {/* Job Board Optimisation */}
             <div className="lg:col-span-6 space-y-4">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
+              {/* <p className="text-xs tracking-[0.2em] uppercase text-[#8D8DAA] mb-1 [font-family:'DM_Sans',Helvetica]">
                 Always-On
-              </p>
+              </p> */}
               <h3 className="[font-family:'DM_Sans',Helvetica] text-[#543d98] font-bold text-[24px] md:text-[28px]">
                 Job Board Optimisation
               </h3>

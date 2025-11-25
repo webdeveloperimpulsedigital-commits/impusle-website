@@ -13,9 +13,9 @@ export const BrandVisionSection = (): JSX.Element => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Copy */}
           <div className="lg:col-span-7">
-            <p className="[font-family:'DM_Sans',Helvetica] text-[#6B7280] text-sm md:text-base mb-3 uppercase tracking-[0.12em]">
+            {/* <p className="[font-family:'DM_Sans',Helvetica] text-[#6B7280] text-sm md:text-base mb-3 uppercase tracking-[0.12em]">
               Case Study · Employer Branding & EVP
-            </p>
+            </p> */}
             <h1 className="[font-family:'DM_Sans',Helvetica] font-bold text-[#030019] text-[30px] sm:text-[34px] lg:text-[44px] leading-tight mb-4">
               Crafting the Employer Value Proposition for{" "}
               <span className="text-[#543d98]">Amazon India</span>

@@ -148,17 +148,67 @@ const css = `
 `;
 
 const caseStudiesData = [
-  { id: 1, title: "Mastercard Inc.", image: "/impulse-website/14_mastercard.jpg", tags: ["Product Design"], tall: true, corner: false },
-  { id: 2, title: "Hindustan Unilever Limited", image: "/impulse-website/16_Unilever.jpg", tags: ["Packaging"], tall: false, corner: true },
-  { id: 3, title: "Avenue Supermarts/DMart", image: "/impulse-website/15_Dmart.jpg", tags: ["Branding"], tall: true, corner: true },
-  { id: 4, title: "Vendiman", image: "/impulse-website/17_Vendiman.jpg", tags: ["Creative"], tall: false, corner: false },
-  { id: 5, title: "ElectroMech", image: "/impulse-website/18_Emech.jpg", tags: ["Branding"], tall: false, corner: false },
-  { id: 6, title: "HEM Corporation", image: "/impulse-website/19_HEM.jpg", tags: ["Packaging"], tall: false, corner: false }
+  {
+    id: 1,
+    title: "Amazone Employer Branding",
+    image: "/impulse-website/Amazon EB.jpg",
+    tags: ["Product Design"],
+    tall: true,
+    corner: false,
+    link: "/case-study/amazon-employer-branding",
+  },
+  {
+    id: 2,
+    title: "Amazone Employee Value Proposition",
+    image: "/impulse-website/Amazon EVP.jpg",
+    tags: ["Packaging"],
+    tall: false,
+    corner: true,
+    link: "/case-study/amazon-evp",
+  },
+  {
+    id: 3,
+    title: "Grasim Pulp and Fibre",
+    image: "/impulse-website/Grasim Pulp and fiber.jpg",
+    tags: ["Branding"],
+    tall: true,
+    corner: true,
+    link: "/case-study/grasim-pulp-fibre",
+  },
+  {
+    id: 4,
+    title: "Shree Rubber Works",
+    image: "/impulse-website/Shree Rubber factory.jpg",
+    tags: ["Creative"],
+    tall: false,
+    corner: false,
+    link: "/case-study/shree-rubber-works",
+  },
+  {
+    id: 5,
+    title: "Automag India",
+    image: "/impulse-website/Automag.jpg",
+    tags: ["Branding"],
+    tall: false,
+    corner: false,
+    link: "/case-study/automag-india",
+  },
+  {
+    id: 6,
+    title: "Atrac Engineering",
+    image: "/impulse-website/Atrac.jpg",
+    tags: ["Packaging"],
+    tall: false,
+    corner: false,
+    link: "/case-study/atrac-engineering",
+  },
 ];
 
 export const ServicesCatalogSection = (): JSX.Element => {
   const gridRef = useRef<HTMLDivElement | null>(null);
-  const [isMobile, setIsMobile] = useState(typeof window !== "undefined" ? window.innerWidth < 768 : false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
 
   // state for the INTERACTIVE mobile slider
   const [activeSlide, setActiveSlide] = useState(0);
@@ -167,11 +217,11 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // desktop masonry sizing (unchanged)
+  // desktop masonry sizing
   useEffect(() => {
     if (typeof window === "undefined" || !gridRef.current || isMobile) return;
     const grid = gridRef.current;
@@ -182,8 +232,12 @@ export const ServicesCatalogSection = (): JSX.Element => {
     const spanItem = (card: HTMLElement) => {
       const rowH = getNum("grid-auto-rows");
       const gap = getNum("gap");
-      const media = card.querySelector(".case-study-media") as HTMLElement | null;
-      const meta = card.querySelector(".case-study-meta") as HTMLElement | null;
+      const media = card.querySelector(".case-study-media") as
+        | HTMLElement
+        | null;
+      const meta = card.querySelector(".case-study-meta") as
+        | HTMLElement
+        | null;
       if (!media || !meta) return;
 
       const total = media.offsetHeight + meta.offsetHeight + gap;
@@ -197,10 +251,13 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
     resizeAll();
 
-    const imgs = Array.from(grid.querySelectorAll<HTMLImageElement>(".case-study-media img"));
+    const imgs = Array.from(
+      grid.querySelectorAll<HTMLImageElement>(".case-study-media img")
+    );
     const handleImgLoad = () => resizeAll();
     imgs.forEach((img) => {
-      if (!img.complete) img.addEventListener("load", handleImgLoad, { once: true });
+      if (!img.complete)
+        img.addEventListener("load", handleImgLoad, { once: true });
     });
 
     window.addEventListener("resize", resizeAll);
@@ -214,7 +271,8 @@ export const ServicesCatalogSection = (): JSX.Element => {
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mq.matches);
-    const handle = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    const handle = (e: MediaQueryListEvent) =>
+      setPrefersReducedMotion(e.matches);
     mq.addEventListener("change", handle);
     return () => mq.removeEventListener("change", handle);
   }, []);
@@ -225,6 +283,7 @@ export const ServicesCatalogSection = (): JSX.Element => {
     image: c.image,
     alt: c.title,
     clientName: c.title,
+    link: c.link,
   }));
 
   const handleSlideChange = (newIndex: number) => {
@@ -275,7 +334,12 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
     switch (position) {
       case 0:
-        return { ...base, transform: `translateX(${x0}px) scale(${scaleActive})`, opacity: 1, zIndex: 30 };
+        return {
+          ...base,
+          transform: `translateX(${x0}px) scale(${scaleActive})`,
+          opacity: 1,
+          zIndex: 30,
+        };
       case 1:
         return {
           ...base,
@@ -295,16 +359,25 @@ export const ServicesCatalogSection = (): JSX.Element => {
           marginTop: mt2,
         };
       default:
-        return { ...base, transform: `translateX(${x2 * 1.5}px)`, opacity: 0, zIndex: 0 };
+        return {
+          ...base,
+          transform: `translateX(${x2 * 1.5}px)`,
+          opacity: 0,
+          zIndex: 0,
+        };
     }
   };
 
-  const CaseStudyCard = ({ caseStudy }: { caseStudy: typeof caseStudiesData[0] }) => (
-    <a href="#" className="case-study-card">
+  const CaseStudyCard = ({
+    caseStudy,
+  }: {
+    caseStudy: (typeof caseStudiesData)[0];
+  }) => (
+    <a href={caseStudy.link} className="case-study-card">
       <div
         className={`case-study-media ${
-          !isMobile && caseStudy.tall ? 'case-study-media--tall' : ''
-        } ${caseStudy.corner ? 'corner' : ''}`}
+          !isMobile && caseStudy.tall ? "case-study-media--tall" : ""
+        } ${caseStudy.corner ? "corner" : ""}`}
       >
         <img src={caseStudy.image} alt={caseStudy.title} loading="lazy" />
       </div>
@@ -316,29 +389,31 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
   const MobileSlider = () => (
     <div className="block lg:hidden">
-      {/* Heading (kept consistent with your section) */}
-      
-
-    
-
       {/* Layered cards slider */}
       <div className="relative h-[400px] overflow-visible">
         {slides.map((slide, i) => (
-          <div
+          <a
             key={slide.id}
+            href={slide.link}
             className="absolute inset-0 rounded-2xl overflow-hidden shadow-lg"
             style={getCardStyle(i)}
           >
-            <img src={slide.image} alt={slide.alt} className="block w-full h-full object-cover" />
-          </div>
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              className="block w-full h-full object-cover"
+            />
+          </a>
         ))}
       </div>
 
       {/* Client name below image */}
       <div className="mt-4 text-left ml-1">
-        <h3 className="font-bold text-[#030019] text-[26px]">
-          {currentSlide.clientName}
-        </h3>
+        <a href={currentSlide.link}>
+          <h3 className="font-bold text-[#030019] text-[26px] hover:underline">
+            {currentSlide.clientName}
+          </h3>
+        </a>
       </div>
 
       {/* Prev / Next buttons */}
@@ -382,7 +457,10 @@ export const ServicesCatalogSection = (): JSX.Element => {
 
   return (
     <>
-      <section className="case-studies-section pt-16 bg-white pb-0 mx-auto md:px-4" data-section="case-studies">
+      <section
+        className="case-studies-section pt-16 bg-white pb-0 mx-auto md:px-4"
+        data-section="case-studies"
+      >
         <div className="wrap-casestuides">
           <div className="case-studies-header">
             <div className="case-studies-content">
@@ -392,19 +470,16 @@ export const ServicesCatalogSection = (): JSX.Element => {
                 </span>
                 <br />
                 <span className="font-bold text-[#543d98] lg:text-[49px] md:text-[52px] sm:text-[26px]">
-                Playbook of Proven Wins 
-
+                  Playbook of Proven Wins
                 </span>
               </h2>
             </div>
-
-            
           </div>
 
-          {/* ✅ NEW MOBILE SLIDER (no Swiper) */}
+          {/* Mobile slider */}
           <MobileSlider />
 
-          {/* ✅ DESKTOP GRID UNCHANGED */}
+          {/* Desktop grid */}
           <DesktopGrid />
         </div>
       </section>
