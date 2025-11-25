@@ -1055,35 +1055,37 @@ export const SlideSharePPT = (): JSX.Element => {
         {/* Category Tabs */}
         <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-200 pb-3 text-xs sm:text-sm">
           <a
-            href="/search-engine-optimization-PPT"
-            className="px-3 py-1.5 rounded-full text-white font-medium bg-[#543d98]"
-          >
+            href="/resources/Slideshare-PPT/"
+            className="px-3 py-1.5 rounded-full text-white font-medium bg-[#543d98]">
             All PPTs
           </a>
           <a
-            href="/social-media-PPT"
-            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
-          >
+            href="/resources/social-media-PPT"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Social Media PPT
           </a>
           <a
-            href="/google-ads-PPT"
-            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
-          >
+            href="/resources/google-ads-PPT"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Google Ads / SEM PPT
           </a>
           <a
-            href="/content-marketing-PPT"
-            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
-          >
+            href="/resources/content-marketing-PPT"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Content Marketing PPT
           </a>
           <a
-            href="/employer-branding-PPT"
-            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors"
-          >
+            href="/resources/employer-branding-PPT"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
             Employer Branding PPT
           </a>
+           <a
+            href="/resources/website-design-development-PPT"
+            className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-slate-400 hover:bg-slate-50 transition-colors">
+            Website Design Development PPT
+          </a>
+
+          
         </div>
 
         {/* Filters 
@@ -1218,13 +1220,33 @@ export const SlideSharePPT = (): JSX.Element => {
 
                         {/* Buttons */}
                         <div className="mt-auto flex items-center justify-between gap-2">
-                          
                           {/* VIEW PPT */}
-                          <Button as="a" href={ppt.pdfUrl} target="_blank" rel="noopener noreferrer" className="w-[120px] h-[40px] group/view inline-flex items-center gap-2 px-4 py-5 bg-white rounded-xl text-[#543d98] hover:bg-[#543d98] hover:text-white transition-colors duration-300" > <span className="font-bold text-sm md:text-base font-['DM_Sans'] group-hover/view:text-white transition-colors duration-300"> View PPT </span> <img src="/impulse-website/vector-1-3.svg" alt="Arrow" className="w-4 h-4 transition-all duration-300 group-hover/view:rotate-45 group-hover/view:brightness-0 group-hover/view:invert" /> </Button>
 
-                          {/* DOWNLOAD */}
-                          <Button as="a" href={ppt.pdfUrl} target="_blank" rel="noopener noreferrer" className="w-[120px] h-[40px] group/download sm:inline-flex items-center gap-2 px-4 py-5 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border border-[#543d98]" > <span className="font-bold text-sm md:text-base font-['DM_Sans'] group-hover/download:text-[#543d98] transition-colors duration-300"> Download </span> <img src="/impulse-website/button-icon.svg" alt="Arrow" className="w-4 h-4 transition-all duration-300 group-hover/download:rotate-45 group-hover/download:brightness-1 group-hover/download:invert " /> </Button>
-                        </div>
+<Button
+  asChild
+  className="w-[120px] h-[40px] group/download sm:inline-flex items-center gap-2 px-4 py-5 rounded-xl bg-[#543d98] text-white hover:bg-white hover:text-[#543d98] transition-colors duration-300 border border-[#543d98]"
+>
+  <a
+    href={ppt.pdfUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    download
+  >
+    <span className="font-bold text-sm md:text-base font-['DM_Sans'] group-hover/download:text-[#543d98] transition-colors duration-300">
+       View PPT
+    </span>
+    <img
+      src="/impulse-website/button-icon.svg"
+      alt="Arrow"
+      className="w-4 h-4 transition-all duration-300 
+        group-hover/download:rotate-45 
+        group-hover/download:brightness-1 
+        group-hover/download:invert"
+    />
+  </a>
+</Button>
+
+                          </div>
                       </div>
               </article>
 

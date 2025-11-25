@@ -1,6 +1,6 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
 import { ContentMarketingPPTHeroSection } from "./sections/ContentMarketingPPTHeroSection";
-import { SlideSharePPT } from "../Resources/sections/SlideSharePPT";
+import { ContentMarketingPPT } from "../Resources/sections/ContentMarketingPPT";
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "../Main/sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
@@ -11,7 +11,7 @@ export const ContentMarketingPPTS = (): JSX.Element => {
       {/* <ScrollRevealLogo /> */}
       <div className="relative w-full space-y-0">
         <ContentMarketingPPTHeroSection />
-        <SlideSharePPT />
+        <ContentMarketingPPT />
         <ContactSection />
         <FAQSection />
         <FooterSection />
