@@ -11,4 +11,8 @@ export default defineConfig({
       plugins: [tailwind()],
     },
   },
+  build: {
+    target: 'es2018',                    // or 'es2017' for maximum safety
+    // chunkSizeWarningLimit: 1600,      // (optional) silence big bundle warning
+  }
 });
