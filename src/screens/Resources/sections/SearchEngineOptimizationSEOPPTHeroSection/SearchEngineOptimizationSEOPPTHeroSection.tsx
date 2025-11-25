@@ -1,9 +1,38 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const SearchEngineOptimizationSEOPPTHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet>
+      <meta name="description" content="Search engine optimisation is the process of influencing the visibility of a website or a web page in a search engines unpaid results. Impulse Digital brings you the latest search engine optimization updates in the form of PPT presentations. " />
+<meta name="keywords" content="search engine optimization ppt, seo ppt" />
+<title>Search Engine Optimization (SEO) PPT | Impulse Digital</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Search Engine Optimization (SEO) PPT | Impulse Digital" />
+<meta property="og:description" content="Search engine optimisation is the process of influencing the visibility of a website or a web page in a search engines unpaid results. Impulse Digital brings you the latest search engine optimization updates in the form of PPT presentations. " />
+<meta property="og:url" content="https://www.theimpulsedigital.com/search-engine-optimization-PPT" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Search Engine Optimization (SEO) PPT | Impulse Digital" />
+<meta name="twitter:description" content="Search engine optimisation is the process of influencing the visibility of a website or a web page in a search engines unpaid results. Impulse Digital brings you the latest search engine optimization updates in the form of PPT presentations. " />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/search-engine-optimization-PPT" />
+
+
+    </Helmet>
+ 
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -48,5 +77,6 @@ export const SearchEngineOptimizationSEOPPTHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

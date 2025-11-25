@@ -1,9 +1,38 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const CareersHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet>
+      <meta name="description" content="At Impulse Digital, we always look forward to hire creative minds. Check out our current openings and apply right away to be the part of Impulse Digital team." />
+<meta name="keywords" content="" />
+<title>Careers at Impulse Digital</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Careers at Impulse Digital" />
+<meta property="og:description" content="At Impulse Digital, we always look forward to hire creative minds. Check out our current openings and apply right away to be the part of Impulse Digital team." />
+<meta property="og:url" content="https://www.theimpulsedigital.com/career" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Careers at Impulse Digital" />
+<meta name="twitter:description" content="At Impulse Digital, we always look forward to hire creative minds. Check out our current openings and apply right away to be the part of Impulse Digital team." />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/career" />
+
+
+    </Helmet>
+  
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +76,6 @@ export const CareersHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+      </>
   );
 };

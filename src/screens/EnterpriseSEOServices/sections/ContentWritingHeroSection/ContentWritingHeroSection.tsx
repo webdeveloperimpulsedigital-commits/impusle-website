@@ -1,9 +1,31 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
+import { Helmet } from "react-helmet-async";
 
 export const ContentWritingHeroSection = (): JSX.Element => {
   return (
+    <>
+    <Helmet> 
+    <title>Best Digital Marketing Agency in Mumbai | Impulse</title>
+    <meta name="description" content="Impulse Digital is a top digital marketing agency in Mumbai that has the expertise to expand your business reach in the digital space. Our creative, innovative, and energetic"/>
+    <meta name="keywords" content="digital marketing agency in mumbai, digital marketing company, impulse digital"/>
+    <meta property="og:title" content="Best Digital Marketing Agency in Mumbai | Impulse Digital" />
+    <meta property="og:description" content="Impulse Digital is a top digital marketing agency in Mumbai that has the expertise to expand your business reach in the digital space. Our creative, innovative, and energetic team helps us stand out from a cluster of digital marketing agencies in Mumbai. We are handling a plethora of clients which includes Amazon, HUL, OLA, Dmart, HDFC, and more big market giants." />
+    <meta property="og:url" content="https://www.theimpulsedigital.com" />
+    <meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+    <meta property="og:site_name" content="Impulse Digital" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@impulsedigi" />
+    <meta name="twitter:creator" content="@impulsedigi" />
+    <meta name="twitter:title" content="Best Digital Marketing Agency in Mumbai | Impulse Digital" />
+    <meta name="twitter:description" content="Impulse Digital is a top digital marketing agency in Mumbai that has the expertise to expand your business reach in the digital space. Our creative, innovative, and energetic team helps us stand out from a cluster of digital marketing agencies in Mumbai. We are handling a plethora of clients which includes Amazon, HUL, OLA, Dmart, HDFC, and more big market giants." />
+    <meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+    <meta name="twitter:url" content="https://www.theimpulsedigital.com" />
+    <link rel="canonical" href="https://www.theimpulsedigital.com" />
+    </Helmet>
+    
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +69,6 @@ export const ContentWritingHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

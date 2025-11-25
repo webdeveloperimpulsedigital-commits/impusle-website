@@ -1,9 +1,37 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
+import { Helmet } from "react-helmet-async";
 
 export const ContentWritingHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet> 
+<meta name="description" content="Looking for a top branding & creative agency in mumbai to handle your corporate branding & content design? Your search ends right here!  Impulse Digital help to create a differentiated place for the brand in the consumer mind." />
+<meta name="keywords" content="branding agency in mumbai, branding companies in mumbai, corporate branding agency, creative agency in mumbai" />
+<title>Branding & Creative Agency in Mumbai | Corporate Branding | Impulse Digital</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Branding & Creative Agency in Mumbai | Corporate Branding | Impulse Digital" />
+<meta property="og:description" content="Looking for a top branding & creative agency in mumbai to handle your corporate branding & content design? Your search ends right here!  Impulse Digital help to create a differentiated place for the brand in the consumer mind." />
+<meta property="og:url" content="https://www.theimpulsedigital.com/branding-creative-services" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Branding & Creative Agency in Mumbai | Corporate Branding | Impulse Digital" />
+<meta name="twitter:description" content="Looking for a top branding & creative agency in mumbai to handle your corporate branding & content design? Your search ends right here!  Impulse Digital help to create a differentiated place for the brand in the consumer mind." />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/branding-creative-services" />
+    </Helmet>
+
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -48,5 +76,6 @@ export const ContentWritingHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

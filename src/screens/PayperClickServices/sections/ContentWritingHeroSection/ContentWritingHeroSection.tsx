@@ -1,9 +1,37 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
+import { Helmet } from "react-helmet-async";
 
 export const ContentWritingHeroSection = (): JSX.Element => {
   return (
+
+    <>
+     <Helmet> 
+        <meta name="description" content="The Impulse Digital is a leading PPC company in Mumbai, India. Our PPC & search engine marketing services give boost to your online marketing efforts. We help you channelize your spends wisely to generate leads and get the best ROI." />
+        <meta name="keywords" content="ppc services in mumbai, ppc company in mumbai, search engine marketing services, pay per click services" />
+        <title>PPC Services in Mumbai | Search Engine Marketing Services | Impulse Digital</title>
+
+        <meta name="robots" content="index, follow" />
+        <meta name="revisit-after" content="1 day" />
+        <meta name="language" content="English" />
+        <meta name="generator" content="N/A" />
+
+        <meta property="og:title" content="PPC Services in Mumbai | Search Engine Marketing Services | Impulse Digital" />
+        <meta property="og:description" content="The Impulse Digital is a leading PPC company in Mumbai, India. Our PPC & search engine marketing services give boost to your online marketing efforts. We help you channelize your spends wisely to generate leads and get the best ROI." />
+        <meta property="og:url" content="https://www.theimpulsedigital.com/online-paid-advertising" />
+        <meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+        <meta property="og:site_name" content="Impulse Digital" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content= "summary_large_image"  />
+        <meta name="twitter:site" content="@impulsedigi" />
+        <meta name="twitter:creator" content="@impulsedigi" />
+        <meta name="twitter:title" content="PPC Services in Mumbai | Search Engine Marketing Services | Impulse Digital" />
+        <meta name="twitter:description" content="The Impulse Digital is a leading PPC company in Mumbai, India. Our PPC & search engine marketing services give boost to your online marketing efforts. We help you channelize your spends wisely to generate leads and get the best ROI." />
+        <meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+        <meta name="twitter:url" content="https://www.theimpulsedigital.com/online-paid-advertising" />
+
+    </Helmet>
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +75,6 @@ export const ContentWritingHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

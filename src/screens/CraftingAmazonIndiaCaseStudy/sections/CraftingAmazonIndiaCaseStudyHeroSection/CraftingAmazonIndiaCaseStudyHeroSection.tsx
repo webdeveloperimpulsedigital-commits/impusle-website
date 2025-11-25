@@ -1,9 +1,37 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const CraftingAmazonIndiaCaseStudyHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet>
+        <meta name="description" content="Check digital marketing case studies by Impulse Digital for insight into how we help our clients with SMM, SEO, SEM, designing and overall digital media presence." />
+    <meta name="keywords" content="" />
+    <title>Digital Marketing Case Studies - Impulse Digital</title>
+    
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="language" content="English" />
+    <meta name="generator" content="N/A" />
+    
+    <meta property="og:title" content="Digital Marketing Case Studies - Impulse Digital" />
+    <meta property="og:description" content="Check digital marketing case studies by Impulse Digital for insight into how we help our clients with SMM, SEO, SEM, designing and overall digital media presence." />
+    <meta property="og:url" content="https://www.theimpulsedigital.com/case-studies" />
+    <meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+    <meta property="og:site_name" content="Impulse Digital" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content= "summary_large_image"  />
+    <meta name="twitter:site" content="@impulsedigi" />
+    <meta name="twitter:creator" content="@impulsedigi" />
+    <meta name="twitter:title" content="Digital Marketing Case Studies - Impulse Digital" />
+    <meta name="twitter:description" content="Check digital marketing case studies by Impulse Digital for insight into how we help our clients with SMM, SEO, SEM, designing and overall digital media presence." />
+    <meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+    <meta name="twitter:url" content="https://www.theimpulsedigital.com/case-studies" />
+    
+    </Helmet>
+    
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +75,6 @@ export const CraftingAmazonIndiaCaseStudyHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

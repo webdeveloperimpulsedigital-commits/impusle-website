@@ -1,5 +1,5 @@
 import Header from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const FeaturedItemsSection = (): JSX.Element => {
   
   const heroTextLines = ["TRANSFORMING", "YOUR BUSINESS", "INTO A LEADING"," BRAND"];
@@ -11,6 +11,33 @@ export const FeaturedItemsSection = (): JSX.Element => {
   };
 
   return (
+  <>
+  <Helmet>
+  <meta name="description" content="We as a Digital marketing agency in India are Handling plethora of clients which includes OLA, Amazon, HUL, HDFC, Dmart and more big market giants. We are super confident to take off your businesses digital success through our digital marketing strategies which supports your pocket as well. We have our forte and are counted as best digital marketing agency in India and SEO company in India." />
+  <meta name="keywords" content="digital marketing agency in india, digital marketing company, seo company, impulse digital" />
+  <title>Digital Marketing Agency in India | SEO Company | Impulse Digital</title>
+  <meta name="robots" content="index, follow" />
+  <meta name="revisit-after" content="1 day" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="language" content="English" />
+  <meta name="generator" content="N/A" />
+  <meta property="og:title" content="Digital Marketing Agency in India | SEO Company | Impulse Digital" />
+  <meta property="og:description" content="We as a Digital marketing agency in India are Handling plethora of clients which includes OLA, Amazon, HUL, HDFC, Dmart and more big market giants. We are super confident to take off your businesses digital success through our digital marketing strategies which supports your pocket as well. We have our forte and are counted as best digital marketing agency in India and SEO company in India." />
+  <meta property="og:url" content="https://www.theimpulsedigital.com/digital-marketing-agency-in-india" />
+  <meta property="og:image" content="https://www.theimpulsedigital.com/impulse-usa-assets/img/industries.jpg" />
+  <meta property="og:site_name" content="Impulse Digital" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@impulsedigi" />
+  <meta name="twitter:creator" content="@impulsedigi" />
+  <meta name="twitter:title" content="Digital Marketing Agency in India | SEO Company | Impulse Digital" />
+  <meta name="twitter:description" content="We as a Digital marketing agency in India are Handling plethora of clients which includes OLA, Amazon, HUL, HDFC, Dmart and more big market giants. We are super confident to take off your businesses digital success through our digital marketing strategies which supports your pocket as well. We have our forte and are counted as best digital marketing agency in India and SEO company in India." />
+  <meta name="twitter:image" content="https://www.theimpulsedigital.com/impulse-usa-assets/img/industries.jpg" />
+  <meta name="twitter:url" content="https://www.theimpulsedigital.com/digital-marketing-agency-in-india" />
+  <link rel="canonical" href="https://www.theimpulsedigital.com/digital-marketing-agency-in-india" />
+
+    </Helmet>
+   
     <section
       className="relative w-full h-screen min-h-[600px] mb-0 h-[600px] sm:h-[700px] md:h-[800px] lg:h-[820px] rounded-t-[55px] overflow-hidden"
       data-section="hero"
@@ -98,6 +125,7 @@ export const FeaturedItemsSection = (): JSX.Element => {
         </div>
       </header>
     </section>
+    </>
   );
 };
 

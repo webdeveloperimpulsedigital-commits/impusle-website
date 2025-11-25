@@ -1,9 +1,37 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const SocialMediaPPTHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet>
+      <meta name="description" content="Impulse Digital brings you the latest social media updates in the form of PPT presentations. The most up-to-date information, the latest trends, and the most relevant news. This ppt presentation will be your personal guide to the best of social media." />
+<meta name="keywords" content="social media ppt, seo ppt" />
+<title>Social Media PPT | Impulse Digital</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Social Media PPT | Impulse Digital" />
+<meta property="og:description" content="Impulse Digital brings you the latest social media updates in the form of PPT presentations. The most up-to-date information, the latest trends, and the most relevant news. This ppt presentation will be your personal guide to the best of social media." />
+<meta property="og:url" content="https://www.theimpulsedigital.com/social-media-PPT" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Social Media PPT | Impulse Digital" />
+<meta name="twitter:description" content="Impulse Digital brings you the latest social media updates in the form of PPT presentations. The most up-to-date information, the latest trends, and the most relevant news. This ppt presentation will be your personal guide to the best of social media." />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/social-media-PPT" />
+
+    </Helmet>
+
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -50,5 +78,6 @@ export const SocialMediaPPTHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

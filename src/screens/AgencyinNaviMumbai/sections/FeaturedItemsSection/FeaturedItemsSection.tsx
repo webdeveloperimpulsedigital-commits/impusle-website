@@ -1,5 +1,5 @@
 import Header from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const FeaturedItemsSection = (): JSX.Element => {
   
   const heroTextLines = ["CREATING", "DIGITAL GROWTH", "STORIES"];
@@ -10,6 +10,33 @@ export const FeaturedItemsSection = (): JSX.Element => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Digital Marketing Agency in Navi Mumbai | SEO Company | Impulse Digital</title>
+<meta name="description" content="Impulse Digital is a best digital marketing agency in Navi Mumbai with decades of expertise in global marketing. Our team of proficient experts endure 24*7 to see your brand excel in the online landscape. As a leading digital marketing agency, we seamlessly fulfil all your marketing endeavours within steadfast timelines. Transform your digital marketing goals into impactful revenue with Impulse Digital." />
+<meta name="keywords" content="digital marketing agency in navi mumbai, digital marketing company, impulse digital" />
+<link rel="canonical" href="https://www.theimpulsedigital.com/digital-marketing-agency-in-navi-mumbai" />
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+<meta property="og:title" content="Digital Marketing Agency in Navi Mumbai | Impulse Digital" />
+<meta property="og:description" content="Impulse Digital is a best digital marketing agency in Navi Mumbai with decades of expertise in global marketing. Our team of proficient experts endure 24*7 to see your brand excel in the online landscape. As a leading digital marketing agency, we seamlessly fulfil all your marketing endeavours within steadfast timelines. Transform your digital marketing goals into impactful revenue with Impulse Digital." />
+<meta property="og:url" content="https://www.theimpulsedigital.com/digital-marketing-agency-in-navi-mumbai" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/uploads/images/content/contact.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Digital Marketing Agency in Navi Mumbai | Impulse Digital" />
+<meta name="twitter:description" content="Impulse Digital is a best digital marketing agency in Navi Mumbai with decades of expertise in global marketing. Our team of proficient experts endure 24*7 to see your brand excel in the online landscape. As a leading digital marketing agency, we seamlessly fulfil all your marketing endeavours within steadfast timelines. Transform your digital marketing goals into impactful revenue with Impulse Digital." />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/uploads/images/content/contact.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/digital-marketing-agency-in-navi-mumbai" />
+
+    </Helmet>
+  
     <section
       className="relative w-full h-screen min-h-[600px] mb-0 h-[600px] sm:h-[700px] md:h-[800px] lg:h-[820px] rounded-t-[55px] overflow-hidden"
       data-section="hero"
@@ -97,6 +124,7 @@ export const FeaturedItemsSection = (): JSX.Element => {
         </div>
       </header>
     </section>
+    </>
   );
 };
 

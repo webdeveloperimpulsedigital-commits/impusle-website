@@ -1,9 +1,38 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
-
+import { Helmet } from "react-helmet-async";
 export const SlideSharePPTHeroSection = (): JSX.Element => {
   return (
+
+    <>
+    <Helmet>
+      <meta name="description" content="Impulse Digital brings you the latest digital marketing and social media updates in the form of PPT presentations." />
+<meta name="keywords" content="" />
+<title>Digital Marketing PPT Presentations by Impulse Digital</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Digital Marketing PPT Presentations by Impulse Digital" />
+<meta property="og:description" content="Impulse Digital brings you the latest digital marketing and social media updates in the form of PPT presentations." />
+<meta property="og:url" content="https://www.theimpulsedigital.com/slideshare-ppt" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Digital Marketing PPT Presentations by Impulse Digital" />
+<meta name="twitter:description" content="Impulse Digital brings you the latest digital marketing and social media updates in the form of PPT presentations." />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/slideshare-ppt" />
+
+    </Helmet>
+    
+
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +76,6 @@ export const SlideSharePPTHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };

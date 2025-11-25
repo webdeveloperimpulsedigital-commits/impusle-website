@@ -1,9 +1,36 @@
 // src/pages/services/content-writing/sections/ContentWritingHeroSection.tsx
 import { NavLink } from "react-router-dom";
 import { Header } from "../../../../components/layout/Header";
+import { Helmet } from "react-helmet-async";
 
 export const ContentWritingHeroSection = (): JSX.Element => {
   return (
+    <>
+  <Helmet> 
+    <meta name="description" content="Our Social media video production services enhances your brand s social presence!From concept to execution every detail is perfected to grab attention. Enquire Now!" />
+<meta name="keywords" content="" />
+<title>Social Media Video Production Services | Creative Video Agency</title>
+
+<meta name="robots" content="index, follow" />
+<meta name="revisit-after" content="1 day" />
+<meta name="language" content="English" />
+<meta name="generator" content="N/A" />
+
+<meta property="og:title" content="Social Media Video Production Services | Creative Video Agency" />
+<meta property="og:description" content="Our Social media video production services enhances your brand s social presence!From concept to execution every detail is perfected to grab attention. Enquire Now!" />
+<meta property="og:url" content="https://www.theimpulsedigital.com/social-media-video-production" />
+<meta property="og:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta property="og:site_name" content="Impulse Digital" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content= "summary_large_image"  />
+<meta name="twitter:site" content="@impulsedigi" />
+<meta name="twitter:creator" content="@impulsedigi" />
+<meta name="twitter:title" content="Social Media Video Production Services | Creative Video Agency" />
+<meta name="twitter:description" content="Our Social media video production services enhances your brand s social presence!From concept to execution every detail is perfected to grab attention. Enquire Now!" />
+<meta name="twitter:image" content="https://www.theimpulsedigital.com/img/logo-id-new.jpg" />
+<meta name="twitter:url" content="https://www.theimpulsedigital.com/social-media-video-production" />
+
+  </Helmet>
     <section
       className="relative w-full lg:h-screen sm:h-screen lg:min-h-[700px] sm:min-h-[500px] rounded-t-[55px] overflow-hidden"
       data-section="content-writing-hero"
@@ -47,5 +74,6 @@ export const ContentWritingHeroSection = (): JSX.Element => {
         </nav>
       </div>
     </section>
+    </>
   );
 };
