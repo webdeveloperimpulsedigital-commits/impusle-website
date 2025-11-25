@@ -71,7 +71,7 @@ export const CasestudiesHeroSection = (): JSX.Element => {
             Home
           </NavLink>
           <span className="select-none">{">"}</span>
-          <span className="text-white">Cases tudies</span>
+          <span className="text-white">Case studies</span>
         </nav>
       </div>
     </section>
