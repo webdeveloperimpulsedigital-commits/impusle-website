@@ -5343,7 +5343,7 @@ padding-bottom: 6rem;
   width: 40%;
 }
 .client-logo {
-    padding: 1.2rem 0.222rem;
+    padding: 0rem;
 }
 
  #sec-border{
@@ -5813,7 +5813,7 @@ padding-bottom: 6rem;
 }
 
 .client-logo{
-  padding: 1.2rem 0.222rem;
+  padding: 0rem !important;
 }
 
 
@@ -6134,5 +6134,3 @@ padding-bottom: 6rem;
 .gap-12{
   gap: 2rem;
 }
-
-

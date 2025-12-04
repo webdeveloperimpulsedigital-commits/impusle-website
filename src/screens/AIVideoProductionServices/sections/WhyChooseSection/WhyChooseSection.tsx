@@ -81,7 +81,7 @@ export const WhyChooseSection = (): JSX.Element => {
               Tailored Content Strategy
             </h3>
             <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-              You’ve written the best piece of content—great! What’s next? With
+              You’ve written the best piece of content great! What’s next? With
               the right channel, timing, and format, it performs. Our strategy
               makes sure it does.
             </p>
@@ -155,7 +155,7 @@ export const WhyChooseSection = (): JSX.Element => {
                 Tailored Content Strategy
               </h3>
               <p className="[font-family:'DM_Sans',Helvetica] text-[#000000] text-base leading-relaxed">
-                You’ve written the best piece of content—great! What’s next? With
+                You’ve written the best piece of content great! What’s next? With
                 the right channel, timing, and format, it performs. Our strategy
                 makes sure it does.
               </p>

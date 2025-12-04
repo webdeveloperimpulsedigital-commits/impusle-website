@@ -41,7 +41,7 @@ export const ProcessSection = (): JSX.Element => {
     description:
       "Then begins the process of drafting pieces, taking care of multiple aspects such as SEO, keyword insertion, and storytelling.",
     expandedContent:
-      "We craft content designed to drive traffic, engagement, and conversions — where creativity and purpose come together to create a message that truly connects with your audience.",
+      "We craft content designed to drive traffic, engagement, and conversions - where creativity and purpose come together to create a message that truly connects with your audience.",
   },
   {
     id: 5,
@@ -55,9 +55,9 @@ export const ProcessSection = (): JSX.Element => {
     id: 6,
     title: "Powerful Storytelling",
     description:
-      "A brand without a story is a business — we help you transform from a business to a brand that your audience recognizes and recalls.",
+      "A brand without a story is a business - we help you transform from a business to a brand that your audience recognizes and recalls.",
     expandedContent:
-      "We humanize your content because humans talk to humans — strategically sharing the founder’s story, the brand’s journey, and day-to-day events to stir emotions and strike conversations.",
+      "We humanize your content because humans talk to humans - strategically sharing the founder’s story, the brand’s journey, and day-to-day events to stir emotions and strike conversations.",
   },
 ];
 

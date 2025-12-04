@@ -28,7 +28,7 @@ const ServicesSection = () => {
       n: "01",
       title: "eCommerce Content Writing",
       points: [
-        "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories–everything optimized and backed up by research and storytelling—not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
+        "eCommerce success equals persuasive, user-focused writing, amongst many other things. Our content writing services include creating product descriptions, category pages, and brand stories everything optimized and backed up by research and storytelling not for mere clicks but actual conversions. We help your online store rank higher and attract the right audience with content that speaks to their needs.",
       ],
       img: "/impulse-website/Ecommerce.jpg",
     },
@@ -76,7 +76,7 @@ const ServicesSection = () => {
       n: "07",
       title: "Corporate Communication",
       points: [
-        "Do you know where most businesses go wrong? They become professionally robotic in their communication. We take care of all your communication—email, press releases, internal newsletters, and more—to create professional yet engaging copy that resonates with your employees, stakeholders, and customers alike. ",
+        "Do you know where most businesses go wrong? They become professionally robotic in their communication. We take care of all your communication email, press releases, internal newsletters, and more to create professional yet engaging copy that resonates with your employees, stakeholders, and customers alike. ",
       ],
       img: "/impulse-website/Corporate Communication.jpg",
     },
@@ -92,7 +92,7 @@ const ServicesSection = () => {
       n: "09",
       title: "Amazon Content Writing",
       points: [
-        "One platform, a million buyers, and a million products—where are you? Our content writing agency specializes in crafting keyword-optimized product descriptions, titles, and bullet points tailored to please Amazon’s algorithms. Trust us to highlight your product’s unique features in a way that makes the buyers click ‘Add to cart’ almost immediately. ",
+        "One platform, a million buyers, and a million products where are you? Our content writing agency specializes in crafting keyword-optimized product descriptions, titles, and bullet points tailored to please Amazon’s algorithms. Trust us to highlight your product’s unique features in a way that makes the buyers click ‘Add to cart’ almost immediately. ",
       ],
       img: "/impulse-website/Amazon Contet writing.jpg",
     },

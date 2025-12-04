@@ -1,5 +1,5 @@
 //import { ScrollRevealLogo } from "../../components/ScrollRevealLogo/ScrollRevealLogo";
-import { CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudyHeroSection } from "./sections/CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudyHeroSection/CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudyHeroSection";
+import { IntelliPulseHeroSection } from "./sections/IntelliPulseHeroSection/IntelliPulseHeroSection";
 import { BrandVisionSection } from "./sections/BrandVisionSection/BrandVisionSection";
 // import { InteractiveGallerySection } from "./sections/InteractiveGallerySection/InteractiveGallerySection";
 // import { InteractiveSliderSection } from "./sections/InteractiveSliderSection/InteractiveSliderSection";
@@ -11,12 +11,12 @@ import { TestimonialsSection } from "../Main/sections/TestimonialsSection/Testim
 import { ContactSection } from "../Main/sections/ContactSection/ContactSection";
 import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { FooterSection } from "../Main/sections/FooterSection/FooterSection";
-export const CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudy = (): JSX.Element => {
+export const IntelliPulseServices = (): JSX.Element => {
   return (
     <main className="relative w-full min-h-screen">
       {/* <ScrollRevealLogo /> */}
       <div className="relative w-full space-y-0">
-        <CraftingtheEmployerValuePropositionforAmazonIndiaCaseStudyHeroSection />
+        <IntelliPulseHeroSection />
         <BrandVisionSection />
         {/* <InteractiveGallerySection /> */}
         {/* <InteractiveSliderSection /> */}

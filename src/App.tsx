@@ -45,6 +45,9 @@ import { AtracEnginePartsCaseStudy } from "./screens/AtracEnginePartsCaseStudy";
 import { CraftingAmazonIndiaCaseStudy } from "./screens/CraftingAmazonIndiaCaseStudy"
 import { GrasimPulpandFibreCaseStudy } from "./screens/GrasimPulpandFibreCaseStudy";
 import { AutomagIndiaCaseStudy } from "./screens/AutomagIndiaCaseStudy";
+import { VideoProductionServices } from "./screens/VideoProductionServices";
+import { AIVideoProductionServices } from "./screens/AIVideoProductionServices";
+import { IntelliPulseServices } from "./screens/IntelliPulseServices";
 
 
 
@@ -72,6 +75,11 @@ export const App = (): JSX.Element => {
       <Route path="/services/social-media-video-production" element={<SocialMediaVideoProductionServices />}/>
       <Route path="/services/search-engine-optimization/ai-seo-agency" element={<AiSeoAgency />} />
        <Route path="/services/agentic-ai" element={<AiAgenticServices />} /> 
+
+      <Route path="/services/intelli-pulse" element={<IntelliPulseServices/>}/>
+      <Route path="/services/ai-video-production" element={<AIVideoProductionServices/>}/>
+       <Route path="/services/video-production" element={<VideoProductionServices />}/>
+
 
       <Route path="/casestudies" element={<Casestudies/>}/>
       <Route path="/casestudies/shree-rubber-works" element={<ShreeRubberWorksCaseStudy />} />

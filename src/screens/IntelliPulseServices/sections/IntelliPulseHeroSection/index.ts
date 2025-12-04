@@ -1,0 +1,1 @@
+export { IntelliPulseHeroSection } from "./IntelliPulseHeroSection";
